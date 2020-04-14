@@ -15,7 +15,21 @@
 			}
 		},
 		onLoad() {
-
+			uni.showLoading({title:'加载中'})
+				.then(()=>new Promise((resolve,reject)=>{
+					
+					setTimeout(()=>resolve(),2000)
+				})
+				)
+				.finally(()=>{
+					uni.hideLoading()
+				})
+			wx.cloud.callFunction({
+				name:'login',
+				data:{}
+			}).then(res=>{
+				console.log(res.result.openid)
+			})
 		},
 		methods: {
 

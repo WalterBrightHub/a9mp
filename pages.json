@@ -1,16 +1,57 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/index/index"
+		}, {
+			"path": "pages/user/user",
+			"style": {}
+		}, {
+			"path": "pages/careerMaps/careerMaps",
+			"style": {}
+		}, {
+			"path": "pages/carPerf/carPerf",
+			"style": {}
+		}, {
+			"path": "pages/dashboard/dashboard",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText":"控制台"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "狂飙小助手",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F5F5F5"
+	},
+	"tabBar": {
+		"color": "#303030",
+		"backgroundColor": "#fff",
+		"selectedColor": "#FF0054",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar-icons/fire.png",
+				"selectedIconPath": "static/tabbar-icons/fire-selected.png",
+				"text": "赛事"
+			},
+			{
+				"pagePath": "pages/careerMaps/careerMaps",
+				"iconPath": "static/tabbar-icons/flag.png",
+				"selectedIconPath": "static/tabbar-icons/flag-selected.png",
+				"text": "地图"
+			},
+			{
+				"pagePath": "pages/carPerf/carPerf",
+				"iconPath": "static/tabbar-icons/car.png",
+				"selectedIconPath": "static/tabbar-icons/car-selected.png",
+				"text": "车辆"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "static/tabbar-icons/user.png",
+				"selectedIconPath": "static/tabbar-icons/user-selected.png",
+				"text": "我的"
+			}
+		]
 	}
 }
