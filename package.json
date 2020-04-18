@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@dcloudio/uni-ui": "^1.1.9",
+    "moment": "^2.24.0"
+  }
 }
