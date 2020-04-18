@@ -4,7 +4,9 @@
 			"path": "pages/index/index"
 		}, {
 			"path": "pages/user/user",
-			"style": {}
+			"style": {
+				"enablePullDownRefresh":true
+			}
 		}, {
 			"path": "pages/careerMaps/careerMaps",
 			"style": {}
@@ -17,7 +19,12 @@
 				"navigationBarTitleText":"控制台"
 			}
 		}
-	],
+     
+        ,{
+            "path" : "pages/dashboard/contest/insert/insert",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "狂飙小助手",
