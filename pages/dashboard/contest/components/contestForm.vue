@@ -67,13 +67,13 @@ import rewordTypeText from '../rewordTypeText.js';
 const rewordTypeRange = Object.keys(rewordTypeText).map(key => ({ value: key, text: rewordTypeText[key] }));
 console.log(rewordTypeRange);
 
-import { uniCalendar } from '@dcloudio/uni-ui';
+// import { uniCalendar } from '@dcloudio/uni-ui';
 
 const launchTime = moment();
 
 export default {
 	components: {
-		uniCalendar
+		// uniCalendar
 	},
 	props: {
 		initPayload: Object
@@ -158,7 +158,7 @@ export default {
 				.then(([err, res]) => {
 					console.log(res);
 					if (res.confirm) {
-						let { rewords } = this;
+						let { rewords } = this.rewords.slice();
 						this.rewords = [...rewords.slice(0, index), ...rewords.slice(index + 1)];
 					}
 				});
@@ -171,6 +171,7 @@ export default {
 		},
 		downRewordOf(index) {
 			let { rewords } = this;
+			console.log(`down ${index} of length ${rewords.length}`)
 			if (index < rewords.length - 1) {
 				this.rewords = [...rewords.slice(0, index), rewords[index + 1], rewords[index], ...rewords.slice(index + 2)];
 			}
@@ -219,7 +220,7 @@ export default {
 }
 
 .form-item-block {
-	padding: 0 10px;
+	// padding: 0 10px;
 	border-radius: 5px;
 	background-color: $card-bg-color;
 }
@@ -229,7 +230,7 @@ export default {
 }
 
 .form-item-block-item {
-	padding: 12px 0;
+	padding: 12px 10px;
 	border-top: 1px solid $divider-color;
 }
 

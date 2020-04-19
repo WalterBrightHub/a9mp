@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="wb-container">
 		<contest-form :init-payload="initPayload" @submitForm="submitForm"></contest-form>
 	</view>
 </template>
@@ -40,11 +40,7 @@
 	}
 </script>
 
-<style>
-.container{
-	max-width: 768px;
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-}
+<style  lang="scss">
+ @import '../../../../style/settings.scss'; 
 </style>
+ 

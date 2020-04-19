@@ -1,16 +1,16 @@
 <template>
-	<view class="container">
-		<view class="content">
-			<view class="title">赛事</view>
-			<navigator class="item" url="contest/insert/insert">
+	<view class="wb-container">
+		<view class="wb-card">
+			<view class="wb-card-item card-title">赛事</view>
+			<navigator class="wb-card-item" url="contest/insert/insert">
 				<view class="item-header">
-					<view class="item-title">新建赛事</view>
+					<view class="card-item-title">新建赛事</view>
 					<image class="item-right item-operation-icon" src="../../static/right-arrow.png"></image>
 				</view>
 			</navigator>
-			<view class="item">
+			<view class="wb-card-item">
 				<view class="item-header">
-					<view class="item-title">管理赛事</view>
+					<view class="card-item-title">管理赛事</view>
 					<image class="item-right item-operation-icon" src="../../static/right-arrow.png"></image>
 				</view>
 			</view>

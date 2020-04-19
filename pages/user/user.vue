@@ -1,50 +1,50 @@
 <template>
-	<view class="container">
-		<view class="content">
-			<view class="title">我的</view>
-			<view class="item" @tap="copyOpenid">
+	<view class="wb-container">
+		<view class="wb-card">
+			<view class="wb-card-item card-title">我的</view>
+			<view class="wb-card-item" @tap="copyOpenid">
 				<view class="item-header">
-					<view class="item-title">用户ID</view>
+					<view class="card-item-title">用户ID</view>
 					<view class="item-right item-operation-text">复制</view>
 				</view>
 				<view class="item-body">
-					<view class="item-text">{{ openid ? openid : ' ' }}</view>
-					<view class="item-tip">这是你在本小程序中的用户标识。</view>
+					<view class="wb-p">{{ openid ? openid : ' ' }}</view>
+					<view class="wb-help">这是你在本小程序中的用户标识。</view>
 				</view>
 			</view>
-			<view class="item" @tap="jumpToDashboard" v-if="isMpManager">
+			<view class="wb-card-item" @tap="jumpToDashboard" v-if="isMpManager">
 				<view class="item-header">
-					<view class="item-title">后台</view>
+					<view class="card-item-title">后台</view>
 					<image class="item-right item-operation-icon" src="../../static/right-arrow.png"></image>
 				</view>
 			</view>
 		</view>
-		<view class="content">
-			<view class="title">关于小程序</view>
-			<view class="item" @tap="copyOpenid">
+		<view class="wb-card">
+			<view class="wb-card-item card-title">关于小程序</view>
+			<view class="wb-card-item" @tap="copyOpenid">
 				<view class="item-header">
-					<view class="item-title">小程序版本</view>
+					<view class="card-item-title">小程序版本</view>
 					<view class="item-right item-right-text">{{ a9mp_version }}</view>
 				</view>
 			</view>
 
-			<view class="item" @tap="copyQQGroup">
+			<view class="wb-card-item" @tap="copyQQGroup">
 				<view class="item-header">
-					<view class="item-title">QQ交流群</view>
+					<view class="card-item-title">QQ交流群</view>
 					<view class="item-right item-right-text">{{ a9mp_QQGroup }}</view>
 				</view>
-				<view class="item-tip">点击复制群号</view>
+				<view class="wb-help">点击复制群号</view>
 			</view>
 
-			<view class="item">
-				<view class="item-header"><view class="item-title">开发组</view></view>
+			<view class="wb-card-item">
+				<view class="item-header"><view class="card-item-title">开发组</view></view>
 				<view class="item-text">水明@收藏家</view>
 				<view class="item-text">Doogle@萌星</view>
 			</view>
 
-			<view class="item">
-				<view class="item-header"><view class="item-title">致谢</view></view>
-				<view class="item-text">车辆数据由 硫化镉@收藏家 提供。</view>
+			<view class="wb-card-item">
+				<view class="item-header"><view class="card-item-title">致谢</view></view>
+				<view class="wb-p">车辆数据由 硫化镉@收藏家 提供。</view>
 			</view>
 		</view>
 	</view>
@@ -182,48 +182,27 @@ export default {
 </script>
 
 <style lang="scss">
-.container {
-	width: 100%;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	max-width: 768px;
-	padding: 10px;
-}
+	@import '../../style/theme.scss';
+// .container {
+// 	width: 100%;
+// 	box-sizing: border-box;
+// 	display: flex;
+// 	flex-direction: column;
+// 	max-width: 768px;
+// 	padding: 10px;
+// }
 
-.content {
-	border-radius: 5px;
-	background-color: $card-bg-color;
-	display: flex;
-	flex-direction: column;
-}
-
-.content + .content {
-	margin-top: 10px;
-}
-
-.title {
-	font-size: 18px;
+.card-title{
 	color: $text-title-color;
+	font-size: 20px;
 	font-weight: bold;
 }
 
-.title,
-.item {
-	padding: 10px;
+.card-item-title{
+	color: $text-title-color;
+	font-size: 18px;
 }
 
-.item {
-	font-size: 14px;
-	// margin: 10px 0;
-	display: flex;
-	flex-direction: column;
-	// align-items: center;
-}
-
-.item + .item {
-	border-top: 1px solid $divider-color;
-}
 
 .item-header {
 	display: flex;
@@ -233,35 +212,26 @@ export default {
 
 .item-text,
 .item-tip {
+	font-size: 16px;
 	margin-bottom: 4px;
 }
 
-.item-title {
-	font-size: 16px;
-	color: $text-title-color;
-}
+
 
 .item-text,
 .item-right-text {
 	word-break: break-word;
 }
 
-.item-tip {
-	font-size: 12px;
-	color: $text-help-color;
-}
 
-.item-right-text {
-	font-size: 14px;
-	color: $text-p-color;
-}
 
-.item-title + .item-right {
+
+
+.item-right {
 	margin-left: auto;
 }
 
 .item-operation-text {
-	font-size: 16px;
 	flex: 0 0 auto;
 	padding: 0 5px 0 10px;
 	color: $theme-color;
