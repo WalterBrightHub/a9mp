@@ -41,9 +41,11 @@
 		<!-- <uni-calendar :insert="false" ref="calendar" :range="true" @confirm="confirmStartDayAndEndDay"></uni-calendar> -->
 		<view class="form-item">
 			<view class="form-item-label">奖励</view>
-			<view class="form-item-block" v-for="(reword, index) in rewords" :key="reword.createTime">
-				<input class="form-item-block-item" v-model="reword.rewordName" placeholder="三菱" />
-				<picker class="form-item-block-item" mode="selector" :range="rewordTypeRange" @change="changeRewordType($event, index)">{{ rewordTypeRange[reword.rewordType] }}</picker>
+			<view class="form-item-block" v-for="(reword, index) in computedRewords" :key="reword.key">
+				<input class="form-item-block-item" v-model="rewords[index].rewordName" placeholder="三菱" />
+				<picker class="form-item-block-item" mode="selector" :value="reword.rewordType" :range="rewordTypeRange" @change="changeRewordType($event, index)">
+					{{ rewordTypeRange[reword.rewordType] }}
+				</picker>
 				<view class="form-item-block-item adjust-panel">
 					<view class="adjust-item adjust-up" @tap="upRewordOf(index)">↑</view>
 					<view class="adjust-item adjust-down" @tap="downRewordOf(index)">↓</view>
@@ -90,6 +92,15 @@ export default {
 			endDay: launchTime.add(1, 'd').format('YYYY-MM-DD'),
 			endTime: '23:59'
 		};
+	},
+	computed: {
+		computedRewords() {
+			//非h5端不支持v-for的动态key
+			return this.rewords.map((reword, index) => ({
+				...reword,
+				key: reword.createTime + '' + index
+			}));
+		}
 	},
 	methods: {
 		openCalendar() {
@@ -158,7 +169,7 @@ export default {
 				.then(([err, res]) => {
 					console.log(res);
 					if (res.confirm) {
-						let { rewords } = this.rewords.slice();
+						let { rewords } = this;
 						this.rewords = [...rewords.slice(0, index), ...rewords.slice(index + 1)];
 					}
 				});
@@ -171,7 +182,7 @@ export default {
 		},
 		downRewordOf(index) {
 			let { rewords } = this;
-			console.log(`down ${index} of length ${rewords.length}`)
+			console.log(`down ${index} of length ${rewords.length}`);
 			if (index < rewords.length - 1) {
 				this.rewords = [...rewords.slice(0, index), rewords[index + 1], rewords[index], ...rewords.slice(index + 2)];
 			}
@@ -246,8 +257,8 @@ export default {
 	display: flex;
 	justify-content: space-around;
 }
-.adjust-item{
-	flex:1;
+.adjust-item {
+	flex: 1;
 	text-align: center;
 	font-weight: bold;
 }
