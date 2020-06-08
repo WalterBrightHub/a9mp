@@ -67,7 +67,7 @@ import moment from 'moment';
 import rewordTypeText from '../rewordTypeText.js';
 
 const rewordTypeRange = Object.keys(rewordTypeText).map(key => ({ value: key, text: rewordTypeText[key] }));
-console.log(rewordTypeRange);
+// console.log(rewordTypeRange);
 
 // import { uniCalendar } from '@dcloudio/uni-ui';
 
