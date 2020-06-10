@@ -16,7 +16,9 @@
       }
     }, {
       "path": "pages/careerMaps/careerMaps",
-      "style": {}
+      "style": {
+        "enablePullDownRefresh": true
+      }
     },  {
       "path": "pages/dashboard/dashboard",
       "style": {
@@ -30,15 +32,12 @@
     }
     ],
   "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "狂飙小助手",
-    "navigationBarBackgroundColor": "#fff",
-    "backgroundColor": "#F5F5F5"
+    //为支持微信深色模式，此处样式转移到manifest.json中
   },
   "tabBar": {
-    "color": "#303030",
-    "backgroundColor": "#fff",
-    "selectedColor": "#FF0054",
+    "color": "@tabFontColor",
+    "backgroundColor": "@tabBgColor",
+    "selectedColor": "@tabSelectedColor",
     "list": [
       {
         "pagePath": "pages/carList/carList",
@@ -57,13 +56,14 @@
         "iconPath": "static/tabbar-icons/fire.png",
         "selectedIconPath": "static/tabbar-icons/fire-selected.png",
         "text": "赛事"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "iconPath": "static/tabbar-icons/user.png",
-        "selectedIconPath": "static/tabbar-icons/user-selected.png",
-        "text": "我的"
       }
+      // ,
+      // {
+      //   "pagePath": "pages/user/user",
+      //   "iconPath": "static/tabbar-icons/user.png",
+      //   "selectedIconPath": "static/tabbar-icons/user-selected.png",
+      //   "text": "我的"
+      // }
     ]
   }
 }

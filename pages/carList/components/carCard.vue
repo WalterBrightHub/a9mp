@@ -134,12 +134,20 @@
 
 <style lang="scss">
   .car-card {
-    /* margin-left: 50px; */
     padding: 32rpx;
     background-color: #fff;
     border-radius: 20rpx;
-    color: #606060;
-    /* min-width: 280px; */
+    color: $text-p-color;
+
+    @include pad-devices {
+      padding: toPadPx(32);
+      border-radius: toPadPx(20);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-p-color-dark;
+      background-color: $card-bg-color-dark;
+    }
   }
 
 
@@ -147,7 +155,16 @@
     font-size: 36rpx;
     font-weight: bold;
     margin-bottom: 10rpx;
-    color: #303030;
+    color: $text-title-color;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      margin-bottom: toPadPx(10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+    }
   }
 
   .stars-and-rank {
@@ -155,6 +172,10 @@
     align-items: center;
     margin-bottom: 10rpx;
     justify-content: space-between;
+
+    @include pad-devices {
+      margin-bottom: toPadPx(10);
+    }
   }
 
 
@@ -164,32 +185,57 @@
     /* display: inline-block; */
     width: 32rpx;
     height: 32rpx;
+
+    @include pad-devices {
+      width: toPadPx(32);
+      height: toPadPx(32);
+    }
   }
 
   .star-icon+.star-icon {
     margin-left: 8rpx;
+
+    @include pad-devices {
+      margin-left: toPadPx(8);
+    }
   }
 
   .nick-name {
-    color: #909090;
+    color: $text-help-color;
     font-size: 28rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(28);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
+    }
   }
 
   .rank {
-    /* margin-left: auto; */
     font-size: 30rpx;
     border-radius: 6rpx;
     padding: 2rpx 6rpx;
-    border: 1.5px solid #ffc107;
+    // border: 1px solid #ffc107;
     color: #ffc107;
-    /* border-color: #ff3176;
-  color: #ff3175; */
     font-weight: bold;
+
+    @include pad-devices {
+      font-size: toPadPx(30);
+      border-radius: toPadPx(6);
+      padding: toPadPx(2) toPadPx(6);
+      // border: toPadPx(3) solid #ffc107;
+    }
   }
 
   .bps {
     display: flex;
     margin-bottom: 10rpx;
+
+    @include pad-devices {
+      margin-bottom: toPadPx(10);
+    }
   }
 
   .bp {
@@ -198,20 +244,34 @@
     text-align: center;
     border-radius: 6rpx;
     font-size: 24rpx;
-    /* min-width: 24px; */
     padding: 8rpx 14rpx;
 
-    /* color: #606060; */
     background-color: #23bbfa;
+
+    @include pad-devices {
+      border-radius: toPadPx(6);
+      font-size: toPadPx(24);
+      padding: toPadPx(8) toPadPx(14);
+    }
   }
 
   .bp+.bp {
     margin-left: 10rpx;
+
+    @include pad-devices {
+      margin-left: toPadPx(10);
+    }
   }
 
   .perf-and-update {
     display: flex;
     font-size: 24rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(24);
+    }
+
+    
   }
 
   .perf {
@@ -231,12 +291,22 @@
   .perf-bar {
     height: 10rpx;
     background-color: #05d1dc;
-    border-radius: 4rpx;
+    border-radius: 6rpx;
     margin-bottom: 18rpx;
+
+    @include pad-devices {
+      height: toPadPx(10);
+      border-radius: toPadPx(6);
+      margin-bottom: toPadPx(18);
+    }
   }
 
   .perf-item+.perf-bar {
     margin-top: 6rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(6);
+    }
   }
 
   .update {
@@ -259,6 +329,10 @@
 
   .cost-item+.cost-item {
     margin-top: 24rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(24);
+    }
   }
 
   .cost-value {
@@ -282,12 +356,22 @@
 
   .part-item+.part-item {
     margin-top: 12rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(12);
+    }
   }
 
   .part-num {
     font-size: 24rpx;
     margin-left: 12rpx;
     width: 28rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(24);
+      margin-left: toPadPx(12);
+      width: toPadPx(28);
+    }
   }
 
 
@@ -295,15 +379,18 @@
     width: 24rpx;
     height: 24rpx;
     margin-left: auto;
-    /* position: absolute; */
-    /* left: 0; */
-    /* bottom: 0; */
-    /* display: block; */
 
-    /* display: block; */
+    @include pad-devices {
+      width: toPadPx(24);
+      height: toPadPx(24);
+    }
   }
 
   .part-icon+.part-icon {
     margin-left: 4rpx;
+
+    @include pad-devices {
+      margin-left: toPadPx(4);
+    }
   }
 </style>

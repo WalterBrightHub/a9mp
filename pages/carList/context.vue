@@ -77,12 +77,15 @@
 <style lang="scss">
 .context{
   // margin: 0 10rpx 0 10rpx;
+  
 }
 .filter-block{
-  
 }
 .placeholder{
   height: 112rpx;
+  @include pad-devices{
+    height: toPadPx(112);
+  }
 }
 .filter{
   display: flex;
@@ -91,13 +94,51 @@
   width: 100%;
   background-color: $page-bg-color;
   
+  @media (prefers-color-scheme: dark){
+    background-color: $page-bg-color-dark;
+  }
   padding: 20rpx;
   box-sizing: border-box;
+  @include pad-devices {
+    padding: toPadPx(20);
+  }
 }
 .car-card-list{
-  padding: 20rpx;
+  padding: 0 20rpx;
+  padding-bottom: 40rpx;
+  @include pad-devices {
+    padding: toPadPx(20);
+    padding-bottom: toPadPx(40);
+  }
+  margin: 0 auto;
+  max-width: 768px;
+  // background-color: $page-bg-color;
+  // @media (prefers-color-scheme: dark){
+  //   background-color: $page-bg-color-dark;
+  // }
 }
 .car-card+.car-card{
   margin-top: 20rpx;
+  @include pad-devices {
+    margin-top: toPadPx(20);
+  }
+}
+@media (min-width:750px) {
+  .car-card-list {
+      display: flex;
+      flex-wrap: wrap;
+      // padding: 20px;
+      /* justify-content: center; */
+    }
+  
+    .car-card {
+      flex: 1 1 340px;
+      margin-top: 20px;
+      padding: 0 10px;
+      max-width: 354px;
+    }
+    .car-card+.car-card{
+      margin-top: 20px;
+    }
 }
 </style>

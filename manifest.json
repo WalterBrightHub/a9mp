@@ -59,6 +59,15 @@
 	"mp-weixin": {
 		"appid": "wx742bd28d4723c3d9",
 		"resizable": true,
+  "darkmode": true,
+  "window":{
+    
+      "navigationBarTextStyle": "@navTxtStyle", 
+      "navigationBarBackgroundColor": "@navBgColor",
+      "navigationBarTitleText": "狂飙小助手",
+      "backgroundColor": "@bgColor"
+  },
+  "themeLocation": "static/theme.json",
 		"setting": {
 			"urlCheck": false,
 			"es6": true,

@@ -40,7 +40,12 @@ page{
 	
 	font-size: 14px;
 	color: $text-p-color;
+  
 	
+  @media (prefers-color-scheme: dark){
+    background-color: $page-bg-color-dark;
+    color: $text-p-color-dark;
+  }
 	
 	
 	

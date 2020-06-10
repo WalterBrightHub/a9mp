@@ -1,8 +1,7 @@
 <template>
   <view class="filter">
 
-    <picker class="sort-block" :range="sortRange" :range-key="'name'" 
-     @change="onChangeSort">{{sortRange[sortValue].name}}</picker>
+    <picker class="sort-block" :range="sortRange" :range-key="'name'" @change="onChangeSort">{{sortRange[sortValue].name}}</picker>
 
     <view class="filter-block" v-if="sort==='carClass'">
       <view class="class-block" :class="{['class-selected']:item===filter}" v-for="item in carFilter" :key="item" @tap="onChangeFilter(item)">
@@ -23,7 +22,7 @@
 
 <script>
   export default {
-    props: ['sort', 'filter','brandRange'],
+    props: ['sort', 'filter', 'brandRange'],
     data() {
       return {
         sortRange: [{
@@ -53,15 +52,32 @@
     },
     methods: {
       onChangeSort(e) {
+        let newSort = this.sortRange[e.target.value].value
+        if (this.sort !== newSort) {
+          this.$emit('onChangeSort', newSort);
+          uni.pageScrollTo({
+            scrollTop: 0
+          })
+          //切换时界面可能没有明显变化，加一个提示
+          uni.showToast({
+            title:'已切换',
+            duration:1000
+          })
+        }
 
-        this.$emit('onChangeSort', this.sortRange[e.target.value].value);
       },
       onChangeFilter(filter) {
-        console.log('hi')
-        this.$emit('onChangeFilter', filter)
+        if (this.filter !== filter) {
+          this.$emit('onChangeFilter', filter)
+          
+          uni.pageScrollTo({
+            scrollTop: 0
+          })
+        }
+
       },
-      onchangeBrand(e){
-        this.$emit('onChangeFilter',this.brandRange[e.target.value])
+      onchangeBrand(e) {
+        this.$emit('onChangeFilter', this.brandRange[e.target.value])
       }
     }
   }
@@ -71,6 +87,8 @@
   .filter {
     display: flex;
     width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
     align-items: center;
   }
 
@@ -78,10 +96,20 @@
     // margin-left: 10rpx;
     color: #000;
     padding: 0 20rpx;
+    font-size: 36rpx;
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
     background-color: #fff;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+
   }
 
   .filter-block {
@@ -101,15 +129,31 @@
     background-color: #fff;
     color: #000;
     border-radius: 10rpx;
+
+    @include pad-devices {
+
+      font-size: toPadPx(36);
+      width: toPadPx(72);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+
   }
 
   .class-block+.class-block {
     margin-left: 30rpx;
+
+    @include pad-devices {
+
+      margin-left: toPadPx(30);
+    }
   }
 
   .class-selected {
     color: #fff;
     background-color: #000;
+
   }
 
   .filter-brand {
@@ -122,5 +166,25 @@
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
+
+    @include pad-devices {
+
+      margin-left: toPadPx(72);
+      font-size: toPadPx(36);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+  }
+  .filter-brand,
+  .sort-block,
+  .class-block{
+    color: $text-title-color;
+    background-color: $card-bg-color;
+  @media (prefers-color-scheme: dark){
+    
+      color: $text-title-color-dark;
+      background-color: $card-bg-color-dark;
+  }
   }
 </style>

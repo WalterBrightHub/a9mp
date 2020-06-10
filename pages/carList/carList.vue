@@ -1,12 +1,17 @@
 <template>
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
-    <context v-else="carListStatus==='resolve'" id="context" :carList="carList" :brandRange="brandRange" />
+    <context v-else-if="carListStatus==='resolve'" id="context" :carList="carList" :brandRange="brandRange" />
 
   </view>
 </template>
 
 <script>
+  /*
+  todo
+  + pad rpx
+  + code better
+  */
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   const requestCarList = async function() {
@@ -14,57 +19,125 @@
       name: 'getCarList'
     })
   }
+  const requestBrands = async function() {
+    return wx.cloud.callFunction({
+      name: 'getBrands'
+    })
+  }
   export default {
     components: {
       'request-fail': requestFail,
-      'context':context
+      'context': context
     },
     data() {
       return {
         carListStatus: 'ready',
         carList: [],
-        brandRange:["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors", "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"]
+        brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors","Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
+        ]
       }
     },
     onLoad() {
-      this.setCarList()
+      this.carListStatus = 'pending'
+      uni.showLoading({
+        title: '加载中',
+      })
+
+      requestCarList()
+        .then(res => {
+          // console.log(res.result.data)
+          // return Promise.reject()
+          this.carList = res.result.data
+          this.carListStatus = 'resolve'
+        }).catch(e => {
+          console.log(e)
+          this.carListStatus = 'reject'
+        }).finally(() => {
+          uni.hideLoading()
+        })
+      this.setBrands()
+    },
+    onShareAppMessage(){
+      
     },
     onPullDownRefresh() {
-      this.setCarList()
+      uni.showLoading({
+        title: '更新中',
+      })
+
+      requestCarList()
+        .then(res => {
+          // console.log(res.result.data)
+          // return Promise.reject()
+          this.carList = res.result.data
+          this.carListStatus = 'resolve'
+          uni.showToast({
+            title: '更新成功',
+            duration: 500
+          })
+        }).catch(e => {
+          console.log(e)
+          this.carListStatus = 'reject'
+          uni.showToast({
+            title: '更新失败',
+            icon: 'none'
+          })
+        }).finally(() => {
+          uni.stopPullDownRefresh()
+        })
+      this.setBrands()
+    },
+    firstTapTab: false,
+    onHide() {
+      this.firstTapTab = true
+    },
+    onTabItemTap() {
+      if (this.firstTapTab) {
+        this.firstTapTab = false
+      } else {
+        uni.pageScrollTo({
+          scrollTop: 0
+        })
+      }
     },
     methods: {
-      setCarList() {
-        this.carListStatus = 'pending'
-
+      setBrands() {
+        requestBrands()
+          .then(res => {
+            // console.log(res.result)
+            this.brandRange = res.result
+          })
+      },
+      onRetry() {
         uni.showLoading({
-          title: '加载中',
+          title: '重试中',
         })
 
         requestCarList()
           .then(res => {
-            console.log(res.result.data)
+            // console.log(res.result.data)
             // return Promise.reject()
             this.carList = res.result.data
             this.carListStatus = 'resolve'
+            uni.showToast({
+              title: '成功'
+            })
           }).catch(e => {
             console.log(e)
             this.carListStatus = 'reject'
-          }).finally(() => {
-            uni.hideLoading({
-              complete: (res) => {},
+            uni.showToast({
+              title: '失败',
+              icon: 'none'
             })
-            uni.stopPullDownRefresh()
           })
-      },
-      onRetry() {
-        this.setCarList()
+        this.setBrands()
       }
     }
   }
 </script>
 
 <style lang="scss">
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
   }
