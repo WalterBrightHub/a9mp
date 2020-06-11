@@ -53,19 +53,9 @@
   },
 
   "tabBar": {
-    // #ifdef  MP-WEIXIN
     "color": "@tabFontColor",
     "backgroundColor": "@tabBgColor",
     "selectedColor": "@tabSelectedColor",
-    // #endif
-    // #ifdef MP-QQ
-    "color": "#000",
-    "backgroundColor": "#fff",
-    "selectedColor": "#FF0054",
-    // #endif
-
-
-    // #ifdef  MP-WEIXIN
     "list": [{
         "pagePath": "pages/carList/carList",
         "iconPath": "@iconPathCarList",
@@ -85,8 +75,6 @@
         "text": "赛事"
       }
     ]
-    // #endif
 
   }
 }
-

@@ -106,7 +106,7 @@
     padding-bottom: 40rpx;
 
     @include pad-devices {
-      padding: toPadPx(20);
+      padding: 0 toPadPx(20);
       padding-bottom: toPadPx(40);
     }
 

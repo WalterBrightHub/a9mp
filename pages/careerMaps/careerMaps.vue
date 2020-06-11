@@ -103,7 +103,7 @@
             this.careerMapsStatus = 'resolve'
 
           uni.showToast({
-            title: '更新成功',
+            title: '最新',
             duration: 500
           })
         })
@@ -111,7 +111,7 @@
           console.error(e)
           this.careerMapsStatus = 'reject'
           uni.showToast({
-            title: '更新失败',
+            title: '失败',
             icon: 'none'
           })
         })
