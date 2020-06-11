@@ -58,12 +58,12 @@
       this.setBrands()
     },
     onShareAppMessage(){
-      
+      return {
+        'title':'天赐三菱，不服不行'
+      }
     },
     onPullDownRefresh() {
-      uni.showLoading({
-        title: '更新中',
-      })
+
 
       requestCarList()
         .then(res => {
@@ -72,7 +72,7 @@
           this.carList = res.result.data
           this.carListStatus = 'resolve'
           uni.showToast({
-            title: '更新成功',
+            title: '最新',
             duration: 500
           })
         }).catch(e => {

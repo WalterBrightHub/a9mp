@@ -12,6 +12,6 @@
   "dependencies": {
     "@dcloudio/uni-ui": "^1.1.9",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0"
+    "moment": "^2.26.0"
   }
 }

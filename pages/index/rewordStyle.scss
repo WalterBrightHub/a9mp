@@ -1,0 +1,98 @@
+
+.reword-text:after {
+  font-weight: bold;
+  font-size: 20rpx;
+  border: 2rpx solid;
+   border-radius: 4rpx;
+  padding: 0 2rpx;
+  margin-left: 8rpx;
+@include pad-devices {
+
+      font-size: toPadPx(20);
+      border: toPadPx(2) solid;
+      border-radius: toPadPx(4);
+      padding:0  toPadPx(2);
+      margin-left: toPadPx(8);
+      
+    }
+}
+
+.reword-bp-uncommon:after {
+  content: '图纸';
+  color: #13b4df;
+}
+
+.reword-bp-rare:after {
+  content: '图纸';
+  color: #c14cde;
+}
+
+.reword-bp-epic:after {
+  content: '图纸';
+  color: #f1cd00;
+}
+
+.reword-token:after {
+  content: '蓝币';
+  color: #068ffc;
+}
+
+.reword-credit:after {
+  content: '金币';
+  color: #ffc701;
+}
+
+.reword-import-part:after {
+  content: '金卡';
+  color: #edb900;
+}
+
+.reword-on-trail:after {
+  content: '试用';
+  color: #ff0054;
+  @media (prefers-color-scheme: dark) {
+      color: $theme-color-dark;
+    }
+}
+
+.reword-kit:after {
+  content: '套件';
+  color: #08a00b;
+}
+
+.reword-skin:after {
+  content: '贴纸';
+  color: #08a00b;
+}
+
+
+.reword-voucher:after {
+  content: '点券';
+  color: #08a00b;
+}
+
+.reword-purple-coin:after {
+  content: '紫币';
+  color: #af9dff;
+}
+
+.reword-car-key:after {
+  content: '🔑';
+  /* color: #eba300; */
+  border: 0px;
+  font-size: 12px;
+}
+
+.reword-avatar{
+  content: '头像';
+  color:#edb900;
+}
+.reword-border{
+  content:'头像框';
+  color:#edb900;
+}
+.reword-nick{
+  
+    content:'称号';
+    color:#edb900;
+}

@@ -74,11 +74,26 @@
     },
     onShareAppMessage(){
       
+        return {
+          'title':'等你很久了！'
+        }
+    },
+    
+    firstTapTab: false,
+    onHide() {
+      this.firstTapTab = true
+    },
+    onTabItemTap() {
+      if (this.firstTapTab) {
+        this.firstTapTab = false
+      } else {
+        uni.pageScrollTo({
+          scrollTop: 0
+        })
+      }
     },
     onPullDownRefresh() {
-      uni.showLoading({
-        title: '更新中',
-      })
+
 
       requestCareerMaps()
         .then(res => {

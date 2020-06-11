@@ -28,9 +28,11 @@
         "tabSelectedColor": "#d92661",
         "tabBgColor": "#121212",
         "tabBorderStyle": "121212",
-        "iconPathCarList": "static/tabbar-icons/car.png",
-        "selectedIconPathCarList": "static/tabbar-icons/car-selected.png",
-        "iconPathContest": "static/tabbar-icons/fire.png",
-        "selectedIconPathContest": "static/tabbar-icons/fire-selected.png"
+        "iconPathCarList": "static/tabbar-icons/car-dark.png",
+        "selectedIconPathCarList": "static/tabbar-icons/car-selected-dark.png",
+        "iconPathCareerMaps": "static/tabbar-icons/flag-dark.png",
+        "selectedIconPathCareerMaps": "static/tabbar-icons/flag-selected-dark.png",
+        "iconPathContest": "static/tabbar-icons/fire-dark.png",
+        "selectedIconPathContest": "static/tabbar-icons/fire-selected-dark.png"
     }
 }

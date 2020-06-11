@@ -150,11 +150,6 @@
     }
   }
 
-  .class-selected {
-    color: #fff;
-    background-color: #000;
-
-  }
 
   .filter-brand {
     margin-left: 72rpx;
@@ -186,5 +181,15 @@
       color: $text-title-color-dark;
       background-color: $card-bg-color-dark;
   }
+  }
+  .class-selected {
+    color: #fff;
+    background-color: #000;
+  @media (prefers-color-scheme: dark){
+    
+      color: $card-bg-color-dark;
+      background-color: $text-title-color-dark;
+  }
+    
   }
 </style>

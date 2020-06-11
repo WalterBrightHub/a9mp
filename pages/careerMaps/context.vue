@@ -202,6 +202,7 @@
   }
   .car-class,
   .map-name{
+    font-weight: bold;
     color: $text-title-color;
     @media (prefers-color-scheme: dark){
       color: $text-title-color-dark;
