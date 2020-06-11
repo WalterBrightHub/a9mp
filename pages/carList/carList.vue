@@ -7,11 +7,6 @@
 </template>
 
 <script>
-  /*
-  todo
-  + pad rpx
-  + code better
-  */
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   const requestCarList = async function() {
@@ -19,6 +14,7 @@
       name: 'getCarList'
     })
   }
+
   const requestBrands = async function() {
     return wx.cloud.callFunction({
       name: 'getBrands'
@@ -33,7 +29,8 @@
       return {
         carListStatus: 'ready',
         carList: [],
-        brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors","Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
+        brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors",
+          "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
         ]
       }
     },
@@ -57,14 +54,12 @@
         })
       this.setBrands()
     },
-    onShareAppMessage(){
+    onShareAppMessage() {
       return {
-        'title':'天赐三菱，不服不行'
+        'title': '天赐三菱，不服不行'
       }
     },
     onPullDownRefresh() {
-
-
       requestCarList()
         .then(res => {
           // console.log(res.result.data)
@@ -104,7 +99,6 @@
       setBrands() {
         requestBrands()
           .then(res => {
-            // console.log(res.result)
             this.brandRange = res.result
           })
       },

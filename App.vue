@@ -3,9 +3,6 @@
   export default {
     onLaunch: function() {
       console.log(process.env.NODE_ENV)
-      // const uniCloudConfig=config[process.env.NODE_ENV].uniCloud
-      // console.log(uniCloudConfig)
-      // uniCloud.init(uniCloudConfig)
       if (!wx.cloud) {
         console.error('请使用 2.2.3 或以上的基础库以使用云能力')
       } else {

@@ -13,7 +13,7 @@
       }
     },
     {
-      "path": "pages/index/index",
+      "path": "pages/contest/contest",
       "style": {
         "enablePullDownRefresh": true,
         "onReachBottomDistance": 200
@@ -38,7 +38,7 @@
   ],
 
   "globalStyle": {
-    //为支持微信深色模式，此处样式转移到manifest.json中
+    //QQ未支持深色模式
     // #ifdef  MP-WEIXIN
     "navigationBarTextStyle": "@navTxtStyle",
     "navigationBarBackgroundColor": "@navBgColor",
@@ -79,7 +79,7 @@
         "text": "地图"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/contest/contest",
         "iconPath": "@iconPathContest",
         "selectedIconPath": "@selectedIconPathContest",
         "text": "赛事"
@@ -87,34 +87,6 @@
     ]
     // #endif
 
-    // #ifdef MP-QQ
-    // "list":[{
-    //     "pagePath": "pages/carList/carList",
-    //     "iconPath": "static/tabbar-icons/car.png",
-    //     "selectedIconPath": "static/tabbar-icons/car-selected.png",
-    //     "text": "车辆"
-    //   },
-    //   {
-    //     "pagePath": "pages/careerMaps/careerMaps",
-    //     "iconPath": "static/tabbar-icons/flag.png",
-    //     "selectedIconPath": "static/tabbar-icons/flag-selected.png",
-    //     "text": "地图"
-    //   },
-    //   {
-    //     "pagePath": "pages/index/index",
-    //     "iconPath": "static/tabbar-icons/fire.png",
-    //     "selectedIconPath": "static/tabbar-icons/fire-selected.png",
-    //     "text": "赛事"
-    //   }
-    // ]
-    // #endif
   }
 }
 
-      // ,
-      // {
-      //   "pagePath": "pages/user/user",
-      //   "iconPath": "static/tabbar-icons/user.png",
-      //   "selectedIconPath": "static/tabbar-icons/user-selected.png",
-      //   "text": "我的"
-      // }

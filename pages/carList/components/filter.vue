@@ -60,8 +60,8 @@
           })
           //切换时界面可能没有明显变化，加一个提示
           uni.showToast({
-            title:'已切换',
-            duration:1000
+            title: '已切换',
+            duration: 1000
           })
         }
 
@@ -69,7 +69,7 @@
       onChangeFilter(filter) {
         if (this.filter !== filter) {
           this.$emit('onChangeFilter', filter)
-          
+
           uni.pageScrollTo({
             scrollTop: 0
           })
@@ -93,7 +93,6 @@
   }
 
   .sort-block {
-    // margin-left: 10rpx;
     color: #000;
     padding: 0 20rpx;
     font-size: 36rpx;
@@ -125,7 +124,6 @@
     text-align: center;
     box-sizing: border-box;
     font-weight: bold;
-    // padding: 18rpx;
     background-color: #fff;
     color: #000;
     border-radius: 10rpx;
@@ -171,25 +169,29 @@
       border-radius: toPadPx(10);
     }
   }
+
   .filter-brand,
   .sort-block,
-  .class-block{
+  .class-block {
     color: $text-title-color;
     background-color: $card-bg-color;
-  @media (prefers-color-scheme: dark){
-    
+
+    @media (prefers-color-scheme: dark) {
+
       color: $text-title-color-dark;
       background-color: $card-bg-color-dark;
+    }
   }
-  }
+
   .class-selected {
     color: #fff;
     background-color: #000;
-  @media (prefers-color-scheme: dark){
-    
+
+    @media (prefers-color-scheme: dark) {
+
       color: $card-bg-color-dark;
       background-color: $text-title-color-dark;
-  }
-    
+    }
+
   }
 </style>

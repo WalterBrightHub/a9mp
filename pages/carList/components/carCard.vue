@@ -116,6 +116,7 @@
       nitroWidth: function(value) {
         return (value - 15) * 1.28
       },
+      //数值千位符
       split3: function(value) {
         var s = value.toString()
         var res = []
@@ -182,7 +183,6 @@
 
 
   .star-icon {
-    /* display: inline-block; */
     width: 32rpx;
     height: 32rpx;
 
@@ -271,13 +271,12 @@
       font-size: toPadPx(24);
     }
 
-    
+
   }
 
   .perf {
     flex: 1;
     margin-right: 2%;
-    /* background-color: green; */
   }
 
   .perf-item {
@@ -314,7 +313,6 @@
     margin-left: 2%;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
   }
 
   .cost-list {
@@ -324,7 +322,6 @@
 
   .cost-item {
     display: flex;
-    /* margin-bottom: 12px; */
   }
 
   .cost-item+.cost-item {
@@ -342,15 +339,10 @@
   .part-list {
     margin-top: auto;
     display: static;
-    /* margin-bottom: 5px; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
   }
 
   .part-item {
-    /* height: 10px; */
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
   }
 

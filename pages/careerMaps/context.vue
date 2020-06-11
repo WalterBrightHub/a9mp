@@ -41,11 +41,9 @@
     },
     computed: {
       selectedCareerMaps() {
-        // console.log(selectCareerMaps[this.mode](this.careerMaps))
         return selectCareerMaps[this.mode](this.careerMaps)
       },
       themes() {
-        // console.log(Object.keys(this.selectedCareerMaps))
         return Object.keys(this.selectedCareerMaps)
       }
     },
@@ -53,18 +51,19 @@
       onChangeMode(e) {
         this.$emit('onChangeMode')
       },
-      betterName(name){
-        return name?name.replace(/([DCBAS])(..)-/,'$2 '):name
+      betterName(name) {
+        return name ? name.replace(/([DCBAS])(..)-/, '$2 ') : name
       }
     }
   }
 </script>
 
 <style lang="scss">
-  .context{
+  .context {
     max-width: 600px;
     margin: 0 auto;
   }
+
   .mode-changer {
     display: flex;
     background-color: $page-bg-color;
@@ -75,13 +74,13 @@
     @include pad-devices {
       padding: toPadPx(20);
     }
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       background-color: $page-bg-color-dark;
     }
   }
 
   .mode-button {
-    // margin-left: 10rpx;
     color: $text-title-color;
     padding: 0 20rpx;
     font-size: 36rpx;
@@ -97,7 +96,8 @@
       line-height: toPadPx(72);
       border-radius: toPadPx(10);
     }
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
       color: $text-title-color-dark;
     }
@@ -105,8 +105,9 @@
 
   .map-list {
     padding: 0 20rpx 40rpx 20rpx;
+
     @include pad-devices {
-      padding:0 toPadPx(20) toPadPx(40) toPadPx(20);
+      padding: 0 toPadPx(20) toPadPx(40) toPadPx(20);
     }
   }
 
@@ -114,12 +115,14 @@
     padding-bottom: 10rpx;
     border-radius: 10rpx;
     background-color: $card-bg-color;
+
     @include pad-devices {
       padding-bottom: toPadPx(10);
       border-radius: toPadPx(10);
-      
+
     }
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
   }
@@ -132,16 +135,18 @@
     padding: 20rpx;
     color: $theme-color;
     font-size: 36rpx;
-    font-weight: bold;    
+    font-weight: bold;
+
     @include pad-devices {
       padding: toPadPx(20);
       font-size: toPadPx(36);
     }
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       color: $theme-color-dark;
     }
-    
-    
+
+
   }
 
   .row {
@@ -149,7 +154,7 @@
     font-size: 24rpx;
     display: flex;
     justify-content: space-between;
-    
+
     @include pad-devices {
       padding: toPadPx(8) toPadPx(20);
       font-size: toPadPx(24);
@@ -159,52 +164,56 @@
   .map-name {
 
     width: 168rpx;
-    
+
     @include pad-devices {
       width: toPadPx(168);
     }
   }
-  .place{
-    // flex:1;
+
+  .place {
     width: 90rpx;
-    
+
     @include pad-devices {
       width: toPadPx(90);
     }
   }
 
   .divider {
-    // height: 4rpx;
     padding-top: 1rpx;
     background-color: $divider-color;
-    margin: 10rpx 0;    
+    margin: 10rpx 0;
+
     @include pad-devices {
       padding-top: toPadPx(1);
       margin: toPadPx(10) 0;
     }
-    
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       background-color: $divider-color-dark;
     }
   }
-  .car-class{
+
+  .car-class {
     font-weight: bold;
     text-align: center;
-    
+
   }
+
   .place,
-  .car-class{
+  .car-class {
     width: 90rpx;
-    
+
     @include pad-devices {
       width: toPadPx(90);
     }
   }
+
   .car-class,
-  .map-name{
+  .map-name {
     font-weight: bold;
     color: $text-title-color;
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       color: $text-title-color-dark;
     }
   }

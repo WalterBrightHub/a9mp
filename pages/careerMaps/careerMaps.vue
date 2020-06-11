@@ -72,13 +72,13 @@
         }
       })
     },
-    onShareAppMessage(){
-      
-        return {
-          'title':'等你很久了！'
-        }
+    onShareAppMessage() {
+
+      return {
+        'title': '等你很久了！'
+      }
     },
-    
+
     firstTapTab: false,
     onHide() {
       this.firstTapTab = true

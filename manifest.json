@@ -110,7 +110,7 @@
           "text": "地图"
         },
         {
-          "pagePath": "pages/index/index",
+          "pagePath": "pages/contest/contest",
           "iconPath": "static/tabbar-icons/fire.png",
           "selectedIconPath": "static/tabbar-icons/fire-selected.png",
           "text": "赛事"
