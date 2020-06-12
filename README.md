@@ -7,4 +7,5 @@
 ![](https://cdn.jsdelivr.net/gh/WalterBrightHub/image-hosting/20200612165059.jpg)
 ## QQ小程序
 
-![](https://cdn.jsdelivr.net/gh/WalterBrightHub/image-hosting/20200612170007.png)
+![](https://cdn.jsdelivr.net/gh/WalterBrightHub/image-hosting/20200612171026.png)
+
