@@ -17,6 +17,7 @@
 <script>
   import filter from './components/filter.vue'
   import carCard from './components/carCard.vue'
+  import {sortBy} from 'lodash'
   //不同排序方式
   const select = {
     'carClass': (carList, carClass) => {
@@ -28,8 +29,9 @@
         .sort((a, b) => a.rank - b.rank)
 
     },
-    'rank': (carList, rank) => {
-      return carList.sort((a, b) => a.rank - b.rank)
+    'all': (carList, sortField) => {
+      //return carList.sort((a, b) => a[sortField] - b[sortField])
+      return sortBy(carList,[sortField]) 
 
     },
     'brand': (carList, brand) => {
@@ -41,8 +43,8 @@
   const defaultFilter = {
     'carClass': 'D',
     'carClassAL': 'D',
-    'rank': 0,
-    'brand': 'Lamborghini'
+    'brand': 'Lamborghini',
+    'all':'rank'
   }
   export default {
     components: {

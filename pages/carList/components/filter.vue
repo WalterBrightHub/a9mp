@@ -11,9 +11,8 @@
       <view class="class-block" :class="{['class-selected']:item===filter}" v-for="item in carFilter" :key="item" @tap="onChangeFilter(item)">
         {{item}}</view>
     </view>
-    <view class="filter-block" v-else-if="sort==='rank'">
+    <picker class="filter-brand" v-else-if="sort==='all'" :range="allRange" :range-key="'name'" @change="onChangeSortField">{{allRange[sortFieldValue].name}}</picker>
 
-    </view>
     <picker class="filter-brand" v-else-if="sort==='brand'" :range="brandRange" @change="onchangeBrand">
       {{filter}}
     </picker>
@@ -34,12 +33,33 @@
             value: 'carClassAL'
           },
           {
-            name: 'MAX性能分',
-            value: 'rank'
+            name: '全车',
+            value: 'all'
           },
           {
             name: '品牌',
             value: 'brand'
+          },
+        ],
+        allRange: [{
+            name: '性能分',
+            value: 'rank',
+          },
+          {
+            name: '最大速度',
+            value: 'topSpeed',
+          },
+          {
+            name: '加速',
+            value: 'acceleration',
+          },
+          {
+            name: '操控',
+            value: 'handling',
+          },
+          {
+            name: '氮气',
+            value: 'nitro',
           },
         ],
         carFilter: ['D', 'C', 'B', 'A', 'S'],
@@ -48,6 +68,9 @@
     computed: {
       sortValue: function() {
         return this.sortRange.findIndex(item => item.value === this.sort)
+      },
+      sortFieldValue() {
+        return this.allRange.findIndex(item => item.value === this.filter)
       }
     },
     methods: {
@@ -56,7 +79,8 @@
         if (this.sort !== newSort) {
           this.$emit('onChangeSort', newSort);
           uni.pageScrollTo({
-            scrollTop: 0
+            scrollTop: 0,
+            duration:0
           })
           //切换时界面可能没有明显变化，加一个提示
           uni.showToast({
@@ -71,13 +95,33 @@
           this.$emit('onChangeFilter', filter)
 
           uni.pageScrollTo({
-            scrollTop: 0
+            scrollTop: 0,
+            duration:0
           })
         }
 
       },
+      onChangeSortField(e) {
+        let newFilter = this.allRange[e.target.value].value
+        if (this.filter !== newFilter) {
+          this.$emit('onChangeFilter', newFilter);
+          uni.pageScrollTo({
+            scrollTop: 0,
+            duration:0
+          })
+        }
+      },
       onchangeBrand(e) {
-        this.$emit('onChangeFilter', this.brandRange[e.target.value])
+        const filter = this.brandRange[e.target.value]
+        if (filter !== this.filter) {
+
+          this.$emit('onChangeFilter', this.brandRange[e.target.value])
+          // console.log('change')
+          uni.pageScrollTo({
+            scrollTop: 0,
+            duration:0
+          })
+        }
       }
     }
   }
