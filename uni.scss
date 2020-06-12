@@ -17,6 +17,19 @@
   $text-help-color-dark:#707070;
   $text-tip-color-dark:#404040;
   $divider-color-dark:#2c2c2c;
+	
+
+	
+	// iPhone 6下的750rpx转化为480px下的px 
+	@function toPadPx($rpx){
+		@return $rpx*0.64px;
+	}
+	
+	@mixin pad-devices {
+		@media (min-width:480px) {
+			@content;
+		}
+	}
 /**
  * 这里是uni-app内置的常用样式变量
  *
