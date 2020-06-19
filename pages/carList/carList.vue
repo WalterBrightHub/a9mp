@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="carListStatus==='resolve'" id="context" :carList="carList" :brandRange="brandRange" />
+    <context v-else-if="carListStatus==='resolve'" id="context" :carList="computedCarList" :brandRange="brandRange" />
 
   </view>
 </template>
@@ -32,6 +32,26 @@
         brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors",
           "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
         ]
+      }
+    },
+    computed: {
+      computedCarList() {
+        return this.carList.map(car => {
+          let {
+            star,
+            star_1,
+            star_2,
+            star_3,
+            star_4,
+            star_5,
+            star_6
+          } = car
+          return {
+            ...car,
+            starArray: [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
+          }
+
+        })
       }
     },
     onLoad() {

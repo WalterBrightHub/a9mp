@@ -3,13 +3,13 @@
     <view class="full-name">{{carData.fullName}}</view>
     <view class="stars-and-rank">
       <view class="stars">
-        <image class="star-icon" v-for="(item,index) in starArray"  src="../../../static/carcard-icons/star.png" />
+        <image class="star-icon" v-for="(item,index) in carData.starArray"  src="../../../static/carcard-icons/star.png" />
       </view>
       <view class="nick-name">{{carData.nickName}}</view>
       <view class="rank">{{carData.rank}}</view>
     </view>
     <view class="bps">
-      <view class="bp" v-for="(item,index) in starArray" :key="index" :style="{flex:item}">{{item}}</view>
+      <view class="bp" v-for="(item,index) in carData.starArray" :key="index" :style="{flex:item}">{{item}}</view>
     </view>
     <view class="perf-and-update">
       <view class="perf">
@@ -23,7 +23,7 @@
           <view class="perf-name">加速</view>
           <view class="perf-value">{{carData.acceleration}}</view>
         </view>
-        <view class="perf-bar" :style="{width:(carData.acceleration)+'%'}" />
+        <view class="perf-bar" :style="{width:accelerationWidth(carData.acceleration)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">操控</view>
@@ -87,20 +87,8 @@
 
       };
     },
-    computed: {
-      starArray: function() {
-
-        let {
-          star,
-          star_1,
-          star_2,
-          star_3,
-          star_4,
-          star_5,
-          star_6
-        } = this.carData
-        return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
-      }
+    beforeDestroy(){
+      console.log('before destory'+this.carData._id)
     },
     methods: {
       //数值转化为宽度百分比
