@@ -7,7 +7,7 @@
     </view>
 
     <view class="car-card-list">
-      <view v-for="item in selectedCars" :key="item._id" class="car-card">
+      <view v-for="item in limitedCars" :key="item._id" class="car-card">
         <car-card :carData="item"></car-card>
       </view>
     </view>
@@ -51,7 +51,7 @@
       'filter': filter,
       'car-card': carCard
     },
-    props: ['carList', 'brandRange'],
+    props: ['carList', 'brandRange','limit'],
     data() {
       return {
         sort: 'carClass',
@@ -62,14 +62,19 @@
       selectedCars: function() {
         return select[this.sort](this.carList, this.filter)
       },
+	  limitedCars(){
+		  return this.selectedCars.slice(0,this.limit)
+	  }
     },
     methods: {
       onChangeSort: function(sort) {
         this.sort = sort
         this.filter = defaultFilter[sort]
+				this.$emit('resetLimit')
       },
       onChangeFilter: function(filter) {
         this.filter = filter
+				this.$emit('resetLimit')
       }
     }
   }

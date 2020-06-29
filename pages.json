@@ -4,7 +4,8 @@
       "path": "pages/carList/carList",
       "style": {
 
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "onReachBottomDistance": 200
       }
     }, {
       "path": "pages/careerMaps/careerMaps",
