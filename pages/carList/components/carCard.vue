@@ -15,31 +15,31 @@
       <view class="perf">
         <view class="perf-item">
           <view class="perf-name">最大速度</view>
-          <view class="perf-value">{{carData.topSpeed}}</view>
+          <view class="perf-value">{{carData.topSpeed.toFixed(1)}}</view>
         </view>
         <view class="perf-bar" :style="{width:topSpeedWidth(carData.topSpeed)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">加速</view>
-          <view class="perf-value">{{carData.acceleration}}</view>
+          <view class="perf-value">{{carData.acceleration.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:accelerationWidth(carData.acceleration)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">操控</view>
-          <view class="perf-value">{{carData.handling}}</view>
+          <view class="perf-value">{{carData.handling.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:handlingWidth(carData.handling)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">氮气</view>
-          <view class="perf-value">{{carData.nitro}}</view>
+          <view class="perf-value">{{carData.nitro.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">单喷时间</view>
-          <view class="perf-value">{{carData.nitroDuration}}</view>
+          <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
         </view>
       </view>
       <view class="update">
@@ -86,9 +86,6 @@
       return {
 
       };
-    },
-    beforeDestroy(){
-      console.log('before destory'+this.carData._id)
     },
     methods: {
       //数值转化为宽度百分比
