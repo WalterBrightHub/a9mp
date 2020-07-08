@@ -1,0 +1,112 @@
+<template>
+  <view class="filter-block">
+    <picker class="filter-picker" :range="sortFieldRange" :range-key="'name'" @change="onChangeSortField">{{sortFieldRange[sortFieldValue].name}}</picker>
+    <view class="filter-toggle" @tap="onToggleIsAsc">{{isAsc?'从低到高':'从高到低'}}</view>
+  </view>
+</template>
+
+<script>
+  import select from './select.js'
+  export default {
+    data() {
+      return {
+        sortField: 'rank',
+        isAsc: true,
+        sortFieldRange: [{
+            name: '性能分',
+            value: 'rank',
+          },
+          {
+            name: '最大速度',
+            value: 'topSpeed',
+          },
+          {
+            name: '加速',
+            value: 'acceleration',
+          },
+          {
+            name: '操控',
+            value: 'handling',
+          },
+          {
+            name: '氮气',
+            value: 'nitro',
+          },
+        ],
+      };
+    },
+    computed: {
+      sortFieldValue() {
+        return this.sortFieldRange.findIndex(item => item.value === this.sortField)
+      },
+    },
+    methods: {
+      onChangeSortField(e) {
+        let newSortField = this.sortFieldRange[e.target.value].value
+        if (this.sortField !== newSortField) {
+          this.sortField = newSortField
+          this.$emit('onChangeSelectMethod', select(newSortField, this.isAsc))
+        }
+      },
+      onToggleIsAsc() {
+        let newIsAsc = !this.isAsc
+        this.isAsc = newIsAsc
+        this.$emit('onChangeSelectMethod', select(this.sortField, newIsAsc))
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  .filter-block {
+    display: flex;
+  }
+
+  .filter-picker {
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    font-size: 36rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+  }
+
+  .filter-picker,
+  .filter-toggle {
+    color: $text-title-color;
+    background-color: $card-bg-color;
+
+    @media (prefers-color-scheme: dark) {
+
+      color: $text-title-color-dark;
+      background-color: $card-bg-color-dark;
+    }
+  }
+
+  .filter-toggle {
+    padding: 0 20rpx;
+    font-size: 36rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx;
+    margin-left: 30rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+      margin-left: toPadPx(30);
+    }
+  }
+</style>

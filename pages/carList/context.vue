@@ -1,13 +1,12 @@
 <template>
   <view class="context">
     <view class="filter-block">
-      <filter :sort="sort" :filter="filter" class="filter" :brandRange="brandRange" @onChangeSort="onChangeSort"
-        @onChangeFilter="onChangeFilter" />
+      <filter class="filter" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
       <view class="placeholder"></view>
     </view>
 
     <view class="car-card-list">
-      <view v-for="item in limitedCars" :key="item._id" class="car-card">
+      <view v-for="item in selectedCars" :key="item._id" class="car-card">
         <car-card :carData="item"></car-card>
       </view>
     </view>
@@ -17,64 +16,42 @@
 <script>
   import filter from './components/filter.vue'
   import carCard from './components/carCard.vue'
-  import {sortBy} from 'lodash'
-  //不同排序方式
-  const select = {
-    'carClass': (carList, carClass) => {
-      return carList.filter(car => car.carClass === carClass)
-        .sort((a, b) => a.rank - b.rank)
-    },
-    'carClassAL': (carList, carClassAL) => {
-      return carList.filter(car => car.carClassAL === carClassAL)
-        .sort((a, b) => a.rank - b.rank)
 
-    },
-    'all': (carList, sortField) => {
-      //return carList.sort((a, b) => a[sortField] - b[sortField])
-      return sortBy(carList,[sortField]) 
+  import {
+    defaultSelect
+  } from './components/filters/carClassFilter/select.js'
 
-    },
-    'brand': (carList, brand) => {
-      return carList.filter(car => car.brand === brand)
-        .sort((a, b) => a.rank - b.rank)
-
-    }
-  }
   const defaultFilter = {
     'carClass': 'D',
     'carClassAL': 'D',
     'brand': 'Lamborghini',
-    'all':'rank'
+    'all': 'rank'
   }
   export default {
     components: {
       'filter': filter,
       'car-card': carCard
     },
-    props: ['carList', 'brandRange','limit'],
+    props: ['carList', 'brandRange', 'limit'],
     data() {
       return {
-        sort: 'carClass',
-        filter: 'D',
+        selectMethod: defaultSelect
       };
     },
     computed: {
       selectedCars: function() {
-        return select[this.sort](this.carList, this.filter)
-      },
-	  limitedCars(){
-		  return this.selectedCars.slice(0,this.limit)
-	  }
+        return this.selectMethod(this.carList).slice(0, this.limit)
+      }
     },
     methods: {
-      onChangeSort: function(sort) {
-        this.sort = sort
-        this.filter = defaultFilter[sort]
-				this.$emit('resetLimit')
-      },
-      onChangeFilter: function(filter) {
-        this.filter = filter
-				this.$emit('resetLimit')
+      onChangeSelectMethod(method) {
+        this.selectMethod = method
+        this.$emit('resetLimit')
+        // console.log('change')
+        uni.pageScrollTo({
+          scrollTop: 0,
+          duration: 0
+        })
       }
     }
   }
