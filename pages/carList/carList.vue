@@ -2,7 +2,7 @@
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
     <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :carList="computedCarList"
-      :limit="limit" :brandRange="brandRange" />
+      :limit="limit" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" />
 
   </view>
 </template>
@@ -10,6 +10,8 @@
 <script>
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
+  import {compareVersion} from './util.js'
+  import _ from 'lodash'
   const requestCarList = async function() {
     return wx.cloud.callFunction({
       name: 'getCarList'
@@ -30,9 +32,9 @@
       return {
         carListStatus: 'ready',
         carList: [],
-        brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors",
-          "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
-        ],
+        // brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors",
+        //   "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
+        // ],
         limit: 20
       }
     },
@@ -55,6 +57,27 @@
 
         })
       },
+      brandRange() {
+        return _(this.carList)
+          .filter(car => car.brand && car.brand !== '')
+          .countBy(car => car.brand)
+          .map((count, brand) => ({
+            count,
+            brand
+          }))
+          .orderBy(['count', 'brand'], ['desc', 'asc'])
+          .map(obj => obj.brand)
+          .value()
+      },
+      releaseVersionRange(){
+        return _(this.carList)
+          .filter(car => car.releaseVersion && car.releaseVersion !== '')
+          .map(car=>car.releaseVersion)
+          .union()
+          // .map(obj => obj.brand)
+          .value()
+          .sort(compareVersion) 
+      }
     },
     onReachBottom() {
       // if(this.limit<this.carList.)
@@ -78,7 +101,6 @@
         }).finally(() => {
           uni.hideLoading()
         })
-      this.setBrands()
     },
     onShareAppMessage() {
       return {
@@ -107,7 +129,6 @@
         }).finally(() => {
           uni.stopPullDownRefresh()
         })
-      this.setBrands()
     },
     firstTapTab: false,
     onHide() {
@@ -123,12 +144,7 @@
       }
     },
     methods: {
-      setBrands() {
-        requestBrands()
-          .then(res => {
-            this.brandRange = res.result
-          })
-      },
+
       onRetry() {
         uni.showLoading({
           title: '重试中',
@@ -151,7 +167,6 @@
               icon: 'none'
             })
           })
-        this.setBrands()
       },
       resetLimit() {
         /*

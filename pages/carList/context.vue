@@ -1,7 +1,7 @@
 <template>
   <view class="context">
     <view class="filter-block">
-      <filter class="filter" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
+      <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"  @onChangeSelectMethod="onChangeSelectMethod" />
       <view class="placeholder"></view>
     </view>
 
@@ -32,7 +32,7 @@
       'filter': filter,
       'car-card': carCard
     },
-    props: ['carList', 'brandRange', 'limit'],
+    props: ['carList', 'brandRange', 'limit',"releaseVersionRange"],
     data() {
       return {
         selectMethod: defaultSelect

@@ -5,6 +5,8 @@
 
     <car-class-filter class="filter-block" v-if="sort==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
     <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" />
+    <release-version-filter class="filter-brand" v-else-if="sort==='releaseVersion'" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
+    
     <all-filter class="filter-brand" v-else-if="sort==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
     <brand-filter class="filter-brand" v-else-if="sort==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
 
@@ -16,6 +18,7 @@
   import carClassALFilter from './filters/carClassALFilter/carClassALFilter.vue'
   import allFilter from './filters/allFilter/allFilter.vue'
   import brandFilter from './filters/brandFilter/brandFilter.vue'
+  import releaseVersionFilter from './filters/releaseVersionFilter/releaseVersionFilter.vue'
 
   import {
     defaultSelect as defaultSelectCarClass
@@ -27,25 +30,21 @@
   import {
     defaultSelect as defaultSelectAll
   } from './filters/allFilter/select.js'
-  import {
-    defaultSelect as defaultSelectBrand
-  } from './filters/brandFilter/select.js'
+  import  selectBrand from './filters/brandFilter/select.js'
 
-  const defaultSelect = {
-    'carClass': defaultSelectCarClass,
-    'carClassAL': defaultSelectCarClassAL,
-    'all': defaultSelectAll,
-    'brand': defaultSelectBrand
-  }
+  import selectReleaseVersion from './filters/releaseVersionFilter/select.js'
+
+
 
   export default {
     components: {
       'car-class-filter': carClassFilter,
       'car-class-al-filter': carClassALFilter,
       'all-filter': allFilter,
-      'brand-filter': brandFilter
+      'brand-filter': brandFilter,
+      'release-version-filter':releaseVersionFilter,
     },
-    props: ['brandRange'],
+    props: ['brandRange','releaseVersionRange'],
     data() {
       return {
         sort: 'carClass',
@@ -56,6 +55,10 @@
           {
             name: '国服等级',
             value: 'carClassAL'
+          },
+          {
+            name:'国际服新车',
+            value:'releaseVersion'
           },
           {
             name: '全车',
@@ -73,6 +76,15 @@
       sortValue: function() {
         return this.sortRange.findIndex(item => item.value === this.sort)
       },
+      defaultSelect(){
+        return {
+    'carClass': defaultSelectCarClass,
+    'carClassAL': defaultSelectCarClassAL,
+    'all': defaultSelectAll,
+    'brand': selectBrand(this.brandRange[0]),
+    'releaseVersion':selectReleaseVersion(this.releaseVersionRange&&this.releaseVersionRange[0])
+  }
+      }
     },
     methods: {
 
@@ -84,7 +96,7 @@
         if (this.sort !== newSort) {
           this.sort = newSort
 
-          this.$emit('onChangeSelectMethod', defaultSelect[newSort])
+          this.$emit('onChangeSelectMethod', this.defaultSelect[newSort])
           // this.$emit('resetLimit')
           uni.pageScrollTo({
             scrollTop: 0,

@@ -3,5 +3,5 @@ const select = brand => carList => {
     .sort((a, b) => a.rank - b.rank)
 }
 
-export const defaultSelect = select('Lamborghini')
+// export const defaultSelect = select('Lamborghini')
 export default select

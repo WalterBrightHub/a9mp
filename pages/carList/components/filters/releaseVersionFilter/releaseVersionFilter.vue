@@ -1,27 +1,28 @@
 <template>
-  <picker class="filter-picker" :range="brandRange" @change="onChangeBrand">
-    {{brand}}
+  <picker class="filter-picker" :range="releaseVersionRange" @change="onChangeReleaseVersion">
+    {{releaseVersion}}
   </picker>
 </template>
 
 <script>
+  //本组件由brandFilter复制而来
   import select from './select.js'
   export default {
-    props: ['brandRange'],
+    props: ['releaseVersionRange'],
     data() {
       return {
-        brand: this.brandRange[0]//'Lamborghini'
+        releaseVersion: this.releaseVersionRange[0]
       }
 
     },
     methods: {
 
-      onChangeBrand(e) {
-        const newBrand = this.brandRange[e.target.value]
-        if (newBrand !== this.brand) {
+      onChangeReleaseVersion(e) {
+        const newVersion = this.releaseVersionRange[e.target.value]
+        if (newVersion !== this.releaseVersion) {
 
-          this.brand = newBrand
-          this.$emit('onChangeSelectMethod', select(newBrand))
+          this.releaseVersion = newVersion
+          this.$emit('onChangeSelectMethod', select(newVersion))
         }
       }
     }
