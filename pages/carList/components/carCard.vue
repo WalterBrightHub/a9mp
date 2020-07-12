@@ -7,6 +7,7 @@
       </view>
       <view class="nick-name">{{carData.nickName}}</view>
       <view class="rank">{{carData.rank}}</view>
+      <view class="car-class">{{carData.carClass}}</view>
     </view>
     <view class="bps">
       <view class="bp" v-for="(item,index) in carData.starArray" :key="index" :style="{flex:item}">{{item}}</view>
@@ -61,11 +62,11 @@
         </view>
 
         <view class="part-list">
-          <view class="part-item">
+          <view class="part-item" v-if="carData.uncommonPart">
             <image class="part-icon" src="../../../static/carcard-icons/part-uncommon.png"></image>
             <view class="part-num">{{carData.uncommonPart}}</view>
           </view>
-          <view class="part-item">
+          <view class="part-item" v-if="carData.rarePart">
             <image class="part-icon" src="../../../static/carcard-icons/part-rare.png"></image>
             <view class="part-num">{{carData.rarePart}}</view>
           </view>
@@ -157,7 +158,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 10rpx;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     @include pad-devices {
       margin-bottom: toPadPx(10);
@@ -188,6 +189,7 @@
   .nick-name {
     color: $text-help-color;
     font-size: 28rpx;
+    margin: 0 auto;
 
     @include pad-devices {
       font-size: toPadPx(28);
@@ -197,11 +199,25 @@
       color: $text-help-color-dark;
     }
   }
+  
+  .car-class{
+    color: $text-p-color;
+    font-size: 30rpx;
+    font-weight: bold;
+    padding: 2rpx 6rpx;
+    @include pad-devices {
+      padding: toPadPx(2) toPadPx(6);
+      font-size: toPadPx(30);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      color: $text-p-color-dark;
+    }
+  }
 
   .rank {
     font-size: 30rpx;
     border-radius: 6rpx;
-    padding: 2rpx 6rpx;
     // border: 1px solid #ffc107;
     color: #ffc107;
     font-weight: bold;
@@ -209,7 +225,6 @@
     @include pad-devices {
       font-size: toPadPx(30);
       border-radius: toPadPx(6);
-      padding: toPadPx(2) toPadPx(6);
       // border: toPadPx(3) solid #ffc107;
     }
   }
