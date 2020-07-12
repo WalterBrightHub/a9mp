@@ -1,7 +1,12 @@
 <template>
   <view class="context">
     <view class="filter-block">
-      <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"  @onChangeSelectMethod="onChangeSelectMethod" />
+      <view class="filter-wrapper">
+        <view class="server-toggle" @tap="onToggleServer">{{serverName}}</view>
+        <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
+          @onChangeSelectMethod="onChangeSelectMethod" />
+
+      </view>
       <view class="placeholder"></view>
     </view>
 
@@ -32,7 +37,7 @@
       'filter': filter,
       'car-card': carCard
     },
-    props: ['carList', 'brandRange', 'limit',"releaseVersionRange"],
+    props: ['carList', 'brandRange', 'limit', "releaseVersionRange", "server"],
     data() {
       return {
         selectMethod: defaultSelect
@@ -41,6 +46,9 @@
     computed: {
       selectedCars: function() {
         return this.selectMethod(this.carList).slice(0, this.limit)
+      },
+      serverName() {
+        return this.server === 'gl' ? "国际" : "国服"
       }
     },
     methods: {
@@ -52,7 +60,10 @@
           scrollTop: 0,
           duration: 0
         })
-      }
+      },
+      onToggleServer(){
+        this.$emit('onToggleServer')
+      },
     }
   }
 </script>
@@ -66,7 +77,7 @@
     }
   }
 
-  .filter {
+  .filter-wrapper {
     display: flex;
     position: fixed;
     z-index: 114514;
@@ -77,6 +88,11 @@
       background-color: $page-bg-color-dark;
     }
 
+  }
+
+  .filter {
+    display: flex;
+    flex: 1;
     padding: 20rpx;
     box-sizing: border-box;
 
@@ -84,6 +100,36 @@
       padding: toPadPx(20);
     }
   }
+
+  .server-toggle {
+    padding: 0 20rpx;
+    font-size: 36rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 0 100rpx 100rpx 0;
+    margin: 20rpx 0 20rpx 0;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: 0 toPadPx(100) toPadPx(100) 0;
+      margin: toPadPx(20) 0 toPadPx(20) 0;
+
+    }
+
+    color: $text-title-color;
+    background-color: #ffdfec;
+
+    @media (prefers-color-scheme: dark) {
+
+      color: $text-title-color-dark;
+      background-color: #641431;
+    }
+
+  }
+
 
   .car-card-list {
     padding: 0 20rpx;

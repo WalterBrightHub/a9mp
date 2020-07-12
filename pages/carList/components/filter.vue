@@ -4,7 +4,7 @@
     <picker class="sort-block" :range="sortRange" :range-key="'name'" @change="onChangeSort">{{sortRange[sortValue].name}}</picker>
 
     <car-class-filter class="filter-block" v-if="sort==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
-    <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" />
+    <!-- <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" /> -->
     <release-version-filter class="filter-brand" v-else-if="sort==='releaseVersion'" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
     
     <all-filter class="filter-brand" v-else-if="sort==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
@@ -15,7 +15,6 @@
 
 <script>
   import carClassFilter from './filters/carClassFilter/carClassFilter.vue'
-  import carClassALFilter from './filters/carClassALFilter/carClassALFilter.vue'
   import allFilter from './filters/allFilter/allFilter.vue'
   import brandFilter from './filters/brandFilter/brandFilter.vue'
   import releaseVersionFilter from './filters/releaseVersionFilter/releaseVersionFilter.vue'
@@ -23,9 +22,7 @@
   import {
     defaultSelect as defaultSelectCarClass
   } from './filters/carClassFilter/select.js'
-  import {
-    defaultSelect as defaultSelectCarClassAL
-  } from './filters/carClassALFilter/select.js'
+
 
   import {
     defaultSelect as defaultSelectAll
@@ -39,7 +36,6 @@
   export default {
     components: {
       'car-class-filter': carClassFilter,
-      'car-class-al-filter': carClassALFilter,
       'all-filter': allFilter,
       'brand-filter': brandFilter,
       'release-version-filter':releaseVersionFilter,
@@ -49,15 +45,15 @@
       return {
         sort: 'carClass',
         sortRange: [{
-            name: '国际服等级',
+            name: '等级',
             value: 'carClass'
           },
+          // {
+          //   name: '国服等级',
+          //   value: 'carClassAL'
+          // },
           {
-            name: '国服等级',
-            value: 'carClassAL'
-          },
-          {
-            name:'国际服新车',
+            name:'释放版本',
             value:'releaseVersion'
           },
           {
@@ -79,7 +75,6 @@
       defaultSelect(){
         return {
     'carClass': defaultSelectCarClass,
-    'carClassAL': defaultSelectCarClassAL,
     'all': defaultSelectAll,
     'brand': selectBrand(this.brandRange[0]),
     'releaseVersion':selectReleaseVersion(this.releaseVersionRange&&this.releaseVersionRange[0])
@@ -162,7 +157,7 @@
 
   .filter-brand {
 
-    margin-left: 72rpx;
+    margin-left: 36rpx;
     flex: 1;
 
     @include pad-devices {

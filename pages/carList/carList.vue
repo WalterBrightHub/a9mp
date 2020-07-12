@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :carList="computedCarList"
+    <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server" @onToggleServer="onToggleServer" :carList="computedCarList"
       :limit="limit" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" />
 
   </view>
@@ -14,15 +14,11 @@
   import _ from 'lodash'
   const requestCarList = async function() {
     return wx.cloud.callFunction({
-      name: 'getCarList'
+      name: 'getCarListBoth'
     })
   }
 
-  const requestBrands = async function() {
-    return wx.cloud.callFunction({
-      name: 'getBrands'
-    })
-  }
+
   export default {
     components: {
       'request-fail': requestFail,
@@ -31,14 +27,19 @@
     data() {
       return {
         carListStatus: 'ready',
-        carList: [],
-        // brandRange: ["Lamborghini", "Porsche", "Ferrari", "McLaren", "Aston Martin", "Koenigsegg", "W Motors",
-        //   "Chevrolet", "Dodge", "Nissan", "Ford", "BMW", "Lotus", "Mercedes-Benz"
-        // ],
-        limit: 20
+
+        limit: 20,
+        server:'gl',
+        carListBoth:{
+          gl:[],
+          al:[]
+        }
       }
     },
     computed: {
+      carList(){
+        return this.carListBoth[this.server]
+      },
       computedCarList() {
         return this.carList.map(car => {
           let {
@@ -48,11 +49,14 @@
             star_3,
             star_4,
             star_5,
-            star_6
+            star_6,
+            stageCost,
+            partCost
           } = car
           return {
             ...car,
-            starArray: [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
+            starArray: [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star),
+            totalCost:stageCost+partCost
           }
 
         })
@@ -93,7 +97,12 @@
         .then(res => {
           // console.log(res.result.data)
           // return Promise.reject()
-          this.carList = res.result.data
+          let [resultGL,resultAL]=res.result
+          this.carListBoth={
+            gl:resultGL.data,
+            al:resultAL.data
+          }
+          // this.carList = res.result.data
           this.carListStatus = 'resolve'
         }).catch(e => {
           console.log(e)
@@ -101,6 +110,8 @@
         }).finally(() => {
           uni.hideLoading()
         })
+        
+      
     },
     onShareAppMessage() {
       return {
@@ -112,7 +123,11 @@
         .then(res => {
           // console.log(res.result.data)
           // return Promise.reject()
-          this.carList = res.result.data
+          let [resultGL,resultAL]=res.result
+          this.carListBoth={
+            gl:resultGL.data,
+            al:resultAL.data
+          }
           this.carListStatus = 'resolve'
           this.limit = 20
           uni.showToast({
@@ -144,6 +159,15 @@
       }
     },
     methods: {
+      onToggleServer(){
+        let newServer=this.server==='al'?'gl':'al'
+        this.server=newServer
+        this.resetLimit()
+        uni.pageScrollTo({
+          scrollTop: 0,
+          duration: 0
+        })
+      },
 
       onRetry() {
         uni.showLoading({
@@ -154,7 +178,11 @@
           .then(res => {
             // console.log(res.result.data)
             // return Promise.reject()
-            this.carList = res.result.data
+            let [resultGL,resultAL]=res.result
+            this.carListBoth={
+              gl:resultGL.data,
+              al:resultAL.data
+            }
             this.carListStatus = 'resolve'
             uni.showToast({
               title: '成功'
