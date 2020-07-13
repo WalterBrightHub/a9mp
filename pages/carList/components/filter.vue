@@ -162,7 +162,7 @@
 
     @include pad-devices {
 
-      margin-left: toPadPx(72);
+      margin-left: toPadPx(36);
     }
   }
 </style>

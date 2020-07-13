@@ -4,14 +4,14 @@
   // border: 2rpx solid;
   border-radius: 4rpx;
   padding: 0 2rpx;
-  margin-left: 8rpx;
+  margin-left: 6rpx;
   @include pad-devices {
 
     font-size: toPadPx(24);
     // border: toPadPx(2) solid;
     border-radius: toPadPx(4);
     padding:0  toPadPx(2);
-    margin-left: toPadPx(8);
+    margin-left: toPadPx(6);
     
   }
 }
