@@ -48,10 +48,6 @@
             name: '等级',
             value: 'carClass'
           },
-          // {
-          //   name: '国服等级',
-          //   value: 'carClassAL'
-          // },
           {
             name:'释放版本',
             value:'releaseVersion'
