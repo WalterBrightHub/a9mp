@@ -27,7 +27,6 @@
     methods: {
 
       onChangeReleaseVersion(e) {
-        console.log('tap')
         this.value=e.target.value
         const newVersion = this.releaseVersionRange[e.target.value]
         if (newVersion !== this.releaseVersion) {
