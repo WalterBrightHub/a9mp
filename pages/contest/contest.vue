@@ -10,11 +10,16 @@
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   let page = 0
-  const requestContestPresent = async function() {
-    return uni.request({
-      url: 'https://a9cn.walterbright.cc/api/contest?time=present',
-      method: 'GET',
+  // const requestContestPresent = async function() {
+  //   return uni.request({
+  //     url: 'https://a9cn.walterbright.cc/api/contest?time=present',
+  //     method: 'GET',
 
+  //   })
+  // }
+  const requestContestPresent = async function() {
+    return wx.cloud.callFunction({
+      name: 'getContest'
     })
   }
   const requestContestPast = async function({
@@ -51,22 +56,12 @@
         title: '加载中'
       })
       requestContestPresent()
-        .then(([error, res]) => {
-          if (error) {
-            console.log(error)
-          } else {
-            const {
-              data
-            } = res
-            if (data.status === 200) {
-
-              // console.log(data.contest)
-              this.contestStatus = 'resolve'
-              this.contestPresent = data.contest
-            } else {
-              return Promise.reject()
-            }
-          }
+        .then((res) => {
+          const {
+            contest
+          } = res.result
+          this.contestStatus = 'resolve'
+          this.contestPresent = contest
         }).catch(e => {
           console.log(e)
           this.contestStatus = 'reject'
@@ -79,27 +74,17 @@
 
       this.now = new Date().getTime()
       requestContestPresent()
-        .then(([error, res]) => {
-          if (error) {
-            console.log(error)
-            uni.hideLoading()
-          } else {
-            // console.log(res.data)
-            const {
-              data
-            } = res
-            if (data.status === 200) {
-              this.contestPresent = data.contest
-              this.contestStatus = 'resolve'
-              uni.showToast({
-                title: '最新',
-                duration: 500,
-              })
-            } else {
-              console.log(data)
-              return Promise.reject()
-            }
-          }
+        .then((res) => {
+          const {
+            contest
+          } = res.result
+          this.contestPresent = contest
+          this.contestStatus = 'resolve'
+          uni.showToast({
+            title: '最新',
+            duration: 500,
+          })
+
         }).catch(e => {
           console.log(e)
           this.contestStatus = 'reject'
@@ -181,22 +166,13 @@
           title: '重试中'
         })
         requestContestPresent()
-          .then(([error, res]) => {
-            if (error) {
-              console.log(error)
-            } else {
-              // console.log(res.data)
-              const {
-                data
-              } = res
-              if (data.status === 200) {
-                this.contestPresent = data.contest
-                this.contestStatus = 'resolve'
-              } else {
-                console.log(data)
-                return Promise.reject()
-              }
-            }
+          .then((res) => {
+            const {
+              contest
+            } = res.result
+
+            this.contestPresent = contest
+            this.contestStatus = 'resolve'
             uni.hideLoading()
           }).catch(e => {
             console.log(e)

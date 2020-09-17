@@ -10,8 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dcloudio/uni-ui": "^1.1.9",
-    "lodash": "^4.17.15",
-    "moment": "^2.26.0"
+    "@dcloudio/uni-ui": "^1.2.3",
+    "@vant/weapp": "^1.4.0",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0"
   }
 }
