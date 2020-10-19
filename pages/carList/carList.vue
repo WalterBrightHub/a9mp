@@ -12,8 +12,12 @@
   import context from './context.vue'
   import {compareVersion} from './util.js'
   import _ from 'lodash'
+  
+  const {myCloud}=getApp().globalData
+  
+  
   const requestCarList = async function() {
-    return wx.cloud.callFunction({
+    return myCloud.callFunction({
       name: 'getCarListBoth'
     })
   }
@@ -88,6 +92,8 @@
       this.limit += 20
     },
     onLoad() {
+      
+      
       this.carListStatus = 'pending'
       uni.showLoading({
         title: '加载中',
@@ -95,7 +101,6 @@
 
       requestCarList()
         .then(res => {
-          // console.log(res.result.data)
           // return Promise.reject()
           let [resultGL,resultAL]=res.result
           this.carListBoth={

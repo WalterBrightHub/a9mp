@@ -1,6 +1,20 @@
 <script>
   import config from './config/index'
+  const {
+    provider,
+    spaceId,
+    clientSecret
+  } = config[process.env.NODE_ENV]
+  const myCloud = uniCloud.init({
+    provider,
+    spaceId,
+    clientSecret
+  })
+  
   export default {
+    globalData: {
+      myCloud
+    },
     onLaunch: function() {
       console.log(process.env.NODE_ENV)
       if (!wx.cloud) {

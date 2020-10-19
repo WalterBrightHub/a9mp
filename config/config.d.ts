@@ -7,7 +7,9 @@ type UniCloud={
 type EnvConfig={
   cloud_env:string,
   mp_version:string
-	uniCloud:UniCloud
+	provider:string,
+	spaceId:string,
+	clientSecret:string
 }
 
 type Config={

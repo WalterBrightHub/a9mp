@@ -12,6 +12,13 @@
       "style": {
         "enablePullDownRefresh": true
       }
+    }, 
+    {
+      "path": "pages/seasonPass/seasonPass",
+      "style": {
+        "enablePullDownRefresh": true
+      }
+
     },
     {
       "path": "pages/contest/contest",
@@ -52,6 +59,12 @@
         "iconPath": "@iconPathCareerMaps",
         "selectedIconPath": "@selectedIconPathCareerMaps",
         "text": "地图"
+      },
+      {
+        "pagePath": "pages/seasonPass/seasonPass",
+        "iconPath": "@iconPathSeasonPass",
+        "selectedIconPath": "@selectedIconPathSeasonPass",
+        "text": "通行证"
       },
       {
         "pagePath": "pages/contest/contest",

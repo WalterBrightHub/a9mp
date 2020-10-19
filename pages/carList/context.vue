@@ -2,7 +2,7 @@
   <view class="context">
     <view class="filter-block">
       <view class="filter-wrapper">
-        <view class="server-toggle" @tap="onToggleServer">{{serverName}}</view>
+        <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
         <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
           @onChangeSelectMethod="onChangeSelectMethod" />
 
@@ -112,26 +112,26 @@
     font-size: 36rpx;
     height: 72rpx;
     line-height: 72rpx;
-    border-radius: 0 100rpx 100rpx 0;
-    margin: 20rpx 0 20rpx 0;
+    border-radius: 10rpx;
+    margin: 20rpx 0 20rpx 20rpx;
 
     @include pad-devices {
       font-size: toPadPx(36);
       padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius:  toPadPx(100) ;
-      margin: toPadPx(20) 0 toPadPx(20) 0;
+      border-radius:  toPadPx(10) ;
+      margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
 
     }
 
-    color: $text-title-color;
-    background-color: #ffdfec;
+    color: #fff;
+    background-color: $theme-color;
 
     @media (prefers-color-scheme: dark) {
 
       color: $text-title-color-dark;
-      background-color: #641431;
+      background-color: $theme-color-dark;
     }
 
   }
@@ -139,11 +139,11 @@
 
   .car-card-list {
     padding: 0 20rpx;
-    padding-bottom: 40rpx;
+    padding-bottom: 30rpx;
 
     @include pad-devices {
       padding: 0 toPadPx(20);
-      padding-bottom: toPadPx(40);
+      padding-bottom: toPadPx(30);
     }
 
     margin: 0 auto;

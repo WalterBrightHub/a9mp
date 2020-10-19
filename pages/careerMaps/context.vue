@@ -1,7 +1,7 @@
 <template>
   <view class="context">
     <view class="mode-changer">
-      <view class="mode-button" @tap="onChangeMode">{{mode==='al'?'国服名':'国际服名'}}</view>
+      <view class="mode-button" @tap="onChangeMode">{{mode==='al'?'国服名':'国际服名'}} ⇌</view>
     </view>
     <view class="map-list">
       <view class="map-card" v-for="theme in themes" :key="theme">
@@ -104,10 +104,10 @@
   }
 
   .map-list {
-    padding: 0 20rpx 40rpx 20rpx;
+    padding: 0 20rpx 30rpx 20rpx;
 
     @include pad-devices {
-      padding: 0 toPadPx(20) toPadPx(40) toPadPx(20);
+      padding: 0 toPadPx(20) toPadPx(30) toPadPx(20);
     }
   }
 

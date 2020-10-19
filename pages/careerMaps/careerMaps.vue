@@ -9,8 +9,9 @@
 <script>
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
+  const {myCloud}=getApp().globalData
   const requestCareerMaps = async function() {
-    return wx.cloud.callFunction({
+    return myCloud.callFunction({
       name: 'getCareerMapsAll'
     })
   }

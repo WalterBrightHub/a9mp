@@ -111,6 +111,12 @@
                     "text" : "地图"
                 },
                 {
+                    "pagePath" : "pages/seasonPass/seasonPass",
+                    "iconPath" : "static/tabbar-icons/pass.png",
+                    "selectedIconPath" : "static/tabbar-icons/pass-selected.png",
+                    "text" : "通行证"
+                },
+                {
                     "pagePath" : "pages/contest/contest",
                     "iconPath" : "static/tabbar-icons/fire.png",
                     "selectedIconPath" : "static/tabbar-icons/fire-selected.png",

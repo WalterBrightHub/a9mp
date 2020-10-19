@@ -86,10 +86,10 @@
   .context {
     max-width: 768px;
     margin: 0 auto;
-    padding: 20rpx;
+    padding: 20rpx 20rpx 30rpx 20rpx;
 
     @include pad-devices {
-      padding: toPadPx(20);
+      padding: toPadPx(20) toPadPx(20) toPadPx(30) toPadPx(20);
     }
   }
 

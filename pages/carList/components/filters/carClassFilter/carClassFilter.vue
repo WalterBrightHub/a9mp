@@ -28,38 +28,53 @@
 <style lang="scss">
   .filter-block {
     display: flex;
+    // width: 100%;
   }
 
   .class-block {
     font-size: 36rpx;
-    width: 72rpx;
+    flex: 1;
     height: 72rpx;
     line-height: 72rpx;
     text-align: center;
     box-sizing: border-box;
     font-weight: bold;
     background-color: #fff;
-    color: #000;
-    border-radius: 10rpx;
 
     @include pad-devices {
 
       font-size: toPadPx(36);
-      width: toPadPx(72);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
     }
 
   }
 
   .class-block+.class-block {
-    margin-left: 30rpx;
+    border-left: 2rpx solid $page-bg-color;
 
     @include pad-devices {
 
-      margin-left: toPadPx(30);
+      border-left: toPadPx(2) solid $page-bg-color;
     }
+
+    @media (prefers-color-scheme: dark) {
+
+      border-left: 2rpx solid $page-bg-color-dark;
+
+      @include pad-devices {
+
+        border-left: toPadPx(2) solid $page-bg-color-dark;
+      }
+    }
+  }
+
+  .class-block:first-child {
+    border-radius: 10rpx 0 0 10rpx;
+  }
+
+  .class-block:last-child {
+    border-radius: 0 10rpx 10rpx 0;
   }
 
   .class-block {

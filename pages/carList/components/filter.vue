@@ -5,10 +5,11 @@
 
     <car-class-filter class="filter-block" v-if="sort==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
     <!-- <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" /> -->
-    <release-version-filter class="filter-brand" v-else-if="sort==='releaseVersion'" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
-    
-    <all-filter class="filter-brand" v-else-if="sort==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
-    <brand-filter class="filter-brand" v-else-if="sort==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
+    <release-version-filter class="filter-block" v-else-if="sort==='releaseVersion'" :releaseVersionRange="releaseVersionRange"
+      @onChangeSelectMethod="onChangeSelectMethod" />
+
+    <all-filter class="filter-block" v-else-if="sort==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
+    <brand-filter class="filter-block" v-else-if="sort==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
 
   </view>
 </template>
@@ -27,7 +28,7 @@
   import {
     defaultSelect as defaultSelectAll
   } from './filters/allFilter/select.js'
-  import  selectBrand from './filters/brandFilter/select.js'
+  import selectBrand from './filters/brandFilter/select.js'
 
   import selectReleaseVersion from './filters/releaseVersionFilter/select.js'
 
@@ -38,9 +39,9 @@
       'car-class-filter': carClassFilter,
       'all-filter': allFilter,
       'brand-filter': brandFilter,
-      'release-version-filter':releaseVersionFilter,
+      'release-version-filter': releaseVersionFilter,
     },
-    props: ['brandRange','releaseVersionRange'],
+    props: ['brandRange', 'releaseVersionRange'],
     data() {
       return {
         sort: 'carClass',
@@ -49,8 +50,8 @@
             value: 'carClass'
           },
           {
-            name:'释放版本',
-            value:'releaseVersion'
+            name: '释放版本',
+            value: 'releaseVersion'
           },
           {
             name: '全车',
@@ -68,13 +69,13 @@
       sortValue: function() {
         return this.sortRange.findIndex(item => item.value === this.sort)
       },
-      defaultSelect(){
+      defaultSelect() {
         return {
-    'carClass': defaultSelectCarClass,
-    'all': defaultSelectAll,
-    'brand': selectBrand(this.brandRange[0]),
-    'releaseVersion':selectReleaseVersion(this.releaseVersionRange&&this.releaseVersionRange[0])
-  }
+          'carClass': defaultSelectCarClass,
+          'all': defaultSelectAll,
+          'brand': selectBrand(this.brandRange[0]),
+          'releaseVersion': selectReleaseVersion(this.releaseVersionRange && this.releaseVersionRange[0])
+        }
       }
     },
     methods: {
@@ -133,9 +134,6 @@
 
   }
 
-  .filter-block {
-    margin-left: auto;
-  }
 
 
 
@@ -151,7 +149,7 @@
     }
   }
 
-  .filter-brand {
+  .filter-block {
 
     margin-left: 36rpx;
     flex: 1;

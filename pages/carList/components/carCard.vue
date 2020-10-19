@@ -38,10 +38,10 @@
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
-        <view class="perf-item">
+        <!-- <view class="perf-item">
           <view class="perf-name">单喷时间</view>
           <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
-        </view>
+        </view> -->
       </view>
       <view class="update">
         <view class="cost-list">
@@ -121,14 +121,18 @@
 
 <style lang="scss">
   .car-card {
-    padding: 32rpx;
+    padding: 20rpx;
+    padding-bottom: 25rpx;
     background-color: #fff;
-    border-radius: 20rpx;
+    
+    // background: linear-gradient(to right, #cef1ff, #ecf9ff);
+    border-radius: 10rpx;
     color: $text-p-color;
 
     @include pad-devices {
-      padding: toPadPx(32);
-      border-radius: toPadPx(20);
+      padding: toPadPx(20);
+      padding-bottom: toPadPx(25);
+      border-radius: toPadPx(10);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -139,13 +143,13 @@
 
 
   .full-name {
-    font-size: 36rpx;
+    font-size: 38rpx;
     font-weight: bold;
     margin-bottom: 10rpx;
     color: $text-title-color;
 
     @include pad-devices {
-      font-size: toPadPx(36);
+      font-size: toPadPx(38);
       margin-bottom: toPadPx(10);
     }
 
@@ -199,17 +203,18 @@
       color: $text-help-color-dark;
     }
   }
-  
-  .car-class{
+
+  .car-class {
     color: $text-p-color;
     font-size: 30rpx;
     font-weight: bold;
     padding: 2rpx 6rpx;
+
     @include pad-devices {
       padding: toPadPx(2) toPadPx(6);
       font-size: toPadPx(30);
     }
-    
+
     @media (prefers-color-scheme: dark) {
       color: $text-p-color-dark;
     }
@@ -243,14 +248,14 @@
     background-color: #303030;
     text-align: center;
     border-radius: 6rpx;
-    font-size: 24rpx;
+    font-size: 28rpx;
     padding: 8rpx 14rpx;
 
     background-color: #23bbfa;
 
     @include pad-devices {
       border-radius: toPadPx(6);
-      font-size: toPadPx(24);
+      font-size: toPadPx(28);
       padding: toPadPx(8) toPadPx(14);
     }
   }
@@ -265,10 +270,10 @@
 
   .perf-and-update {
     display: flex;
-    font-size: 24rpx;
+    font-size: 28rpx;
 
     @include pad-devices {
-      font-size: toPadPx(24);
+      font-size: toPadPx(28);
     }
 
 
@@ -288,15 +293,23 @@
   }
 
   .perf-bar {
-    height: 10rpx;
+    height: 12rpx;
     background-color: #05d1dc;
     border-radius: 6rpx;
-    margin-bottom: 18rpx;
+    // margin-bottom: 18rpx;
 
     @include pad-devices {
-      height: toPadPx(10);
+      height: toPadPx(12);
       border-radius: toPadPx(6);
-      margin-bottom: toPadPx(18);
+      // margin-bottom: toPadPx(18);
+    }
+  }
+
+  .perf-bar+.perf-item {
+    margin-top: 18rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(18);
     }
   }
 
@@ -308,9 +321,11 @@
     }
   }
 
+
+
   .update {
     flex: 1;
-    margin-left: 2%;
+    margin-left: 1em;
     display: flex;
     flex-direction: column;
   }
@@ -325,10 +340,10 @@
   }
 
   .cost-item+.cost-item {
-    margin-top: 24rpx;
+    margin-top: 32rpx;
 
     @include pad-devices {
-      margin-top: toPadPx(24);
+      margin-top: toPadPx(32);
     }
   }
 
@@ -338,7 +353,8 @@
 
   .part-list {
     margin-top: auto;
-    display: static;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .part-item {
@@ -347,42 +363,46 @@
   }
 
   .part-item+.part-item {
-    margin-top: 12rpx;
+    margin-left: 18rpx;
 
     @include pad-devices {
-      margin-top: toPadPx(12);
+      margin-left: toPadPx(18);
     }
   }
 
   .part-num {
-    font-size: 24rpx;
-    margin-left: 12rpx;
-    width: 28rpx;
+    font-size: 28rpx;
+    // margin-left: 12rpx;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    // vertical-align: center;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    // text-shadow: 0 0 20rpx rgba(0,0,0,0.6);
 
     @include pad-devices {
-      font-size: toPadPx(24);
-      margin-left: toPadPx(12);
-      width: toPadPx(28);
+      font-size: toPadPx(28);
+      width: toPadPx(40);
+      height: toPadPx(40);
+      line-height: toPadPx(40);
     }
   }
 
 
   .part-icon {
-    width: 24rpx;
-    height: 24rpx;
-    margin-left: auto;
+    width: 40rpx;
+    height: 40rpx;
+    // margin-left: auto;
+    position: absolute;
+    // z-index: -114514;
 
     @include pad-devices {
-      width: toPadPx(24);
-      height: toPadPx(24);
+      width: toPadPx(40);
+      height: toPadPx(40);
     }
   }
 
-  .part-icon+.part-icon {
-    margin-left: 4rpx;
 
-    @include pad-devices {
-      margin-left: toPadPx(4);
-    }
-  }
 </style>

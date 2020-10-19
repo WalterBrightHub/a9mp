@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 unpackage/
+config/index.ts
 dist/
 
 # local env files
@@ -21,3 +22,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+config/index.ts
+config/index.ts
