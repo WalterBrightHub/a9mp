@@ -1,8 +1,12 @@
 <template>
   <view class="context">
-    <view class="season-title-block">
-      <view class="season-name">{{seasonPass.seasonName}}</view>
-      <view class="season-remain-time">{{remainTimeString}}后结束</view>
+    <view class="head">
+
+      <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
+      <view class="season-title-block">
+        <view class="season-name">{{seasonPass.seasonName}}</view>
+        <view class="season-remain-time">{{remainTimeString}}后结束</view>
+      </view>
     </view>
     <view class="mission-list-block">
 
@@ -23,7 +27,7 @@
 <script>
   import moment from 'moment'
   export default {
-    props: ['seasonPass', 'now'],
+    props: ['seasonPass', 'now', 'server'],
     data() {
       return {
 
@@ -34,47 +38,92 @@
         console.log(this.now)
         console.log(moment(this.seasonPass.endTime))
         return moment(this.seasonPass.endTime).from(this.now, true)
+      },
+      serverName() {
+        return this.server === 'gl' ? "国际" : "国服"
       }
     },
     methods: {
+      onToggleServer() {
 
+        this.$emit('onToggleServer')
+      }
     }
   }
 </script>
 
 <style lang="scss">
+  
+  .head{
+    display: flex;
+  }
+  
+  .server-toggle {
+    padding: 0 20rpx;
+    font-size: 36rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx;
+    margin: 20rpx 0 20rpx 20rpx;
+  
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius:  toPadPx(10) ;
+      margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
+  
+    }
+  
+    color: #fff;
+    background-color: $theme-color;
+  
+    @media (prefers-color-scheme: dark) {
+  
+      color: $text-title-color-dark;
+      background-color: $theme-color-dark;
+    }
+  
+  }
+  
   .season-title-block {
     display: flex;
+    flex:1;
     margin: 20rpx;
 
     //好康的渐变
     //https://www.ui.cn/detail/198009.html 双色渐变用于中小面积，轻量渐变用于大面积
-    background: linear-gradient(to right, #f7ce26, #ff0054);
+    // background: linear-gradient(to right, #f7ce26, #ff0054);
     border-radius: 10rpx;
   }
 
   .season-name {
-    padding: 20rpx;
-    // border-radius: 10rpx 0 0 10rpx;
-    // background-color: #f7ce26;
+    padding: 0 20rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx 0 0 10rpx;
+    background-color: #f7ce26;
     color: #000;
     font-size: 36rpx;
     font-weight: bold;
-    flex: 1;
   }
 
   .season-remain-time {
-    padding: 20rpx;
+    padding: 0 20rpx;
+    line-height: 72rpx;
     display: flex;
+    flex: 1;
+    justify-content: flex-end;
     align-items: center;
-    // border-radius: 0 10rpx 10rpx 0;
+    border-radius: 0 10rpx 10rpx 0;
     color: #fff;
-    // background-color: $theme-color;
+    //background-color: $theme-color;
+     background: linear-gradient(to right, #f7ce26, #ff0054);
   }
 
-.mission-list-block{
-  padding-bottom: 30rpx;
-}
+  .mission-list-block {
+    padding-bottom: 30rpx;
+  }
 
   .mission-list {
     background-color: $card-bg-color;

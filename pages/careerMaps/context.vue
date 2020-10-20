@@ -1,7 +1,7 @@
 <template>
   <view class="context">
     <view class="mode-changer">
-      <view class="mode-button" @tap="onChangeMode">{{mode==='al'?'国服名':'国际服名'}} ⇌</view>
+      <view class="mode-button" @tap="onChangeMode">{{mode==='al'?'国服':'国际'}} ⇌</view>
     </view>
     <view class="map-list">
       <view class="map-card" v-for="theme in themes" :key="theme">
@@ -81,13 +81,13 @@
   }
 
   .mode-button {
-    color: $text-title-color;
+    color: #fff;
     padding: 0 20rpx;
     font-size: 36rpx;
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
-    background-color: $card-bg-color;
+    background-color: $theme-color;
 
     @include pad-devices {
       font-size: toPadPx(36);
@@ -98,7 +98,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
+      background-color: $theme-color-dark;
       color: $text-title-color-dark;
     }
   }

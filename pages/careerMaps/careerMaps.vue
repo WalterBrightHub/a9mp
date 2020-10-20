@@ -1,15 +1,21 @@
 <template>
   <view class="container">
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='mode' @onChangeMode="onChangeMode" />
+    <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' @onChangeMode="onChangeMode" />
 
   </view>
 </template>
 
 <script>
+  import {
+    mapState,
+    mapMutations
+  } from 'vuex'
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
-  const {myCloud}=getApp().globalData
+  const {
+    myCloud
+  } = getApp().globalData
   const requestCareerMaps = async function() {
     return myCloud.callFunction({
       name: 'getCareerMapsAll'
@@ -24,8 +30,12 @@
       return {
         careerMaps: [],
         careerMapsStatus: 'ready',
-        mode: 'gl'
+        // mode: 'gl'
       }
+    },
+    computed: {
+
+      ...mapState(['server']),
     },
     onLoad() {
       this.careerMapsStatus = 'pending'
@@ -48,30 +58,7 @@
         .finally(() => {
           uni.hideLoading()
         })
-      const key = 'mapMode'
-      uni.getStorage({
-        key
-      }).then(([error, res]) => {
-        const defaultMode = 'gl'
-        if (error) {
-          uni.setStorage({
-            key,
-            data: defaultMode
-          })
-          this.mode = defaultMode
-        } else {
-          const mode = res.data
-          if (mode !== 'al' && mode !== 'gl') {
-            uni.setStorage({
-              key,
-              data: defaultMode
-            })
-            this.mode = defaultMode
-          } else {
-            this.mode = mode
-          }
-        }
-      })
+
     },
     onShareAppMessage() {
 
@@ -146,16 +133,13 @@
             })
           })
       },
+
+      ...mapMutations(['toggleServer']),
       onChangeMode() {
-        let {
-          mode
-        } = this
-        let newMode = mode === 'al' ? 'gl' : 'al'
-        this.mode = newMode
-        uni.setStorage({
-          key: 'mapMode',
-          data: newMode
+        uni.showToast({
+          title: '已切换'
         })
+        this.toggleServer()
       }
     }
   }

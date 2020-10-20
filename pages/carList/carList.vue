@@ -1,21 +1,31 @@
 <template>
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server" @onToggleServer="onToggleServer" :carList="computedCarList"
-      :limit="limit" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" />
+    <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server"
+      @onToggleServer="onToggleServer" :carList="computedCarList" :limit="limit" :brandRange="brandRange"
+      :releaseVersionRange="releaseVersionRange" />
 
   </view>
 </template>
 
 <script>
+  import {
+    mapState,
+    mapMutations
+  } from 'vuex'
+
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
-  import {compareVersion} from './util.js'
+  import {
+    compareVersion
+  } from './util.js'
   import _ from 'lodash'
-  
-  const {myCloud}=getApp().globalData
-  
-  
+
+  const {
+    myCloud
+  } = getApp().globalData
+
+
   const requestCarList = async function() {
     return myCloud.callFunction({
       name: 'getCarListBoth'
@@ -33,15 +43,16 @@
         carListStatus: 'ready',
 
         limit: 20,
-        server:'gl',
-        carListBoth:{
-          gl:[],
-          al:[]
+        // server:'gl',
+        carListBoth: {
+          gl: [],
+          al: []
         }
       }
     },
     computed: {
-      carList(){
+      ...mapState(['server']),
+      carList() {
         return this.carListBoth[this.server]
       },
       computedCarList() {
@@ -60,7 +71,7 @@
           return {
             ...car,
             starArray: [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star),
-            totalCost:stageCost+partCost
+            totalCost: stageCost + partCost
           }
 
         })
@@ -77,14 +88,14 @@
           .map(obj => obj.brand)
           .value()
       },
-      releaseVersionRange(){
+      releaseVersionRange() {
         return _(this.carList)
           .filter(car => car.releaseVersion && car.releaseVersion !== '')
-          .map(car=>car.releaseVersion)
+          .map(car => car.releaseVersion)
           .union()
           // .map(obj => obj.brand)
           .value()
-          .sort(compareVersion) 
+          .sort(compareVersion)
       }
     },
     onReachBottom() {
@@ -92,8 +103,8 @@
       this.limit += 20
     },
     onLoad() {
-      
-      
+
+
       this.carListStatus = 'pending'
       uni.showLoading({
         title: '加载中',
@@ -102,10 +113,10 @@
       requestCarList()
         .then(res => {
           // return Promise.reject()
-          let [resultGL,resultAL]=res.result
-          this.carListBoth={
-            gl:resultGL.data,
-            al:resultAL.data
+          let [resultGL, resultAL] = res.result
+          this.carListBoth = {
+            gl: resultGL.data,
+            al: resultAL.data
           }
           // this.carList = res.result.data
           this.carListStatus = 'resolve'
@@ -115,8 +126,8 @@
         }).finally(() => {
           uni.hideLoading()
         })
-        
-      
+
+
     },
     onShareAppMessage() {
       return {
@@ -128,10 +139,10 @@
         .then(res => {
           // console.log(res.result.data)
           // return Promise.reject()
-          let [resultGL,resultAL]=res.result
-          this.carListBoth={
-            gl:resultGL.data,
-            al:resultAL.data
+          let [resultGL, resultAL] = res.result
+          this.carListBoth = {
+            gl: resultGL.data,
+            al: resultAL.data
           }
           this.carListStatus = 'resolve'
           this.limit = 20
@@ -164,9 +175,12 @@
       }
     },
     methods: {
-      onToggleServer(){
-        let newServer=this.server==='al'?'gl':'al'
-        this.server=newServer
+      ...mapMutations(['toggleServer']),
+      onToggleServer() {
+        uni.showToast({
+          title: '已切换'
+        })
+        this.toggleServer()
         this.resetLimit()
         uni.pageScrollTo({
           scrollTop: 0,
@@ -183,10 +197,10 @@
           .then(res => {
             // console.log(res.result.data)
             // return Promise.reject()
-            let [resultGL,resultAL]=res.result
-            this.carListBoth={
-              gl:resultGL.data,
-              al:resultAL.data
+            let [resultGL, resultAL] = res.result
+            this.carListBoth = {
+              gl: resultGL.data,
+              al: resultAL.data
             }
             this.carListStatus = 'resolve'
             uni.showToast({

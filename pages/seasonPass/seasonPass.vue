@@ -1,24 +1,27 @@
 <template>
   <view class="container">
-    <context :seasonPass="computedSeasonPass" :now="now"/>
+    <context :seasonPass="computedSeasonPass" :now="now" :server="server" @onToggleServer="onToggleServer" />
   </view>
 </template>
 
 <script>
+  import {
+    mapState,
+    mapMutations
+  } from 'vuex'
   import context from './context.vue'
-  
+
   export default {
-    components:{
-      'context':context
+    components: {
+      'context': context
     },
     data() {
       return {
-        server:'gl',
-        now:new Date(),
+        now: new Date(),
         seasonPassGlobal: {
           seasonName: '英国风情赛季',
-          startTime:new Date('2020-8-27 18:00 utc+8').getTime(),
-          endTime:new Date('2020-10-22 18:00 utc+8').getTime(),
+          startTime: new Date('2020-8-27 18:00 utc+8').getTime(),
+          endTime: new Date('2020-10-22 18:00 utc+8').getTime(),
           episodes: [{
             episode_id: 1,
             missions: [{
@@ -89,14 +92,24 @@
       };
     },
     computed: {
+      ...mapState(['server']),
       computedSeasonPass() {
         const {
           episodes
         } = this.seasonPassGlobal
         return {
           ...this.seasonPassGlobal,
-          episodes:episodes.sort((a, b) => b.episode_id-a.episode_id)
+          episodes: episodes.sort((a, b) => b.episode_id - a.episode_id)
         }
+      }
+    },
+    methods: {
+      ...mapMutations(['toggleServer']),
+      onToggleServer() {
+        uni.showToast({
+          title: '已切换'
+        })
+        this.toggleServer()
       }
     }
   }
