@@ -1,128 +1,165 @@
 {
-    "name" : "a9mp",
-    "appid" : "__UNI__4385270",
-    "description" : "狂飙小助手",
-    "versionName" : "1.3.0",
-    "versionCode" : "100",
-    "transformPx" : false,
-    /* 5+App特有相关 */
-    "app-plus" : {
-        "usingComponents" : true,
-        "nvueCompiler" : "uni-app",
-        "compilerVersion" : 3,
-        "splashscreen" : {
-            "alwaysShowBeforeRender" : true,
-            "waiting" : true,
-            "autoclose" : true,
-            "delay" : 0
-        },
-        /* 模块配置 */
-        "modules" : {},
-        /* 应用发布信息 */
-        "distribute" : {
-            /* android打包配置 */
-            "android" : {
-                "permissions" : [
-                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
-                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
-            },
-            /* ios打包配置 */
-            "ios" : {},
-            /* SDK配置 */
-            "sdkConfigs" : {}
-        }
+  "name": "a9mp",
+  "appid": "__UNI__4385270",
+  "description": "狂飙小助手",
+  "versionName": "1.3.0",
+  "versionCode": "100",
+  "transformPx": false,
+  /* 5+App特有相关 */
+  "app-plus": {
+    "usingComponents": true,
+    "nvueCompiler": "uni-app",
+    "compilerVersion": 3,
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
     },
-    /* 快应用特有相关 */
-    "quickapp" : {},
-    /* 小程序特有相关 */
-    "mp-weixin" : {
-        "appid" : "wx742bd28d4723c3d9",
-        "resizable" : true,
-        "darkmode" : true,
-        "window" : {
-            "navigationBarTextStyle" : "@navTxtStyle",
-            "navigationBarBackgroundColor" : "@navBgColor",
-            "navigationBarTitleText" : "狂飙小助手",
-            "backgroundColor" : "@bgColor"
-        },
-        "themeLocation" : "static/theme.json",
-        "setting" : {
-            "urlCheck" : false,
-            "es6" : true,
-            "postcss" : true,
-            "minified" : true
-        },
-        "usingComponents" : true,
-        "permission" : {}
-    },
-    "mp-alipay" : {
-        "usingComponents" : true
-    },
-    "mp-baidu" : {
-        "usingComponents" : true
-    },
-    "mp-toutiao" : {
-        "usingComponents" : true
-    },
-    "mp-qq" : {
-        "appid" : "1110198637",
-        "resizable" : true,
-        "setting" : {
-            "es6" : true,
-            "postcss" : true,
-            "minified" : true
-        },
-        "tabBar" : {
-            "color" : "#000",
-            "backgroundColor" : "#fff",
-            "selectedColor" : "#FF0054",
-            "list" : [
-                {
-                    "pagePath" : "pages/carList/carList",
-                    "iconPath" : "static/tabbar-icons/car.png",
-                    "selectedIconPath" : "static/tabbar-icons/car-selected.png",
-                    "text" : "车辆"
-                },
-                {
-                    "pagePath" : "pages/careerMaps/careerMaps",
-                    "iconPath" : "static/tabbar-icons/flag.png",
-                    "selectedIconPath" : "static/tabbar-icons/flag-selected.png",
-                    "text" : "地图"
-                },
-                {
-                    "pagePath" : "pages/seasonPass/seasonPass",
-                    "iconPath" : "static/tabbar-icons/pass.png",
-                    "selectedIconPath" : "static/tabbar-icons/pass-selected.png",
-                    "text" : "通行证"
-                },
-                {
-                    "pagePath" : "pages/contest/contest",
-                    "iconPath" : "static/tabbar-icons/fire.png",
-                    "selectedIconPath" : "static/tabbar-icons/fire-selected.png",
-                    "text" : "赛事"
-                }
-            ]
-        }
+    /* 模块配置 */
+    "modules": {},
+    /* 应用发布信息 */
+    "distribute": {
+      /* android打包配置 */
+      "android": {
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+        ]
+      },
+      /* ios打包配置 */
+      "ios": {},
+      /* SDK配置 */
+      "sdkConfigs": {}
     }
+  },
+  /* 快应用特有相关 */
+  "quickapp": {},
+  /* 小程序特有相关 */
+  "mp-weixin": {
+    "appid": "wx742bd28d4723c3d9",
+    "resizable": true,
+    "darkmode": true,
+    "window": {
+      "navigationBarTextStyle": "@navTxtStyle",
+      "navigationBarBackgroundColor": "@navBgColor",
+      "navigationBarTitleText": "狂飙小助手",
+      "backgroundColor": "@bgColor"
+    },
+    "themeLocation": "static/theme.json",
+
+    "tabBar": {
+      "color": "@tabFontColor",
+      "backgroundColor": "@tabBgColor",
+      "selectedColor": "@tabSelectedColor",
+      "list": [{
+          "pagePath": "pages/carList/carList",
+          "iconPath": "@iconPathCarList",
+          "selectedIconPath": "@selectedIconPathCarList",
+          "text": "车辆"
+        },
+        {
+          "pagePath": "pages/careerMaps/careerMaps",
+          "iconPath": "@iconPathCareerMaps",
+          "selectedIconPath": "@selectedIconPathCareerMaps",
+          "text": "地图"
+        },
+        {
+          "pagePath": "pages/seasonPass/seasonPass",
+          "iconPath": "@iconPathSeasonPass",
+          "selectedIconPath": "@selectedIconPathSeasonPass",
+          "text": "通行证"
+        },
+        {
+          "pagePath": "pages/contest/contest",
+          "iconPath": "@iconPathContest",
+          "selectedIconPath": "@selectedIconPathContest",
+          "text": "赛事"
+        }
+      ]
+
+    },
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    "permission": {}
+  },
+  "mp-alipay": {
+    "usingComponents": true
+  },
+  "mp-baidu": {
+    "usingComponents": true
+  },
+  "mp-toutiao": {
+    "usingComponents": true
+  },
+  "mp-qq": {
+    "appid": "1110198637",
+    "resizable": true,
+    "setting": {
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    }
+    
+  },
+  "h5": {
+    "router": {
+      "mode": "hash"
+    },
+    "tabBar": {
+      "color": "#000",
+      "backgroundColor": "#fff",
+      "selectedColor": "#FF0054",
+      "list": [{
+          "pagePath": "pages/carList/carList",
+          "iconPath": "static/tabbar-icons/car.png",
+          "selectedIconPath": "static/tabbar-icons/car-selected.png",
+          "text": "车辆"
+        },
+        {
+          "pagePath": "pages/careerMaps/careerMaps",
+          "iconPath": "static/tabbar-icons/flag.png",
+          "selectedIconPath": "static/tabbar-icons/flag-selected.png",
+          "text": "地图"
+        },
+        {
+          "pagePath": "pages/seasonPass/seasonPass",
+          "iconPath": "static/tabbar-icons/pass.png",
+          "selectedIconPath": "static/tabbar-icons/pass-selected.png",
+          "text": "通行证"
+        },
+        {
+          "pagePath": "pages/contest/contest",
+          "iconPath": "static/tabbar-icons/fire.png",
+          "selectedIconPath": "static/tabbar-icons/fire-selected.png",
+          "text": "赛事"
+        }
+      ]
+    }
+  }
 }
