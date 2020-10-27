@@ -43,7 +43,6 @@
         carListStatus: 'ready',
 
         limit: 20,
-        // server:'gl',
         carListBoth: {
           gl: [],
           al: []
