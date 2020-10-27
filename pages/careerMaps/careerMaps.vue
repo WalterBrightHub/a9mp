@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+    <career-query :trackDetails="trackDetails" :careerSeasons="careerSeasons"></career-query>
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetry' />
     <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' @onChangeMode="onChangeMode" />
 
@@ -7,12 +8,15 @@
 </template>
 
 <script>
+  import careerSeasons from './careerSeasons.json'
+  import trackDetails from './trackDetails.json'
   import {
     mapState,
     mapMutations
   } from 'vuex'
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
+  import careerQuery from './careerQuery.vue'
   const {
     myCloud
   } = getApp().globalData
@@ -24,12 +28,15 @@
   export default {
     components: {
       'request-fail': requestFail,
-      'context': context
+      'context': context,
+      'career-query': careerQuery,
     },
     data() {
       return {
         careerMaps: [],
         careerMapsStatus: 'ready',
+        careerSeasons,
+        trackDetails,
         // mode: 'gl'
       }
     },

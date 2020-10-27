@@ -1,0 +1,7030 @@
+[
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 1,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 2,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 3,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 4,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 5,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "LEGENDARY START 2018",
+        "race": 6,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 1,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 2,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 3,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 4,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 5,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 6,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 7,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 8,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 9,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "GEARHEADS",
+        "race": 10,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 1,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 2,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 3,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 4,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 5,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 6,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 7,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 8,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 9,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D NOVICE",
+        "race": 10,
+        "mapNameCN": "冰雪大地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 1,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 2,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 3,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 4,
+        "mapNameCN": "漫步南京路",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 5,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 6,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 7,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 8,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 9,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "EXCLUSIV CHALLENGE ASIA",
+        "race": 10,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 1,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 2,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 3,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 4,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 5,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 6,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 7,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 8,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 9,
+        "mapNameCN": "云霄飞车",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "PURE MUSCLE CAR",
+        "race": 10,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 1,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 2,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 3,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 4,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 5,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 6,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 7,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "（BMW Z4 LCI E89）",
+        "race": 8,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 1,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 2,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 3,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 4,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 5,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 6,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 7,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 8,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 9,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 10,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 11,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS D ROOKIE",
+        "race": 12,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 1,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 2,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 3,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 4,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 5,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 6,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 7,
+        "mapNameCN": "风之小径",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 8,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 9,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 10,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 11,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 12,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 13,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CLASS C NOVICE",
+        "race": 14,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 1,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 2,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 3,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 4,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 5,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 6,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 7,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 8,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 9,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 10,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 11,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 12,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 13,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 14,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "CAMARO",
+        "race": 15,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 1,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 2,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 3,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 4,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 5,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "ESCAPE",
+        "race": 6,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 1,
+        "mapNameCN": "明治冲击",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 2,
+        "mapNameCN": "崭露头角",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 3,
+        "mapNameCN": "樱花城堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 4,
+        "mapNameCN": "工业革命",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 5,
+        "mapNameCN": "急速之争",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第一章",
+        "season": "THE HEART OF KANSAI",
+        "race": 6,
+        "mapNameCN": "逐浪之旅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 1,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 2,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 3,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 4,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 5,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 6,
+        "mapNameCN": "古老奇观",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 7,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 8,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 9,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 10,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 11,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D PRO",
+        "race": 12,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 1,
+        "mapNameCN": "住宅区",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 2,
+        "mapNameCN": "不夜城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 3,
+        "mapNameCN": "极速飞跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 4,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 5,
+        "mapNameCN": "空投",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 6,
+        "mapNameCN": "地铁冲浪",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 7,
+        "mapNameCN": "观光游览",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 8,
+        "mapNameCN": "公园竞速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 9,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 10,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 11,
+        "mapNameCN": "闯荡华尔街",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 12,
+        "mapNameCN": "量子跃迁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "STARS & STRIPES",
+        "race": 13,
+        "mapNameCN": "飞艇竞速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 1,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 2,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 3,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 4,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 5,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 6,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 7,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 8,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 9,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 10,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 11,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "UITIMATE MUSCLE",
+        "race": 12,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 1,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 2,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 3,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 4,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 5,
+        "mapNameCN": "永恒之城",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 6,
+        "mapNameCN": "法老游戏",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 7,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 8,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 9,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 10,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 11,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 12,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 13,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 14,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C ROOKIE",
+        "race": 15,
+        "mapNameCN": "冰雪大地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 1,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 2,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 3,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 4,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 5,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 6,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 7,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 8,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 9,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 10,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 11,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 12,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 13,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "green machines",
+        "race": 14,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 1,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 2,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 3,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 4,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 5,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 6,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 7,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 8,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 9,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 10,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 11,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 12,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 13,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 14,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "American Blaze",
+        "race": 15,
+        "mapNameCN": "旋风弯道",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 1,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 2,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 3,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 4,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 5,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 6,
+        "mapNameCN": "荒地",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 7,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 8,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 9,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 10,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 11,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Euro Tracks",
+        "race": 12,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 1,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 2,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 3,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 4,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 5,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 6,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 7,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 8,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 9,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 10,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 11,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 12,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B NOVIC",
+        "race": 13,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 1,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 2,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 3,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 4,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 5,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 6,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "Eastern GETAWAY",
+        "race": 7,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 1,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 2,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 3,
+        "mapNameCN": "冰封路径",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 4,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 5,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 6,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 7,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 8,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 9,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 10,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 11,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 12,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS D ELITE",
+        "race": 13,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 1,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 2,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 3,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 4,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 5,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 6,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 7,
+        "mapNameCN": "东方明珠",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 8,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 9,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 10,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 11,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS C PRO",
+        "race": 12,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 1,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 2,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 3,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 4,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 5,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 6,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 7,
+        "mapNameCN": "风之小径",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 8,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 9,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 10,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 11,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 12,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 13,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 14,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 15,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 16,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 17,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 18,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 19,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 20,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 21,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BMW",
+        "race": 22,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 1,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 2,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 3,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 4,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 5,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 6,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 7,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 8,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 9,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 10,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 11,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "CLASS B ROOKIE",
+        "race": 12,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 1,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 2,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 3,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 4,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 5,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 6,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 7,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 8,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 9,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 10,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 11,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "ASTON MARTIN",
+        "race": 12,
+        "mapNameCN": "自由路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 1,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 2,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 3,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 4,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 5,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 6,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 7,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 8,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 9,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "(WOLKSWAGEN XL SPORT CONCEPT)",
+        "race": 10,
+        "mapNameCN": "自由路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 1,
+        "mapNameCN": "尖峰时刻",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 2,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 3,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 4,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 5,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 6,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 7,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 8,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 9,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 10,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 11,
+        "mapNameCN": "尖峰时刻",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 12,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 13,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 14,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 15,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 16,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 17,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 18,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 19,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "LOTUS",
+        "race": 20,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 1,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 2,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 3,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 4,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 5,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 6,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "AMERICAN MOST WANDTED",
+        "race": 7,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 1,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 2,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 3,
+        "mapNameCN": "量子跃迁",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 4,
+        "mapNameCN": "风之小径",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 5,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 6,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 7,
+        "mapNameCN": "荒地",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 8,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 9,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 10,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 11,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "BRITISH SEASON",
+        "race": 12,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 1,
+        "mapNameCN": "胜地冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 2,
+        "mapNameCN": "酒店大道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 3,
+        "mapNameCN": "海滩登陆",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 4,
+        "mapNameCN": "地狱谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 5,
+        "mapNameCN": "天堂度假村",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第二章",
+        "season": "WELCOME TO PARADISE",
+        "race": 6,
+        "mapNameCN": "环岛之旅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 1,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 2,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 3,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 4,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 5,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 6,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 7,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 8,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 9,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 10,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 11,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 12,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 13,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 14,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS D MASTER ",
+        "race": 15,
+        "mapNameCN": "狂飙洞穴！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 1,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 2,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 3,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 4,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 5,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 6,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 7,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 8,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 9,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 10,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 11,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 12,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 13,
+        "mapNameCN": "荒地",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 14,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "GERMAN WHEELS ",
+        "race": 15,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 1,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 2,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 3,
+        "mapNameCN": "冰封路径",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 4,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 5,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 6,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 7,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 8,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 9,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 10,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 11,
+        "mapNameCN": "东方明珠",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars 1: THE BEGINNING",
+        "race": 12,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 1,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 2,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 3,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 4,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 5,
+        "mapNameCN": "明治冲击",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 6,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 7,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 8,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 9,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 10,
+        "mapNameCN": "酒店大道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 11,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 12,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 13,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 14,
+        "mapNameCN": "工业革命",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ultimate EXPERIENCE SEASON",
+        "race": 15,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 1,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 2,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 3,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 4,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 5,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 6,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 7,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 8,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 9,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 10,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 11,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 12,
+        "mapNameCN": "狂飙洞穴！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 13,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 14,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 15,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 16,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 17,
+        "mapNameCN": "自由路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Exotic Beasts ",
+        "race": 18,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 1,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 2,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 3,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 4,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 5,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 6,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 7,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 8,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 9,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 10,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 11,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 12,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 13,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 14,
+        "mapNameCN": "古老奇观",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 15,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 16,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 17,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "DODGE",
+        "race": 18,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 1,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 2,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 3,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 4,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 5,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 6,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ESCAPES",
+        "race": 7,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 1,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 2,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 3,
+        "mapNameCN": "漫步南京路",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 4,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 5,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 6,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 7,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 8,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 9,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 10,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 11,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 12,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 13,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 14,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 15,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FUTURE FAST ",
+        "race": 16,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 1,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 2,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 3,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 4,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 5,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 6,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 7,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 8,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 9,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 10,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 11,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 12,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 13,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 14,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Ford",
+        "race": 15,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 1,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 2,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 3,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 4,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 5,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 6,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 7,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 8,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 9,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 10,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 11,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 12,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 13,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 14,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "CLASS C ELITE ",
+        "race": 15,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 1,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 2,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 3,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 4,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 5,
+        "mapNameCN": "自由路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 6,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 7,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 8,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 9,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 10,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 11,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 12,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 13,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 14,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 15,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 16,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 17,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "EURO REBELS ",
+        "race": 18,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 1,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 2,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 3,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 4,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 5,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 6,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "FROM NORTH TO SOUTH ",
+        "race": 7,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 1,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 2,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 3,
+        "mapNameCN": "永恒之城",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 4,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 5,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 6,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 7,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 8,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 9,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 10,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 11,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 12,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 13,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 14,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 15,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Super Cars2: RISING",
+        "race": 16,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 1,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 2,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 3,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 4,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 5,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 6,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 7,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 8,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 9,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 10,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 11,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 12,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 13,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 14,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 15,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 16,
+        "mapNameCN": "大桥景观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 17,
+        "mapNameCN": "云霄飞车",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "AMERICAN EXTREME ",
+        "race": 18,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 1,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 2,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 3,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 4,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 5,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 6,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 7,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 8,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 9,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 10,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 11,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 12,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 13,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 14,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 15,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "ITALIAN RIDE ",
+        "race": 16,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 1,
+        "mapNameCN": "万神殿岔路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 2,
+        "mapNameCN": "山地速降",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 3,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 4,
+        "mapNameCN": "万神殿岔路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 5,
+        "mapNameCN": "古罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 6,
+        "mapNameCN": "洞穴热浪",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 7,
+        "mapNameCN": "荒地",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 8,
+        "mapNameCN": "尖峰时刻",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 9,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 10,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 11,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第三章",
+        "season": "Mercedes-Benz",
+        "race": 12,
+        "mapNameCN": "古罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 1,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 2,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 3,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 4,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 5,
+        "mapNameCN": "荒地",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 6,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 7,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 8,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 9,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "BRITISH BEASTS ",
+        "race": 10,
+        "mapNameCN": "自由路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 1,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 2,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 3,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 4,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 5,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 6,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 7,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 8,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 9,
+        "mapNameCN": "云霄飞车",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 10,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 11,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A NOVIC",
+        "race": 12,
+        "mapNameCN": "法老游戏",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 1,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 2,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 3,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 4,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 5,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 6,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 7,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 8,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 9,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 10,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 11,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B PRO ",
+        "race": 12,
+        "mapNameCN": "大桥景观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 1,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 2,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 3,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 4,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 5,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 6,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 7,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 8,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 9,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 10,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 11,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS C MASTER",
+        "race": 12,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 1,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 2,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 3,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 4,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 5,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 6,
+        "mapNameCN": "漫步南京路",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 7,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 8,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 9,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 10,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 11,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "LAND OF THE SUN RACING ",
+        "race": 12,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 1,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 2,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 3,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 4,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 5,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 6,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 7,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 8,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 9,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 10,
+        "mapNameCN": "大桥景观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 11,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 12,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 13,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 14,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "PORSCHE",
+        "race": 15,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 1,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 2,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 3,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 4,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 5,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 6,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 7,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 8,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 9,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ROOKIE",
+        "race": 10,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 1,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 2,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 3,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 4,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 5,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 6,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 7,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 8,
+        "mapNameCN": "冰封路径",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 9,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A PRO ",
+        "race": 10,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 1,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 2,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 3,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 4,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 5,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 6,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 7,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "URRAN OUTCAST ",
+        "race": 8,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 1,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 2,
+        "mapNameCN": "完整旅途",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 3,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 4,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 5,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 6,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 7,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 8,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 9,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 10,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 11,
+        "mapNameCN": "旋风弯道",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B ELITE",
+        "race": 12,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 1,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 2,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 3,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 4,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 5,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 6,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 7,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 8,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 9,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 10,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 11,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 12,
+        "mapNameCN": "永恒之城",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 13,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 14,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "EURO SHOW DOWN ",
+        "race": 15,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 1,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 2,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 3,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 4,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 5,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 6,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 7,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 8,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 9,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 10,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 11,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 12,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "Super Cars 3: RETURN TO RIDE",
+        "race": 13,
+        "mapNameCN": "狂飙洞穴！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 1,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 2,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 3,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 4,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 5,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 6,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 7,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 8,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 9,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 10,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 11,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 12,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 13,
+        "mapNameCN": "景观公路",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS A ELITE",
+        "race": 14,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 1,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 2,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 3,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 4,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 5,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 6,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 7,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 8,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 9,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 10,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 11,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 12,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 13,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "CLASS B MASTER",
+        "race": 14,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 1,
+        "mapNameCN": "山地速降",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 2,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 3,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 4,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 5,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 6,
+        "mapNameCN": "洞穴热浪",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 7,
+        "mapNameCN": "尖峰时刻",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 8,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 9,
+        "mapNameCN": "尖峰时刻",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 10,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 11,
+        "mapNameCN": "冰雪大地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 12,
+        "mapNameCN": "山地速降",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 13,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 14,
+        "mapNameCN": "完整旅途",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 15,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 16,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 17,
+        "mapNameCN": "洞穴热浪",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 18,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 19,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "McLaren",
+        "race": 20,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 1,
+        "mapNameCN": "桥墩压力",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 2,
+        "mapNameCN": "小岛竞速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 3,
+        "mapNameCN": "雷鸣之始",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 4,
+        "mapNameCN": "地狱谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 5,
+        "mapNameCN": "小岛竞速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 6,
+        "mapNameCN": "包罗万象",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 7,
+        "mapNameCN": "雷鸣之始",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 8,
+        "mapNameCN": "酒店大道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 9,
+        "mapNameCN": "胜地冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 10,
+        "mapNameCN": "海滩登陆",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 11,
+        "mapNameCN": "天堂度假村",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 12,
+        "mapNameCN": "酒店大道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 13,
+        "mapNameCN": "海滩登陆",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 14,
+        "mapNameCN": "地狱谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第四章",
+        "season": "SUN RACERS",
+        "race": 15,
+        "mapNameCN": "包罗万象",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 1,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 2,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 3,
+        "mapNameCN": "云霄飞车",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 4,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 5,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 6,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 7,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 8,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 9,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 10,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 11,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S NOVIC",
+        "race": 12,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 1,
+        "mapNameCN": "难波公园",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 2,
+        "mapNameCN": "护城河决战",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 3,
+        "mapNameCN": "崭露头角",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 4,
+        "mapNameCN": "明治冲击",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 5,
+        "mapNameCN": "急速之争",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 6,
+        "mapNameCN": "大型丘陵",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 7,
+        "mapNameCN": "工业革命",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 8,
+        "mapNameCN": "樱花城堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 9,
+        "mapNameCN": "逐浪之旅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "TRADITION MEETS FUTURE",
+        "race": 10,
+        "mapNameCN": "大阪欢迎你",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 1,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 2,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 3,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 4,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 5,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 6,
+        "mapNameCN": "漫步南京路",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 7,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 8,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 9,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 10,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 11,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FERRARI",
+        "race": 12,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 1,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 2,
+        "mapNameCN": "古老奇观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 3,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 4,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 5,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 6,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 7,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 8,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 9,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 10,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 11,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ROOKIE",
+        "race": 12,
+        "mapNameCN": "冰雪大地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 1,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 2,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 3,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 4,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 5,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 6,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 7,
+        "mapNameCN": "魔法岛屿",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 8,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 9,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 10,
+        "mapNameCN": "城市狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 11,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 12,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 13,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 14,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "HYBRID ACE ",
+        "race": 15,
+        "mapNameCN": "冰雪大地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 1,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 2,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 3,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 4,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 5,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Roadtrips Interrupted",
+        "race": 6,
+        "mapNameCN": "美国荒野",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 1,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 2,
+        "mapNameCN": "东方巴黎",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 3,
+        "mapNameCN": "旋风弯道",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 4,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 5,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 6,
+        "mapNameCN": "罗马小道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 7,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 8,
+        "mapNameCN": "风车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 9,
+        "mapNameCN": "冰封地堡",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 10,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 11,
+        "mapNameCN": "旧时风情",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "ASPHALT HYPER·MACHINES",
+        "race": 12,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 1,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 2,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 3,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 4,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 5,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 6,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 7,
+        "mapNameCN": "东方明珠",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 8,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 9,
+        "mapNameCN": "跌宕罗马",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 10,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 11,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 12,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 13,
+        "mapNameCN": "双环岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 14,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "LAMBORGHINI",
+        "race": 15,
+        "mapNameCN": "狂飙洞穴！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 1,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 2,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 3,
+        "mapNameCN": "法老游戏",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 4,
+        "mapNameCN": "大桥景观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 5,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 6,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 7,
+        "mapNameCN": "坠落",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 8,
+        "mapNameCN": "自由路线",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 9,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S PRO ",
+        "race": 10,
+        "mapNameCN": "幽灵船",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 1,
+        "mapNameCN": "临湾城市",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 2,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 3,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 4,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 5,
+        "mapNameCN": "人民广场狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 6,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 7,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 8,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 9,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 10,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 11,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 12,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "W MOTORS ",
+        "race": 13,
+        "mapNameCN": "时间旅行",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 1,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 2,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 3,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 4,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 5,
+        "mapNameCN": "东方明珠",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 6,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 7,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 8,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 9,
+        "mapNameCN": "云霄飞车",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 10,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 11,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS A MASTER",
+        "race": 12,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 1,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 2,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 3,
+        "mapNameCN": "尼罗河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 4,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 5,
+        "mapNameCN": "决战大桥",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 6,
+        "mapNameCN": "开罗塔终点",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 7,
+        "mapNameCN": "法老游戏",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 8,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S ELITE ",
+        "race": 9,
+        "mapNameCN": "信仰之跃",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 1,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 2,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 3,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 4,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 5,
+        "mapNameCN": "购物狂欢",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 6,
+        "mapNameCN": "岩石山谷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 7,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 8,
+        "mapNameCN": "永恒之城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 9,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 10,
+        "mapNameCN": "圣彼得狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 11,
+        "mapNameCN": "荒地",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 12,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 13,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 14,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "EURO MOTORS ",
+        "race": 15,
+        "mapNameCN": "国王的复兴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 1,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 2,
+        "mapNameCN": "洞穴",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 3,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 4,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 5,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 6,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 7,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 8,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 9,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 10,
+        "mapNameCN": "自由落体",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 11,
+        "mapNameCN": "古老奇观",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 12,
+        "mapNameCN": "漫步南京路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "Hyper Roam ",
+        "race": 13,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 1,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 2,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 3,
+        "mapNameCN": "城市烈焰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 4,
+        "mapNameCN": "世界大都会",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 5,
+        "mapNameCN": "法老游戏",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 6,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 7,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 8,
+        "mapNameCN": "冰雪大地",
+        "raceType": "追逐赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 9,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "CLASS S MASTER",
+        "race": 10,
+        "mapNameCN": "狂飙洞穴！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 1,
+        "mapNameCN": "横贯大陆赛事",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 2,
+        "mapNameCN": "云霄飞车",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 3,
+        "mapNameCN": "旋风弯道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 4,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "计时赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 5,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 6,
+        "mapNameCN": "旧金山街道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 7,
+        "mapNameCN": "淘金狂飙",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 8,
+        "mapNameCN": "市中心高架桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 9,
+        "mapNameCN": "峡谷飞驰",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 10,
+        "mapNameCN": "决战大桥",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 11,
+        "mapNameCN": "龙卷风！",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 12,
+        "mapNameCN": "大桥景观",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 13,
+        "mapNameCN": "铁道迷",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 14,
+        "mapNameCN": "印第安国度",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 15,
+        "mapNameCN": "喧闹铁路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 16,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 17,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 18,
+        "mapNameCN": "浦东崛起",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 19,
+        "mapNameCN": "悬崖峭壁",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "American Autos ",
+        "race": 20,
+        "mapNameCN": "古代遗迹",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 1,
+        "mapNameCN": "洞穴热浪",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 2,
+        "mapNameCN": "拥堵隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 3,
+        "mapNameCN": "景观公路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 4,
+        "mapNameCN": "山崩",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 5,
+        "mapNameCN": "隧道",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 6,
+        "mapNameCN": "杰基拉岛",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 7,
+        "mapNameCN": "水滨",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 8,
+        "mapNameCN": "未来之路",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 9,
+        "mapNameCN": "触摸天空",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 10,
+        "mapNameCN": "山地速降",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 11,
+        "mapNameCN": "洞穴热浪",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 12,
+        "mapNameCN": "台伯河激流",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 13,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 14,
+        "mapNameCN": "灯塔",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 15,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 16,
+        "mapNameCN": "尖塔耸立",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 17,
+        "mapNameCN": "美国荒野",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 18,
+        "mapNameCN": "穿越台伯河",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 19,
+        "mapNameCN": "冰封路径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 20,
+        "mapNameCN": "山巅",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 21,
+        "mapNameCN": "曲直高速",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 22,
+        "mapNameCN": "风之小径",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 23,
+        "mapNameCN": "地下冲刺",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 24,
+        "mapNameCN": "申城",
+        "raceType": "常规赛"
+    },
+    {
+        "chapter": "第五章",
+        "season": "FRENCH Connection",
+        "race": 25,
+        "mapNameCN": "迂回路线",
+        "raceType": "常规赛"
+    }
+]
