@@ -1,8 +1,8 @@
 <template>
-  <view class="fail-block">
+  <div class="fail-block">
     <image src="/static/packet.png" class="fail-icon"></image>
     <button class="retry" size="mini" @tap="onRetry">重试</button>
-  </view>
+  </div>
 </template>
 
 <script>
