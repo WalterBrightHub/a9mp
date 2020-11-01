@@ -1,8 +1,5 @@
 <template>
   <view class="context">
-    <view class="mode-changer">
-      <view class="mode-button" @tap="onChangeMode">{{mode==='al'?'国服':'国际'}} ⇌</view>
-    </view>
     <view class="map-list">
       <view class="map-card" v-for="theme in themes" :key="theme">
         <view class="theme">{{theme}}</view>
@@ -64,50 +61,12 @@
     margin: 0 auto;
   }
 
-  .mode-changer {
-    display: flex;
-    background-color: $page-bg-color;
-
-    padding: 20rpx;
-    box-sizing: border-box;
-
-    @include pad-devices {
-      padding: toPadPx(20);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $page-bg-color-dark;
-    }
-  }
-
-  .mode-button {
-    color: #fff;
-    padding: 0 20rpx;
-    font-size: 36rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    border-radius: 10rpx;
-    background-color: $theme-color;
-
-    @include pad-devices {
-      font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $theme-color-dark;
-      color: $text-title-color-dark;
-    }
-  }
 
   .map-list {
-    padding: 0 20rpx 30rpx 20rpx;
+    padding: 20rpx 20rpx 30rpx 20rpx;
 
     @include pad-devices {
-      padding: 0 toPadPx(20) toPadPx(30) toPadPx(20);
+      padding: toPadPx(20) toPadPx(20) toPadPx(30) toPadPx(20);
     }
   }
 

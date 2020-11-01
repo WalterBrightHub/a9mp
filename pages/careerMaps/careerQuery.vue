@@ -2,40 +2,55 @@
   <view>
     <div class="head">精确查询</div>
     <div class="picker-block">
-      <picker class="picker theme-picker" :range="mapThemeRange" @change="onChangeMapTheme">{{mapTheme}}<span class="tip-triangle">▼</span></picker>
-      <picker class="picker name-picker" :range="mapNameRange" @change="onChangeMapName" :value="mapNameValue">{{mapName}}<span
+      <picker class="picker theme-picker" :range="mapThemeRange" @change="onChangeMapTheme" :value="mapThemeValue">{{mapTheme}}<span
+          class="tip-triangle">▼</span></picker>
+      <picker class="picker name-picker" :range="mapNameAndLengthRange" @change="onChangeMapName" :value="mapNameValue">{{mapName}}<span
           class="tip-triangle">▼</span></picker>
     </div>
-    <div class="career-season-list">
-      <div class="career-season" v-for="season in selectedCareerSeasons">
+    <div class="career-season-list" v-if="selectedCareerSeasons.length>0">
+      <div class="career-season" v-for="season in selectedCareerSeasons" :key="_id">
         <div class="season-item chapter">{{season.chapter}}</div>
         <div class="season-item season">{{season.season}}</div>
         <div class="season-item race">{{season.race}}</div>
+        <div class="season-item race-type" :class="'race-'+raceTypes[season.raceType]">{{season.raceType}}</div>
       </div>
     </div>
+    <div v-else class="empty-season-list">😮 生涯竟然没有这张图</div>
   </view>
 </template>
 
 <script>
   import _ from 'lodash'
+
+  const raceTypes = {
+    '常规赛': 'race',
+    '追逐赛': 'hunted',
+    '计时赛': 'time-attack'
+  }
+
   export default {
-    props: ['trackDetails', 'careerSeasons'],
+    props: ['trackDetails', 'careerSeasons', 'mapThemeRange'],
     data() {
       return {
-        mapTheme: this.trackDetails[0].mapTheme,
-        // mapName:this.trackDetails[0].mapNameCN,
+        // 放在data内的是picker value，即0，1，2...，显示在界面上的String放在Computed中
+        mapThemeValue: 0,
         mapNameValue: 0,
+        raceTypes,
       };
     },
     computed: {
       selectedCareerSeasons() {
-        return this.careerSeasons.filter(item => item.mapNameCN === this.mapName)
+        return this.careerSeasons.filter(item => item.mapName === this.mapName)
       },
-      mapThemeRange() {
-        return _(this.trackDetails).map(item => item.mapTheme).uniq().value()
+      mapTheme() {
+        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue] : ''
       },
       mapNameRange() {
-        return this.trackDetails.filter(item => item.mapTheme === this.mapTheme).map(item => item.mapNameCN)
+        return this.trackDetails.filter(item => item.mapTheme === this.mapTheme).map(item => item.mapName)
+      },
+      mapNameAndLengthRange() {
+        return this.trackDetails.filter(item => item.mapTheme === this.mapTheme).map(item => item.mapName +
+          ` ${item.length}'`)
       },
       mapName() {
         return this.mapNameRange[this.mapNameValue]
@@ -44,21 +59,17 @@
     methods: {
 
       onChangeMapTheme(e) {
-        const newMapTheme = this.mapThemeRange[e.target.value]
-        if (newMapTheme !== this.mapTheme) {
-
-          this.mapTheme = newMapTheme
-          // this.mapName=this.mapNameRange[0]
+        const newMapThemeValue = e.target.value
+        if (newMapThemeValue !== this.mapThemeValue) {
+          this.mapThemeValue = newMapThemeValue
           this.mapNameValue = 0
         }
       },
       onChangeMapName(e) {
 
-        const newMapName = this.mapNameRange[e.target.value]
-        if (newMapName !== this.mapName) {
-
-          // this.mapName = newMapName
-          this.mapNameValue = e.target.value
+        const newMapNameValue = e.target.value
+        if (newMapNameValue !== this.mapNameValue) {
+          this.mapNameValue = newMapNameValue
         }
       }
     }
@@ -73,7 +84,7 @@
     border-radius: 10rpx 10rpx 0 0;
     padding: 20rpx;
     background-color: $card-bg-color;
-    margin: 20rpx 20rpx 5rpx 20rpx;
+    margin: 0 20rpx 5rpx 20rpx;
   }
 
   .picker-block {
@@ -101,11 +112,19 @@
     padding-left: 16rpx;
   }
 
-  .career-season-list {
+  .career-season-list,
+  .empty-season-list {
     background-color: $card-bg-color;
     border-radius: 0 0 10rpx 10rpx;
     margin: 5rpx 20rpx 0 20rpx;
     padding: 20rpx;
+  }
+
+  .empty-season-list {
+    display: flex;
+    font-size: 28rpx;
+    justify-content: center;
+    color: $text-help-color;
   }
 
   .career-season {
@@ -125,17 +144,42 @@
     padding: 5rpx;
   }
 
-  .season-item+.season-item {
-    margin-left: 10rpx;
-  }
+
 
   .chapter {
     font-weight: bold;
     color: $text-title-color;
+    flex: none;
+  }
+
+  .season {
+    margin-left: 10rpx;
+    overflow: hidden;
+    /*隐藏溢出的文本  */
+    white-space: nowrap;
+    /*不换行  */
+    text-overflow: ellipsis;
   }
 
   .race {
     color: #41b90a;
     font-weight: bold;
+    margin-left: auto;
+    flex: none;
+    width: 48rpx;
+    text-align: center;
+  }
+
+  .race-type {
+
+    flex: none;
+  }
+
+  .race-time-attack {
+    color: #5eb57a;
+  }
+
+  .race-hunted {
+    color: #5b81e2;
   }
 </style>

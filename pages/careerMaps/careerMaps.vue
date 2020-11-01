@@ -1,15 +1,19 @@
 <template>
   <view class="container">
-    <career-query :trackDetails="trackDetails" :careerSeasons="careerSeasons"></career-query>
-    <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' @onChangeMode="onChangeMode" />
+    <view class="mode-changer">
+      <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
+    </view>
+    <request-fail v-if="careerQueryStatus==='reject'" @onRetry='onRetryCareerQuery' />
+    <career-query v-else-if="careerQueryStatus==='resolve'" :trackDetails="selectedTracks" :careerSeasons="selectedCareerSeasons"
+      :mapThemeRange="selectedMapThemeRange"></career-query>
+
+    <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
+    <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' />
 
   </view>
 </template>
 
 <script>
-  import careerSeasons from './careerSeasons.json'
-  import trackDetails from './trackDetails.json'
   import {
     mapState,
     mapMutations
@@ -25,6 +29,16 @@
       name: 'getCareerMapsAll'
     })
   }
+  //精确查询所需的所有数据
+  const requestCareerQuery = async function() {
+    return myCloud.callFunction({
+      name: 'getMultiFullTable',
+      data: {
+        tableNames: ['careerSeasons', 'tracks', 'mapThemes']
+      }
+    })
+  }
+
   export default {
     components: {
       'request-fail': requestFail,
@@ -35,17 +49,63 @@
       return {
         careerMaps: [],
         careerMapsStatus: 'ready',
-        careerSeasons,
-        trackDetails,
+        careerSeasons: [],
+        tracks: [],
+        mapThemes: [],
+        careerQueryStatus: 'ready'
         // mode: 'gl'
       }
     },
     computed: {
 
       ...mapState(['server']),
+      selectedMapThemeRange() {
+        return this.server === 'gl' ?
+          this.mapThemes.map(item => item.mapThemeCN) :
+          this.mapThemes.map(item => item.mapThemeAL)
+      },
+      selectedTracks() {
+        return this.server === 'gl' ?
+          this.tracks.map(item => ({ ...item,
+            mapName: item.mapNameCN,
+            mapTheme: item.mapThemeCN
+          })) :
+          this.tracks.map(item => ({ ...item,
+            mapName: item.mapNameAL,
+            mapTheme: item.mapThemeAL
+          }))
+      },
+      selectedCareerSeasons() {
+        return this.server === 'gl' ?
+          this.careerSeasons.map(item => ({ ...item,
+            mapName: item.mapNameCN,
+            season: item.seasonEN
+          })) :
+          this.careerSeasons.map(item => ({ ...item,
+            mapName: item.mapNameAL,
+            season: item.seasonAL
+          }))
+      }
     },
     onLoad() {
       this.careerMapsStatus = 'pending'
+
+
+
+      requestCareerQuery()
+        .then(res => {
+          const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
+          this.careerSeasons = careerSeasonsTable.data
+          this.tracks = tracksTable.data
+          this.mapThemes = mapThemesTable.data
+
+          this.careerQueryStatus = 'resolve'
+        }).catch(e => {
+
+          console.error(e)
+          this.careerQueryStatus = 'reject'
+        })
+
       uni.showLoading({
         title: '加载中',
       })
@@ -89,6 +149,21 @@
     },
     onPullDownRefresh() {
 
+      requestCareerQuery()
+        .then(res => {
+          // return Promise.reject()
+          const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
+          this.careerSeasons = careerSeasonsTable.data
+          this.tracks = tracksTable.data
+          this.mapThemes = mapThemesTable.data
+
+          this.careerQueryStatus = 'resolve'
+        }).catch(e => {
+
+          console.error(e)
+          this.careerQueryStatus = 'reject'
+        })
+
 
       requestCareerMaps()
         .then(res => {
@@ -115,8 +190,33 @@
         })
     },
     methods: {
+      onRetryCareerQuery() {
+        uni.showLoading({
+          title: '重试中',
+        })
+        requestCareerQuery()
+          .then(res => {
+            const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
+            this.careerSeasons = careerSeasonsTable.data
+            this.tracks = tracksTable.data
+            this.mapThemes = mapThemesTable.data
 
-      onRetry() {
+            this.careerQueryStatus = 'resolve'
+            uni.showToast({
+              title: '成功'
+            })
+          }).catch(e => {
+            uni.showToast({
+              title: '失败',
+              icon: 'none'
+            })
+
+            console.error(e)
+            this.careerQueryStatus = 'reject'
+          })
+      },
+
+      onRetryCareerMaps() {
         uni.showLoading({
           title: '重试中',
         })
@@ -152,6 +252,47 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  .mode-changer {
+    display: flex;
+    background-color: $page-bg-color;
 
+    padding: 20rpx;
+    box-sizing: border-box;
+
+    @include pad-devices {
+      padding: toPadPx(20);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $page-bg-color-dark;
+    }
+  }
+
+  .mode-button {
+    color: #fff;
+    padding: 0 20rpx;
+    font-size: 36rpx;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    color: $theme-color;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $theme-color-dark;
+      color: $text-title-color-dark;
+    }
+  }
 </style>
