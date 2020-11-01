@@ -75,9 +75,9 @@
       margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
   
     }
-  
-    color: #fff;
-    background-color: $theme-color;
+    color: $theme-color;  
+
+    background-color: #fff;
   
     @media (prefers-color-scheme: dark) {
   
@@ -95,6 +95,8 @@
     //好康的渐变
     //https://www.ui.cn/detail/198009.html 双色渐变用于中小面积，轻量渐变用于大面积
     // background: linear-gradient(to right, #f7ce26, #ff0054);
+    
+     // background: linear-gradient(to right, #f7ce26, #ff0054);
     border-radius: 10rpx;
   }
 
@@ -102,7 +104,12 @@
     padding: 0 20rpx;
     line-height: 72rpx;
     border-radius: 10rpx 0 0 10rpx;
-    background-color: #f7ce26;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    // background-color: #f7ce26;
+    
+    background: linear-gradient(to right, #ffe681,#f7ce26 );
     color: #000;
     font-size: 36rpx;
     font-weight: bold;
@@ -112,13 +119,12 @@
     padding: 0 20rpx;
     line-height: 72rpx;
     display: flex;
-    flex: 1;
     justify-content: flex-end;
     align-items: center;
     border-radius: 0 10rpx 10rpx 0;
     color: #fff;
-    //background-color: $theme-color;
-     background: linear-gradient(to right, #f7ce26, #ff0054);
+    background-color: $theme-color;
+    // background: linear-gradient(to right, #ff9a77, #ff0054);
   }
 
   .mission-list-block {

@@ -125,8 +125,10 @@
 
     }
 
-    color: #fff;
-    background-color: $theme-color;
+    // color: #fff;
+    // background-color: $theme-color;
+    color: $theme-color;
+    background-color: #fff;
 
     @media (prefers-color-scheme: dark) {
 

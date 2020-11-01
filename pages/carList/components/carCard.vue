@@ -209,9 +209,11 @@
     font-size: 30rpx;
     font-weight: bold;
     padding: 2rpx 6rpx;
+    margin-left: 10rpx;
 
     @include pad-devices {
       padding: toPadPx(2) toPadPx(6);
+    margin-left: toPadPx(10);
       font-size: toPadPx(30);
     }
 
@@ -223,14 +225,12 @@
   .rank {
     font-size: 30rpx;
     border-radius: 6rpx;
-    // border: 1px solid #ffc107;
     color: #ffc107;
     font-weight: bold;
 
     @include pad-devices {
       font-size: toPadPx(30);
       border-radius: toPadPx(6);
-      // border: toPadPx(3) solid #ffc107;
     }
   }
 
@@ -251,7 +251,9 @@
     font-size: 28rpx;
     padding: 8rpx 14rpx;
 
-    background-color: #23bbfa;
+    // background-color: #23bbfa;
+    
+    background: linear-gradient(to right, #54cdff,#23bbfa );
 
     @include pad-devices {
       border-radius: toPadPx(6);
@@ -295,6 +297,7 @@
   .perf-bar {
     height: 12rpx;
     background-color: #05d1dc;
+    
     border-radius: 6rpx;
     // margin-bottom: 18rpx;
 

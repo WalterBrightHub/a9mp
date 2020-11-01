@@ -151,12 +151,12 @@
 
   .filter-block {
 
-    margin-left: 36rpx;
+    margin-left: 20rpx;
     flex: 1;
 
     @include pad-devices {
 
-      margin-left: toPadPx(36);
+      margin-left: toPadPx(20);
     }
   }
 </style>
