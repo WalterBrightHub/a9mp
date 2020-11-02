@@ -8,7 +8,7 @@
           class="tip-triangle">▼</span></picker>
     </div>
     <div class="career-season-list" v-if="selectedCareerSeasons.length>0">
-      <div class="career-season" v-for="season in selectedCareerSeasons" :key="_id">
+      <div class="career-season" v-for="season in selectedCareerSeasons" :key="season._id">
         <div class="season-item chapter">{{season.chapter}}</div>
         <div class="season-item season">{{season.season}}</div>
         <div class="season-item race">{{season.race}}</div>
