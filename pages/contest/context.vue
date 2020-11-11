@@ -9,7 +9,7 @@
             <view class="time-tip tip-future">{{getTimeTip(contest.startTime,contest.endTime)}}后开启</view>
           </view>
 
-          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :mapName="contest.mapName" :rewords="contest.rewords" />
+          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName" :rewords="contest.rewords" />
 
 
         </view>
@@ -23,7 +23,7 @@
             <view class="time-tip tip-now">{{getTimeTip(contest.startTime,contest.endTime)}}后结束</view>
           </view>
 
-          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :mapName="contest.mapName" :rewords="contest.rewords" />
+          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName" :rewords="contest.rewords" />
 
 
 
@@ -38,7 +38,7 @@
             <view class="time-tip tip-finish">已结束</view>
           </view>
 
-          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :mapName="contest.mapName" :rewords="contest.rewords" />
+          <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName" :rewords="contest.rewords" />
 
 
         </view>

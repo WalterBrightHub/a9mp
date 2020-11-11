@@ -25,9 +25,9 @@
 
 <script>
   const oneDay = 1000 * 60 * 60 * 24
-  const formatDate = date => `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
+  const formatDate = (date,now) => (date.getFullYear()===new Date(now).getFullYear()?'':`${date.getFullYear()}.`)+`${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'rewords', 'mapName'],
+    props: ['startTime', 'endTime','now', 'rewords', 'mapName'],
     data() {
       return {
 
@@ -36,8 +36,8 @@
     methods: {
 
       selectDays(startTime, endTime) {
-        const startDay = formatDate(new Date(startTime))
-        const endDay = formatDate(new Date(endTime))
+        const startDay = formatDate(new Date(startTime),this.now)
+        const endDay = formatDate(new Date(endTime),this.now)
         if (startDay === endDay) {
           return startDay
         } else {
