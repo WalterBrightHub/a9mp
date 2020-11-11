@@ -9,14 +9,16 @@
 <script>
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
+  
+  const {
+    myCloud
+  } = getApp().globalData
+  const db = myCloud.database();
+    const dbCmd = db.command;
+    const dbCollectionName = 'events';
+  
+  
   let page = 0
-  // const requestContestPresent = async function() {
-  //   return uni.request({
-  //     url: 'https://a9cn.walterbright.cc/api/contest?time=present',
-  //     method: 'GET',
-
-  //   })
-  // }
   const requestContestPresent = async function() {
     return wx.cloud.callFunction({
       name: 'getContest'
