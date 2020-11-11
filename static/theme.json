@@ -15,9 +15,7 @@
         "iconPathCareerMaps": "static/tabbar-icons/flag.png",
         "selectedIconPathCareerMaps": "static/tabbar-icons/flag-selected.png",
         "iconPathContest": "static/tabbar-icons/fire.png",
-        "selectedIconPathContest": "static/tabbar-icons/fire-selected.png",
-        "iconPathSeasonPass":"static/tabbar-icons/pass.png",
-        "selectedIconPathSeasonPass":"static/tabbar-icons/pass-selected.png"
+        "selectedIconPathContest": "static/tabbar-icons/fire-selected.png"
     },
     "dark": {
         "navBgColor": "#121212",
@@ -35,8 +33,6 @@
         "iconPathCareerMaps": "static/tabbar-icons/flag-dark.png",
         "selectedIconPathCareerMaps": "static/tabbar-icons/flag-selected-dark.png",
         "iconPathContest": "static/tabbar-icons/fire-dark.png",
-        "selectedIconPathContest": "static/tabbar-icons/fire-selected-dark.png",
-        "iconPathSeasonPass":"static/tabbar-icons/pass-dark.png",
-        "selectedIconPathSeasonPass":"static/tabbar-icons/pass-selected-dark.png"
+        "selectedIconPathContest": "static/tabbar-icons/fire-selected-dark.png"
     }
 }

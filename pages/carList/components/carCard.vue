@@ -38,10 +38,10 @@
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
-        <!-- <view class="perf-item">
+        <view class="perf-item">
           <view class="perf-name">单喷时间</view>
           <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
-        </view> -->
+        </view>
       </view>
       <view class="update">
         <view class="cost-list">
