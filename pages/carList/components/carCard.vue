@@ -10,7 +10,7 @@
       <view class="car-class">{{carData.carClass}}</view>
     </view>
     <view class="bps">
-      <view class="bp" v-for="(item,index) in carData.starArray" :key="index" :style="{flex:item}">{{item}}</view>
+      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in carData.starArray" :key="index" :style="{flex:item}">{{item}}</view>
     </view>
     <view class="perf-and-update">
       <view class="perf">
@@ -40,7 +40,7 @@
 
         <view class="perf-item">
           <view class="perf-name">单喷时间</view>
-          <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
+          <view class="perf-value">{{carData.nitroDuration>0?Number(carData.nitroDuration).toFixed(2):'待测'}}</view>
         </view>
       </view>
       <view class="update">
@@ -64,15 +64,15 @@
         <view class="part-list">
           <view class="part-item" v-if="carData.uncommonPart">
             <image class="part-icon" src="../../../static/carcard-icons/part-uncommon.png"></image>
-            <view class="part-num">{{carData.uncommonPart}}</view>
+            <view class="part-num uncommon-part-num">{{carData.uncommonPart}}</view>
           </view>
           <view class="part-item" v-if="carData.rarePart">
             <image class="part-icon" src="../../../static/carcard-icons/part-rare.png"></image>
-            <view class="part-num">{{carData.rarePart}}</view>
+            <view class="part-num rare-part-num">{{carData.rarePart}}</view>
           </view>
           <view class="part-item" v-if="carData.epicPart">
             <image class="part-icon" src="../../../static/carcard-icons/part-epic.png"></image>
-            <view class="part-num">{{carData.epicPart}}</view>
+            <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
         </view>
       </view>
@@ -125,7 +125,7 @@
     padding-bottom: 25rpx;
     background-color: #fff;
     
-    // background: linear-gradient(to right, #cef1ff, #ecf9ff);
+    // background: linear-gradient(to right, #fffdec, #fffbcf);
     border-radius: 10rpx;
     color: $text-p-color;
 
@@ -261,6 +261,14 @@
       padding: toPadPx(8) toPadPx(14);
     }
   }
+  
+  .bp-rare{
+    background: linear-gradient(to right, #d667f1,#cc52ea );
+  }
+  
+  .bp-epic{
+    background: linear-gradient(to right, #f9d716,#efcd0a );
+  }
 
   .bp+.bp {
     margin-left: 10rpx;
@@ -297,6 +305,7 @@
   .perf-bar {
     height: 12rpx;
     background-color: #05d1dc;
+    background: linear-gradient(to right, #0cd6e1, #05d1dc);
     
     border-radius: 6rpx;
     // margin-bottom: 18rpx;
@@ -392,6 +401,7 @@
       line-height: toPadPx(40);
     }
   }
+
 
 
   .part-icon {

@@ -98,7 +98,7 @@
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
-    margin-left: 30rpx;
+    margin-left: 20rpx;
 
     @include pad-devices {
       font-size: toPadPx(36);
@@ -106,7 +106,7 @@
       height: toPadPx(72);
       line-height: toPadPx(72);
       border-radius: toPadPx(10);
-      margin-left: toPadPx(30);
+      margin-left: toPadPx(20);
     }
   }
 </style>
