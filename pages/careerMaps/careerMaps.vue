@@ -262,11 +262,9 @@
 
     @include pad-devices {
       padding: toPadPx(20);
+    max-width: 768px;
+      margin: 0 auto;
     }
-
-    // @media (prefers-color-scheme: dark) {
-    //   background-color: $page-bg-color-dark;
-    // }
   }
 
   .mode-button {

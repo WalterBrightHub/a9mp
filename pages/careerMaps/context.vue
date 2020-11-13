@@ -57,7 +57,7 @@
 
 <style lang="scss">
   .context {
-    max-width: 600px;
+    max-width: 768px;
     margin: 0 auto;
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <div class="context">
     <div class="head">精确查询</div>
     <div class="picker-block">
       <picker class="picker theme-picker" :range="mapThemeRange" @change="onChangeMapTheme" :value="mapThemeValue">{{mapTheme}}<span
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div v-else class="empty-season-list">😮 生涯竟然没有这张图</div>
-  </view>
+  </div>
 </template>
 
 <script>
@@ -76,7 +76,16 @@
   }
 </script>
 
+
+
 <style lang="scss">
+  .context {
+    @include pad-devices {
+    max-width: 768px;
+      margin: 0 auto;
+    }
+  }
+
   .head {
     font-size: 36rpx;
     color: #41b90a;
@@ -86,6 +95,14 @@
     background-color: $card-bg-color;
     margin: 0 20rpx 5rpx 20rpx;
 
+    @include pad-devices {
+      font-size: toPadPx(36);
+      border-radius: toPadPx(10) toPadPx(10) 0 0;
+      padding: toPadPx(20);
+      background-color: $card-bg-color;
+      margin: 0 toPadPx(20) toPadPx(5) toPadPx(20);
+    }
+
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
@@ -94,6 +111,10 @@
   .picker-block {
     display: flex;
     margin: 0 20rpx;
+
+    @include pad-devices {
+      margin: 0 toPadPx(20);
+    }
   }
 
   .picker {
@@ -105,6 +126,11 @@
     font-weight: bold;
     flex: 1;
     text-align: center;
+
+    @include pad-devices {
+      padding: toPadPx(20);
+      font-size: toPadPx(32);
+    }
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
@@ -120,6 +146,10 @@
     color: #d4d4d4;
     padding-left: 16rpx;
 
+    @include pad-devices {
+      padding-left: toPadPx(16);
+    }
+
     @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
@@ -132,6 +162,12 @@
     margin: 5rpx 20rpx 0 20rpx;
     padding: 20rpx;
 
+    @include pad-devices {
+      border-radius: 0 0 toPadPx(10) toPadPx(10);
+      margin: toPadPx(5) toPadPx(20) 0 toPadPx(20);
+      padding: toPadPx(20);
+    }
+
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
@@ -143,6 +179,10 @@
     justify-content: center;
     color: $text-help-color;
 
+    @include pad-devices {
+      font-size: toPadPx(28);
+    }
+
     @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
@@ -152,16 +192,26 @@
     display: flex;
     font-size: 28rpx;
 
+    @include pad-devices {
+      font-size: toPadPx(28);
+    }
 
   }
 
   .career-season+.career-season {
     margin-top: 10rpx;
+    @include pad-devices{
+      margin-top: toPadPx(10);
+    }
   }
 
   .season-item {
     border-radius: 5rpx;
     padding: 5rpx;
+    @include pad-devices{
+      border-radius: toPadPx(5);
+      padding: toPadPx(5);
+    }
   }
 
 
