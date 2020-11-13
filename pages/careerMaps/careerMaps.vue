@@ -255,7 +255,7 @@
 <style lang="scss">
   .mode-changer {
     display: flex;
-    background-color: $page-bg-color;
+    // background-color: $page-bg-color;
 
     padding: 20rpx;
     box-sizing: border-box;
@@ -264,13 +264,12 @@
       padding: toPadPx(20);
     }
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $page-bg-color-dark;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $page-bg-color-dark;
+    // }
   }
 
   .mode-button {
-    color: #fff;
     padding: 0 20rpx;
     font-size: 36rpx;
     flex: 1;
@@ -279,7 +278,7 @@
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
-    background-color: #fff;
+    background-color: $card-bg-color;
     color: $theme-color;
 
     @include pad-devices {
@@ -291,8 +290,8 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background-color: $theme-color-dark;
-      color: $text-title-color-dark;
+      background-color: $card-bg-color-dark;
+      color: $theme-color-dark;
     }
   }
 </style>

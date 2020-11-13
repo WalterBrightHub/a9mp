@@ -128,12 +128,12 @@
     // color: #fff;
     // background-color: $theme-color;
     color: $theme-color;
-    background-color: #fff;
+    background-color: $card-bg-color;
 
     @media (prefers-color-scheme: dark) {
 
-      color: $text-title-color-dark;
-      background-color: $theme-color-dark;
+      color: $theme-color-dark;
+      background-color: $card-bg-color-dark;
     }
 
   }

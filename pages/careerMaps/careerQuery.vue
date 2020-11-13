@@ -85,6 +85,9 @@
     padding: 20rpx;
     background-color: $card-bg-color;
     margin: 0 20rpx 5rpx 20rpx;
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
   }
 
   .picker-block {
@@ -101,6 +104,11 @@
     font-weight: bold;
     flex: 1;
     text-align: center;
+    
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+      color: $text-title-color-dark;
+    }
   }
 
   .picker+.picker {
@@ -110,6 +118,9 @@
   .tip-triangle {
     color: #d4d4d4;
     padding-left: 16rpx;
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
+    }
   }
 
   .career-season-list,
@@ -118,6 +129,9 @@
     border-radius: 0 0 10rpx 10rpx;
     margin: 5rpx 20rpx 0 20rpx;
     padding: 20rpx;
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
   }
 
   .empty-season-list {
@@ -125,6 +139,9 @@
     font-size: 28rpx;
     justify-content: center;
     color: $text-help-color;
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
+    }
   }
 
   .career-season {
@@ -139,7 +156,6 @@
   }
 
   .season-item {
-    // background-color: #b3ff92;
     border-radius: 5rpx;
     padding: 5rpx;
   }
@@ -150,6 +166,9 @@
     font-weight: bold;
     color: $text-title-color;
     flex: none;
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+    }
   }
 
   .season {
@@ -168,6 +187,9 @@
     flex: none;
     width: 48rpx;
     text-align: center;
+    // @media (prefers-color-scheme: dark) {
+    //   color: $theme-color-dark;
+    // }
   }
 
   .race-type {
