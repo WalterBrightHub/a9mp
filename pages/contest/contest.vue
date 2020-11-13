@@ -1,5 +1,8 @@
 <template>
   <view class="container">
+    <view class="mode-changer">
+      <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
+    </view>
 
     <request-fail v-if="contestStatus==='reject'" @onRetry='onRetry' />
     <context v-else-if="contestStatus==='resolve'" :contestPresent='contestPresent' :contestPast='contestPast' :now="now" />
@@ -10,13 +13,25 @@
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   
+    import {
+      mapState,
+      mapMutations
+    } from 'vuex'
+    
   const {
     myCloud
   } = getApp().globalData
   const db = myCloud.database();
     const dbCmd = db.command;
-    const dbCollectionName = 'events';
+    const dbCollectionName = 'contest';
   
+  const testClientDB=()=>{
+    db.collection('contest').count().then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
   
   let page = 0
   const requestContestPresent = async function() {
@@ -52,6 +67,10 @@
         now: new Date().getTime()
       }
     },
+    computed:{
+      
+      ...mapState(['server']),
+    },
     onLoad() {
       this.contestStatus = 'pending'
       uni.showLoading({
@@ -73,6 +92,8 @@
       this.setContestPast()
     },
     onPullDownRefresh() {
+      
+      testClientDB()
 
       this.now = new Date().getTime()
       requestContestPresent()
@@ -142,6 +163,13 @@
       }
     },
     methods: {
+      ...mapMutations(['toggleServer']),
+      onChangeMode() {
+        uni.showToast({
+          title: '已切换'
+        })
+        this.toggleServer()
+      },
       setContestPast() {
         requestContestPast({
             page,
@@ -192,6 +220,44 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  .mode-changer {
+    display: flex;
+    // background-color: $page-bg-color;
 
+    padding: 20rpx;
+    box-sizing: border-box;
+
+    @include pad-devices {
+      padding: toPadPx(20);
+    max-width: 768px;
+      margin: 0 auto;
+    }
+  }
+
+  .mode-button {
+    padding: 0 20rpx;
+    font-size: 36rpx;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 10rpx;
+    background-color: $card-bg-color;
+    color: $theme-color;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+      color: $theme-color-dark;
+    }
+  }
 </style>
