@@ -66,13 +66,14 @@
     },
     computed: {
       contestFuture() {
-        return this.contestPresent.filter(contest => contest.startTime > this.now).sort((a, b) => a.startTime === b.startTime ?
-          (a.contestName < b.contestName ? 1 : -1) : a.startTime < b.startTime)
+        return this.contestPresent.filter(contest => contest.startTime > this.now)
+        //.sort((a, b) => a.startTime === b.startTime ?
+          //(a.contestName < b.contestName ? 1 : -1) : b.startTime - a.startTime)
       },
       contestNow() {
 
         return this.contestPresent.filter(contest => contest.startTime <= this.now)
-          .sort((a, b) => a.startTime === b.startTime ? (a.contestName < b.contestName ? 1 : -1) : a.startTime < b.startTime)
+          //.sort((a, b) => a.startTime === b.startTime ? (a.contestName < b.contestName ? 1 : -1) : b.startTime - a.startTime)
       }
     },
     methods: {
