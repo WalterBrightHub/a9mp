@@ -260,6 +260,10 @@
       font-size: toPadPx(28);
       padding: toPadPx(8) toPadPx(14);
     }
+    
+    @media (prefers-color-scheme: dark){
+      color: $card-bg-color-dark;
+    }
   }
   
   .bp-rare{
@@ -392,6 +396,10 @@
     text-align: center;
     z-index: 1;
     color: #fff;
+    
+    @media (prefers-color-scheme: dark){
+      color: $card-bg-color-dark;
+    }
     // text-shadow: 0 0 20rpx rgba(0,0,0,0.6);
 
     @include pad-devices {
