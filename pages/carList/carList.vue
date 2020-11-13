@@ -29,8 +29,8 @@
   const requestCarList = async function() {
     return myCloud.callFunction({
       name: 'getMultiFullTable',
-      data:{
-        tableNames:['carList','carListAL']
+      data: {
+        tableNames: ['carList', 'carListAL']
       }
     })
   }

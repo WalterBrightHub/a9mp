@@ -8,7 +8,7 @@
 
       </view>
     </view>
-      <view class="placeholder"></view>
+    <view class="placeholder"></view>
 
     <view class="car-card-list">
       <view v-for="item in selectedCars" :key="item._id" class="car-card">
@@ -61,7 +61,7 @@
           duration: 0
         })
       },
-      onToggleServer(){
+      onToggleServer() {
         this.$emit('onToggleServer')
       },
     }
@@ -77,12 +77,12 @@
     }
   }
 
-.filter-block{
-  // display: flex;
+  .filter-block {
+    // display: flex;
     position: fixed;
     z-index: 114514;
     width: 100%;
-}
+  }
 
   .filter-wrapper {
     display: flex;
@@ -102,6 +102,7 @@
     flex: 1;
     padding: 20rpx;
     box-sizing: border-box;
+
     @include pad-devices {
       padding: toPadPx(20);
     }
@@ -120,7 +121,7 @@
       padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius:  toPadPx(10) ;
+      border-radius: toPadPx(10);
       margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
 
     }
