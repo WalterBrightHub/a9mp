@@ -271,7 +271,7 @@
   }
   
   .bp-epic{
-    background: linear-gradient(to right, #f9d716,#efcd0a );
+    background: linear-gradient(to right, #fed016,#ffc107 );
   }
 
   .bp+.bp {
