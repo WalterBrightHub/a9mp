@@ -82,15 +82,19 @@
   font-size: 12px;
 }
 
-.reword-avatar{
-  content: '头像';
-  color:#edb900;
-}
-.reword-border{
-  content:'头像框';
-  color:#edb900;
-}
-.reword-nick{
-  content:'称号';
-  color:#edb900;
-}
+
+
+  .reword-icon:after{
+    content:'头像';
+    color:#08a00b;
+  }
+  
+  .reword-icon-frame:after{
+    content:'头像框';
+    color:#08a00b;
+  }
+  
+  .reword-honorary-title:after{
+    content:'荣誉称号';
+    color:#08a00b;
+  }

@@ -31,7 +31,7 @@
       timeStatus(){
         const {startTime,endTime}=this.contest
         const {now}=this
-        return startTime>now?'feature':endTime>=now?'now':'past'
+        return startTime>now?'future':endTime>=now?'now':'past'
       },
       timeTip(){
         
