@@ -79,11 +79,13 @@
         return this.server === 'gl' ?
           this.careerSeasons.map(item => ({ ...item,
             mapName: item.mapNameCN,
-            season: item.seasonEN
+            season: item.seasonEN,
+            chapter:item.chapterCN,
           })) :
           this.careerSeasons.map(item => ({ ...item,
             mapName: item.mapNameAL,
-            season: item.seasonAL
+            season: item.seasonAL,
+            chapter:item.chapterAL,
           }))
       }
     },
