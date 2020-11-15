@@ -32,7 +32,7 @@
     props: ['trackDetails', 'careerSeasons', 'mapThemeRange'],
     data() {
       return {
-        // 放在data内的是picker value，即0，1，2...，显示在界面上的String放在Computed中
+        // 放在data内的是picker value，即"0"，"1"，"2"...，显示在界面上的String放在Computed中
         mapThemeValue: 0,
         mapNameValue: 0,
         raceTypes,
@@ -81,7 +81,7 @@
 <style lang="scss">
   .context {
     @include pad-devices {
-    max-width: 768px;
+      max-width: 768px;
       margin: 0 auto;
     }
   }
@@ -200,7 +200,8 @@
 
   .career-season+.career-season {
     margin-top: 10rpx;
-    @include pad-devices{
+
+    @include pad-devices {
       margin-top: toPadPx(10);
     }
   }
@@ -208,7 +209,8 @@
   .season-item {
     border-radius: 5rpx;
     padding: 5rpx;
-    @include pad-devices{
+
+    @include pad-devices {
       border-radius: toPadPx(5);
       padding: toPadPx(5);
     }

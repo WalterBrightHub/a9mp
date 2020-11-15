@@ -31,27 +31,6 @@
   } from 'vuex'
 
 
-
-  // let page = 0
-  // const requestContestPresent = async function() {
-  //   return wx.cloud.callFunction({
-  //     name: 'getContest'
-  //   })
-  // }
-  // const requestContestPast = async function({
-  //   page,
-  //   limit
-  // }) {
-  //   return uni.request({
-  //     url: 'https://a9cn.walterbright.cc/api/contest',
-  //     method: 'GET',
-  //     data: {
-  //       time: 'past',
-  //       page,
-  //       limit
-  //     } 
-  //   })
-  // }
   export default {
     components: {
 
@@ -60,13 +39,10 @@
     },
     data() {
       return {
-        // contestStatus: 'ready',
-        // contestPresent: [],
-        // contestPast: [],
         now: new Date().getTime(),
         action: '',
         typeFilterValue: "0", //注意picker的坑
-        typeFilterRange: ['全部', '寻车', '特殊赛', '大奖赛','通行证', '巅峰', '多人', '节日'],
+        typeFilterRange: ['全部', '寻车', '特殊赛', '大奖赛', '通行证', '巅峰', '多人', '节日'],
       }
     },
     computed: {
@@ -78,9 +54,6 @@
         }
       },
       where() {
-        // console.log(this.now)
-        console.log(this.typeFilterValue)
-        console.log(this.typeFilterValue === 0)
         if (this.typeFilterValue === "0") {
 
           return {
@@ -100,20 +73,6 @@
       uni.showLoading({
         title: '加载中'
       })
-      // requestContestPresent()
-      //   .then((res) => {
-      //     const {
-      //       contest
-      //     } = res.result
-      //     this.contestStatus = 'resolve'
-      //     this.contestPresent = contest
-      //   }).catch(e => {
-      //     console.log(e)
-      //     this.contestStatus = 'reject'
-      //   }).finally(() => {
-      //     uni.hideLoading()
-      //   })
-      // this.setContestPast()
     },
     onPullDownRefresh() {
 
@@ -133,52 +92,10 @@
           duration: 500,
         })
       })
-      // requestContestPresent()
-      //   .then((res) => {
-      //     const {
-      //       contest
-      //     } = res.result
-      //     this.contestPresent = contest
-      //     this.contestStatus = 'resolve'
-      //     uni.showToast({
-      //       title: '最新',
-      //       duration: 500,
-      //     })
-
-      //   }).catch(e => {
-      //     console.log(e)
-      //     this.contestStatus = 'reject'
-      //     uni.showToast({
-      //       title: '失败',
-      //       icon: 'none',
-      //       duration: 500
-      //     })
-      //   }).finally(() => {
-      //     uni.stopPullDownRefresh()
-      //   })
-      // page = 0
-      // this.setContestPast()
     },
     onReachBottom() {
 
       this.$refs.contestDB.loadMore()
-      // requestContestPast({
-      //   page,
-      //   limit: 20
-      // }).then(([error, res]) => {
-      //   if (error) {
-      //     console.log(error)
-      //   } else {
-      //     page++
-      //     const {
-      //       data
-      //     } = res
-      //     if (data.status === 200) {
-      //       // console.log(data.contest)
-      //       this.contestPast = this.contestPast.concat(data.contest)
-      //     }
-      //   }
-      // })
     },
     onShareAppMessage() {
 
@@ -212,52 +129,6 @@
       onChangeType(e) {
         this.typeFilterValue = e.target.value
       },
-      // setContestPast() {
-      //   requestContestPast({
-      //       page,
-      //       limit: 20
-      //     })
-      //     .then(([error, res]) => {
-      //       if (error) {
-      //         console.log(error)
-      //       } else {
-      //         page++
-      //         const {
-      //           data
-      //         } = res
-      //         if (data.status === 200) {
-      //           // console.log(data.contest)
-      //           this.contestPast = data.contest
-      //         }
-      //       }
-      //     })
-      // },
-      // onRetry() {
-      //   this.now = new Date().getTime()
-      //   uni.showLoading({
-      //     title: '重试中'
-      //   })
-      //   requestContestPresent()
-      //     .then((res) => {
-      //       const {
-      //         contest
-      //       } = res.result
-
-      //       this.contestPresent = contest
-      //       this.contestStatus = 'resolve'
-      //       uni.hideLoading()
-      //     }).catch(e => {
-      //       console.log(e)
-      //       this.contestStatus = 'reject'
-      //       uni.showToast({
-      //         title: '失败',
-      //         duration: 500,
-      //         icon: 'none'
-      //       })
-      //     })
-      //   page = 0
-      //   this.setContestPast()
-      // },
       onqueryload() {
         uni.hideLoading()
       },
