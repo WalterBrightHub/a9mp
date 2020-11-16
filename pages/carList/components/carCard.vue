@@ -10,7 +10,7 @@
       <view class="car-class">{{carData.carClass}}</view>
     </view>
     <view class="bps">
-      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in carData.starArray" :key="index" :style="{flex:item}">{{item}}</view>
+      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index" :style="{flex:item}">{{item}}</view>
     </view>
     <view class="perf-and-update">
       <view class="perf">
@@ -55,7 +55,7 @@
           </view>
           <view class="cost-item">
             <view class="cost-name">MAX</view>
-            <view class="cost-value">{{split3(carData.totalCost)}}</view>
+            <view class="cost-value">{{split3(carData.stageCost+carData.partCost)}}</view>
           </view>
 
 
@@ -87,6 +87,18 @@
       return {
 
       };
+    },
+    computed:{
+      starArray(){
+        let {star,
+            star_1,
+            star_2,
+            star_3,
+            star_4,
+            star_5,
+            star_6,}=this.carData
+        return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
+      },
     },
     methods: {
       //数值转化为宽度百分比

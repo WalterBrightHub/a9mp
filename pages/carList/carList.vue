@@ -2,7 +2,7 @@
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
     <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server"
-      @onToggleServer="onToggleServer" :carList="computedCarList" :limit="limit" :brandRange="brandRange"
+      @onToggleServer="onToggleServer" :carList="carList" :limit="limit" :brandRange="brandRange"
       :releaseVersionRange="releaseVersionRange" />
 
   </view>
@@ -56,27 +56,6 @@
       ...mapState(['server']),
       carList() {
         return this.carListBoth[this.server]
-      },
-      computedCarList() {
-        return this.carList.map(car => {
-          let {
-            star,
-            star_1,
-            star_2,
-            star_3,
-            star_4,
-            star_5,
-            star_6,
-            stageCost,
-            partCost
-          } = car
-          return {
-            ...car,
-            starArray: [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star),
-            totalCost: stageCost + partCost
-          }
-
-        })
       },
       brandRange() {
         return _(this.carList)

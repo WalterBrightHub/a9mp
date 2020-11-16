@@ -87,10 +87,10 @@
       }, () => {
         // console.log(this.$refs.contestDB.dataList);
         uni.stopPullDownRefresh()
-        uni.showToast({
-          title: '最新',
-          duration: 500,
-        })
+        // uni.showToast({
+        //   title: '最新',
+        //   duration: 500,
+        // })
       })
     },
     onReachBottom() {
