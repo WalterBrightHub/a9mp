@@ -132,7 +132,9 @@
       onqueryload() {
         uni.hideLoading()
       },
-      onqueryerror() {},
+      onqueryerror() {
+        uni.hideLoading()
+      },
     }
   }
 </script>
