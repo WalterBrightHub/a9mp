@@ -2,8 +2,7 @@
   <view class="container">
     <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
     <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server"
-      @onToggleServer="onToggleServer" :carList="carList" :limit="limit" :brandRange="brandRange"
-      :releaseVersionRange="releaseVersionRange" />
+      @onToggleServer="onToggleServer" :carList="carList" :limit="limit" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" />
 
   </view>
 </template>
@@ -21,9 +20,9 @@
   } from './util.js'
   import _ from 'lodash'
 
-  const {
-    myCloud
-  } = getApp().globalData
+  const myCloud = uniCloud
+
+  const db = myCloud.database()
 
 
   const requestCarList = async function() {
@@ -91,22 +90,37 @@
         title: '加载中',
       })
 
-      requestCarList()
+      db.collection(this.server === 'al' ? 'carListAL' : 'carList').where({
+          carClass: 'D'
+        }).get()
         .then(res => {
+          // console.log(res.result)
+          this.carListBoth[this.server]=res.result.data
+          this.carListStatus = 'resolve'
+          uni.hideLoading()
+          // console.log('预加载完成')
+          return requestCarList()
+        })
+        .then(res=>{
           // return Promise.reject()
           let [resultGL, resultAL] = res.result
           this.carListBoth = {
             gl: resultGL.data,
             al: resultAL.data
           }
-          // this.carList = res.result.data
           this.carListStatus = 'resolve'
+          // console.log('全部加载完成')
         }).catch(e => {
           console.log(e)
           this.carListStatus = 'reject'
         }).finally(() => {
           uni.hideLoading()
         })
+
+      
+        //.then(res => {
+          
+          // this.carList = res.result.data
 
 
     },

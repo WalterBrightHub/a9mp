@@ -21,9 +21,7 @@
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   import careerQuery from './careerQuery.vue'
-  const {
-    myCloud
-  } = getApp().globalData
+  const myCloud = uniCloud
   const requestCareerMaps = async function() {
     return myCloud.callFunction({
       name: 'getCareerMapsAll'
