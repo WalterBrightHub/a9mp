@@ -42,7 +42,7 @@
         now: new Date().getTime(),
         action: '',
         typeFilterValue: "0", //注意picker的坑
-        typeFilterRange: ['全部', '寻车', '特殊赛', '大奖赛', '通行证', '巅峰', '多人', '节日'],
+        typeFilterRange: ['热门', '往期','寻车', '特殊赛', '大奖赛', '通行证', '巅峰', '多人', '节日'],
       }
     },
     computed: {
@@ -56,11 +56,13 @@
       where() {
         if (this.typeFilterValue === "0") {
 
-          return {
-            server: this.server,
+          return `server=='${this.server}' && endTime>=${this.now}`
             // type:/.*/
-          }
-        } else {
+        } 
+        else if(this.typeFilterValue==="1"){
+          return `server=='${this.server}' && endTime<${this.now}`
+        }
+        else {
           return {
             server: this.server,
             type: this.typeFilterRange[this.typeFilterValue]
@@ -75,10 +77,6 @@
       })
     },
     onPullDownRefresh() {
-
-      // console.log(this.where)
-      // console.log(this.typeFilterValue)
-      // testClientDB()
 
       const that = this
       this.now = new Date().getTime()
