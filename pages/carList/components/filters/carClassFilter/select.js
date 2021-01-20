@@ -1,6 +1,6 @@
 const select = carClass => carList => {
   return carList.filter(car => car.carClass === carClass)
-    .sort((a, b) => a.rank - b.rank)
+    .sort((a, b) => a._id - b._id)
 }
 
 export const defaultSelect = select('D')
