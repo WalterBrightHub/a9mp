@@ -5,7 +5,7 @@
       <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}</picker>
     </view>
     <div class="contest-db">
-      <uni-clientdb class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
+      <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
         collection="contest" orderby="startTime desc,contestName asc" :getone="false" :action="action" :where="where"
         @load="onqueryload" @error="onqueryerror">
         <view v-if="error" class="error">{{error.message}}</view>
@@ -16,14 +16,14 @@
         </view>
         <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
         <!-- <view v-if="loading" class="loading">加载中...</view> -->
-      </uni-clientdb>
+      </unicloud-db>
     </div>
   </view>
 </template>
 
 <script>
   import contestItem from './components/contestItem.vue'
-  import uniClientDB from '../../components/uni-clientdb/uni-clientdb.vue'
+  // import uniClientDB from '../../components/uni-clientdb/uni-clientdb.vue'
 
   import {
     mapState,
@@ -34,7 +34,7 @@
   export default {
     components: {
 
-      'uni-clientdb': uniClientDB,
+      // 'uni-clientdb': uniClientDB,
       'contest-item': contestItem
     },
     data() {
