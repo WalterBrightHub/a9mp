@@ -6,6 +6,9 @@
 </template>
 
 <script>
+  import {
+    mapState,
+  } from 'vuex'
   import select from './select.js'
   export default {
     data() {
@@ -14,11 +17,19 @@
         carFilter: ['D', 'C', 'B', 'A', 'S'],
       };
     },
+    watch: {
+      server(newServer) {
+        this.$emit('onChangeSelectMethod', select(this.carClass, newServer))
+      }
+    },
+    computed: {
+      ...mapState(['server']),
+    },
     methods: {
       onChangeCarClass(newCarClass) {
         if (this.carClass !== newCarClass) {
           this.carClass = newCarClass
-          this.$emit('onChangeSelectMethod', select(newCarClass))
+          this.$emit('onChangeSelectMethod', select(newCarClass, this.server))
         }
       }
     }

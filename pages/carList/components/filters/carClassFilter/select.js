@@ -1,7 +1,7 @@
-const select = carClass => carList => {
-  return carList.filter(car => car.carClass === carClass)
-    .sort((a, b) => a._id - b._id)
-}
+const select = (carClass, server) => ({
+  where: `carClass=='${carClass}'`,
+  sort: '_id',
+  server
+})
 
-export const defaultSelect = select('D')
 export default select

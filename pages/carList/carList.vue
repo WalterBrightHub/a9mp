@@ -1,8 +1,9 @@
 <template>
   <view class="container">
-    <request-fail v-if="carListStatus==='reject'" @onRetry='onRetry' />
-    <context v-else-if="carListStatus==='resolve'" @resetLimit="resetLimit" id="context" :server="server"
-      @onToggleServer="onToggleServer" :carList="carList" :limit="limit" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" />
+    <filter-block @resetLimit="resetLimit" id="filter-block" :server="server" @onToggleServer="onToggleServer"
+      :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
+
+    <context id="context"  :carList="carList" :selectMethod="selectMethod" ref="carListDB" />
 
   </view>
 </template>
@@ -14,10 +15,12 @@
   } from 'vuex'
 
   import requestFail from '../../components/requestFail/requestFail.vue'
+  import filterBlock from './filterBlock.vue'
   import context from './context.vue'
   import {
     compareVersion
   } from './util.js'
+  import selectCarClass from './components/filters/carClassFilter/select.js'
   import _ from 'lodash'
 
   const myCloud = uniCloud
@@ -25,39 +28,41 @@
   const db = myCloud.database()
 
 
-  const requestCarList = async function() {
-    return myCloud.callFunction({
-      name: 'getMultiFullTable',
-      data: {
-        tableNames: ['carList', 'carListAL']
-      }
-    })
-  }
 
 
   export default {
     components: {
-      'request-fail': requestFail,
+      'filter-block': filterBlock,
       'context': context
     },
     data() {
       return {
-        carListStatus: 'ready',
-
-        limit: 20,
-        carListBoth: {
-          gl: [],
-          al: []
-        }
+        selectMethod: selectCarClass('D', this.server),
+        releaseVersionRangeGL: [],
+        releaseVersionRangeAL: [],
+        brandRange: ['Ferrari'],
       }
     },
     computed: {
       ...mapState(['server']),
-      carList() {
-        return this.carListBoth[this.server]
-      },
-      brandRange() {
-        return _(this.carList)
+      releaseVersionRange() {
+        return this.server === 'gl' ? this.releaseVersionRangeGL : this.releaseVersionRangeAL
+      }
+    },
+    onReachBottom() {
+      this.$refs.carListDB.loadMore()
+      this.limit += 20
+    },
+    onLoad() {
+
+      db.collection('carList').field('releaseVersion,brand').limit(475).get().then(res => {
+        let rvr = _(res.result.data).map(car => car.releaseVersion)
+          .union()
+          .value()
+          .sort(compareVersion)
+        this.releaseVersionRangeGL = rvr
+
+        let br = _(res.result.data)
           .filter(car => car.brand && car.brand !== '')
           .countBy(car => car.brand)
           .map((count, brand) => ({
@@ -67,60 +72,20 @@
           .orderBy(['count', 'brand'], ['desc', 'asc'])
           .map(obj => obj.brand)
           .value()
-      },
-      releaseVersionRange() {
-        return _(this.carList)
-          .filter(car => car.releaseVersion && car.releaseVersion !== '')
-          .map(car => car.releaseVersion)
-          .union()
-          // .map(obj => obj.brand)
-          .value()
-          .sort(compareVersion)
-      }
-    },
-    onReachBottom() {
-      // if(this.limit<this.carList.)
-      this.limit += 20
-    },
-    onLoad() {
 
-
-      this.carListStatus = 'pending'
-      uni.showLoading({
-        title: '加载中',
+        this.brandRange = br
       })
 
-      db.collection(this.server === 'al' ? 'carListAL' : 'carList').where({
-          carClass: 'D'
-        }).get()
-        .then(res => {
-          // console.log(res.result)
-          this.carListBoth[this.server]=res.result.data
-          this.carListStatus = 'resolve'
-          uni.hideLoading()
-          // console.log('预加载完成')
-          return requestCarList()
-        })
-        .then(res=>{
-          // return Promise.reject()
-          let [resultGL, resultAL] = res.result
-          this.carListBoth = {
-            gl: resultGL.data,
-            al: resultAL.data
-          }
-          this.carListStatus = 'resolve'
-          // console.log('全部加载完成')
-        }).catch(e => {
-          console.log(e)
-          this.carListStatus = 'reject'
-        }).finally(() => {
-          uni.hideLoading()
-        })
+      db.collection('carListAL').field('releaseVersion').limit(475).get().then(res => {
+        let rvr = _(res.result.data).map(car => car.releaseVersion)
+          .union()
+          .value()
+          .sort(compareVersion)
+        this.releaseVersionRangeAL = rvr
+      })
 
-      
-        //.then(res => {
-          
-          // this.carList = res.result.data
+
+
 
 
     },
@@ -130,31 +95,7 @@
       }
     },
     onPullDownRefresh() {
-      requestCarList()
-        .then(res => {
-          // console.log(res.result.data)
-          // return Promise.reject()
-          let [resultGL, resultAL] = res.result
-          this.carListBoth = {
-            gl: resultGL.data,
-            al: resultAL.data
-          }
-          this.carListStatus = 'resolve'
-          this.limit = 20
-          uni.showToast({
-            title: '最新',
-            duration: 500
-          })
-        }).catch(e => {
-          console.log(e)
-          this.carListStatus = 'reject'
-          uni.showToast({
-            title: '更新失败',
-            icon: 'none'
-          })
-        }).finally(() => {
-          uni.stopPullDownRefresh()
-        })
+      this.$refs.carListDB.refresh();
     },
     firstTapTab: false,
     onHide() {
@@ -176,46 +117,21 @@
           title: '已切换'
         })
         this.toggleServer()
-        this.resetLimit()
+        // this.resetLimit()
+        uni.pageScrollTo({
+          scrollTop: 0,
+          duration: 0
+        })
+      },
+      onChangeSelectMethod(method) {
+        this.selectMethod = method
         uni.pageScrollTo({
           scrollTop: 0,
           duration: 0
         })
       },
 
-      onRetry() {
-        uni.showLoading({
-          title: '重试中',
-        })
 
-        requestCarList()
-          .then(res => {
-            // console.log(res.result.data)
-            // return Promise.reject()
-            let [resultGL, resultAL] = res.result
-            this.carListBoth = {
-              gl: resultGL.data,
-              al: resultAL.data
-            }
-            this.carListStatus = 'resolve'
-            uni.showToast({
-              title: '成功'
-            })
-          }).catch(e => {
-            console.log(e)
-            this.carListStatus = 'reject'
-            uni.showToast({
-              title: '失败',
-              icon: 'none'
-            })
-          })
-      },
-      resetLimit() {
-        /*
-        下拉的时候重置；切换filter的时候重置
-        */
-        this.limit = 20
-      }
     }
   }
 </script>

@@ -15,19 +15,18 @@
 </template>
 
 <script>
+  import {
+    mapState,
+  } from 'vuex'
   import carClassFilter from './filters/carClassFilter/carClassFilter.vue'
   import allFilter from './filters/allFilter/allFilter.vue'
   import brandFilter from './filters/brandFilter/brandFilter.vue'
   import releaseVersionFilter from './filters/releaseVersionFilter/releaseVersionFilter.vue'
 
-  import {
-    defaultSelect as defaultSelectCarClass
-  } from './filters/carClassFilter/select.js'
+  import selectCarClass from './filters/carClassFilter/select.js'
 
 
-  import {
-    defaultSelect as defaultSelectAll
-  } from './filters/allFilter/select.js'
+  import selectAll from './filters/allFilter/select.js'
   import selectBrand from './filters/brandFilter/select.js'
 
   import selectReleaseVersion from './filters/releaseVersionFilter/select.js'
@@ -66,15 +65,16 @@
       };
     },
     computed: {
+      ...mapState(['server']),
       sortValue: function() {
         return this.sortRange.findIndex(item => item.value === this.sort)
       },
       defaultSelect() {
         return {
-          'carClass': defaultSelectCarClass,
-          'all': defaultSelectAll,
-          'brand': selectBrand(this.brandRange[0]),
-          'releaseVersion': selectReleaseVersion(this.releaseVersionRange && this.releaseVersionRange[0])
+          'carClass': selectCarClass('D', this.server),
+          'all': selectAll('rank', true, this.server),
+          'brand': selectBrand(this.brandRange[0], this.server),
+          'releaseVersion': selectReleaseVersion(this.releaseVersionRange && this.releaseVersionRange[0], this.server)
         }
       }
     },

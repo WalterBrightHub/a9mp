@@ -6,6 +6,9 @@
 </template>
 
 <script>
+  import {
+    mapState,
+  } from 'vuex'
   import select from './select.js'
   export default {
     data() {
@@ -35,7 +38,13 @@
         ],
       };
     },
+    watch: {
+      server(newServer) {
+        this.$emit('onChangeSelectMethod', select(this.sortField, this.isAsc, newServer))
+      }
+    },
     computed: {
+      ...mapState(['server']),
       sortFieldValue() {
         return this.sortFieldRange.findIndex(item => item.value === this.sortField)
       },
@@ -45,13 +54,13 @@
         let newSortField = this.sortFieldRange[e.target.value].value
         if (this.sortField !== newSortField) {
           this.sortField = newSortField
-          this.$emit('onChangeSelectMethod', select(newSortField, this.isAsc))
+          this.$emit('onChangeSelectMethod', select(newSortField, this.isAsc, this.server))
         }
       },
       onToggleIsAsc() {
         let newIsAsc = !this.isAsc
         this.isAsc = newIsAsc
-        this.$emit('onChangeSelectMethod', select(this.sortField, newIsAsc))
+        this.$emit('onChangeSelectMethod', select(this.sortField, newIsAsc, this.server))
       }
     }
   }

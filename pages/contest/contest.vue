@@ -78,7 +78,7 @@
     },
     onPullDownRefresh() {
 
-      const that = this
+      // const that = this
       this.now = new Date().getTime()
       this.$refs.contestDB.loadData({
         clear: true

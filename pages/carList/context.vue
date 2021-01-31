@@ -1,145 +1,68 @@
 <template>
   <view class="context">
-    <view class="filter-block">
-      <view class="filter-wrapper">
-        <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
-        <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
-          @onChangeSelectMethod="onChangeSelectMethod" />
 
-      </view>
-    </view>
-    <view class="placeholder"></view>
 
-    <view class="car-card-list">
-      <view v-for="item in selectedCars" :key="item._id" class="car-card">
-        <car-card :carData="item"></car-card>
+
+    <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
+      :collection="collection" :orderby="selectMethod.sort" :getone="false" :action="action" :where="selectMethod.where"
+      @load="onqueryload" @error="onqueryerror">
+      <view v-if="error" class="error">{{error.message}}</view>
+      <view v-else class=" car-card-list">
+        <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
+          <car-card class="" :carData="carData"></car-card>
+        </view>
       </view>
-    </view>
+
+      <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
+      <view v-if="loading" class="loading">加载中...</view>
+    </unicloud-db>
   </view>
 </template>
 
 <script>
-  import filter from './components/filter.vue'
   import carCard from './components/carCard.vue'
 
-  import {
-    defaultSelect
-  } from './components/filters/carClassFilter/select.js'
-
-  const defaultFilter = {
-    'carClass': 'D',
-    'carClassAL': 'D',
-    'brand': 'Lamborghini',
-    'all': 'rank'
-  }
   export default {
     components: {
-      'filter': filter,
       'car-card': carCard
     },
-    props: ['carList', 'brandRange', 'limit', "releaseVersionRange", "server"],
+    props: ['carList', 'selectMethod'],
     data() {
       return {
-        selectMethod: defaultSelect
+        // where:this.selectMethod.where
       };
     },
     computed: {
-      selectedCars: function() {
-        return this.selectMethod(this.carList).slice(0, this.limit)
+      collection() {
+        return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
       },
-      serverName() {
-        return this.server === 'gl' ? "国际" : "国服"
-      }
     },
     methods: {
-      onChangeSelectMethod(method) {
-        this.selectMethod = method
-        this.$emit('resetLimit')
-        // console.log('change')
-        uni.pageScrollTo({
-          scrollTop: 0,
-          duration: 0
+      loadMore() {
+        this.$refs.carListDB.loadMore()
+      },
+      refresh() {
+        this.$refs.carListDB.loadData({
+          // clear: true
+        }, () => {
+          uni.showToast({
+            title: '最新',
+            duration: 500
+          })
+          uni.stopPullDownRefresh()
         })
       },
-      onToggleServer() {
-        this.$emit('onToggleServer')
+      onqueryload() {
+        // uni.hideLoading()
+      },
+      onqueryerror() {
+        // uni.hideLoading()
       },
     }
   }
 </script>
 
 <style lang="scss">
-  .placeholder {
-    height: 112rpx;
-
-    @include pad-devices {
-      height: toPadPx(112);
-    }
-  }
-
-  .filter-block {
-    // display: flex;
-    position: fixed;
-    z-index: 114514;
-    width: 100%;
-  }
-
-  .filter-wrapper {
-    display: flex;
-    margin: 0 auto;
-    max-width: 768px;
-    align-items: center;
-    background-color: $page-bg-color;
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $page-bg-color-dark;
-    }
-
-  }
-
-  .filter {
-    display: flex;
-    flex: 1;
-    padding: 20rpx;
-    box-sizing: border-box;
-
-    @include pad-devices {
-      padding: toPadPx(20);
-    }
-  }
-
-  .server-toggle {
-    padding: 0 20rpx;
-    font-size: 36rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    border-radius: 10rpx;
-    margin: 20rpx 0 20rpx 20rpx;
-
-    @include pad-devices {
-      font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-      margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
-
-    }
-
-    // color: #fff;
-    // background-color: $theme-color;
-    color: $theme-color;
-    background-color: $card-bg-color;
-
-    @media (prefers-color-scheme: dark) {
-
-      color: $theme-color-dark;
-      background-color: $card-bg-color-dark;
-    }
-
-  }
-
-
   .car-card-list {
     padding: 0 20rpx;
     padding-bottom: 30rpx;
@@ -152,6 +75,10 @@
     margin: 0 auto;
     max-width: 768px;
 
+  }
+
+  .cardb {
+    // width: 100%;
   }
 
   .car-card+.car-card {
@@ -178,6 +105,24 @@
 
     .car-card+.car-card {
       margin-top: 20px;
+    }
+  }
+
+  .car-empty-list,
+  .loading {
+    font-size: 28px;
+    margin-top: 20rpx;
+    color: $text-help-color;
+    display: flex;
+    justify-content: center;
+
+    @include pad-devices {
+      margin-top: toPadPx(20);
+      font-size: toPadPx(28);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
     }
   }
 </style>

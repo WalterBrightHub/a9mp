@@ -6,33 +6,39 @@
 
 <script>
   //本组件由brandFilter复制而来
+  import {
+    mapState,
+  } from 'vuex'
   import select from './select.js'
   export default {
     props: ['releaseVersionRange'],
     data() {
       return {
         releaseVersion: this.releaseVersionRange[0],
-        value:0
+        value: 0
       }
 
     },
-    watch:{
-      releaseVersionRange(newRange){
-        let newVersion=newRange[0]
-        this.releaseVersion=newVersion
-        this.value=0
-         this.$emit('onChangeSelectMethod', select(newVersion))
+    computed: {
+      ...mapState(['server']),
+    },
+    watch: {
+      releaseVersionRange(newRange) {
+        let newVersion = newRange[0]
+        this.releaseVersion = newVersion
+        this.value = 0
+        this.$emit('onChangeSelectMethod', select(newVersion, this.server, this.server))
       }
     },
     methods: {
 
       onChangeReleaseVersion(e) {
-        this.value=e.target.value
+        this.value = e.target.value
         const newVersion = this.releaseVersionRange[e.target.value]
         if (newVersion !== this.releaseVersion) {
 
           this.releaseVersion = newVersion
-          this.$emit('onChangeSelectMethod', select(newVersion))
+          this.$emit('onChangeSelectMethod', select(newVersion, this.server, this.server))
         }
       }
     }

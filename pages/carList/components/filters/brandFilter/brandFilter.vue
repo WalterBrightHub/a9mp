@@ -5,14 +5,25 @@
 </template>
 
 <script>
+  import {
+    mapState,
+  } from 'vuex'
   import select from './select.js'
   export default {
     props: ['brandRange'],
     data() {
       return {
-        brand: this.brandRange[0]//'Lamborghini'
+        brand: this.brandRange[0] //'Lamborghini'
       }
 
+    },
+    computed: {
+      ...mapState(['server']),
+    },
+    watch: {
+      server(newServer) {
+        this.$emit('onChangeSelectMethod', select(this.brand, newServer))
+      }
     },
     methods: {
 
@@ -21,7 +32,7 @@
         if (newBrand !== this.brand) {
 
           this.brand = newBrand
-          this.$emit('onChangeSelectMethod', select(newBrand))
+          this.$emit('onChangeSelectMethod', select(newBrand, this.server))
         }
       }
     }

@@ -1,6 +1,7 @@
-const select = (sortField, isAsc) => carList => {
-  return carList.sort((a, b) => isAsc ? a[sortField] - b[sortField] : b[sortField] - a[sortField])
-}
+const select = (sortField, isAsc, server) => ({
+  where: '',
+  sort: `${sortField} ${isAsc?'asc':'desc'}`,
+  server
+})
 
-export const defaultSelect = select('rank', true)
 export default select

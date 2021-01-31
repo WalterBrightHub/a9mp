@@ -1,7 +1,8 @@
-const select = brand => carList => {
-  return carList.filter(car => car.brand === brand)
-    .sort((a, b) => a.rank - b.rank)
-}
+const select = (brand, server) => ({
+  where: `brand=='${brand}'`,
+  sort: 'rank',
+  server
+})
 
 // export const defaultSelect = select('Lamborghini')
 export default select
