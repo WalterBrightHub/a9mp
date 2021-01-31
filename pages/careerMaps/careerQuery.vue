@@ -140,6 +140,9 @@
 
   .picker+.picker {
     margin-left: 5rpx;
+    @include pad-devices {
+      margin-left: toPadPx(5);
+    }
   }
 
   .tip-triangle {
