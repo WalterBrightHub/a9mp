@@ -110,7 +110,7 @@
 
   .car-empty-list,
   .loading {
-    font-size: 28px;
+    font-size: 36rpx;
     margin-top: 20rpx;
     color: $text-help-color;
     display: flex;
@@ -118,7 +118,7 @@
 
     @include pad-devices {
       margin-top: toPadPx(20);
-      font-size: toPadPx(28);
+      font-size: toPadPx(36);
     }
 
     @media (prefers-color-scheme: dark) {

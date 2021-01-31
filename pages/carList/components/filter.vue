@@ -90,15 +90,15 @@
 
           this.$emit('onChangeSelectMethod', this.defaultSelect[newSort])
           // this.$emit('resetLimit')
-          uni.pageScrollTo({
-            scrollTop: 0,
-            duration: 0
-          })
+          // uni.pageScrollTo({
+          //   scrollTop: 0,
+          //   duration: 0
+          // })
           //切换时界面可能没有明显变化，加一个提示
-          uni.showToast({
-            title: '已切换',
-            duration: 1000
-          })
+          // uni.showToast({
+          //   title: '已切换',
+          //   duration: 1000
+          // })
         }
 
       },

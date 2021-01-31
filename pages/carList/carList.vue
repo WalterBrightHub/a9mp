@@ -113,15 +113,15 @@
     methods: {
       ...mapMutations(['toggleServer']),
       onToggleServer() {
-        uni.showToast({
-          title: '已切换'
-        })
+        // uni.showToast({
+        //   title: '已切换'
+        // })
         this.toggleServer()
         // this.resetLimit()
-        uni.pageScrollTo({
-          scrollTop: 0,
-          duration: 0
-        })
+        // uni.pageScrollTo({
+        //   scrollTop: 0,
+        //   duration: 0
+        // })
       },
       onChangeSelectMethod(method) {
         this.selectMethod = method
