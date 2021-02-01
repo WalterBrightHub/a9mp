@@ -3,9 +3,7 @@
     <view class="mode-changer">
       <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
     </view>
-    <request-fail v-if="careerQueryStatus==='reject'" @onRetry='onRetryCareerQuery' />
-    <career-query v-else-if="careerQueryStatus==='resolve'" :trackDetails="selectedTracks" :careerSeasons="selectedCareerSeasons"
-      :mapThemeRange="selectedMapThemeRange"></career-query>
+    <career-query :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server" :careerQueryStatus="careerQueryStatus"></career-query>
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
     <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' />
@@ -22,6 +20,7 @@
   import context from './context.vue'
   import careerQuery from './careerQuery.vue'
   const myCloud = uniCloud
+  const db = myCloud.database()
   const requestCareerMaps = async function() {
     return myCloud.callFunction({
       name: 'getCareerMapsAll'
@@ -49,62 +48,26 @@
         careerMapsStatus: 'ready',
         careerSeasons: [],
         tracks: [],
-        mapThemes: [],
+        mapThemeRange: [],
         careerQueryStatus: 'ready'
-        // mode: 'gl'
       }
     },
     computed: {
 
       ...mapState(['server']),
-      selectedMapThemeRange() {
-        return this.server === 'gl' ?
-          this.mapThemes.map(item => item.mapThemeCN) :
-          this.mapThemes.map(item => item.mapThemeAL)
-      },
-      selectedTracks() {
-        return this.server === 'gl' ?
-          this.tracks.map(item => ({ ...item,
-            mapName: item.mapNameCN,
-            mapTheme: item.mapThemeCN
-          })) :
-          this.tracks.map(item => ({ ...item,
-            mapName: item.mapNameAL,
-            mapTheme: item.mapThemeAL
-          }))
-      },
-      selectedCareerSeasons() {
-        return this.server === 'gl' ?
-          this.careerSeasons.map(item => ({ ...item,
-            mapName: item.mapNameCN,
-            season: item.seasonEN,
-            chapter:item.chapterCN,
-          })) :
-          this.careerSeasons.map(item => ({ ...item,
-            mapName: item.mapNameAL,
-            season: item.seasonAL,
-            chapter:item.chapterAL,
-          }))
-      }
     },
     onLoad() {
-      this.careerMapsStatus = 'pending'
 
-
-
-      requestCareerQuery()
-        .then(res => {
-          const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
-          this.careerSeasons = careerSeasonsTable.data
-          this.tracks = tracksTable.data
-          this.mapThemes = mapThemesTable.data
-
+      let mapThemeRange = db.collection('mapThemes').orderBy('_id').get()
+      let tracks = db.collection('tracks').orderBy('_id').get()
+      Promise.all([mapThemeRange, tracks])
+        .then(([mapThemeRange, tracks]) => {
+          this.mapThemeRange = mapThemeRange.result.data
+          this.tracks = tracks.result.data
           this.careerQueryStatus = 'resolve'
-        }).catch(e => {
-
-          console.error(e)
-          this.careerQueryStatus = 'reject'
         })
+
+      this.careerMapsStatus = 'pending'
 
       uni.showLoading({
         title: '加载中',
@@ -149,19 +112,13 @@
     },
     onPullDownRefresh() {
 
-      requestCareerQuery()
-        .then(res => {
-          // return Promise.reject()
-          const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
-          this.careerSeasons = careerSeasonsTable.data
-          this.tracks = tracksTable.data
-          this.mapThemes = mapThemesTable.data
-
+      let mapThemeRange = db.collection('mapThemes').orderBy('_id').get()
+      let tracks = db.collection('tracks').orderBy('_id').get()
+      Promise.all([mapThemeRange, tracks])
+        .then(([mapThemeRange, tracks]) => {
+          this.mapThemeRange = mapThemeRange.result.data
+          this.tracks = tracks.result.data
           this.careerQueryStatus = 'resolve'
-        }).catch(e => {
-
-          console.error(e)
-          this.careerQueryStatus = 'reject'
         })
 
 
@@ -194,28 +151,8 @@
         uni.showLoading({
           title: '重试中',
         })
-        requestCareerQuery()
-          .then(res => {
-            const [careerSeasonsTable, tracksTable, mapThemesTable] = res.result
-            this.careerSeasons = careerSeasonsTable.data
-            this.tracks = tracksTable.data
-            this.mapThemes = mapThemesTable.data
 
-            this.careerQueryStatus = 'resolve'
-            uni.showToast({
-              title: '成功'
-            })
-          }).catch(e => {
-            uni.showToast({
-              title: '失败',
-              icon: 'none'
-            })
-
-            console.error(e)
-            this.careerQueryStatus = 'reject'
-          })
       },
-
       onRetryCareerMaps() {
         uni.showLoading({
           title: '重试中',
@@ -262,7 +199,7 @@
 
     @include pad-devices {
       padding: toPadPx(20);
-    max-width: 768px;
+      max-width: 768px;
       margin: 0 auto;
     }
   }

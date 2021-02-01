@@ -2,20 +2,33 @@
   <div class="context">
     <div class="head">精确查询</div>
     <div class="picker-block">
-      <picker class="picker theme-picker" :range="mapThemeRange" @change="onChangeMapTheme" :value="mapThemeValue">{{mapTheme}}<span
+      <picker class="picker theme-picker" :range="selectedMapThemeRange" @change="onChangeMapTheme" :value="mapThemeValue">{{mapThemeDisplay}}<span
           class="tip-triangle">▼</span></picker>
       <picker class="picker name-picker" :range="mapNameAndLengthRange" @change="onChangeMapName" :value="mapNameValue">{{mapName}}<span
           class="tip-triangle">▼</span></picker>
     </div>
-    <div class="career-season-list" v-if="selectedCareerSeasons.length>0">
+    <!-- <div class="career-season-list" v-if="selectedCareerSeasons.length>0">
       <div class="career-season" v-for="season in selectedCareerSeasons" :key="season._id">
         <div class="season-item chapter">{{season.chapter}}</div>
         <div class="season-item season">{{season.season}}</div>
         <div class="season-item race">{{season.race}}</div>
         <div class="season-item race-type" :class="'race-'+raceTypes[season.raceType]">{{season.raceType}}</div>
       </div>
-    </div>
-    <div v-else class="empty-season-list">😮 生涯竟然没有这张图</div>
+    </div> -->
+    <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
+      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true">
+      <view v-if="error" class="error">{{error.message}}</view>
+      <div class="career-season-list" v-else-if="data.length>0">
+        <div class="career-season" v-for="season in data" :key="season._id">
+          <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
+          <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
+          <div class="season-item race">{{season.race}}</div>
+          <div class="season-item race-type" :class="'race-'+raceTypes[season.raceType]">{{season.raceType}}</div>
+        </div>
+      </div>
+      <div v-if="data.length===0 && careerQueryStatus==='resolve' " class="empty-season-list">😮 生涯竟然没有这张图</div>
+      <!-- <view v-if="loading" class="loading">加载中...</view> -->
+    </unicloud-db>
   </div>
 </template>
 
@@ -29,7 +42,7 @@
   }
 
   export default {
-    props: ['trackDetails', 'careerSeasons', 'mapThemeRange'],
+    props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server',"careerQueryStatus"],
     data() {
       return {
         // 放在data内的是picker value，即"0"，"1"，"2"...，显示在界面上的String放在Computed中
@@ -38,19 +51,53 @@
         raceTypes,
       };
     },
+    watch:{
+      careerQueryStatus(newStatus){
+        if(newStatus==='resolve'){
+          console.log('起飞！')
+          this.$refs.careerSeasonDB.loadData()
+        }
+      }
+    },
     computed: {
-      selectedCareerSeasons() {
-        return this.careerSeasons.filter(item => item.mapName === this.mapName)
+      options(){
+        return{
+          server:this.server
+        }
+      },
+      where(){
+        console.log(`mapNameCN=='${this.mapNameRange[this.mapNameValue]}'`)
+        return this.server==='gl'
+        ?`mapNameCN=='${this.mapNameRange[this.mapNameValue]?this.mapNameRange[this.mapNameValue]:'大桥景观'}'`
+        :`mapNameAL=='${this.mapNameRange[this.mapNameValue]?this.mapNameRange[this.mapNameValue]:'大桥景观'}'`
       },
       mapTheme() {
-        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue] : ''
+        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue].mapThemeCN: ''
+      },
+      selectedMapThemeRange(){
+        return this.server==='gl'?this.mapThemeRange.map(item=>item.mapThemeCN):this.mapThemeRange.map(item=>item.mapThemeAL)
+      },
+      mapThemeDisplay(){
+        console.log(this.mapThemeRange.length > 0 ? 
+          (this.server==='gl'?this.mapThemeRange[this.mapThemeValue].mapThemeCN: this.mapThemeRange[this.mapThemeValue].mapThemeAL)
+          : '')
+          return this.mapThemeRange.length > 0 ? 
+          (this.server==='gl'?this.mapThemeRange[this.mapThemeValue].mapThemeCN: this.mapThemeRange[this.mapThemeValue].mapThemeAL)
+          : ''
       },
       mapNameRange() {
-        return this.trackDetails.filter(item => item.mapTheme === this.mapTheme).map(item => item.mapName)
+        return this.server==='gl'
+        ?this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(
+        item => item.mapNameCN)
+        :this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(
+        item => item.mapNameAL)
       },
       mapNameAndLengthRange() {
-        return this.trackDetails.filter(item => item.mapTheme === this.mapTheme).map(item => item.mapName +
-          ` ${item.length}'`)
+        return this.server==='gl'
+          ?this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(item=>
+        item.mapNameCN +` ${item.length}'`)
+        :this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(item=>
+        item.mapNameAL +` ${item.length}'`)
       },
       mapName() {
         return this.mapNameRange[this.mapNameValue]
@@ -140,6 +187,7 @@
 
   .picker+.picker {
     margin-left: 5rpx;
+
     @include pad-devices {
       margin-left: toPadPx(5);
     }
