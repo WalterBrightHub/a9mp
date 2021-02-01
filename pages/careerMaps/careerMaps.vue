@@ -38,7 +38,7 @@
       return {
         careerMaps: [],
         careerMapsStatus: 'ready',
-        careerSeasons: [],
+        // careerSeasons: [],
         tracks: [],
         mapThemeRange:[],
         // 加载主题与赛道后开始查询
