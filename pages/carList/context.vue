@@ -1,8 +1,5 @@
 <template>
   <view class="context">
-
-
-
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
       :collection="collection" :orderby="selectMethod.sort" :getone="false" :action="action" :where="selectMethod.where"
       @load="onqueryload" @error="onqueryerror">
