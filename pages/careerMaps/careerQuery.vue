@@ -42,7 +42,7 @@
   }
 
   export default {
-    props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server',"careerQueryStatus"],
+    props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server', "careerQueryStatus"],
     data() {
       return {
         // 放在data内的是picker value，即"0"，"1"，"2"...，显示在界面上的String放在Computed中
@@ -51,56 +51,55 @@
         raceTypes,
       };
     },
-    watch:{
-      careerQueryStatus(newStatus){
-        if(newStatus==='resolve'){
-          console.log('起飞！')
+    watch: {
+      careerQueryStatus(newStatus) {
+        if (newStatus === 'resolve') {
+          // console.log('起飞！')
           this.$refs.careerSeasonDB.loadData()
         }
       }
     },
     computed: {
-      options(){
-        return{
-          server:this.server
+      options() {
+        return {
+          server: this.server
         }
       },
-      where(){
-        console.log(`mapNameCN=='${this.mapNameRange[this.mapNameValue]}'`)
-        return this.server==='gl'
-        ?`mapNameCN=='${this.mapNameRange[this.mapNameValue]?this.mapNameRange[this.mapNameValue]:'大桥景观'}'`
-        :`mapNameAL=='${this.mapNameRange[this.mapNameValue]?this.mapNameRange[this.mapNameValue]:'大桥景观'}'`
+      where() {
+        return `mapNameCN=='${this.selectedMapNames[this.mapNameValue]
+        ?this.selectedMapNames[this.mapNameValue].mapNameCN
+        :'大桥景观'}'`
+
       },
       mapTheme() {
-        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue].mapThemeCN: ''
+        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue].mapThemeCN : ''
       },
-      selectedMapThemeRange(){
-        return this.server==='gl'?this.mapThemeRange.map(item=>item.mapThemeCN):this.mapThemeRange.map(item=>item.mapThemeAL)
+      selectedMapThemeRange() {
+        return this.server === 'gl' ? this.mapThemeRange.map(item => item.mapThemeCN) : this.mapThemeRange.map(item =>
+          item.mapThemeAL)
       },
-      mapThemeDisplay(){
-        console.log(this.mapThemeRange.length > 0 ? 
-          (this.server==='gl'?this.mapThemeRange[this.mapThemeValue].mapThemeCN: this.mapThemeRange[this.mapThemeValue].mapThemeAL)
-          : '')
-          return this.mapThemeRange.length > 0 ? 
-          (this.server==='gl'?this.mapThemeRange[this.mapThemeValue].mapThemeCN: this.mapThemeRange[this.mapThemeValue].mapThemeAL)
-          : ''
+      mapThemeDisplay() {
+        return this.mapThemeRange.length > 0 ?
+          this.selectedMapThemeRange[this.mapThemeValue] :
+          ''
       },
-      mapNameRange() {
-        return this.server==='gl'
-        ?this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(
-        item => item.mapNameCN)
-        :this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(
-        item => item.mapNameAL)
+      selectedMapNames() {
+        return this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme)
       },
       mapNameAndLengthRange() {
-        return this.server==='gl'
-          ?this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(item=>
-        item.mapNameCN +` ${item.length}'`)
-        :this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme).map(item=>
-        item.mapNameAL +` ${item.length}'`)
+        return this.server === 'gl' ?
+          this.selectedMapNames.map(item =>
+            item.mapNameCN + ` ${item.length}'`) :
+          this.selectedMapNames.map(item =>
+            item.mapNameAL + ` ${item.length}'`)
       },
       mapName() {
-        return this.mapNameRange[this.mapNameValue]
+        if(!this.selectedMapNames[this.mapNameValue]){
+          return ''
+        }
+        return this.server === 'gl' ?
+          this.selectedMapNames[this.mapNameValue].mapNameCN :
+          this.selectedMapNames[this.mapNameValue].mapNameAL
       }
     },
     methods: {
@@ -118,6 +117,9 @@
         if (newMapNameValue !== this.mapNameValue) {
           this.mapNameValue = newMapNameValue
         }
+      },
+      refresh(){
+          this.$refs.careerSeasonDB.loadData()
       }
     }
   }

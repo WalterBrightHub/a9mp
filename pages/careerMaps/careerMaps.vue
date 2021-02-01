@@ -3,7 +3,7 @@
     <view class="mode-changer">
       <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
     </view>
-    <career-query :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server" :careerQueryStatus="careerQueryStatus"></career-query>
+    <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server" :careerQueryStatus="careerQueryStatus"></career-query>
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
     <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' />
@@ -26,15 +26,7 @@
       name: 'getCareerMapsAll'
     })
   }
-  //精确查询所需的所有数据
-  const requestCareerQuery = async function() {
-    return myCloud.callFunction({
-      name: 'getMultiFullTable',
-      data: {
-        tableNames: ['careerSeasons', 'tracks', 'mapThemes']
-      }
-    })
-  }
+
 
   export default {
     components: {
@@ -48,7 +40,8 @@
         careerMapsStatus: 'ready',
         careerSeasons: [],
         tracks: [],
-        mapThemeRange: [],
+        mapThemeRange:[],
+        // 加载主题与赛道后开始查询
         careerQueryStatus: 'ready'
       }
     },
@@ -112,14 +105,7 @@
     },
     onPullDownRefresh() {
 
-      let mapThemeRange = db.collection('mapThemes').orderBy('_id').get()
-      let tracks = db.collection('tracks').orderBy('_id').get()
-      Promise.all([mapThemeRange, tracks])
-        .then(([mapThemeRange, tracks]) => {
-          this.mapThemeRange = mapThemeRange.result.data
-          this.tracks = tracks.result.data
-          this.careerQueryStatus = 'resolve'
-        })
+      this.$refs.careerQueryDB.refresh()
 
 
       requestCareerMaps()
