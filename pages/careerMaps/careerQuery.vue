@@ -15,7 +15,7 @@
           <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
           <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
           <div class="season-item race">{{season.race}}</div>
-          <div class="season-item race-type" :class="'race-'+raceTypes[season.raceType]">{{season.raceType}}</div>
+          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}</div>
         </div>
       </div>
       <div v-if="data.length===0 && careerQueryStatus==='resolve' " class="empty-season-list">😮 生涯竟然没有这张图</div>
@@ -40,7 +40,7 @@
         // 放在data内的是picker value，即"0"，"1"，"2"...，显示在界面上的String放在Computed中
         mapThemeValue: 0,
         mapNameValue: 0,
-        raceTypes,
+        // raceTypes,
       };
     },
     watch: {
@@ -54,7 +54,8 @@
     computed: {
       options() {
         return {
-          server: this.server
+          server: this.server,
+          raceTypes
         }
       },
       where() {
