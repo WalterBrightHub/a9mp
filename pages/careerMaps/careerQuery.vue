@@ -7,14 +7,6 @@
       <picker class="picker name-picker" :range="mapNameAndLengthRange" @change="onChangeMapName" :value="mapNameValue">{{mapName}}<span
           class="tip-triangle">▼</span></picker>
     </div>
-    <!-- <div class="career-season-list" v-if="selectedCareerSeasons.length>0">
-      <div class="career-season" v-for="season in selectedCareerSeasons" :key="season._id">
-        <div class="season-item chapter">{{season.chapter}}</div>
-        <div class="season-item season">{{season.season}}</div>
-        <div class="season-item race">{{season.race}}</div>
-        <div class="season-item race-type" :class="'race-'+raceTypes[season.raceType]">{{season.raceType}}</div>
-      </div>
-    </div> -->
     <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
       :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true">
       <view v-if="error" class="error">{{error.message}}</view>
