@@ -24,3 +24,5 @@ yarn-error.log*
 *.sw*
 config/index.ts
 config/index.ts
+
+uniCloud-aliyun/
