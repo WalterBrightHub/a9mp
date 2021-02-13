@@ -84,7 +84,7 @@
     onShareAppMessage() {
 
       return {
-        'title': '生涯地图哪里找，动动手指就知晓'
+        'title': '生涯地图，精确查询'
       }
     },
 
