@@ -54,26 +54,22 @@
       this.limit += 20
     },
     onLoad() {
+      
+      //获取所有品牌，并按照车辆数降序排列。
+      db.collection('carList').where('brand!=""').groupBy('brand').groupField('count(*) as count').orderBy('count desc, brand asc').get().then(res=>{
+        // console.log(res.result.data)
+        const brands=res.result.data
+        this.brandRange=brands.map(car=>car.brand)
+      })
 
-      db.collection('carList').field('releaseVersion,brand').limit(475).get().then(res => {
+      //获取释放版本，比较函数只能自己写啦
+      db.collection('carList').field('releaseVersion').limit(475).get().then(res => {
         let rvr = _(res.result.data).map(car => car.releaseVersion)
           .union()
           .value()
           .sort(compareVersion)
         this.releaseVersionRangeGL = rvr
 
-        let br = _(res.result.data)
-          .filter(car => car.brand && car.brand !== '')
-          .countBy(car => car.brand)
-          .map((count, brand) => ({
-            count,
-            brand
-          }))
-          .orderBy(['count', 'brand'], ['desc', 'asc'])
-          .map(obj => obj.brand)
-          .value()
-
-        this.brandRange = br
       })
 
       db.collection('carListAL').field('releaseVersion').limit(475).get().then(res => {
@@ -83,10 +79,6 @@
           .sort(compareVersion)
         this.releaseVersionRangeAL = rvr
       })
-
-
-
-
 
     },
     onShareAppMessage() {
