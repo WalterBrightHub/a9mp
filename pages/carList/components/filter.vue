@@ -74,7 +74,7 @@
           'carClass': selectCarClass('D', this.server),
           'all': selectAll('rank', true, this.server),
           'brand': selectBrand(this.brandRange[0], this.server),
-          'releaseVersion': selectReleaseVersion(this.releaseVersionRange && this.releaseVersionRange[0], this.server)
+          'releaseVersion': selectReleaseVersion(this.releaseVersionRange[0] && this.releaseVersionRange[0].releaseVersion, this.server)
         }
       }
     },

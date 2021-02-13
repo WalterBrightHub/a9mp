@@ -27,9 +27,6 @@
 
   const db = myCloud.database()
 
-
-
-
   export default {
     components: {
       'filter-block': filterBlock,
@@ -62,22 +59,23 @@
         this.brandRange=brands.map(car=>car.brand)
       })
 
-      //获取释放版本，比较函数只能自己写啦
-      db.collection('carList').field('releaseVersion').limit(475).get().then(res => {
-        let rvr = _(res.result.data).map(car => car.releaseVersion)
-          .union()
-          .value()
-          .sort(compareVersion)
-        this.releaseVersionRangeGL = rvr
+      //获取释放版本
+      db.collection('versionNoteGL').orderBy('_id desc').limit(475).get().then(res => {
+        // console.log(res.result.data)
+        this.releaseVersionRangeGL = res.result.data.map(item=>({
+          ...item,
+          displaySelect:item.releaseVersion+' '+item.note
+        }))
 
       })
 
-      db.collection('carListAL').field('releaseVersion').limit(475).get().then(res => {
-        let rvr = _(res.result.data).map(car => car.releaseVersion)
-          .union()
-          .value()
-          .sort(compareVersion)
-        this.releaseVersionRangeAL = rvr
+      db.collection('versionNoteAL').orderBy('_id desc').limit(475).get().then(res => {
+        // console.log(res.result.data)
+        this.releaseVersionRangeAL = res.result.data.map(item=>({
+          ...item,
+          displaySelect:item.releaseVersion+' '+item.note
+        }))
+      
       })
 
     },

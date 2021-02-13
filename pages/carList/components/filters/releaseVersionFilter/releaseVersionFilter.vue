@@ -1,5 +1,5 @@
 <template>
-  <picker class="filter-picker" :range="releaseVersionRange" @change="onChangeReleaseVersion" :value="value">
+  <picker class="filter-picker" :range="releaseVersionRange" :range-key="'displaySelect'" @change="onChangeReleaseVersion" :value="value">
     {{releaseVersion}}
   </picker>
 </template>
@@ -14,7 +14,7 @@
     props: ['releaseVersionRange'],
     data() {
       return {
-        releaseVersion: this.releaseVersionRange[0],
+        releaseVersion: this.releaseVersionRange[0]?this.releaseVersionRange[0].releaseVersion:'',
         value: 0
       }
 
@@ -24,7 +24,7 @@
     },
     watch: {
       releaseVersionRange(newRange) {
-        let newVersion = newRange[0]
+        let newVersion = newRange[0].releaseVersion
         this.releaseVersion = newVersion
         this.value = 0
         this.$emit('onChangeSelectMethod', select(newVersion, this.server, this.server))
@@ -34,7 +34,7 @@
 
       onChangeReleaseVersion(e) {
         this.value = e.target.value
-        const newVersion = this.releaseVersionRange[e.target.value]
+        const newVersion = this.releaseVersionRange[e.target.value].releaseVersion
         if (newVersion !== this.releaseVersion) {
 
           this.releaseVersion = newVersion

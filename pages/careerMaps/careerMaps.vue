@@ -22,9 +22,7 @@
   const myCloud = uniCloud
   const db = myCloud.database()
   const requestCareerMaps = async function() {
-    return myCloud.callFunction({
-      name: 'getCareerMapsAll'
-    })
+    return db.collection('careerMaps').orderBy('_id').limit(100).get()
   }
 
 
@@ -70,7 +68,7 @@
         .then(res => {
           // console.log(res.result) // 3
           // return Promise.reject()
-          this.careerMaps = res.result,
+          this.careerMaps = res.result.data,
             this.careerMapsStatus = 'resolve'
 
         })
@@ -112,7 +110,7 @@
         .then(res => {
           // console.log(res.result) // 3
           // return Promise.reject()
-          this.careerMaps = res.result,
+          this.careerMaps = res.result.data,
             this.careerMapsStatus = 'resolve'
 
           uni.showToast({
@@ -148,7 +146,7 @@
           .then(res => {
             // console.log(res.result) // 3
             // return Promise.reject()
-            this.careerMaps = res.result,
+            this.careerMaps = res.result.data,
               this.careerMapsStatus = 'resolve'
             uni.showToast({
               title: '成功'
