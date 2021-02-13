@@ -10,7 +10,7 @@
       <view class="car-class">{{carData.carClass}}</view>
     </view>
     <view class="bps">
-      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index" :style="{flex:item}">{{item}}</view>
+      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index" :style="{flex:item>0?item:20}">{{item}}</view>
     </view>
     <view class="perf-and-update">
       <view class="perf">
