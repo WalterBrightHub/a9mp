@@ -81,7 +81,7 @@
     },
     onShareAppMessage() {
       return {
-        'title': '天赐三菱，不服不行'
+        'title': '狂飙助手真奇妙，车辆数据全知道'
       }
     },
     onPullDownRefresh() {

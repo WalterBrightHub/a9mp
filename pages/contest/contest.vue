@@ -98,8 +98,8 @@
     onShareAppMessage() {
 
       return {
-        'title': '你的专属客服！',
-        imageUrl: 'https://6139-a9cn-wifx6-1301013383.tcb.qcloud.la/share1.jpg'
+        'title': '赛事活动真不少，专属客服来爆料',
+        // imageUrl: 'https://6139-a9cn-wifx6-1301013383.tcb.qcloud.la/share1.jpg'
       }
     },
 

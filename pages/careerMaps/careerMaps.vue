@@ -84,7 +84,7 @@
     onShareAppMessage() {
 
       return {
-        'title': '等你很久了！'
+        'title': '生涯地图哪里找，动动手指全知晓'
       }
     },
 
