@@ -374,6 +374,9 @@
     @media (prefers-color-scheme: dark){
       color: $text-help-color-dark;
     }
+    @include pad-devices {
+      line-height: toPadPx(56);
+    }
   }
 
   .cost-list {
