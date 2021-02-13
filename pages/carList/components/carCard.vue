@@ -38,12 +38,12 @@
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
-        <view class="perf-item">
+        <view class="perf-item" v-if="carData.nitroDuration>0">
           <view class="perf-name">单喷时间</view>
-          <view class="perf-value">{{carData.nitroDuration>0?Number(carData.nitroDuration).toFixed(2):'待测'}}</view>
+          <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
         </view>
       </view>
-      <view class="update">
+      <view class="update" v-if="carData.releaseVersion!=='0.0'">
         <view class="cost-list">
           <view class="cost-item">
             <view class="cost-name">升级</view>
@@ -75,6 +75,10 @@
             <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
         </view>
+      </view>
+      <view class="update feature-tip-block" v-else>
+        <div class="feature-tip">尚未发布</div>
+        <div class="feature-tip">仅供参考</div>
       </view>
     </view>
   </view>
@@ -356,6 +360,20 @@
     margin-left: 1em;
     display: flex;
     flex-direction: column;
+  }
+  
+  .feature-tip-block{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .feature-tip{
+    color: $text-help-color;
+    line-height: 56rpx;
+    @media (prefers-color-scheme: dark){
+      color: $text-help-color-dark;
+    }
   }
 
   .cost-list {

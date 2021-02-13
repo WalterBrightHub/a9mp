@@ -135,9 +135,6 @@
   }
 
 
-
-
-
   .sort-block {
     color: $text-title-color;
     background-color: $card-bg-color;
