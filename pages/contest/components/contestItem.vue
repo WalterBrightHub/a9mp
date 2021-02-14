@@ -28,16 +28,27 @@
       };
     },
     computed: {
-      timeStatus(){
-        const {startTime,endTime}=this.contest
-        const {now}=this
-        return startTime>now?'future':endTime>=now?'now':'past'
+      timeStatus() {
+        const {
+          startTime,
+          endTime
+        } = this.contest
+        const {
+          now
+        } = this
+        return startTime > now ? 'future' : endTime >= now ? 'now' : 'past'
       },
-      timeTip(){
-        
-          const {startTime,endTime}=this.contest
-          const {now}=this
-          return startTime>now?`${moment(startTime).to(this.now, true)}后开启`:endTime>=now?`${moment(endTime).from(this.now, true)}后结束`:'已结束'
+      timeTip() {
+
+        const {
+          startTime,
+          endTime
+        } = this.contest
+        const {
+          now
+        } = this
+        return startTime > now ? `${moment(startTime).to(this.now, true)}后开启` : endTime >= now ?
+          `${moment(endTime).from(this.now, true)}后结束` : '已结束'
         if (startTime > this.now) {
           return moment(startTime).to(this.now, true)
         } else {

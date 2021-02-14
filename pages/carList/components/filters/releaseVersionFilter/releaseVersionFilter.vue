@@ -1,5 +1,6 @@
 <template>
-  <picker class="filter-picker" :range="releaseVersionRange" :range-key="'displaySelect'" @change="onChangeReleaseVersion" :value="value">
+  <picker class="filter-picker" :range="releaseVersionRange" :range-key="'displaySelect'" @change="onChangeReleaseVersion"
+    :value="value">
     {{releaseVersion}}
   </picker>
 </template>
@@ -14,7 +15,7 @@
     props: ['releaseVersionRange'],
     data() {
       return {
-        releaseVersion: this.releaseVersionRange[0]?this.releaseVersionRange[0].releaseVersion:'',
+        releaseVersion: this.releaseVersionRange[0] ? this.releaseVersionRange[0].releaseVersion : '',
         value: 0
       }
 

@@ -40,7 +40,7 @@
       };
     },
     computed: {
-        ...mapState(['server']),
+      ...mapState(['server']),
       serverName() {
         return this.server === 'gl' ? "国际" : "国服"
       }

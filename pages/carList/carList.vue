@@ -1,9 +1,9 @@
 <template>
   <view class="container">
-    <filter-block  id="filter-block" 
-      :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
+    <filter-block id="filter-block" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
+      @onChangeSelectMethod="onChangeSelectMethod" />
 
-    <context id="context"  :carList="carList" :selectMethod="selectMethod" ref="carListDB" />
+    <context id="context" :carList="carList" :selectMethod="selectMethod" ref="carListDB" />
 
   </view>
 </template>
@@ -45,31 +45,32 @@
       this.limit += 20
     },
     onLoad() {
-      
+
       //获取所有品牌，并按照车辆数降序排列。
-      db.collection('carList').where('brand!=""').groupBy('brand').groupField('count(*) as count').orderBy('count desc, brand asc').get().then(res=>{
+      db.collection('carList').where('brand!=""').groupBy('brand').groupField('count(*) as count').orderBy(
+        'count desc, brand asc').get().then(res => {
         // console.log(res.result.data)
-        const brands=res.result.data
-        this.brandRange=brands.map(car=>car.brand)
+        const brands = res.result.data
+        this.brandRange = brands.map(car => car.brand)
       })
 
       //获取释放版本
       db.collection('versionNoteGL').orderBy('_id desc').limit(475).get().then(res => {
         // console.log(res.result.data)
-        this.releaseVersionRangeGL = res.result.data.map(item=>({
+        this.releaseVersionRangeGL = res.result.data.map(item => ({
           ...item,
-          displaySelect:item.releaseVersion+' '+item.note
+          displaySelect: item.releaseVersion + ' ' + item.note
         }))
 
       })
 
       db.collection('versionNoteAL').orderBy('_id desc').limit(475).get().then(res => {
         // console.log(res.result.data)
-        this.releaseVersionRangeAL = res.result.data.map(item=>({
+        this.releaseVersionRangeAL = res.result.data.map(item => ({
           ...item,
-          displaySelect:item.releaseVersion+' '+item.note
+          displaySelect: item.releaseVersion + ' ' + item.note
         }))
-      
+
       })
 
     },
@@ -95,7 +96,7 @@
       }
     },
     methods: {
-      
+
       onChangeSelectMethod(method) {
         this.selectMethod = method
         uni.pageScrollTo({

@@ -87,7 +87,7 @@
             item.mapNameAL + ` ${item.length}'`)
       },
       mapName() {
-        if(!this.selectedMapNames[this.mapNameValue]){
+        if (!this.selectedMapNames[this.mapNameValue]) {
           return ''
         }
         return this.server === 'gl' ?
@@ -111,8 +111,8 @@
           this.mapNameValue = newMapNameValue
         }
       },
-      refresh(){
-          this.$refs.careerSeasonDB.loadData()
+      refresh() {
+        this.$refs.careerSeasonDB.loadData()
       }
     }
   }

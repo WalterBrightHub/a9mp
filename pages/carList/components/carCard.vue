@@ -10,7 +10,8 @@
       <view class="car-class">{{carData.carClass}}</view>
     </view>
     <view class="bps">
-      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index" :style="{flex:item>0?item:20}">{{item}}</view>
+      <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index"
+        :style="{flex:item>0?item:20}">{{item}}</view>
     </view>
     <view class="perf-and-update">
       <view class="perf">
@@ -92,15 +93,17 @@
 
       };
     },
-    computed:{
-      starArray(){
-        let {star,
-            star_1,
-            star_2,
-            star_3,
-            star_4,
-            star_5,
-            star_6,}=this.carData
+    computed: {
+      starArray() {
+        let {
+          star,
+          star_1,
+          star_2,
+          star_3,
+          star_4,
+          star_5,
+          star_6,
+        } = this.carData
         return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
       },
     },
@@ -140,7 +143,7 @@
     padding: 20rpx;
     padding-bottom: 25rpx;
     background-color: #fff;
-    
+
     // background: linear-gradient(to right, #fffdec, #fffbcf);
     border-radius: 10rpx;
     color: $text-p-color;
@@ -229,7 +232,7 @@
 
     @include pad-devices {
       padding: toPadPx(2) toPadPx(6);
-    margin-left: toPadPx(10);
+      margin-left: toPadPx(10);
       font-size: toPadPx(30);
     }
 
@@ -268,26 +271,26 @@
     padding: 8rpx 14rpx;
 
     // background-color: #23bbfa;
-    
-    background: linear-gradient(to right, #54cdff,#23bbfa );
+
+    background: linear-gradient(to right, #54cdff, #23bbfa);
 
     @include pad-devices {
       border-radius: toPadPx(6);
       font-size: toPadPx(28);
       padding: toPadPx(8) toPadPx(14);
     }
-    
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       color: $card-bg-color-dark;
     }
   }
-  
-  .bp-rare{
-    background: linear-gradient(to right, #d667f1,#cc52ea );
+
+  .bp-rare {
+    background: linear-gradient(to right, #d667f1, #cc52ea);
   }
-  
-  .bp-epic{
-    background: linear-gradient(to right, #fed016,#ffc107 );
+
+  .bp-epic {
+    background: linear-gradient(to right, #fed016, #ffc107);
   }
 
   .bp+.bp {
@@ -326,7 +329,7 @@
     height: 12rpx;
     background-color: #05d1dc;
     background: linear-gradient(to right, #0cd6e1, #05d1dc);
-    
+
     border-radius: 6rpx;
     // margin-bottom: 18rpx;
 
@@ -361,19 +364,21 @@
     display: flex;
     flex-direction: column;
   }
-  
-  .feature-tip-block{
+
+  .feature-tip-block {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
-  .feature-tip{
+
+  .feature-tip {
     color: $text-help-color;
     line-height: 56rpx;
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
+
     @include pad-devices {
       line-height: toPadPx(56);
     }
@@ -429,10 +434,11 @@
     text-align: center;
     z-index: 1;
     color: #fff;
-    
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
       color: $card-bg-color-dark;
     }
+
     // text-shadow: 0 0 20rpx rgba(0,0,0,0.6);
 
     @include pad-devices {
@@ -457,6 +463,4 @@
       height: toPadPx(40);
     }
   }
-
-
 </style>
