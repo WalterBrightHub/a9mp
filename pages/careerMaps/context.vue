@@ -7,6 +7,11 @@
           <view class="map-name"></view>
           <view class="car-class" v-for="item in ['D','C','B','A','S']" :key="item">{{item}}</view>
         </view>
+        <view class="row" v-for="item in selectedCareerMaps[theme]['ll']" :key="item._id">
+          <view class="map-name">{{item.mapName}}</view>
+          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
+        </view>
+        <view class="divider" />
         <view class="row" v-for="item in selectedCareerMaps[theme]['l']" :key="item._id">
           <view class="map-name">{{item.mapName}}</view>
           <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
