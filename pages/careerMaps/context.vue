@@ -50,9 +50,6 @@
       }
     },
     methods: {
-      onChangeMode(e) {
-        this.$emit('onChangeMode')
-      },
       betterName(name) {
         return name ? name.replace(/([DCBAS])(..)-/, '$2 ') : name
       }

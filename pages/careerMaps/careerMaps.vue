@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <view class="mode-changer">
-      <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
+      <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
     </view>
     <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
       :careerQueryStatus="careerQueryStatus"></career-query>
@@ -163,12 +163,6 @@
       },
 
       ...mapMutations(['toggleServer']),
-      onChangeMode() {
-        uni.showToast({
-          title: '已切换'
-        })
-        this.toggleServer()
-      }
     }
   }
 </script>

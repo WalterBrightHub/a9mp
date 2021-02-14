@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <view class="filter-block">
-      <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
+      <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
       <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}</picker>
     </view>
     <div class="contest-db">
@@ -115,12 +115,6 @@
     },
     methods: {
       ...mapMutations(['toggleServer']),
-      onChangeMode() {
-        uni.showToast({
-          title: '已切换'
-        })
-        this.toggleServer()
-      },
       onChangeType(e) {
         this.typeFilterValue = e.target.value
       },
