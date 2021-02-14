@@ -1,15 +1,15 @@
 <template>
   <view class="filter">
 
-    <picker class="sort-block" :range="sortRange" :range-key="'name'" @change="onChangeSort">{{sortRange[sortValue].name}}</picker>
+    <picker class="sort-block" :range="sortRange" :range-key="'name'" @change="onChangeSort">{{sort.name}}</picker>
 
-    <car-class-filter class="filter-block" v-if="sort==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
+    <car-class-filter class="filter-block" v-if="sort.value==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
     <!-- <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" /> -->
-    <release-version-filter class="filter-block" v-else-if="sort==='releaseVersion'" :releaseVersionRange="releaseVersionRange"
+    <release-version-filter class="filter-block" v-else-if="sort.value==='releaseVersion'" :releaseVersionRange="releaseVersionRange"
       @onChangeSelectMethod="onChangeSelectMethod" />
 
-    <all-filter class="filter-block" v-else-if="sort==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
-    <brand-filter class="filter-block" v-else-if="sort==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
+    <all-filter class="filter-block" v-else-if="sort.value==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
+    <brand-filter class="filter-block" v-else-if="sort.value==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
 
   </view>
 </template>
@@ -43,7 +43,7 @@
     props: ['brandRange', 'releaseVersionRange'],
     data() {
       return {
-        sort: 'carClass',
+        sortValue: 0,
         sortRange: [{
             name: '等级',
             value: 'carClass'
@@ -66,15 +66,16 @@
     },
     computed: {
       ...mapState(['server']),
-      sortValue: function() {
-        return this.sortRange.findIndex(item => item.value === this.sort)
+      sort: function() {
+        return this.sortRange[this.sortValue]
       },
       defaultSelect() {
         return {
           'carClass': selectCarClass('D', this.server),
           'all': selectAll('rank', true, this.server),
           'brand': selectBrand(this.brandRange[0], this.server),
-          'releaseVersion': selectReleaseVersion(this.releaseVersionRange[0] && this.releaseVersionRange[0].releaseVersion, this.server)
+          'releaseVersion': selectReleaseVersion(this.releaseVersionRange[0] && this.releaseVersionRange[0].releaseVersion,
+            this.server)
         }
       }
     },
@@ -84,21 +85,13 @@
         this.$emit('onChangeSelectMethod', method)
       },
       onChangeSort(e) {
-        let newSort = this.sortRange[e.target.value].value
-        if (this.sort !== newSort) {
-          this.sort = newSort
+        let newSortValue = e.target.value
+        if (this.sortValue !== newSortValue) {
+          this.sortValue = newSortValue
+
+          let newSort = this.sortRange[newSortValue].value
 
           this.$emit('onChangeSelectMethod', this.defaultSelect[newSort])
-          // this.$emit('resetLimit')
-          // uni.pageScrollTo({
-          //   scrollTop: 0,
-          //   duration: 0
-          // })
-          //切换时界面可能没有明显变化，加一个提示
-          // uni.showToast({
-          //   title: '已切换',
-          //   duration: 1000
-          // })
         }
 
       },
