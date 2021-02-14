@@ -1,6 +1,6 @@
 <template>
   <view class="filter-block">
-    <picker class="filter-picker" :range="sortFieldRange" :range-key="'name'" @change="onChangeSortField">{{sortFieldRange[sortFieldValue].name}}</picker>
+    <picker class="filter-picker" :range="sortFieldRange" :value="sortFieldValue" :range-key="'name'" @change="onChangeSortField">{{sortField.name}}</picker>
     <view class="filter-toggle" @tap="onToggleIsAsc">{{isAsc?'从低到高':'从高到低'}}</view>
   </view>
 </template>
@@ -13,8 +13,8 @@
   export default {
     data() {
       return {
-        sortField: 'rank',
         isAsc: true,
+        sortFieldValue: 0,
         sortFieldRange: [{
             name: '性能分',
             value: 'rank',
@@ -40,27 +40,28 @@
     },
     watch: {
       server(newServer) {
-        this.$emit('onChangeSelectMethod', select(this.sortField, this.isAsc, newServer))
+        this.$emit('onChangeSelectMethod', select(this.sortField.value, this.isAsc, newServer))
       }
     },
     computed: {
       ...mapState(['server']),
-      sortFieldValue() {
-        return this.sortFieldRange.findIndex(item => item.value === this.sortField)
+      sortField() {
+        return this.sortFieldRange[this.sortFieldValue]
       },
     },
     methods: {
       onChangeSortField(e) {
-        let newSortField = this.sortFieldRange[e.target.value].value
-        if (this.sortField !== newSortField) {
-          this.sortField = newSortField
+        let newSortFieldValue = e.target.value
+        if (this.sortFieldValue !== newSortFieldValue) {
+          this.sortFieldValue = newSortFieldValue
+          let newSortField = this.sortFieldRange[newSortFieldValue].value
           this.$emit('onChangeSelectMethod', select(newSortField, this.isAsc, this.server))
         }
       },
       onToggleIsAsc() {
         let newIsAsc = !this.isAsc
         this.isAsc = newIsAsc
-        this.$emit('onChangeSelectMethod', select(this.sortField, newIsAsc, this.server))
+        this.$emit('onChangeSelectMethod', select(this.sortField.value, newIsAsc, this.server))
       }
     }
   }
