@@ -3,7 +3,8 @@
     <view class="mode-changer">
       <view class="mode-button" @tap="onChangeMode">{{server==='al'?'国服':'国际'}} ⇌</view>
     </view>
-    <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server" :careerQueryStatus="careerQueryStatus"></career-query>
+    <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
+      :careerQueryStatus="careerQueryStatus"></career-query>
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
     <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' />
@@ -19,8 +20,7 @@
   import requestFail from '../../components/requestFail/requestFail.vue'
   import context from './context.vue'
   import careerQuery from './careerQuery.vue'
-  const myCloud = uniCloud
-  const db = myCloud.database()
+  const db = uniCloud.database()
   const requestCareerMaps = async function() {
     return db.collection('careerMaps').orderBy('_id').limit(100).get()
   }
@@ -38,7 +38,7 @@
         careerMapsStatus: 'ready',
         // careerSeasons: [],
         tracks: [],
-        mapThemeRange:[],
+        mapThemeRange: [],
         // 加载主题与赛道后开始查询
         careerQueryStatus: 'ready'
       }

@@ -1,12 +1,12 @@
 <template>
   <view class="context">
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
-      :collection="collection" :orderby="selectMethod.sort" :getone="false" :action="action" :where="selectMethod.where"
-      @load="onqueryload" @error="onqueryerror">
+      :collection="collection" :orderby="selectMethod.sort"  :where="selectMethod.where"
+      >
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
-          <car-card class="" :carData="carData"></car-card>
+          <car-card :carData="carData"></car-card>
         </view>
       </view>
 
@@ -48,12 +48,6 @@
           })
           uni.stopPullDownRefresh()
         })
-      },
-      onqueryload() {
-        // uni.hideLoading()
-      },
-      onqueryerror() {
-        // uni.hideLoading()
       },
     }
   }

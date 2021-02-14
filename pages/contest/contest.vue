@@ -34,7 +34,6 @@
   export default {
     components: {
 
-      // 'uni-clientdb': uniClientDB,
       'contest-item': contestItem
     },
     data() {

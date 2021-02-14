@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <filter-block @resetLimit="resetLimit" id="filter-block" :server="server" @onToggleServer="onToggleServer"
+    <filter-block  id="filter-block" 
       :brandRange="brandRange" :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
 
     <context id="context"  :carList="carList" :selectMethod="selectMethod" ref="carListDB" />
@@ -14,18 +14,12 @@
     mapMutations
   } from 'vuex'
 
-  import requestFail from '../../components/requestFail/requestFail.vue'
   import filterBlock from './filterBlock.vue'
   import context from './context.vue'
-  import {
-    compareVersion
-  } from './util.js'
   import selectCarClass from './components/filters/carClassFilter/select.js'
   import _ from 'lodash'
 
-  const myCloud = uniCloud
-
-  const db = myCloud.database()
+  const db = uniCloud.database()
 
   export default {
     components: {
@@ -101,18 +95,7 @@
       }
     },
     methods: {
-      ...mapMutations(['toggleServer']),
-      onToggleServer() {
-        // uni.showToast({
-        //   title: '已切换'
-        // })
-        this.toggleServer()
-        // this.resetLimit()
-        // uni.pageScrollTo({
-        //   scrollTop: 0,
-        //   duration: 0
-        // })
-      },
+      
       onChangeSelectMethod(method) {
         this.selectMethod = method
         uni.pageScrollTo({
