@@ -1,7 +1,7 @@
 <template>
   <view class="context">
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
-      :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where">
+      :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where" @load="onqueryload" @error="onqueryerror">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
@@ -10,7 +10,6 @@
       </view>
 
       <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
-      <view v-if="loading" class="loading">加载中...</view>
     </unicloud-db>
   </view>
 </template>
@@ -33,6 +32,11 @@
         return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
       },
     },
+    beforeCreate() {
+      uni.showLoading({
+        title: '加载中'
+      })
+    },
     methods: {
       loadMore() {
         this.$refs.carListDB.loadMore()
@@ -47,6 +51,12 @@
           })
           uni.stopPullDownRefresh()
         })
+      },
+      onqueryload() {
+        uni.hideLoading()
+      },
+      onqueryerror() {
+        uni.hideLoading()
       },
     }
   }
@@ -98,8 +108,7 @@
     }
   }
 
-  .car-empty-list,
-  .loading {
+  .car-empty-list {
     font-size: 36rpx;
     margin-top: 20rpx;
     color: $text-help-color;
