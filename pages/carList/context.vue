@@ -34,17 +34,8 @@
         // where:this.selectMethod.where
       };
     },
-    created() {
-      console.log(this.selectMethod)
-    },
-    watch: {
-      selectMethod(m) {
-        console.log(m)
-      }
-    },
     computed: {
       collection() {
-        console.log(this.selectMethod)
         return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
       },
     },
