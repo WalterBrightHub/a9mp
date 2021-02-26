@@ -39,24 +39,25 @@
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
-        <view class="perf-item" v-if="carData.nitroDuration>0">
+        <view class="perf-item">
           <view class="perf-name">单喷时间</view>
-          <view class="perf-value">{{Number(carData.nitroDuration).toFixed(2)}}</view>
+          <view class="perf-value" v-if="carData.nitroDuration>0">{{Number(carData.nitroDuration).toFixed(2)}}</view>
+          <view class="perf-value" v-else>机密</view>
         </view>
       </view>
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
         <view class="cost-list">
           <view class="cost-item">
             <view class="cost-name">升级</view>
-            <view class="cost-value">{{split3(carData.stageCost)}}</view>
+            <view class="cost-value">{{carData.stageCost>0?split3(carData.stageCost):'机密'}}</view>
           </view>
           <view class="cost-item">
             <view class="cost-name">零件</view>
-            <view class="cost-value">{{split3(carData.partCost)}}</view>
+            <view class="cost-value">{{carData.partCost>0?split3(carData.partCost):'机密'}}</view>
           </view>
           <view class="cost-item">
             <view class="cost-name">MAX</view>
-            <view class="cost-value">{{split3(carData.stageCost+carData.partCost)}}</view>
+            <view class="cost-value">{{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}</view>
           </view>
 
 
