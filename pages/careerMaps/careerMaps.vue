@@ -110,10 +110,7 @@
           this.careerMaps = res.result.data,
             this.careerMapsStatus = 'resolve'
 
-          uni.showToast({
-            title: '最新',
-            duration: 500
-          })
+          
         })
         .catch(e => {
           console.error(e)

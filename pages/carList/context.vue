@@ -45,10 +45,6 @@
         this.$refs.carListDB.loadData({
           // clear: true
         }, () => {
-          uni.showToast({
-            title: '最新',
-            duration: 500
-          })
           uni.stopPullDownRefresh()
         })
       },
