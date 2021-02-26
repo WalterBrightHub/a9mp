@@ -9,6 +9,9 @@
         collection="contest" orderby="startTime desc,contestName asc" :getone="false" :action="action" :where="where"
         @load="onqueryload" @error="onqueryerror">
         <view v-if="error" class="error">{{error.message}}</view>
+        <view class="loading" v-else-if="loading">
+          <loading />
+        </view>
         <view v-else class="contest-list">
 
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
@@ -23,6 +26,7 @@
 
 <script>
   import contestItem from './components/contestItem.vue'
+  import loading from '../../components/loading/loading.vue'
   // import uniClientDB from '../../components/uni-clientdb/uni-clientdb.vue'
 
   import {
@@ -34,7 +38,8 @@
   export default {
     components: {
 
-      'contest-item': contestItem
+      'contest-item': contestItem,
+      'loading': loading
     },
     data() {
       return {
@@ -69,9 +74,7 @@
     },
     onLoad() {
       // this.contestStatus = 'pending'
-      uni.showLoading({
-        title: '加载中'
-      })
+      
     },
     onPullDownRefresh() {
 
@@ -227,7 +230,8 @@
     }
   }
 
-  .contest-empty-list {
+  .contest-empty-list,
+  .loading {
     margin-top: 20rpx;
     color: $text-help-color;
     display: flex;

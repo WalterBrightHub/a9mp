@@ -61,10 +61,6 @@
 
       this.careerMapsStatus = 'pending'
 
-      uni.showLoading({
-        title: '加载中',
-      })
-
       requestCareerMaps()
         .then(res => {
           // console.log(res.result) // 3

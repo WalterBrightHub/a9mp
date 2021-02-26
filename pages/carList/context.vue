@@ -3,6 +3,9 @@
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
       :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where" @load="onqueryload" @error="onqueryerror">
       <view v-if="error" class="error">{{error.message}}</view>
+      <view class="loading" v-else-if="loading">
+        <loading />
+      </view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
           <car-card :carData="carData"></car-card>
@@ -16,10 +19,12 @@
 
 <script>
   import carCard from './components/carCard.vue'
+  import loading from '../../components/loading/loading.vue'
 
   export default {
     components: {
-      'car-card': carCard
+      'car-card': carCard,
+      'loading': loading
     },
     props: ['carList', 'selectMethod'],
     data() {
@@ -31,11 +36,6 @@
       collection() {
         return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
       },
-    },
-    beforeCreate() {
-      uni.showLoading({
-        title: '加载中'
-      })
     },
     methods: {
       loadMore() {
@@ -123,5 +123,9 @@
     @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
+  }
+
+  .loading {
+    padding: 24rpx;
   }
 </style>

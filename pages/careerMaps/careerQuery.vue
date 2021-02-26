@@ -10,6 +10,9 @@
     <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
       :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true">
       <view v-if="error" class="error">{{error.message}}</view>
+      <view class="loading" v-else-if="loading">
+        <loading />
+      </view>
       <div class="career-season-list" v-else-if="data.length>0">
         <div class="career-season" v-for="season in data" :key="season._id">
           <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
@@ -18,14 +21,14 @@
           <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}</div>
         </div>
       </div>
-      <div v-if="data.length===0 && careerQueryStatus==='resolve' " class="empty-season-list">😮 生涯竟然没有这张图</div>
-      <!-- <view v-if="loading" class="loading">加载中...</view> -->
+      <div v-if="!loading && data.length===0 && options.careerQueryStatus==='resolve' " class="empty-season-list">😮 生涯竟然没有这张图</div>
     </unicloud-db>
   </div>
 </template>
 
 <script>
   import _ from 'lodash'
+  import loading from '../../components/loading/loading.vue'
 
   const raceTypes = {
     '常规赛': 'race',
@@ -34,6 +37,9 @@
   }
 
   export default {
+    components: {
+      'loading': loading
+    },
     props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server', "careerQueryStatus"],
     data() {
       return {
@@ -55,7 +61,8 @@
       options() {
         return {
           server: this.server,
-          raceTypes
+          raceTypes,
+          careerQueryStatus:this.careerQueryStatus
         }
       },
       where() {
@@ -202,7 +209,8 @@
   }
 
   .career-season-list,
-  .empty-season-list {
+  .empty-season-list,
+  .loading {
     background-color: $card-bg-color;
     border-radius: 0 0 10rpx 10rpx;
     margin: 5rpx 20rpx 0 20rpx;
