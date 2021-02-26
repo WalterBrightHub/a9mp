@@ -3,13 +3,14 @@
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
       :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where" @load="onqueryload" @error="onqueryerror">
       <view v-if="error" class="error">{{error.message}}</view>
-      <view class="loading" v-else-if="loading">
-        <loading />
-      </view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
           <car-card :carData="carData"></car-card>
         </view>
+      </view>
+      
+      <view class="loading" v-if="loading">
+        <loading />
       </view>
 
       <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
@@ -123,5 +124,8 @@
 
   .loading {
     padding: 24rpx;
+    @include pad-devices {
+      padding: toPadPx(24);
+    }
   }
 </style>

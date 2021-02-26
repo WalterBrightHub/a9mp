@@ -9,13 +9,13 @@
         collection="contest" orderby="startTime desc,contestName asc" :getone="false" :action="action" :where="where"
         @load="onqueryload" @error="onqueryerror">
         <view v-if="error" class="error">{{error.message}}</view>
-        <view class="loading" v-else-if="loading">
-          <loading />
-        </view>
         <view v-else class="contest-list">
 
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
             :now="options.now" :index="index" />
+        </view>
+        <view class="loading" v-if="loading">
+          <loading />
         </view>
         <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
         <!-- <view v-if="loading" class="loading">加载中...</view> -->
@@ -254,7 +254,7 @@
     }
   }
 
-  .loading,
+
   .error {
     margin-top: 10rpx;
     color: $text-help-color;
