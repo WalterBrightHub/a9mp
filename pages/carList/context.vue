@@ -1,7 +1,8 @@
 <template>
   <view class="context">
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
-      :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where" @load="onqueryload" @error="onqueryerror">
+      :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where" @load="onqueryload" @error="onqueryerror"
+      :manual="true">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
@@ -33,8 +34,17 @@
         // where:this.selectMethod.where
       };
     },
+    created() {
+      console.log(this.selectMethod)
+    },
+    watch: {
+      selectMethod(m) {
+        console.log(m)
+      }
+    },
     computed: {
       collection() {
+        console.log(this.selectMethod)
         return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
       },
     },
@@ -55,10 +65,10 @@
         })
       },
       onqueryload() {
-        uni.hideLoading()
+        // uni.hideLoading()
       },
       onqueryerror() {
-        uni.hideLoading()
+        // uni.hideLoading()
       },
     }
   }

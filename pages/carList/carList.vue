@@ -28,7 +28,7 @@
     },
     data() {
       return {
-        selectMethod: selectCarClass('D', this.server),
+        selectMethod: {},
         releaseVersionRangeGL: [],
         releaseVersionRangeAL: [],
         brandRange: ['Ferrari'],
@@ -45,6 +45,9 @@
       this.limit += 20
     },
     onLoad() {
+      //默认为空对象，组件加载设置为手动，当重新赋值时就加载了，无需调用
+      this.selectMethod = selectCarClass('D', this.server)
+      // this.$refs.carListDB.loadData()
 
       //获取所有品牌，并按照车辆数降序排列。
       db.collection('carList').where('brand!=""').groupBy('brand').groupField('count(*) as count').orderBy(
