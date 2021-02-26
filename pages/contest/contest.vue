@@ -74,13 +74,14 @@
     },
     onLoad() {
       // this.contestStatus = 'pending'
-      
+
     },
     onPullDownRefresh() {
 
       // const that = this
       this.now = new Date().getTime()
       this.$refs.contestDB.loadData({
+        //设置false和不设置都会导致bug，真奇怪
         clear: true
       }, () => {
         // console.log(this.$refs.contestDB.dataList);

@@ -8,7 +8,7 @@
           <car-card :carData="carData"></car-card>
         </view>
       </view>
-      
+
       <view class="loading" v-if="loading">
         <loading />
       </view>
@@ -44,8 +44,13 @@
       },
       refresh() {
         this.$refs.carListDB.loadData({
+          //设置true无效，真奇怪
           // clear: true
         }, () => {
+          uni.showToast({
+            title: '最新',
+            duration: 500
+          })
           uni.stopPullDownRefresh()
         })
       },
@@ -124,6 +129,7 @@
 
   .loading {
     padding: 24rpx;
+
     @include pad-devices {
       padding: toPadPx(24);
     }

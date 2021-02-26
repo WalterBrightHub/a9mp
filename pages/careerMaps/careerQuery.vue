@@ -8,7 +8,8 @@
           class="tip-triangle">▼</span></picker>
     </div>
     <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true" page-size="479">
+      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true"
+      page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
@@ -21,7 +22,8 @@
           <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}</div>
         </div>
       </div>
-      <div v-if="!loading && data.length===0 && options.careerQueryStatus==='resolve' " class="empty-season-list">😮 生涯竟然没有这张图</div>
+      <div v-if="!loading && data.length===0 && options.careerQueryStatus==='resolve' " class="empty-season-list">😮
+        生涯竟然没有这张图</div>
     </unicloud-db>
   </div>
 </template>
@@ -62,7 +64,7 @@
         return {
           server: this.server,
           raceTypes,
-          careerQueryStatus:this.careerQueryStatus
+          careerQueryStatus: this.careerQueryStatus
         }
       },
       where() {

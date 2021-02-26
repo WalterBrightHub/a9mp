@@ -110,7 +110,7 @@
           this.careerMaps = res.result.data,
             this.careerMapsStatus = 'resolve'
 
-          
+
         })
         .catch(e => {
           console.error(e)
