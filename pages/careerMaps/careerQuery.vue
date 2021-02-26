@@ -8,7 +8,7 @@
           class="tip-triangle">▼</span></picker>
     </div>
     <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true">
+      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true" page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
