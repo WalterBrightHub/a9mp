@@ -22,7 +22,7 @@
   import careerQuery from './careerQuery.vue'
   const db = uniCloud.database()
   const requestCareerMaps = async function() {
-    return db.collection('careerMaps').orderBy('_id').limit(100).get()
+    return db.collection('careerMaps2').orderBy('_id').limit(100).get()
   }
 
 

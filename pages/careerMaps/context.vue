@@ -9,22 +9,22 @@
         </view>
         <view class="row" v-for="item in selectedCareerMaps[theme]['ll']" :key="item._id">
           <view class="map-name">{{item.mapName}}</view>
-          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
+          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" >{{place}}</view>
         </view>
         <view class="divider" />
         <view class="row" v-for="item in selectedCareerMaps[theme]['l']" :key="item._id">
           <view class="map-name">{{item.mapName}}</view>
-          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
+          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" >{{place}}</view>
         </view>
         <view class="divider" />
         <view class="row" v-for="item in selectedCareerMaps[theme]['m']" :key="item._id">
           <view class="map-name">{{item.mapName}}</view>
-          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
+          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" >{{place}}</view>
         </view>
         <view class="divider" />
         <view class="row" v-for="item in selectedCareerMaps[theme]['s']" :key="item._id">
           <view class="map-name">{{item.mapName}}</view>
-          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{betterName(place)}}</view>
+          <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" >{{place}}</view>
         </view>
       </view>
     </view>
@@ -50,9 +50,6 @@
       }
     },
     methods: {
-      betterName(name) {
-        return name ? name.replace(/([DCBAS])(..)-/, '$2 ') : name
-      }
     }
   }
 </script>
