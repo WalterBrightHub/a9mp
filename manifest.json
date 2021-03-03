@@ -85,6 +85,12 @@
           "text": "地图"
         },
         {
+          "pagePath": "pages/seasonPass/seasonPass",
+          "iconPath": "@iconPathSeasonPass",
+          "selectedIconPath": "@selectedIconPathSeasonPass",
+          "text": "通行证"
+        },
+        {
           "pagePath": "pages/contest/contest",
           "iconPath": "@iconPathContest",
           "selectedIconPath": "@selectedIconPathContest",
@@ -119,7 +125,7 @@
       "postcss": true,
       "minified": true
     }
-    
+
   },
   "h5": {
     "router": {

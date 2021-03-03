@@ -12,8 +12,14 @@
       "style": {
         "enablePullDownRefresh": true
       }
-    }, 
+    },
+    {
+      "path": "pages/seasonPass/seasonPass",
+      "style": {
+        "enablePullDownRefresh": true
+      }
 
+    },
 
     {
       "path": "pages/contest/contest",
@@ -21,6 +27,13 @@
         "enablePullDownRefresh": true,
         "onReachBottomDistance": 200
       }
+    }, {
+      "path": "pages/seasonPass/missionMapQuery/missionMapQuery",
+      "style": {
+        "navigationBarTitleText": "精确查询",
+        "enablePullDownRefresh": false
+      }
+
     }
   ],
 
@@ -54,6 +67,12 @@
         "iconPath": "static/tabbar-icons/flag.png",
         "selectedIconPath": "static/tabbar-icons/flag-selected.png",
         "text": "地图"
+      },
+      {
+        "pagePath": "pages/seasonPass/seasonPass",
+        "iconPath": "static/tabbar-icons/pass.png",
+        "selectedIconPath": "static/tabbar-icons/pass-selected.png",
+        "text": "通行证"
       },
       {
         "pagePath": "pages/contest/contest",
