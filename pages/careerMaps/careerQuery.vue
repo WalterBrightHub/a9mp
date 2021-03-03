@@ -1,11 +1,16 @@
 <template>
   <div class="context">
-    <div class="head">精确查询</div>
-    <div class="picker-block">
-      <picker class="picker theme-picker" :range="selectedMapThemeRange" @change="onChangeMapTheme" :value="mapThemeValue">{{mapThemeDisplay}}<span
-          class="tip-triangle">▼</span></picker>
-      <picker class="picker name-picker" :range="mapNameAndLengthRange" @change="onChangeMapName" :value="mapNameValue">{{mapName}}<span
-          class="tip-triangle">▼</span></picker>
+    <div class="map-theme-block">
+      <div class="map-theme" :class="{['map-theme-selected']:index===mapThemeValue}" v-for="(mapTheme,index) in selectedMapThemeRange"
+        @tap="onChangeMapTheme(index)">{{mapTheme}}</div>
+    </div>
+    <div class="map-name-block">
+
+      <div class="map-name" :class="{['map-name-selected']:index===mapNameValue}" v-for="(item,index) in mapNameAndLengthRange"
+        @tap="onChangeMapName(index)">{{item}}</div>
+
+
+
     </div>
     <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
       :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true"
@@ -73,17 +78,12 @@
         :'大桥景观'}'`
 
       },
-      mapTheme() {
-        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue].mapThemeCN : ''
-      },
       selectedMapThemeRange() {
         return this.server === 'gl' ? this.mapThemeRange.map(item => item.mapThemeCN) : this.mapThemeRange.map(item =>
           item.mapThemeAL)
       },
-      mapThemeDisplay() {
-        return this.mapThemeRange.length > 0 ?
-          this.selectedMapThemeRange[this.mapThemeValue] :
-          ''
+      mapTheme() {
+        return this.mapThemeRange.length > 0 ? this.mapThemeRange[this.mapThemeValue].mapThemeCN : ''
       },
       selectedMapNames() {
         return this.trackDetails.filter(item => item.mapThemeCN === this.mapTheme)
@@ -95,30 +95,17 @@
           this.selectedMapNames.map(item =>
             item.mapNameAL + ` ${item.length}'`)
       },
-      mapName() {
-        if (!this.selectedMapNames[this.mapNameValue]) {
-          return ''
-        }
-        return this.server === 'gl' ?
-          this.selectedMapNames[this.mapNameValue].mapNameCN :
-          this.selectedMapNames[this.mapNameValue].mapNameAL
-      }
     },
     methods: {
 
-      onChangeMapTheme(e) {
-        const newMapThemeValue = e.target.value
-        if (newMapThemeValue !== this.mapThemeValue) {
-          this.mapThemeValue = newMapThemeValue
+      onChangeMapTheme(index) {
+        if (this.mapThemeValue !== index) {
           this.mapNameValue = 0
+          this.mapThemeValue = index
         }
       },
-      onChangeMapName(e) {
-
-        const newMapNameValue = e.target.value
-        if (newMapNameValue !== this.mapNameValue) {
-          this.mapNameValue = newMapNameValue
-        }
+      onChangeMapName(index) {
+        this.mapNameValue = index
       },
       refresh() {
         this.$refs.careerSeasonDB.loadData()
@@ -137,78 +124,87 @@
     }
   }
 
-  .head {
-    font-size: 36rpx;
-    color: #41b90a;
-    font-weight: bold;
-    border-radius: 10rpx 10rpx 0 0;
-    padding: 20rpx;
-    background-color: $card-bg-color;
-    margin: 0 20rpx 5rpx 20rpx;
+  .map-theme-block,
+  .map-name-block {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
 
-    @include pad-devices {
-      font-size: toPadPx(36);
-      border-radius: toPadPx(10) toPadPx(10) 0 0;
-      padding: toPadPx(20);
-      background-color: $card-bg-color;
-      margin: 0 toPadPx(20) toPadPx(5) toPadPx(20);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
-    }
-  }
-
-  .picker-block {
-    display: flex;
     margin: 0 20rpx;
+    padding: 20rpx 0;
+
+    background-color: $card-bg-color;
 
     @include pad-devices {
       margin: 0 toPadPx(20);
     }
-  }
-
-  .picker {
-    background-color: $card-bg-color;
-    // border-radius: 5rpx;
-    padding: 20rpx;
-    font-size: 32rpx;
-    color: $text-title-color;
-    font-weight: bold;
-    flex: 1;
-    text-align: center;
-
-    @include pad-devices {
-      padding: toPadPx(20);
-      font-size: toPadPx(32);
-    }
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
+    }
+  }
+
+  .map-theme-block {
+    border-radius: 10rpx 10rpx 0 0;
+
+    @include pad-devices {
+      border-radius: toPadPx(10) toPadPx(10) 0 0;
+    }
+  }
+
+  .map-name-block {
+    margin-top: 5rpx;
+    grid-template-columns: repeat(3, 33.3333333%);
+
+    @include pad-devices {
+      margin-top: toPadPx(5);
+    }
+  }
+
+  .map-theme,
+  .map-name {
+
+
+    display: flex;
+    justify-content: center;
+
+    color: $text-title-color;
+    font-weight: bold;
+
+    padding: 10rpx 0;
+    // border: 1rpx solid $divider-color;
+    // box-sizing: border-box;
+
+
+    font-size: 28rpx;
+    line-height: 48rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(28);
+      line-height: toPadPx(48);
+      padding: toPadPx(10) 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
       color: $text-title-color-dark;
     }
   }
 
-  .picker+.picker {
-    margin-left: 5rpx;
-
-    @include pad-devices {
-      margin-left: toPadPx(5);
-    }
-  }
-
-  .tip-triangle {
-    color: #d4d4d4;
-    padding-left: 16rpx;
-
-    @include pad-devices {
-      padding-left: toPadPx(16);
-    }
+  .map-name {
+    color: $text-p-color;
+    font-weight: normal;
 
     @media (prefers-color-scheme: dark) {
-      color: $text-help-color-dark;
+      color: $text-p-color-dark;
     }
   }
+
+  .map-theme-selected,
+  .map-name-selected {
+    background-color: #41b90a;
+    color: #fff;
+  }
+
+
 
   .career-season-list,
   .empty-season-list,
