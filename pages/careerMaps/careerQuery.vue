@@ -1,20 +1,20 @@
 <template>
   <div class="context">
     <div class="map-theme-block">
-      <div class="map-theme" :class="{['map-theme-selected']:index===mapThemeValue}" v-for="(mapTheme,index) in selectedMapThemeRange"
-        @tap="onChangeMapTheme(index)">{{mapTheme}}</div>
+      <div class="map-theme" :class="{['map-theme-selected']:index===mapThemeValue}"
+        v-for="(mapTheme,index) in selectedMapThemeRange" @tap="onChangeMapTheme(index)">{{mapTheme}}</div>
     </div>
     <div class="map-name-block">
 
-      <div class="map-name" :class="{['map-name-selected']:index===mapNameValue}" v-for="(item,index) in mapNameAndLengthRange"
-        @tap="onChangeMapName(index)">{{item}}</div>
+      <div class="map-name" :class="{['map-name-selected']:index===mapNameValue}"
+        v-for="(item,index) in mapNameAndLengthRange" @tap="onChangeMapName(index)">{{item}}</div>
 
 
 
     </div>
-    <unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true"
-      page-size="479">
+    <unicloud-db class="career-season-db" ref="careerSeasonDB"
+      v-slot:default="{data, pagination, loading, error, options}" :options="options" collection="careerSeasons"
+      :orderby="_id" :getone="false" :where="where" manual="true" page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
@@ -24,7 +24,8 @@
           <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
           <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
           <div class="season-item race">{{season.race}}</div>
-          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}</div>
+          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
+          </div>
         </div>
       </div>
       <div v-if="!loading && data.length===0 && options.careerQueryStatus==='resolve' " class="empty-season-list">😮
@@ -200,8 +201,8 @@
 
   .map-theme-selected,
   .map-name-selected {
-    background-color: #41b90a;
-    color: #fff;
+    background-color: #2d8006;
+    color: $text-title-color-dark;
   }
 
 
