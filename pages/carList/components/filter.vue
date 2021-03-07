@@ -3,13 +3,15 @@
 
     <picker class="sort-block" :range="sortRange" :range-key="'name'" @change="onChangeSort">{{sort.name}}</picker>
 
-    <car-class-filter class="filter-block" v-if="sort.value==='carClass'" @onChangeSelectMethod="onChangeSelectMethod" />
-    <!-- <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" /> -->
-    <release-version-filter class="filter-block" v-else-if="sort.value==='releaseVersion'" :releaseVersionRange="releaseVersionRange"
+    <car-class-filter class="filter-block" v-if="sort.value==='carClass'"
       @onChangeSelectMethod="onChangeSelectMethod" />
+    <!-- <car-class-al-filter class="filter-block" v-else-if="sort==='carClassAL'" @onChangeSelectMethod="onChangeSelectMethod" /> -->
+    <release-version-filter class="filter-block" v-else-if="sort.value==='releaseVersion'"
+      :releaseVersionRange="releaseVersionRange" @onChangeSelectMethod="onChangeSelectMethod" />
 
     <all-filter class="filter-block" v-else-if="sort.value==='all'" @onChangeSelectMethod="onChangeSelectMethod" />
-    <brand-filter class="filter-block" v-else-if="sort.value==='brand'" :brandRange="brandRange" @onChangeSelectMethod="onChangeSelectMethod" />
+    <brand-filter class="filter-block" v-else-if="sort.value==='brand'" :brandRange="brandRange"
+      @onChangeSelectMethod="onChangeSelectMethod" />
 
   </view>
 </template>
@@ -74,7 +76,8 @@
           'carClass': selectCarClass('D', this.server),
           'all': selectAll('rank', true, this.server),
           'brand': selectBrand(this.brandRange[0], this.server),
-          'releaseVersion': selectReleaseVersion(this.releaseVersionRange[0] && this.releaseVersionRange[0].releaseVersion,
+          'releaseVersion': selectReleaseVersion(this.releaseVersionRange[0] && this.releaseVersionRange[0]
+            .releaseVersion,
             this.server)
         }
       }

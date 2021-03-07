@@ -209,8 +209,9 @@
   .map-name-selected {
     background-color: #41b90a;
     color: #fff;
+
     @media (prefers-color-scheme: dark) {
-    color: $text-title-color-dark;
+      color: $text-title-color-dark;
       background-color: #2d8006;
     }
   }
