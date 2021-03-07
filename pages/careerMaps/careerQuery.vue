@@ -139,6 +139,7 @@
       margin: 0 toPadPx(20);
     }
 
+
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
@@ -149,6 +150,11 @@
 
     @include pad-devices {
       border-radius: toPadPx(10) toPadPx(10) 0 0;
+    }
+
+    @media (min-width:760px) {
+      grid-template-columns: repeat(5, 20%);
+
     }
   }
 
@@ -201,8 +207,12 @@
 
   .map-theme-selected,
   .map-name-selected {
-    background-color: #2d8006;
+    background-color: #41b90a;
+    color: #fff;
+    @media (prefers-color-scheme: dark) {
     color: $text-title-color-dark;
+      background-color: #2d8006;
+    }
   }
 
 
