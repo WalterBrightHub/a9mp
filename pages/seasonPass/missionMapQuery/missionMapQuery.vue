@@ -1,26 +1,26 @@
 <template>
-	<view class="container">
-		<div class="head">{{mapName}}</div>
-		
-		<unicloud-db class="career-season-db" ref="careerSeasonDB" v-slot:default="{data, pagination, loading, error, options}"
-		  :options="options" collection="careerSeasons" :orderby="_id" :getone="false" :where="where" manual="true"
-		  page-size="479">
-		  <view v-if="error" class="error">{{error.message}}</view>
-		  <view class="loading" v-else-if="loading">
-		    <loading />
-		  </view>
-		  <div class="career-season-list" v-else-if="data.length>0">
-		    <div class="career-season" v-for="season in data" :key="season._id">
-		      <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
-		      <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
-		      <div class="season-item race">{{season.race}}</div>
-		      <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}</div>
-		    </div>
-		  </div>
-		  <div v-if="!loading && data.length===0 " class="empty-season-list">😮
-		    生涯竟然没有这张图</div>
-		</unicloud-db>
-	</view>
+  <view class="container">
+    <div class="head">{{mapName}}</div>
+
+    <unicloud-db class="career-season-db" ref="careerSeasonDB"
+      v-slot:default="{data, pagination, loading, error, options}" :options="options" collection="careerSeasons"
+      :orderby="_id" :getone="false" :where="where" manual="true" page-size="479">
+      <view v-if="error" class="error">{{error.message}}</view>
+      <view class="loading" v-else-if="loading">
+        <loading />
+      </view>
+      <div class="career-season-list" v-else-if="data.length>0">
+        <div class="career-season" v-for="season in data" :key="season._id">
+          <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
+          <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
+          <div class="season-item race">{{season.race}}</div>
+          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
+          </div>
+        </div>
+      </div>
+      <div v-if="!loading && data.length===0 " class="empty-season-list">😮 生涯竟然没有这张图</div>
+    </unicloud-db>
+  </view>
 </template>
 
 <script>
@@ -29,43 +29,47 @@
     '追逐赛': 'hunted',
     '计时赛': 'time-attack'
   }
-  
-	export default {
-		data() {
-			return {
-				where:'',
-        mapName:'',
-        server:''
-			}
-		},
-    computed:{
-      options(){
+
+  export default {
+    data() {
+      return {
+        where: '',
+        mapName: '',
+        server: ''
+      }
+    },
+    computed: {
+      options() {
         return {
-          server:this.server,
+          server: this.server,
           raceTypes
         }
       }
     },
-    onLoad({server,mapName}){
-      this.server=server
-      this.mapName=mapName
-      this.where=server==='gl'
-        ?`mapNameCN=='${mapName}'`
-        :`mapNameAL=='${mapName}'`
+    onLoad({
+      server,
+      mapName
+    }) {
+      this.server = server
+      this.mapName = mapName
+      this.where = server === 'gl' ?
+        `mapNameCN=='${mapName}'` :
+        `mapNameAL=='${mapName}'`
     },
-		methods: {
-			
-		}
-	}
+    methods: {
+
+    }
+  }
 </script>
 
 <style lang="scss">
-.container {
+  .container {
     @include pad-devices {
       max-width: 768px;
-      width:100%;
+      width: 100%;
       margin: 0 auto;
     }
+
     padding: 20rpx 0;
   }
 
@@ -76,7 +80,7 @@
     border-radius: 10rpx 10rpx 0 0;
     padding: 20rpx;
     background-color: $card-bg-color;
-    margin: 0  20rpx;
+    margin: 0 20rpx;
 
     @include pad-devices {
       font-size: toPadPx(36);
