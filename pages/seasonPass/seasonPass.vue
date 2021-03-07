@@ -1,6 +1,7 @@
 <template>
   <view class="container">
-    <context :seasonPass="computedSeasonPass" :now="now" :server="server" @onToggleServer="onToggleServer" />
+    <context :seasonPass="computedSeasonPass" :seasonPassStatus="seasonPassMissionsStatus" :server="server"
+      @onToggleServer="toggleServer" @onRetry="onRetry" />
   </view>
 </template>
 
@@ -10,8 +11,13 @@
     mapMutations
   } from 'vuex'
   import context from './context.vue'
-  
-  import {seasonPassGL,seasonPassAL} from './fakeData.js'
+
+  const db = uniCloud.database()
+  const requestSeasonPassMissions = async function(now, server) {
+    return db.collection('seasonPassMissions').where(`server=="${server}"&&endTime>${now}`).get({
+      getOne: true
+    })
+  }
 
   export default {
     components: {
@@ -19,15 +25,20 @@
     },
     data() {
       return {
-        now: new Date().getTime(),
-        seasonPassGL,
-        seasonPassAL
+        seasonPassMissions: {
+          episodes: []
+        },
+        seasonPassMissionsStatus: 'ready',
+
       };
     },
     computed: {
       ...mapState(['server']),
       computedSeasonPass() {
-        const seasonPass=this.server==='gl'?this.seasonPassGL:this.seasonPassAL
+        const seasonPass = this.seasonPassMissions
+        if (!seasonPass) {
+          return null
+        }
         const {
           episodes
         } = seasonPass
@@ -37,16 +48,64 @@
         }
       }
     },
+    watch: {
+      server(newServer) {
+
+        let now = new Date().getTime()
+        this.seasonPassMissionsStatus = 'loading'
+        requestSeasonPassMissions(now, this.server)
+          .then(res => {
+            this.seasonPassMissions = res.result.data
+            this.seasonPassMissionsStatus = 'resolve'
+          }).catch(e => {
+            this.seasonPassMissionsStatus = 'reject'
+          })
+      }
+    },
     onLoad() {
-      
+
+      this.seasonPassMissionsStatus = 'loading'
+      let now = new Date().getTime()
+      requestSeasonPassMissions(now, this.server)
+        .then(res => {
+          this.seasonPassMissions = res.result.data
+          this.seasonPassMissionsStatus = 'resolve'
+        }).catch(e => {
+          this.seasonPassMissionsStatus = 'reject'
+        })
+    },
+    onPullDownRefresh() {
+      // this.seasonPassMissionsStatus = 'loading'
+      let now = new Date().getTime()
+      requestSeasonPassMissions(now, this.server)
+        .then(res => {
+          // return Promise.reject()
+          this.seasonPassMissions = res.result.data
+          this.seasonPassMissionsStatus = 'resolve'
+          uni.showToast({
+            title: '最新',
+            duration: 500
+          })
+        }).catch(e => {
+          this.seasonPassMissionsStatus = 'reject'
+        }).finally(() => {
+          uni.stopPullDownRefresh()
+        })
     },
     methods: {
       ...mapMutations(['toggleServer']),
-      onToggleServer() {
-        uni.showToast({
-          title: '已切换'
-        })
-        this.toggleServer()
+      onRetry() {
+        this.seasonPassMissionsStatus = 'loading'
+        let now = new Date().getTime()
+        requestSeasonPassMissions(now, this.server)
+          .then(res => {
+            this.seasonPassMissions = res.result.data
+            this.seasonPassMissionsStatus = 'resolve'
+          }).catch(e => {
+            this.seasonPassMissionsStatus = 'reject'
+          }).finally(() => {
+            uni.stopPullDownRefresh()
+          })
       }
     }
   }

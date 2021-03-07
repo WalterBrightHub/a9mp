@@ -4,10 +4,10 @@
 
       <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
       <view class="season-title-block">
-        <view class="season-name">{{seasonPass.seasonName}}</view>
+        <view class="season-name">{{seasonName}}</view>
       </view>
     </view>
-    <view class="mission-list-block">
+    <view class="mission-list-block" v-if="seasonPassStatus==='resolve' && seasonPass">
 
       <view class="mission-list" v-for="episode in seasonPass.episodes" :key="episode.episode_id">
         <view class="episode-name">第 {{episode.episode_id}} 幕</view>
@@ -27,26 +27,40 @@
         </view>
       </view>
     </view>
+
+    <view class="loading" v-else-if="seasonPassStatus==='loading'">
+      <loading></loading>
+    </view>
+    <view class="no-season-pass-tip" v-else-if="seasonPassStatus==='resolve' && !seasonPass">没有可用的通行证赛季。稍后再来！</view>
+    <view class="no-season-pass-tip" v-else-if="seasonPassStatus==='reject'">
+      <request-fail @onRetry='onRetry' />
+    </view>
   </view>
 </template>
 
 <script>
-  import moment from 'moment'
+  import loading from '../../components/loading/loading.vue'
+  import requestFail from '../../components/requestFail/requestFail.vue'
   export default {
-    props: ['seasonPass', 'now', 'server'],
+    components: {
+      'loading': loading,
+      'request-fail': requestFail,
+
+    },
+    props: ['seasonPass', 'seasonPassStatus', 'server'],
     data() {
       return {
 
       };
     },
     computed: {
-      remainTimeString() {
-        console.log(this.now)
-        console.log(moment(this.seasonPass.endTime))
-        return moment(this.seasonPass.endTime).from(this.now, true)
-      },
       serverName() {
         return this.server === 'gl' ? "国际" : "国服"
+      },
+      seasonName() {
+        return this.seasonPassStatus === 'resolve' ?
+          (this.seasonPass ? this.seasonPass.seasonName : '敬请期待') :
+          ''
       }
     },
     methods: {
@@ -59,16 +73,20 @@
         uni.navigateTo({
           url: `/pages/seasonPass/missionMapQuery/missionMapQuery?server=${this.server}&mapName=${mapName}`
         })
+      },
+      onRetry() {
+        this.$emit('onRetry')
       }
     }
   }
 </script>
 
 <style lang="scss">
-  .context{
+  .context {
     max-width: 768px;
     margin: 0 auto;
   }
+
   .head {
     display: flex;
   }
@@ -150,7 +168,31 @@
     }
   }
 
+  .loading {
+    padding-top: 30rpx;
 
+    @include pad-devices {
+      padding-top: toPadPx(30);
+    }
+  }
+
+  .no-season-pass-tip {
+    color: $text-help-color;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+    padding-top: 48rpx;
+
+    @media (prefers-color-scheme: dark) {
+
+      color: $text-help-color-dark;
+    }
+
+    @include pad-devices {
+      font-size: toPadPx(32);
+      padding-top: toPadPx(48);
+    }
+  }
 
   .mission-list-block {
     padding-bottom: 30rpx;
@@ -208,10 +250,10 @@
   }
 
   .mission-tag-block {
-    padding: 30rpx 20rpx 0 20rpx;
+    padding: 25rpx 20rpx 0 20rpx;
 
     @include pad-devices {
-      padding: toPadPx(30) toPadPx(20) 0 toPadPx(20);
+      padding: toPadPx(25) toPadPx(20) 0 toPadPx(20);
     }
   }
 
@@ -250,12 +292,12 @@
 
 
   .mission-solution {
-    padding: 0 20rpx 30rpx 20rpx;
+    padding: 5rpx 20rpx 25rpx 20rpx;
     font-size: 32rpx;
 
     @include pad-devices {
       font-size: toPadPx(32);
-      padding: 0 toPadPx(20) toPadPx(30) toPadPx(20);
+      padding: toPadPx(5) toPadPx(20) toPadPx(25) toPadPx(20);
     }
   }
 
