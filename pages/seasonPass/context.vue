@@ -23,7 +23,7 @@
           </view>
         </view>
         <view v-else class="episode-empty-list">
-          <view class="no-hard-mission-tip">🧐本幕没有特别难找的任务！</view>
+          <view class="no-hard-mission-tip">🧐 本幕没有特别难找的任务！</view>
         </view>
       </view>
     </view>

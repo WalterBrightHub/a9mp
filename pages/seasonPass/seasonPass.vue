@@ -87,6 +87,7 @@
             duration: 500
           })
         }).catch(e => {
+          console.log(e)
           this.seasonPassMissionsStatus = 'reject'
         }).finally(() => {
           uni.stopPullDownRefresh()
