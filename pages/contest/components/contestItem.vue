@@ -8,7 +8,7 @@
       </view>
 
       <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName"
-        :rewords="contest.rewords" />
+        :rewords="contest.rewords" :featuredCars="contest.featuredCars" />
     </view>
   </view>
 </template>

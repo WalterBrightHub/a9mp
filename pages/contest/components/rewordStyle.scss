@@ -1,13 +1,13 @@
 .reword-text:after {
   font-weight: bold;
-  font-size: 24rpx;
+  font-size: 30rpx;
   // border: 2rpx solid;
   border-radius: 4rpx;
   padding: 0 2rpx;
   margin-left: 6rpx;
   @include pad-devices {
 
-    font-size: toPadPx(24);
+    font-size: toPadPx(30);
     // border: toPadPx(2) solid;
     border-radius: toPadPx(4);
     padding:0  toPadPx(2);
