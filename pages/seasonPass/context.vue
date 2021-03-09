@@ -69,7 +69,6 @@
         this.$emit('onToggleServer')
       },
       onMissionMapQuery(mapName) {
-        console.log(mapName)
         uni.navigateTo({
           url: `/pages/seasonPass/missionMapQuery/missionMapQuery?server=${this.server}&mapName=${mapName}`
         })
@@ -262,7 +261,7 @@
     margin: 0 10rpx 10rpx 0;
     font-size: 28rpx;
     border-radius: 5rpx;
-    padding: 10rpx;
+    padding: 10rpx 16rpx;
     color: #22a3df;
     background-color: #d9f1f5;
 
@@ -274,7 +273,7 @@
 
     @include pad-devices {
       font-size: toPadPx(28);
-      padding: toPadPx(10);
+      padding: toPadPx(10) toPadPx(16);
       margin: 0 toPadPx(10) toPadPx(10) 0;
       border-radius: toPadPx(5);
     }
