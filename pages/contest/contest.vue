@@ -2,12 +2,13 @@
   <view class="container">
     <view class="filter-block">
       <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
-      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}</picker>
+      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
+      </picker>
     </view>
     <div class="contest-db">
-      <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}" :options="options"
-        collection="contest" orderby="startTime desc,contestName asc" :getone="false" :action="action" :where="where"
-        @load="onqueryload" @error="onqueryerror">
+      <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
+        :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
+        :action="action" :where="where" @load="onqueryload" @error="onqueryerror">
         <view v-if="error" class="error">{{error.message}}</view>
         <view v-else class="contest-list">
 

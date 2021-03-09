@@ -93,6 +93,12 @@
           uni.stopPullDownRefresh()
         })
     },
+    onShareAppMessage() {
+
+      return {
+        'title': '通行证任务，快速指引',
+      }
+    },
     methods: {
       ...mapMutations(['toggleServer']),
       onRetry() {

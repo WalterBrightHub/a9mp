@@ -49,15 +49,7 @@
     },
     onLoad() {
 
-      let mapThemeRange = db.collection('mapThemes').orderBy('_id').get()
-      //limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大500条。
-      let tracks = db.collection('tracks').orderBy('_id').limit(500).get()
-      Promise.all([mapThemeRange, tracks])
-        .then(([mapThemeRange, tracks]) => {
-          this.mapThemeRange = mapThemeRange.result.data
-          this.tracks = tracks.result.data
-          this.careerQueryStatus = 'resolve'
-        })
+      this.requestThemesAndTracks()
 
       this.careerMapsStatus = 'pending'
 
@@ -100,7 +92,11 @@
     },
     onPullDownRefresh() {
 
-      this.$refs.careerQueryDB.refresh()
+      this.requestThemesAndTracks()
+        .then(() => {
+
+          this.$refs.careerQueryDB.refresh()
+        })
 
 
       requestCareerMaps()
@@ -125,13 +121,20 @@
         })
     },
     methods: {
-      onRetryCareerQuery() {
-        uni.showLoading({
-          title: '重试中',
-        })
-
+      requestThemesAndTracks() {
+        let mapThemeRange = db.collection('mapThemes').orderBy('_id').get()
+        //limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大500条。
+        let tracks = db.collection('tracks').orderBy('_id').limit(500).get()
+        return Promise.all([mapThemeRange, tracks])
+          .then(([mapThemeRange, tracks]) => {
+            this.mapThemeRange = mapThemeRange.result.data
+            this.tracks = tracks.result.data
+            this.careerQueryStatus = 'resolve'
+          })
       },
       onRetryCareerMaps() {
+        this.requestThemesAndTracks()
+
         uni.showLoading({
           title: '重试中',
         })

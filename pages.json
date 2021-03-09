@@ -30,7 +30,7 @@
     }, {
       "path": "pages/seasonPass/missionMapQuery/missionMapQuery",
       "style": {
-        "navigationBarTitleText": "精确查询",
+        "navigationBarTitleText": "任务地图指引",
         "enablePullDownRefresh": false
       }
 

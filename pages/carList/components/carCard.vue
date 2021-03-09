@@ -3,7 +3,8 @@
     <view class="full-name">{{carData.fullName}}</view>
     <view class="stars-and-rank">
       <view class="stars">
-        <image class="star-icon" v-for="(item,index) in carData.star" :key="index" src="../../../static/carcard-icons/star.png" />
+        <image class="star-icon" v-for="(item,index) in carData.star" :key="index"
+          src="../../../static/carcard-icons/star.png" />
       </view>
       <view class="nick-name">{{carData.nickName}}</view>
       <view class="rank">{{carData.rank}}</view>
@@ -57,7 +58,8 @@
           </view>
           <view class="cost-item">
             <view class="cost-name">MAX</view>
-            <view class="cost-value">{{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}</view>
+            <view class="cost-value">
+              {{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}</view>
           </view>
 
 
