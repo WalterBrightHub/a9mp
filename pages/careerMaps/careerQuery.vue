@@ -109,7 +109,9 @@
         this.mapNameValue = index
       },
       refresh() {
-        this.$refs.careerSeasonDB.loadData()
+        this.$refs.careerSeasonDB.loadData({
+          clear: true
+        })
       }
     }
   }

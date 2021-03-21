@@ -1,19 +1,21 @@
 <template>
   <view>
-    <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false" :action="action"
-      :where="where" @load="onqueryload" @error="onqueryerror">
-      <view v-if="error" class="error">{{error.message}}</view>
-      <view v-else class="contest-list">
-        <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
-          :now="options.now" :index="index" />
-      </view>
-      <view class="loading" v-if="loading">
-        <!-- <loading /> -->
-      </view>
-      <view class="contest-empty-list" v-if="data.length===0 && loading===false">ðŸ˜® è¿™é‡Œç©ºç©ºå¦‚ä¹Ÿ</view>
-      <!-- <view v-if="loading" class="loading">åŠ è½½ä¸­...</view> -->
-    </unicloud-db>
+    <div class="contest-db">
+      <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
+        :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
+        :action="action" :where="where" @load="onqueryload" @error="onqueryerror">
+        <view v-if="error" class="error">{{error.message}}</view>
+        <view v-else class="contest-list">
+          <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
+            :now="options.now" :index="index" />
+        </view>
+        <view class="loading" v-if="loading">
+          <!-- <loading /> -->
+        </view>
+        <view class="contest-empty-list" v-if="data.length===0 && loading===false"> ÕâÀï¿Õ¿ÕÈçÒ²</view>
+        <!-- <view v-if="loading" class="loading">åŠ è½½ä¸..</view> -->
+      </unicloud-db>
+    </div>
   </view>
 </template>
 
@@ -23,28 +25,29 @@
   const db = uniCloud.database()
   const dbCmd = db.command
   export default {
-    components:{
+    components: {
       'contest-item': contestItem,
       'loading': loading
     },
     data() {
       return {
-        now:new Date().getTime()
+        now: new Date().getTime()
       }
     },
-    computed:{
-      where(){
+    computed: {
+      where() {
         return {
           featuredCars: dbCmd.all(['sian'])
         }
       },
-      options(){
+      options() {
         return {
-          now:this.now
+          now: this.now
         }
       }
     },
-    onLoad() {
+    onLoad({car_id}) {
+      console.log(car_id)
       db.collection('contest').where({
           featuredCars: dbCmd.all(['sian'])
         })
@@ -65,6 +68,6 @@
   }
 </script>
 
-<style>
-
+<style lang="scss">
+  @import '../../contest/contest-list.scss';
 </style>

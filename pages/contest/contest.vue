@@ -5,7 +5,6 @@
       <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
       </picker>
     </view>
-    <view class="jump-to" @tap="jumpTo">页面测试</view>
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
@@ -129,11 +128,6 @@
       },
       onqueryerror() {
         uni.hideLoading()
-      },
-      jumpTo(){
-        uni.navigateTo({
-          url: `/pages/carList/carArchives/carArchives`
-        })
       }
     }
   }
@@ -212,69 +206,6 @@
     }
   }
 
-  .contest-db {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 20rpx 20rpx 30rpx 20rpx;
-    box-sizing: border-box;
+@import './contest-list.scss';
 
-    @include pad-devices {
-      padding: toPadPx(20) toPadPx(20) toPadPx(30) toPadPx(20);
-    }
-  }
-
-  .contest-list {
-    background-color: $card-bg-color;
-    border-radius: 10rpx;
-    font-size: 28rpx;
-
-    @include pad-devices {
-      border-radius: toPadPx(10);
-      font-size: toPadPx(28);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
-    }
-  }
-
-  .contest-empty-list,
-  .loading {
-    margin-top: 20rpx;
-    color: $text-help-color;
-    display: flex;
-    justify-content: center;
-
-    @include pad-devices {
-      margin-top: toPadPx(20);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-help-color-dark;
-    }
-  }
-
-  .contest-list+.contest-list {
-    margin-top: 20rpx;
-
-    @include pad-devices {
-      margin-top: toPadPx(20);
-    }
-  }
-
-
-  .error {
-    margin-top: 10rpx;
-    color: $text-help-color;
-    display: flex;
-    justify-content: center;
-
-    @include pad-devices {
-      margin-top: toPadPx(10);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-help-color-dark
-    }
-  }
 </style>

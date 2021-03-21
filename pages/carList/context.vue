@@ -45,8 +45,8 @@
       },
       refresh() {
         this.$refs.carListDB.loadData({
-          //设置true无效，真奇怪
-          // clear: true
+          //设置true又正常了，真奇怪
+          clear: true
         }, () => {
           uni.showToast({
             title: '最新',
