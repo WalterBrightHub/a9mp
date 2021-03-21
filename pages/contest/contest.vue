@@ -5,6 +5,7 @@
       <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
       </picker>
     </view>
+    <view class="jump-to" @tap="jumpTo">页面测试</view>
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
@@ -129,6 +130,11 @@
       onqueryerror() {
         uni.hideLoading()
       },
+      jumpTo(){
+        uni.navigateTo({
+          url: `/pages/carList/carArchives/carArchives`
+        })
+      }
     }
   }
 </script>

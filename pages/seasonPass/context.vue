@@ -195,12 +195,15 @@
   }
 
   .mission-list-block {
-    padding-bottom: 30rpx;
+    padding:0 20rpx 30rpx 20rpx;
+    @include pad-devices {
+      padding: 0 toPadPx(20) toPadPx(30) toPadPx(20);
+    }
   }
 
   .mission-list {
     background-color: $card-bg-color;
-    margin: 0 20rpx;
+    // margin: 0 20rpx;
     border-radius: 10rpx;
 
     // padding: 20rpx 0;
@@ -211,7 +214,7 @@
 
     @include pad-devices {}
 
-    margin: 0 toPadPx(20);
+    // margin: 0 toPadPx(20);
     border-radius: toPadPx(10);
   }
 

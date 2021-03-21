@@ -319,7 +319,7 @@
   }
 
   .race-time-attack {
-    color: #5eb57a;
+    color: #41b90a;
   }
 
   .race-hunted {

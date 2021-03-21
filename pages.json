@@ -42,7 +42,16 @@
       }
 
     }
-  ],
+      ,{
+            "path" : "pages/carList/carArchives/carArchives",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 
   "globalStyle": {
     //QQ未支持深色模式
@@ -60,7 +69,7 @@
   },
 
   "tabBar": {
-    "color": "#000",
+    "color": "#949494",
     "backgroundColor": "#fff",
     "selectedColor": "#FF0054",
     "list": [{
@@ -71,8 +80,8 @@
       },
       {
         "pagePath": "pages/careerMaps/careerMaps",
-        "iconPath": "static/tabbar-icons/flag.png",
-        "selectedIconPath": "static/tabbar-icons/flag-selected.png",
+        "iconPath": "static/tabbar-icons/map.png",
+        "selectedIconPath": "static/tabbar-icons/map-selected.png",
         "text": "地图"
       },
       {
@@ -83,9 +92,19 @@
       },
       {
         "pagePath": "pages/contest/contest",
-        "iconPath": "static/tabbar-icons/fire.png",
-        "selectedIconPath": "static/tabbar-icons/fire-selected.png",
+        "iconPath": "static/tabbar-icons/trophy.png",
+        "selectedIconPath": "static/tabbar-icons/trophy-selected.png",
         "text": "赛事"
+      }
+    ]
+  },
+  "condition" : { //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式(list 的索引项)
+    "list": [
+      {
+        "name": "", //模式名称
+        "path": "", //启动页面，必选
+        "query": "" //启动参数，在页面的onLoad函数里面得到
       }
     ]
   }
