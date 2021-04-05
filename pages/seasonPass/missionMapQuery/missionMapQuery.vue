@@ -194,6 +194,12 @@
 
   .race-type {
 
+    color: $text-help-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
+    }
+
     flex: none;
   }
 

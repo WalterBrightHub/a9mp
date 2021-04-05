@@ -72,8 +72,8 @@
           careerQueryStatus: this.careerQueryStatus
         }
       },
-      careerSeasonName(){
-        return this.server==='gl'?'careerSeasonGL':'careerSeasonAL'
+      careerSeasonName() {
+        return this.server === 'gl' ? 'careerSeasonGL' : 'careerSeasonAL'
       },
       where() {
         return `mapName=='${this.selectedMapNames[this.mapNameValue]
@@ -318,6 +318,12 @@
   }
 
   .race-type {
+
+    color: $text-help-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-help-color-dark;
+    }
 
     flex: none;
   }
