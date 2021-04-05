@@ -3,7 +3,7 @@
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-        :action="action" :where="where" @load="onqueryload" @error="onqueryerror">
+        :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true">
         <view v-if="error" class="error">{{error.message}}</view>
         <view v-else class="contest-list">
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
@@ -12,8 +12,7 @@
         <view class="loading" v-if="loading">
           <!-- <loading /> -->
         </view>
-        <view class="contest-empty-list" v-if="data.length===0 && loading===false"> ÕâÀï¿Õ¿ÕÈçÒ²</view>
-        <!-- <view v-if="loading" class="loading">åŠ è½½ä¸..</view> -->
+        <view class="contest-empty-list" v-if="data.length===0 && loading===false">è¿™é‡Œç©ºç©ºå¦‚ä¹Ÿ</view>
       </unicloud-db>
     </div>
   </view>
@@ -31,13 +30,14 @@
     },
     data() {
       return {
-        now: new Date().getTime()
+        now: new Date().getTime(),
+        car_id:'&&&'
       }
     },
     computed: {
       where() {
         return {
-          featuredCars: dbCmd.all(['sian'])
+          featuredCars: dbCmd.all([this.car_id])
         }
       },
       options() {
@@ -48,6 +48,7 @@
     },
     onLoad({car_id}) {
       console.log(car_id)
+      this.car_id=car_id
       db.collection('contest').where({
           featuredCars: dbCmd.all(['sian'])
         })

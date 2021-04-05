@@ -95,6 +95,12 @@
           "iconPath": "@iconPathContest",
           "selectedIconPath": "@selectedIconPathContest",
           "text": "赛事"
+        },
+        {
+          "pagePath": "pages/about/about",
+          "iconPath": "@iconPathAbout",
+          "selectedIconPath": "@selectedIconPathAbout",
+          "text": "更多"
         }
       ]
 

@@ -13,7 +13,7 @@
 
     </div>
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
-      v-slot:default="{data, pagination, loading, error, options}" :options="options" collection="careerSeasons"
+      v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
       :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
@@ -21,8 +21,8 @@
       </view>
       <div class="career-season-list" v-else-if="data.length>0">
         <div class="career-season" v-for="season in data" :key="season._id">
-          <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
-          <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
+          <div class="season-item chapter">{{season.chapter}}</div>
+          <div class="season-item season">{{season.season}}</div>
           <div class="season-item race">{{season.race}}</div>
           <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
           </div>
@@ -68,14 +68,16 @@
     computed: {
       options() {
         return {
-          server: this.server,
           raceTypes,
           careerQueryStatus: this.careerQueryStatus
         }
       },
+      careerSeasonName(){
+        return this.server==='gl'?'careerSeasonGL':'careerSeasonAL'
+      },
       where() {
-        return `mapNameCN=='${this.selectedMapNames[this.mapNameValue]
-        ?this.selectedMapNames[this.mapNameValue].mapNameCN
+        return `mapName=='${this.selectedMapNames[this.mapNameValue]
+        ?(this.server === 'gl' ?this.selectedMapNames[this.mapNameValue].mapNameCN:this.selectedMapNames[this.mapNameValue].mapNameAL)
         :'大桥景观'}'`
 
       },

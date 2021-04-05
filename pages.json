@@ -51,6 +51,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/about/about",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
     ],
 
   "globalStyle": {
@@ -95,6 +104,12 @@
         "iconPath": "static/tabbar-icons/trophy.png",
         "selectedIconPath": "static/tabbar-icons/trophy-selected.png",
         "text": "赛事"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "static/tabbar-icons/helmet.png",
+        "selectedIconPath": "static/tabbar-icons/helmet-selected.png",
+        "text": "更多"
       }
     ]
   },
