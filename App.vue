@@ -3,6 +3,7 @@
 
     onLaunch: function() {
       console.log(process.env.NODE_ENV)
+      
     }
   }
 </script>

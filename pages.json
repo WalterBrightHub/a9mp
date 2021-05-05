@@ -1,4 +1,7 @@
 {
+  "window": {
+      // "initialRenderingCache": "static"
+    },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/carList/carList",
@@ -41,26 +44,22 @@
         "enablePullDownRefresh": false
       }
 
+    }, {
+      "path": "pages/carList/carArchives/carArchives",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/about/about",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
     }
-      ,{
-            "path" : "pages/carList/carArchives/carArchives",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/about/about",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-    ],
+  ],
 
   "globalStyle": {
     //QQ未支持深色模式
@@ -75,6 +74,7 @@
     "backgroundColor": "#F5F5F5",
     // #endif
     "navigationBarTitleText": "狂飙小助手"
+    
   },
 
   "tabBar": {
@@ -113,14 +113,12 @@
       }
     ]
   },
-  "condition" : { //模式配置，仅开发期间生效
+  "condition": { //模式配置，仅开发期间生效
     "current": 0, //当前激活的模式(list 的索引项)
-    "list": [
-      {
-        "name": "", //模式名称
-        "path": "", //启动页面，必选
-        "query": "" //启动参数，在页面的onLoad函数里面得到
-      }
-    ]
+    "list": [{
+      "name": "", //模式名称
+      "path": "", //启动页面，必选
+      "query": "" //启动参数，在页面的onLoad函数里面得到
+    }]
   }
 }

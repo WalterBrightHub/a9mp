@@ -54,9 +54,18 @@
       },
       onQueryFeaturedCars() {
         const params = this.featuredCars.join(',')
-        uni.navigateTo({
-          url: `/pages/contest/queryFeaturedCars/queryFeaturedCars?carIds=${params}`
-        })
+        let pages = getCurrentPages()
+        let currentPage = pages[pages.length - 1]
+        const url = `/pages/contest/queryFeaturedCars/queryFeaturedCars?carIds=${params}`
+        if ('pages/carList/carArchives/carArchives' === currentPage.route) {
+          uni.redirectTo({
+            url
+          })
+        } else {
+          uni.navigateTo({
+            url
+          })
+        }
       }
     }
   }

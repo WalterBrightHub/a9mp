@@ -59,7 +59,8 @@
           <view class="cost-item">
             <view class="cost-name">MAX</view>
             <view class="cost-value">
-              {{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}</view>
+              {{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}
+            </view>
           </view>
 
 
@@ -137,10 +138,20 @@
         }
         return res.reverse().join('')
       },
-      jumpToArchives(){
-        uni.navigateTo({
-          url: `/pages/carList/carArchives/carArchives?car_id=${this.carData.car_id}`
-        })
+      jumpToArchives() {
+        const url = `/pages/carList/carArchives/carArchives?car_id=${this.carData.car_id}`
+
+        let pages = getCurrentPages()
+        let currentPage = pages[pages.length - 1]
+        if ('pages/contest/queryFeaturedCars/queryFeaturedCars' === currentPage.route) {
+          uni.redirectTo({
+            url
+          })
+        } else {
+          uni.navigateTo({
+            url
+          })
+        }
       }
     }
   }

@@ -3,16 +3,16 @@
     <div class="head">{{mapName}}</div>
 
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
-      v-slot:default="{data, pagination, loading, error, options}" :options="options" collection="careerSeasons"
-      :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479">
+      v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
+      :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479" @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
       </view>
       <div class="career-season-list" v-else-if="data.length>0">
         <div class="career-season" v-for="season in data" :key="season._id">
-          <div class="season-item chapter">{{options.server=='gl'?season.chapterCN:season.chapterAL}}</div>
-          <div class="season-item season">{{options.server=='gl'?season.seasonEN:season.seasonAL}}</div>
+          <div class="season-item chapter">{{season.chapter}}</div>
+          <div class="season-item season">{{season.season}}</div>
           <div class="season-item race">{{season.race}}</div>
           <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
           </div>
@@ -35,7 +35,8 @@
       return {
         where: '',
         mapName: '',
-        server: ''
+        server: '',
+        careerSeasonName:''
       }
     },
     computed: {
@@ -44,7 +45,7 @@
           server: this.server,
           raceTypes
         }
-      }
+      },
     },
     onLoad({
       server,
@@ -52,12 +53,27 @@
     }) {
       this.server = server
       this.mapName = mapName
-      this.where = server === 'gl' ?
-        `mapNameCN=='${mapName}'` :
-        `mapNameAL=='${mapName}'`
+      this.where=`mapName=='${mapName}'` 
+        this.careerSeasonName=this.server === 'gl' ? 'careerSeasonGL' : 'careerSeasonAL'
+    },
+    onShareAppMessage() {
+
+      return {
+        title: `我用狂飙小助手查到了“${this.mapName}"这张图的位置，你也来康康！`,
+      }
     },
     methods: {
-
+      handleLoad(data, ended, pagination){
+        console.log(data)
+        let careerSeasonRace=data.filter(season=>season.raceType==='常规赛')
+        let careerSeasonHunted=data.filter(season=>season.raceType==='追逐赛')
+        let careerSeasonTimeAttack=data.filter(season=>season.raceType==='计时赛')
+        // 如有其它形式的生涯赛，要在这里添加类型
+        // console.log(careerSeasonTimeAttack)
+        // this.$refs.careerSeasonDB.clear()
+        // 没效果
+        data =[...careerSeasonTimeAttack,...careerSeasonHunted,...careerSeasonRace]
+      }
     }
   }
 </script>
@@ -78,7 +94,7 @@
     color: #41b90a;
     font-weight: bold;
     border-radius: 10rpx 10rpx 0 0;
-    padding: 20rpx;
+    padding: 20rpx 20rpx 5rpx 20rpx;
     background-color: $card-bg-color;
     margin: 0 20rpx;
 
