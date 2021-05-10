@@ -19,6 +19,10 @@
 </template>
 
 <script>
+  import {
+    mapState,
+    // mapMutations
+  } from 'vuex'
   import contestItem from '../../contest/components/contestItem.vue'
   import loading from '../../../components/loading/loading.vue'
   const db = uniCloud.database()
@@ -35,9 +39,11 @@
       }
     },
     computed: {
+      ...mapState(['server']),
       where() {
         return {
-          featuredCars: dbCmd.all([this.car_id])
+          featuredCars: dbCmd.all([this.car_id]),
+          server:this.server
         }
       },
       options() {

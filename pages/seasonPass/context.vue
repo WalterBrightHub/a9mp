@@ -10,20 +10,20 @@
     <view class="mission-list-block" v-if="seasonPassStatus==='resolve' && seasonPass">
 
       <view class="mission-list" v-for="episode in seasonPass.episodes" :key="episode.episode_id">
-        <view class="episode-name">第 {{episode.episode_id}} 幕</view>
+        <view class="episode-name">第 {{episode.episode_id}} {{server === 'gl'?'幕':'章'}}</view>
         <view class="episode-list" v-if="episode.missions.length>0">
           <view class="mission" v-for="(mission,index) in episode.missions" :key="index">
             <view class="divider" v-if="index>0"></view>
             <view class="mission-tag-block">
               <view class="mission-tag map-query" v-for="mapName in mission.mapNames" :key="mapName"
-                @click="onMissionMapQuery(mapName)">{{mapName}} 🔍</view>
+                @click="onMissionMapQuery(mapName,mission.tags)">{{mapName}} 🔍</view>
               <view class="mission-tag" v-for="tag in mission.tags" :key="tag">{{tag}}</view>
             </view>
             <view class="mission-solution">{{mission.solution}}</view>
           </view>
         </view>
         <view v-else class="episode-empty-list">
-          <view class="no-hard-mission-tip">🧐 本幕没有特别难找的任务！</view>
+          <view class="no-hard-mission-tip">🧐 本{{server === 'gl'?'幕':'章'}}没有特别难找的任务！</view>
         </view>
       </view>
     </view>
@@ -68,9 +68,22 @@
 
         this.$emit('onToggleServer')
       },
-      onMissionMapQuery(mapName) {
+      onMissionMapQuery(mapName,tags) {
+        let url=''
+        let timeAttack=0
+        let hunted=0
+        for(let tag of tags){
+          if(tag==='追逐赛'){
+            hunted=1
+            break
+          }
+          else if(tag==='计时赛'){
+            timeAttack=1
+            break
+          }
+        }
         uni.navigateTo({
-          url: `/pages/seasonPass/missionMapQuery/missionMapQuery?server=${this.server}&mapName=${mapName}`
+          url: `/pages/seasonPass/missionMapQuery/missionMapQuery?server=${this.server}&mapName=${mapName}&timeAttack=${timeAttack}&hunted=${hunted}`
         })
       },
       onRetry() {
@@ -266,7 +279,7 @@
     border-radius: 5rpx;
     padding: 10rpx 16rpx;
     color: #22a3df;
-    background-color: #d9f1f5;
+    background-color: #e3f5f8;
 
     @media (prefers-color-scheme: dark) {
 
@@ -283,7 +296,7 @@
   }
 
   .map-query {
-    color: #d9f5d9;
+    color: #fff;
     background-color: #41b90a;
 
     @media (prefers-color-scheme: dark) {

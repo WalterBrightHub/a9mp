@@ -4,7 +4,7 @@
 
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
       v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
-      :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479" @load="handleLoad">
+      :orderby="'_id'" :getone="false" :where="where" loadtime="onready" page-size="479" @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
@@ -36,7 +36,7 @@
         where: '',
         mapName: '',
         server: '',
-        careerSeasonName:''
+        careerSeasonName: ''
       }
     },
     computed: {
@@ -49,12 +49,21 @@
     },
     onLoad({
       server,
-      mapName
+      mapName,
+      timeAttack,
+      hunted
     }) {
       this.server = server
       this.mapName = mapName
-      this.where=`mapName=='${mapName}'` 
-        this.careerSeasonName=this.server === 'gl' ? 'careerSeasonGL' : 'careerSeasonAL'
+      if (timeAttack === '1') {
+        this.where = `mapName=='${mapName}'&&raceType=='计时赛'`
+      } else if (hunted === '1') {
+        this.where = `mapName=='${mapName}'&&raceType=='追逐赛'`
+      } else {
+
+        this.where = `mapName=='${mapName}'`
+      }
+      this.careerSeasonName = this.server === 'gl' ? 'careerSeasonGL' : 'careerSeasonAL'
     },
     onShareAppMessage() {
 
@@ -63,16 +72,22 @@
       }
     },
     methods: {
-      handleLoad(data, ended, pagination){
-        console.log(data)
-        let careerSeasonRace=data.filter(season=>season.raceType==='常规赛')
-        let careerSeasonHunted=data.filter(season=>season.raceType==='追逐赛')
-        let careerSeasonTimeAttack=data.filter(season=>season.raceType==='计时赛')
+      handleLoad(data, ended, pagination) {
+        let careerSeasonRace = data.filter(season => season.raceType === '常规赛')
+        let careerSeasonHunted = data.filter(season => season.raceType === '追逐赛')
+        let careerSeasonTimeAttack = data.filter(season => season.raceType === '计时赛')
         // 如有其它形式的生涯赛，要在这里添加类型
         // console.log(careerSeasonTimeAttack)
         // this.$refs.careerSeasonDB.clear()
+        // this.$refs.careerSeasonDB.reset()
         // 没效果
-        data =[...careerSeasonTimeAttack,...careerSeasonHunted,...careerSeasonRace]
+        setTimeout(() => {
+          this.$refs.careerSeasonDB.dataList = [...careerSeasonTimeAttack, ...careerSeasonHunted, ...
+            careerSeasonRace
+          ]
+
+          // console.log(this.$refs.careerSeasonDB.dataList)
+        }, 0)
       }
     }
   }

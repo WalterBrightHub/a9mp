@@ -57,15 +57,15 @@
         let pages = getCurrentPages()
         let currentPage = pages[pages.length - 1]
         const url = `/pages/contest/queryFeaturedCars/queryFeaturedCars?carIds=${params}`
-        if ('pages/carList/carArchives/carArchives' === currentPage.route) {
-          uni.redirectTo({
-            url
-          })
-        } else {
+        // if ('pages/carList/carArchives/carArchives' === currentPage.route) {
+        //   uni.redirectTo({
+        //     url
+        //   })
+        // } else {
           uni.navigateTo({
             url
           })
-        }
+        // }
       }
     }
   }
@@ -149,7 +149,8 @@
   .featured-cars-button {
     font-size: 28rpx;
     color: #22a3df;
-    background-color: #d9f1f5;
+    // background-color: #d9f1f5;
+    background-color: $page-bg-color;
     border-radius: 5rpx;
     padding: 10rpx 20rpx;
 

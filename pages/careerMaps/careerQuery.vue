@@ -14,7 +14,7 @@
     </div>
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
       v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
-      :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479">
+      :orderby="'_id'" :getone="false" :where="where" manual="true" page-size="479" @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />
@@ -114,7 +114,24 @@
         this.$refs.careerSeasonDB.loadData({
           clear: true
         })
-      }
+      },
+      
+        handleLoad(data, ended, pagination){
+          // console.log(data)
+          let careerSeasonRace=data.filter(season=>season.raceType==='常规赛')
+          let careerSeasonHunted=data.filter(season=>season.raceType==='追逐赛')
+          let careerSeasonTimeAttack=data.filter(season=>season.raceType==='计时赛')
+          // 如有其它形式的生涯赛，要在这里添加类型
+          // console.log(careerSeasonTimeAttack)
+          // this.$refs.careerSeasonDB.clear()
+          // this.$refs.careerSeasonDB.reset()
+          // 没效果
+          setTimeout(()=>{
+            this.$refs.careerSeasonDB.dataList =[...careerSeasonTimeAttack,...careerSeasonHunted,...careerSeasonRace]
+            
+          // console.log(this.$refs.careerSeasonDB.dataList)
+          },0)
+          }
     }
   }
 </script>

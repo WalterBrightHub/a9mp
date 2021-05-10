@@ -143,15 +143,15 @@
 
         let pages = getCurrentPages()
         let currentPage = pages[pages.length - 1]
-        if ('pages/contest/queryFeaturedCars/queryFeaturedCars' === currentPage.route) {
-          uni.redirectTo({
-            url
-          })
-        } else {
+        // if ('pages/contest/queryFeaturedCars/queryFeaturedCars' === currentPage.route) {
+        //   uni.redirectTo({
+        //     url
+        //   })
+        // } else {
           uni.navigateTo({
             url
           })
-        }
+        // }
       }
     }
   }

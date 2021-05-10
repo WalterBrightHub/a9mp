@@ -1,7 +1,7 @@
 const select = (releaseVersion, server) => ({
   where: `releaseVersion=='${releaseVersion}'`,
   // where:'',
-  sort: 'rank',
+  sort: '_id',
   server
 })
 

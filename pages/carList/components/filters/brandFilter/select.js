@@ -1,6 +1,6 @@
 const select = (brand, server) => ({
   where: `brand=='${brand}'`,
-  sort: 'rank',
+  sort: '_id',
   server
 })
 

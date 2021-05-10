@@ -79,7 +79,6 @@
     },
     onPullDownRefresh() {
 
-      // const that = this
       this.now = new Date().getTime()
       this.$refs.contestDB.loadData({
         //设置false和不设置都会导致bug，真奇怪
@@ -87,14 +86,9 @@
       }, () => {
         // console.log(this.$refs.contestDB.dataList);
         uni.stopPullDownRefresh()
-        // uni.showToast({
-        //   title: '最新',
-        //   duration: 500,
-        // })
       })
     },
     onReachBottom() {
-
       this.$refs.contestDB.loadMore()
     },
     onShareAppMessage() {
