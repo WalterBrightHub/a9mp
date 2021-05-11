@@ -1,7 +1,7 @@
 <template>
 
-  <div  class="career-season-list">
-    <div class="career-season" v-for="season in data" :key="season._id">
+  <div class="career-season-list">
+    <div class="career-season" v-for="season in priorityData" :key="season._id">
       <div class="season-item chapter">{{season.chapter}}</div>
       <div class="season-item season">{{season.season}}</div>
       <div class="season-item race">{{season.race}}</div>
@@ -23,6 +23,14 @@
       return {
         raceTypes
       };
+    },
+    computed: {
+      priorityData() {
+        let careerSeasonRace = this.data.filter(season => season.raceType === '常规赛')
+        let careerSeasonHunted = this.data.filter(season => season.raceType === '追逐赛')
+        let careerSeasonTimeAttack = this.data.filter(season => season.raceType === '计时赛')
+        return [...careerSeasonTimeAttack, ...careerSeasonHunted, ...careerSeasonRace]
+      }
     }
   }
 </script>
@@ -35,17 +43,18 @@
     border-radius: 0 0 10rpx 10rpx;
     margin: 5rpx 20rpx 0 20rpx;
     padding: 20rpx;
-  
+
     @include pad-devices {
       border-radius: 0 0 toPadPx(10) toPadPx(10);
       margin: toPadPx(5) toPadPx(20) 0 toPadPx(20);
       padding: toPadPx(20);
     }
-  
+
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
   }
+
   .career-season {
     display: flex;
     font-size: 28rpx;
