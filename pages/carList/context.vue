@@ -14,7 +14,7 @@
         <loading />
       </view>
 
-      <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
+      <view class="car-empty-list" v-if="data.length===0 && options.loaded===true">😮 这里空空如也</view>
     </unicloud-db>
   </view>
 </template>
@@ -32,6 +32,9 @@
     data() {
       return {
         // where:this.selectMethod.where
+        options:{
+          loaded:false
+        }
       };
     },
     computed: {
@@ -57,6 +60,7 @@
       },
       onqueryload() {
         // uni.hideLoading()
+        this.loaded=true
       },
       onqueryerror() {
         // uni.hideLoading()

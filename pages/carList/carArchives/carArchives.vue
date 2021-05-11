@@ -12,7 +12,7 @@
         <view class="loading" v-if="loading">
           <!-- <loading /> -->
         </view>
-        <view class="contest-empty-list" v-if="data.length===0 && loading===false">这里空空如也</view>
+        <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 还没有赛事记录</view>
       </unicloud-db>
     </div>
   </view>
