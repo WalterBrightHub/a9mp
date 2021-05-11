@@ -67,6 +67,7 @@
         </view>
 
         <view class="part-list">
+          <view class="part-title">零件数量</view>
           <view class="part-item" v-if="carData.uncommonPart">
             <image class="part-icon" src="../../../static/carcard-icons/part-uncommon.png"></image>
             <view class="part-num uncommon-part-num">{{carData.uncommonPart}}</view>
@@ -425,9 +426,24 @@
   }
 
   .part-list {
-    margin-top: auto;
+    margin-top: 32rpx;
     display: flex;
-    justify-content: flex-end;
+    
+    @include pad-devices {
+      margin-top: toPadPx(32);
+    }
+    // justify-content: flex-end;
+  }
+  
+  .part-title{
+    display: flex;
+    align-items: center;
+    height: 40rpx;
+    line-height: 40rpx;
+  }
+  
+  .part-title+.part-item{
+    margin-left:auto;
   }
 
   .part-item {

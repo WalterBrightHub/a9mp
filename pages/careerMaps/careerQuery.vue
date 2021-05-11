@@ -19,15 +19,7 @@
       <view class="loading" v-else-if="loading">
         <loading />
       </view>
-      <div class="career-season-list" v-else-if="data.length>0">
-        <div class="career-season" v-for="season in data" :key="season._id">
-          <div class="season-item chapter">{{season.chapter}}</div>
-          <div class="season-item season">{{season.season}}</div>
-          <div class="season-item race">{{season.race}}</div>
-          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
-          </div>
-        </div>
-      </div>
+      <prioritySeasonList :data="data" v-else-if="data.length>0" />
       <div v-if="!loading && data.length===0 && options.careerQueryStatus==='resolve' " class="empty-season-list">😮
         生涯竟然没有这张图</div>
     </unicloud-db>
@@ -35,18 +27,15 @@
 </template>
 
 <script>
-  import _ from 'lodash'
+  // import _ from 'lodash'
   import loading from '../../components/loading/loading.vue'
+  import prioritySeasonList from '../../components/prioritySeasonList/prioritySeasonList.vue'
 
-  const raceTypes = {
-    '常规赛': 'race',
-    '追逐赛': 'hunted',
-    '计时赛': 'time-attack'
-  }
 
   export default {
     components: {
-      'loading': loading
+      'loading': loading,
+      'prioritySeasonList': prioritySeasonList
     },
     props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server', "careerQueryStatus"],
     data() {
@@ -68,7 +57,6 @@
     computed: {
       options() {
         return {
-          raceTypes,
           careerQueryStatus: this.careerQueryStatus
         }
       },
@@ -115,23 +103,11 @@
           clear: true
         })
       },
-      
-        handleLoad(data, ended, pagination){
-          // console.log(data)
-          let careerSeasonRace=data.filter(season=>season.raceType==='常规赛')
-          let careerSeasonHunted=data.filter(season=>season.raceType==='追逐赛')
-          let careerSeasonTimeAttack=data.filter(season=>season.raceType==='计时赛')
-          // 如有其它形式的生涯赛，要在这里添加类型
-          // console.log(careerSeasonTimeAttack)
-          // this.$refs.careerSeasonDB.clear()
-          // this.$refs.careerSeasonDB.reset()
-          // 没效果
-          setTimeout(()=>{
-            this.$refs.careerSeasonDB.dataList =[...careerSeasonTimeAttack,...careerSeasonHunted,...careerSeasonRace]
-            
-          // console.log(this.$refs.careerSeasonDB.dataList)
-          },0)
-          }
+
+      handleLoad(data, ended, pagination) {
+        // console.log(data)
+        
+      }
     }
   }
 </script>
@@ -237,8 +213,6 @@
     }
   }
 
-
-
   .career-season-list,
   .empty-season-list,
   .loading {
@@ -271,85 +245,5 @@
     @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
-  }
-
-  .career-season {
-    display: flex;
-    font-size: 28rpx;
-
-    @include pad-devices {
-      font-size: toPadPx(28);
-    }
-
-  }
-
-  .career-season+.career-season {
-    margin-top: 10rpx;
-
-    @include pad-devices {
-      margin-top: toPadPx(10);
-    }
-  }
-
-  .season-item {
-    border-radius: 5rpx;
-    padding: 5rpx;
-
-    @include pad-devices {
-      border-radius: toPadPx(5);
-      padding: toPadPx(5);
-    }
-  }
-
-
-
-  .chapter {
-    font-weight: bold;
-    color: $text-title-color;
-    flex: none;
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-title-color-dark;
-    }
-  }
-
-  .season {
-    margin-left: 10rpx;
-    overflow: hidden;
-    /*隐藏溢出的文本  */
-    white-space: nowrap;
-    /*不换行  */
-    text-overflow: ellipsis;
-  }
-
-  .race {
-    color: #41b90a;
-    font-weight: bold;
-    margin-left: auto;
-    flex: none;
-    width: 48rpx;
-    text-align: center;
-    // @media (prefers-color-scheme: dark) {
-    //   color: $theme-color-dark;
-    // }
-  }
-
-  .race-type {
-
-    color: $text-help-color;
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-help-color-dark;
-    }
-
-    flex: none;
-  }
-
-  .race-time-attack {
-    color: #41b90a;
-  }
-
-  .race-hunted {
-    color: #5b81e2;
   }
 </style>

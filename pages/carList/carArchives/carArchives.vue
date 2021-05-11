@@ -3,7 +3,7 @@
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-        :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true">
+        :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="479">
         <view v-if="error" class="error">{{error.message}}</view>
         <view v-else class="contest-list">
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
@@ -53,15 +53,15 @@
       }
     },
     onLoad({car_id}) {
-      console.log(car_id)
+      // console.log(car_id)
       this.car_id=car_id
-      db.collection('contest').where({
-          featuredCars: dbCmd.all(['sian'])
-        })
-        .get()
-        .then(res => {
-          console.log(res)
-        })
+      // db.collection('contest').where({
+      //     featuredCars: dbCmd.all(['sian'])
+      //   })
+      //   .get()
+      //   .then(res => {
+      //     console.log(res)
+      //   })
     },
     methods: {
 

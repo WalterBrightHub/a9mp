@@ -9,28 +9,21 @@
       <view class="loading" v-else-if="loading">
         <loading />
       </view>
-      <div class="career-season-list" v-else-if="data.length>0">
-        <div class="career-season" v-for="season in data" :key="season._id">
-          <div class="season-item chapter">{{season.chapter}}</div>
-          <div class="season-item season">{{season.season}}</div>
-          <div class="season-item race">{{season.race}}</div>
-          <div class="season-item race-type" :class="'race-'+options.raceTypes[season.raceType]">{{season.raceType}}
-          </div>
-        </div>
-      </div>
+      
+        <prioritySeasonList  :data="data" v-else-if="data.length>0" />
       <div v-if="!loading && data.length===0 " class="empty-season-list">😮 生涯竟然没有这张图</div>
     </unicloud-db>
   </view>
 </template>
 
 <script>
-  const raceTypes = {
-    '常规赛': 'race',
-    '追逐赛': 'hunted',
-    '计时赛': 'time-attack'
-  }
+  import prioritySeasonList from '@/components/prioritySeasonList/prioritySeasonList.vue'
+
 
   export default {
+    components:{
+      prioritySeasonList
+    },
     data() {
       return {
         where: '',
@@ -43,7 +36,6 @@
       options() {
         return {
           server: this.server,
-          raceTypes
         }
       },
     },
@@ -73,21 +65,7 @@
     },
     methods: {
       handleLoad(data, ended, pagination) {
-        let careerSeasonRace = data.filter(season => season.raceType === '常规赛')
-        let careerSeasonHunted = data.filter(season => season.raceType === '追逐赛')
-        let careerSeasonTimeAttack = data.filter(season => season.raceType === '计时赛')
-        // 如有其它形式的生涯赛，要在这里添加类型
-        // console.log(careerSeasonTimeAttack)
-        // this.$refs.careerSeasonDB.clear()
-        // this.$refs.careerSeasonDB.reset()
-        // 没效果
-        setTimeout(() => {
-          this.$refs.careerSeasonDB.dataList = [...careerSeasonTimeAttack, ...careerSeasonHunted, ...
-            careerSeasonRace
-          ]
-
-          // console.log(this.$refs.careerSeasonDB.dataList)
-        }, 0)
+        
       }
     }
   }

@@ -47,14 +47,14 @@
     }, {
       "path": "pages/carList/carArchives/carArchives",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "关联赛事",
         "enablePullDownRefresh": false
       }
 
     }, {
       "path": "pages/about/about",
       "style": {
-        "navigationBarTitleText": "",
+        // "navigationBarTitleText": "",
         "enablePullDownRefresh": true
       }
 
