@@ -4,7 +4,7 @@
 
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
       v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
-      :orderby="'_id'" :getone="false" :where="where" loadtime="onready" page-size="479" @load="handleLoad">
+      :orderby="'_id'" :getone="false" :where="where" loadtime="onready" :page-size="479" @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view class="loading" v-else-if="loading">
         <loading />

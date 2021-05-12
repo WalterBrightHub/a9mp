@@ -3,7 +3,7 @@
     <view class="filter-block">
       <view class="filter-wrapper">
         <view class="server-toggle" @tap="toggleServer">{{serverName}} ⇌</view>
-        <filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
+        <v-filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
           @onChangeSelectMethod="onChangeSelectMethod" />
 
       </view>
@@ -31,7 +31,7 @@
   }
   export default {
     components: {
-      'filter': filter,
+      'v-filter': filter,
     },
     props: ['brandRange', "releaseVersionRange", ],
     data() {

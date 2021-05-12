@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <unicloud-db class="cardb" :ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
-      :collection="collection" :orderby="'_id desc'" :where="where" manual="true" page-size="479">
+      :collection="collection" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
