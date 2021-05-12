@@ -2,8 +2,14 @@
   <view class="container">
     <view class="filter-block">
       <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
-      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
-      </picker>
+      <!--      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
+      </picker> -->
+      <view class="type-filter-block">
+        <view class="type-filter-item" :class="{['type-filter-item-selected']:index===typeFilterValue}"
+          v-for="(type,index) in typeFilterRange" @tap="onChangeType(index)">
+          {{type}}
+        </view>
+      </view>
     </view>
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
@@ -46,8 +52,8 @@
       return {
         now: new Date().getTime(),
         action: '',
-        typeFilterValue: "0", //注意picker的坑
-        typeFilterRange: ['热门', '往期', '寻车', '特殊赛', '大奖赛', '通行证', '巅峰', '多人', '节日'],
+        typeFilterValue: 0,
+        typeFilterRange: ['热门', '往期', '寻车', '多人', '特殊赛', '大奖赛', '通行证', '巅峰', '节日'],
       }
     },
     computed: {
@@ -59,11 +65,11 @@
         }
       },
       where() {
-        if (this.typeFilterValue === "0") {
+        if (this.typeFilterValue === 0) {
 
           return `server=='${this.server}' && endTime>=${this.now}`
           // type:/.*/
-        } else if (this.typeFilterValue === "1") {
+        } else if (this.typeFilterValue === 1) {
           return `server=='${this.server}' && endTime<${this.now}`
         } else {
           return {
@@ -114,8 +120,8 @@
     },
     methods: {
       ...mapMutations(['toggleServer']),
-      onChangeType(e) {
-        this.typeFilterValue = e.target.value
+      onChangeType(index) {
+        this.typeFilterValue = index
       },
       onqueryload() {
         uni.hideLoading()
@@ -130,15 +136,17 @@
 <style lang="scss">
   .filter-block {
     display: flex;
-    // background-color: $page-bg-color;
+    background-color: $card-bg-color;
 
-    padding: 20rpx;
-    padding-bottom: 0;
+    padding: 0 20rpx;
     box-sizing: border-box;
 
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
+
     @include pad-devices {
-      padding: toPadPx(20);
-      padding-bottom: 0;
+      padding:0 toPadPx(20);
       box-sizing: border-box;
       max-width: 768px;
       margin: 0 auto;
@@ -174,8 +182,66 @@
     }
   }
 
+  .type-filter-block {
+    // padding: 0 20rpx;
+    font-size: 36rpx;
+    display: flex;
+    text-align: center;
+    // justify-content: center;
+    flex: 1;
+    margin-left: 32rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    background-color: $card-bg-color;
+    color: $text-title-color;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      // padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      margin-left: toPadPx(32);
+      line-height: toPadPx(72);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+      color: $text-title-color-dark;
+    }
+  }
+  
+    .type-filter-block::-webkit-scrollbar {
+      height:0 !important ;
+    }
+
+  .type-filter-item {
+    flex: none;
+  }
+
+.type-filter-item-selected{
+  border-bottom: 8rpx solid $theme-color;
+  font-weight: bold;
+  color: $theme-color;
+  @media (prefers-color-scheme: dark) {
+    color: $theme-color-dark;
+    border-bottom-color: $theme-color-dark;
+  }
+  @include pad-devices{
+    border-bottom-width: toPadPx(8);
+  }
+}
+
+  .type-filter-item+.type-filter-item {
+    margin-left: 32rpx;
+    @include pad-devices{
+      margin-left: toPadPx(32);
+    }
+  }
+
   .mode-button {
-    padding: 0 20rpx;
+    // padding: 0 20rpx;
     font-size: 36rpx;
     display: flex;
     justify-content: center;
@@ -183,23 +249,22 @@
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
-    background-color: $card-bg-color;
+    // background-color: $page-bg-color;
     color: $theme-color;
 
     @include pad-devices {
       font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
+      // padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
       border-radius: toPadPx(10);
     }
 
     @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
+      // background-color: $page-bg-color-dark;
       color: $theme-color-dark;
     }
   }
 
-@import './contest-list.scss';
-
+  @import './contest-list.scss';
 </style>
