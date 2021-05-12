@@ -93,6 +93,20 @@
           uni.stopPullDownRefresh()
         })
     },
+    
+    firstTapTab: false,
+    onHide() {
+      this.firstTapTab = true
+    },
+    onTabItemTap() {
+      if (this.firstTapTab) {
+        this.firstTapTab = false
+      } else {
+        uni.pageScrollTo({
+          scrollTop: 0
+        })
+      }
+    },
     onShareAppMessage() {
 
       return {
