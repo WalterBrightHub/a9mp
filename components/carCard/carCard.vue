@@ -4,7 +4,7 @@
     <view class="stars-and-rank">
       <view class="stars">
         <image class="star-icon" v-for="(item,index) in carData.star" :key="index"
-          src="../../../static/carcard-icons/star.png" />
+          src="@/static/carcard-icons/star.png" />
       </view>
       <view class="nick-name">{{carData.nickName}}</view>
       <view class="rank">{{carData.rank}}</view>
@@ -67,17 +67,17 @@
         </view>
 
         <view class="part-list">
-          <view class="part-title">零件数量</view>
+          <view class="part-title">零件</view>
           <view class="part-item" v-if="carData.uncommonPart">
-            <image class="part-icon" src="../../../static/carcard-icons/part-uncommon.png"></image>
+            <image class="part-icon" src="@/static/carcard-icons/part-uncommon.png"></image>
             <view class="part-num uncommon-part-num">{{carData.uncommonPart}}</view>
           </view>
           <view class="part-item" v-if="carData.rarePart">
-            <image class="part-icon" src="../../../static/carcard-icons/part-rare.png"></image>
+            <image class="part-icon" src="@/static/carcard-icons/part-rare.png"></image>
             <view class="part-num rare-part-num">{{carData.rarePart}}</view>
           </view>
           <view class="part-item" v-if="carData.epicPart">
-            <image class="part-icon" src="../../../static/carcard-icons/part-epic.png"></image>
+            <image class="part-icon" src="@/static/carcard-icons/part-epic.png"></image>
             <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
         </view>
@@ -440,6 +440,10 @@
     align-items: center;
     height: 40rpx;
     line-height: 40rpx;
+    @include pad-devices {
+      height: toPadPx(40);
+      line-height: toPadPx(40);
+    }
   }
   
   .part-title+.part-item{

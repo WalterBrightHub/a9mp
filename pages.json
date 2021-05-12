@@ -1,7 +1,7 @@
 {
   "window": {
-      // "initialRenderingCache": "static"
-    },
+    // "initialRenderingCache": "static"
+  },
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/carList/carList",
@@ -58,13 +58,29 @@
         "enablePullDownRefresh": true
       }
 
+    }, {
+      "path": "pages/about/specialEvent/specialEventCalculator/specialEventCalculator",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
     }
       ,{
-            "path" : "pages/about/specialEvent/specialEventCalculator/specialEventCalculator",
+            "path" : "pages/careerMaps/quickQuery/quickQuery",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "快速查询",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/careerMaps/mapNameComparison/mapNameComparison",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "中英对照",
+                "enablePullDownRefresh": true
             }
             
         }
@@ -83,7 +99,7 @@
     "backgroundColor": "#F5F5F5",
     // #endif
     "navigationBarTitleText": "狂飙小助手"
-    
+
   },
 
   "tabBar": {

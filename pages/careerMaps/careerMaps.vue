@@ -1,13 +1,18 @@
 <template>
   <view class="container">
-    <view class="mode-changer">
-      <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
+    <view class="head-wrapper">
+
+      <view class="head">
+        <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
+        <view class="tab-block">
+          <view class="tab-item tab-item-selected">精确查询</view>
+          <navigator class="tab-item" url="/pages/careerMaps/quickQuery/quickQuery">快速查询</navigator>
+          <navigator class="tab-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">中英对照</navigator>
+        </view>
+      </view>
     </view>
     <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
       :careerQueryStatus="careerQueryStatus"></career-query>
-
-    <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
-    <context v-else-if="careerMapsStatus==='resolve'" :careerMaps='careerMaps' :mode='server' />
 
   </view>
 </template>
@@ -17,25 +22,16 @@
     mapState,
     mapMutations
   } from 'vuex'
-  import requestFail from '../../components/requestFail/requestFail.vue'
-  import context from './context.vue'
   import careerQuery from './careerQuery.vue'
-  const db = uniCloud.database()
-  const requestCareerMaps = async function() {
-    return db.collection('careerMaps2').orderBy('_id').limit(100).get()
-  }
 
+  const db = uniCloud.database()
 
   export default {
     components: {
-      'request-fail': requestFail,
-      'context': context,
       'career-query': careerQuery,
     },
     data() {
       return {
-        careerMaps: [],
-        careerMapsStatus: 'ready',
         // careerSeasons: [],
         tracks: [],
         mapThemeRange: [],
@@ -51,29 +47,11 @@
 
       this.requestThemesAndTracks()
 
-      this.careerMapsStatus = 'pending'
-
-      requestCareerMaps()
-        .then(res => {
-          // console.log(res.result) // 3
-          // return Promise.reject()
-          this.careerMaps = res.result.data,
-            this.careerMapsStatus = 'resolve'
-
-        })
-        .catch(e => {
-          console.error(e)
-          this.careerMapsStatus = 'reject'
-        })
-        .finally(() => {
-          uni.hideLoading()
-        })
-
     },
     onShareAppMessage() {
 
       return {
-        'title': '生涯地图，精确查询'
+        'title': '我在用《狂飙小助手》精确查询生涯地图，你也来康康！'
       }
     },
 
@@ -96,29 +74,10 @@
         .then(() => {
 
           this.$refs.careerQueryDB.refresh()
-        })
-
-
-      requestCareerMaps()
-        .then(res => {
-          // console.log(res.result) // 3
-          // return Promise.reject()
-          this.careerMaps = res.result.data,
-            this.careerMapsStatus = 'resolve'
-
-
-        })
-        .catch(e => {
-          console.error(e)
-          this.careerMapsStatus = 'reject'
-          uni.showToast({
-            title: '失败',
-            icon: 'none'
-          })
-        })
-        .finally(() => {
           uni.stopPullDownRefresh()
         })
+
+
     },
     methods: {
       requestThemesAndTracks() {
@@ -132,32 +91,6 @@
             this.careerQueryStatus = 'resolve'
           })
       },
-      onRetryCareerMaps() {
-        this.requestThemesAndTracks()
-
-        uni.showLoading({
-          title: '重试中',
-        })
-
-        requestCareerMaps()
-          .then(res => {
-            // console.log(res.result) // 3
-            // return Promise.reject()
-            this.careerMaps = res.result.data,
-              this.careerMapsStatus = 'resolve'
-            uni.showToast({
-              title: '成功'
-            })
-          })
-          .catch(e => {
-            console.error(e)
-            this.careerMapsStatus = 'reject'
-            uni.showToast({
-              title: '失败',
-              icon: 'none'
-            })
-          })
-      },
 
       ...mapMutations(['toggleServer']),
     }
@@ -165,24 +98,96 @@
 </script>
 
 <style lang="scss">
-  .mode-changer {
+  .head-wrapper {
+
+    background-color: $card-bg-color;
+    margin-bottom: 20rpx;
+    @include pad-devices {
+      margin-bottom: toPadPx(20);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
+  }
+
+  .head {
     display: flex;
     // background-color: $page-bg-color;
 
-    padding: 20rpx;
+    padding: 0 20rpx;
     box-sizing: border-box;
 
     @include pad-devices {
-      padding: toPadPx(20);
+      padding: 0 toPadPx(20);
       max-width: 768px;
       margin: 0 auto;
     }
   }
 
-  .mode-button {
-    padding: 0 20rpx;
+
+
+  .tab-block {
+    // padding: 0 20rpx;
     font-size: 36rpx;
+    display: flex;
+    // text-align: center;
+    // justify-content: space-between;
     flex: 1;
+    margin-left: 32rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    background-color: $card-bg-color;
+    color: $text-title-color;
+
+
+    @include pad-devices {
+      font-size: toPadPx(36);
+      // padding: 0 toPadPx(20);
+      height: toPadPx(72);
+      margin-left: toPadPx(32);
+      line-height: toPadPx(72);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+      color: $text-title-color-dark;
+    }
+  }
+
+
+
+  .tab-item {
+    // flex: 1;
+  }
+
+  .tab-item-selected {
+    border-bottom: 8rpx solid $theme-color;
+    font-weight: bold;
+    color: $theme-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $theme-color-dark;
+      border-bottom-color: $theme-color-dark;
+    }
+
+    @include pad-devices {
+      border-bottom-width: toPadPx(8);
+    }
+  }
+
+  .tab-item+.tab-item {
+    margin-left: 32rpx;
+
+    @include pad-devices {
+      margin-left: toPadPx(32);
+    }
+  }
+
+  .mode-button {
+    
+    font-size: 36rpx;
+    flex: none;
     display: flex;
     justify-content: center;
     height: 72rpx;
@@ -193,7 +198,6 @@
 
     @include pad-devices {
       font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
       border-radius: toPadPx(10);
@@ -204,4 +208,6 @@
       color: $theme-color-dark;
     }
   }
+
+
 </style>

@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dcloudio/uni-ui": "^1.2.3",
-    "@vant/weapp": "^1.4.0",
     "moment": "^2.27.0",
     "vuex": "^3.5.1",
     "vuex-persistedstate": "^4.0.0-beta.1"

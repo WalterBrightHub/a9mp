@@ -15,8 +15,11 @@
     display: flex;
     flex-direction: column;
 
-    font-size: 14px;
-    color: $text-p-color;
+    font-size: 32rpx;
+    color: $text-p-color;  
+      @include pad-devices {
+      font-size: toPadPx(32);
+    }
 
 
     @media (prefers-color-scheme: dark) {

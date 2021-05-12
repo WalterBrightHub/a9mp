@@ -106,7 +106,7 @@
 
       handleLoad(data, ended, pagination) {
         // console.log(data)
-        
+
       }
     }
   }
@@ -128,7 +128,6 @@
     grid-template-columns: repeat(4, 25%);
 
     margin: 0 20rpx;
-    padding: 20rpx 0;
 
     background-color: $card-bg-color;
 
@@ -144,12 +143,14 @@
 
   .map-theme-block {
     border-radius: 10rpx 10rpx 0 0;
+    padding-top: 10rpx;
 
     @include pad-devices {
       border-radius: toPadPx(10) toPadPx(10) 0 0;
+      padding-top: toPadPx(10);
     }
 
-    @media (min-width:760px) {
+    @media (min-width:750px) {
       grid-template-columns: repeat(5, 20%);
 
     }
@@ -161,6 +162,10 @@
 
     @include pad-devices {
       margin-top: toPadPx(5);
+    }
+    @media (min-width:750px) {
+      grid-template-columns: repeat(4, 25%);
+    
     }
   }
 

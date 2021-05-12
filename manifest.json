@@ -67,6 +67,8 @@
       "backgroundColor": "@bgColor"
     },
     "themeLocation": "static/theme.json",
+    
+    
 
     "tabBar": {
       "color": "@tabFontColor",

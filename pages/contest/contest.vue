@@ -1,16 +1,19 @@
 <template>
   <view class="container">
-    <view class="filter-block">
-      <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
-      <!--      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
+    <div class="filter-wrapper">
+
+      <view class="filter-block">
+        <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
+        <!--      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
       </picker> -->
-      <view class="type-filter-block">
-        <view class="type-filter-item" :class="{['type-filter-item-selected']:index===typeFilterValue}"
-          v-for="(type,index) in typeFilterRange" @tap="onChangeType(index)">
-          {{type}}
+        <view class="type-filter-block">
+          <view class="type-filter-item" :class="{['type-filter-item-selected']:index===typeFilterValue}"
+            v-for="(type,index) in typeFilterRange" @tap="onChangeType(index)">
+            {{type}}
+          </view>
         </view>
       </view>
-    </view>
+    </div>
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
@@ -134,53 +137,32 @@
 </script>
 
 <style lang="scss">
-  .filter-block {
-    display: flex;
-    background-color: $card-bg-color;
+  .filter-wrapper {
 
-    padding: 0 20rpx;
-    box-sizing: border-box;
+    background-color: $card-bg-color;
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
+  }
+
+  .filter-block {
+    display: flex;
+
+    padding: 0 20rpx;
+    box-sizing: border-box;
+
+
 
     @include pad-devices {
-      padding:0 toPadPx(20);
+      padding: 0 toPadPx(20);
       box-sizing: border-box;
       max-width: 768px;
       margin: 0 auto;
     }
   }
 
-  .type-filter {
-    padding: 0 20rpx;
-    font-size: 36rpx;
-    // display: flex;
-    text-align: center;
-    justify-content: center;
-    flex: 1;
-    margin-left: 20rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    border-radius: 10rpx;
-    background-color: $card-bg-color;
-    color: $text-title-color;
 
-    @include pad-devices {
-      font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      margin-left: toPadPx(20);
-      line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
-      color: $text-title-color-dark;
-    }
-  }
 
   .type-filter-block {
     // padding: 0 20rpx;
@@ -189,7 +171,7 @@
     text-align: center;
     // justify-content: center;
     flex: 1;
-    margin-left: 32rpx;
+    margin-left: 30rpx;
     height: 72rpx;
     line-height: 72rpx;
     background-color: $card-bg-color;
@@ -202,7 +184,7 @@
       font-size: toPadPx(36);
       // padding: 0 toPadPx(20);
       height: toPadPx(72);
-      margin-left: toPadPx(32);
+      margin-left: toPadPx(30);
       line-height: toPadPx(72);
     }
 
@@ -211,31 +193,34 @@
       color: $text-title-color-dark;
     }
   }
-  
-    .type-filter-block::-webkit-scrollbar {
-      height:0 !important ;
-    }
+
+  .type-filter-block::-webkit-scrollbar {
+    height: 0 !important;
+  }
 
   .type-filter-item {
     flex: none;
   }
 
-.type-filter-item-selected{
-  border-bottom: 8rpx solid $theme-color;
-  font-weight: bold;
-  color: $theme-color;
-  @media (prefers-color-scheme: dark) {
-    color: $theme-color-dark;
-    border-bottom-color: $theme-color-dark;
+  .type-filter-item-selected {
+    border-bottom: 8rpx solid $theme-color;
+    font-weight: bold;
+    color: $theme-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $theme-color-dark;
+      border-bottom-color: $theme-color-dark;
+    }
+
+    @include pad-devices {
+      border-bottom-width: toPadPx(8);
+    }
   }
-  @include pad-devices{
-    border-bottom-width: toPadPx(8);
-  }
-}
 
   .type-filter-item+.type-filter-item {
     margin-left: 32rpx;
-    @include pad-devices{
+
+    @include pad-devices {
       margin-left: toPadPx(32);
     }
   }

@@ -22,7 +22,7 @@
     "selectedIconPathAbout": "static/tabbar-icons/helmet-selected.png"
   },
   "dark": {
-    "navBgColor": "#121212",
+    "navBgColor": "#1e1e1e",
     "navTxtStyle": "white",
     "bgColor": "#121212",
     "bgTxtStyle": "dark",

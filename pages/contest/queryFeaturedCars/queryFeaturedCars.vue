@@ -23,8 +23,8 @@
     mapState,
     mapMutations
   } from 'vuex'
-  import carCard from '../../carList/components/carCard.vue'
-  import loading from '../../../components/loading/loading.vue'
+  import carCard from '@/components/carCard/carCard.vue'
+  import loading from '@/components/loading/loading.vue'
 
   export default {
     components: {
@@ -64,75 +64,14 @@
 <style lang="scss">
   .container {
     padding-top: 20rpx;
-  }
 
-  .car-card-list {
-    padding: 0 20rpx;
-    padding-bottom: 30rpx;
-
-    @include pad-devices {
-      padding: 0 toPadPx(20);
-      padding-bottom: toPadPx(30);
-    }
-
-    margin: 0 auto;
-    max-width: 768px;
-
-  }
-
-  .cardb {
-    // width: 100%;
-  }
-
-  .car-card+.car-card {
-    margin-top: 20rpx;
-
-    @include pad-devices {
-      margin-top: toPadPx(20);
-    }
-  }
-
-  //宽屏设备，双列排布
-  @media (min-width:750px) {
-    .car-card-list {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .car-card {
-      flex: 1 1 340px;
-      margin-top: 20px;
-      padding: 0 10px;
-      max-width: 354px;
-    }
-
-    .car-card+.car-card {
-      margin-top: 20px;
-    }
-  }
-
-  .car-empty-list {
-    font-size: 36rpx;
-    margin-top: 20rpx;
-    color: $text-help-color;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 
     @include pad-devices {
-      margin-top: toPadPx(20);
-      font-size: toPadPx(36);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-help-color-dark;
+      padding-top: toPadPx(20);
     }
   }
 
-  .loading {
-    padding: 24rpx;
-
-    @include pad-devices {
-      padding: toPadPx(24);
-    }
-  }
+@import '@/pages/carList/carList.scss';
 </style>
