@@ -5,7 +5,7 @@
       @load="onqueryload" @error="onqueryerror" :manual="true">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
-        <view class="car-card" v-for="(carData,index) in data" :key="carData._id">
+        <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
           <car-card :carData="carData"></car-card>
         </view>
       </view>

@@ -20,7 +20,7 @@
 	
 
 	
-	// iPhone 6下的750rpx转化为480px下的px 
+	// iPhone 6下的750rpx转化为420px下的px 
 	@function toPadPx($rpx){
 		//@return $rpx*0.64px;
 		@return $rpx*0.56px;
