@@ -49,17 +49,9 @@
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
         <view class="cost-list">
           <view class="cost-item">
-            <view class="cost-name">升级</view>
-            <view class="cost-value">{{carData.stageCost>0?split3(carData.stageCost):'机密'}}</view>
-          </view>
-          <view class="cost-item">
-            <view class="cost-name">零件</view>
-            <view class="cost-value">{{carData.partCost>0?split3(carData.partCost):'机密'}}</view>
-          </view>
-          <view class="cost-item">
-            <view class="cost-name">MAX</view>
+            <view class="cost-name">改装费</view>
             <view class="cost-value">
-              {{carData.stageCost>0&&carData.partCost>0?split3(carData.stageCost+carData.partCost):'机密'}}
+              {{carData.totalCost>0?split3(carData.totalCost):'机密'}}
             </view>
           </view>
 
@@ -67,7 +59,7 @@
         </view>
 
         <view class="part-list">
-          <view class="part-title">零件</view>
+          <view class="part-title">进口零件</view>
           <view class="part-item" v-if="carData.uncommonPart">
             <image class="part-icon" src="@/static/carcard-icons/part-uncommon.png"></image>
             <view class="part-num uncommon-part-num">{{carData.uncommonPart}}</view>
@@ -144,15 +136,13 @@
 
         let pages = getCurrentPages()
         let currentPage = pages[pages.length - 1]
-        // if ('pages/contest/queryFeaturedCars/queryFeaturedCars' === currentPage.route) {
-        //   uni.redirectTo({
-        //     url
-        //   })
-        // } else {
+        if ('/pages/carList/carArchives/carArchives' === currentPage.route) {
+          //又回到最初的起点？
+        } else {
           uni.navigateTo({
             url
           })
-        // }
+        }
       }
     }
   }
