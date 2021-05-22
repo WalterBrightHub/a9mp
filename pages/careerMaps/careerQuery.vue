@@ -116,10 +116,13 @@
 
 <style lang="scss">
   .context {
-    @include pad-devices {
+      padding-bottom: 30rpx;
+      @include pad-devices {
+        padding-bottom: toPadPx(30);
       max-width: 768px;
       margin: 0 auto;
     }
+    
   }
 
   .map-theme-block,
@@ -217,8 +220,9 @@
       background-color: #2d8006;
     }
   }
+  
 
-  .career-season-list,
+
   .empty-season-list,
   .loading {
     background-color: $card-bg-color;

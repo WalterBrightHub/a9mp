@@ -49,7 +49,19 @@
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
         <view class="cost-list">
           <view class="cost-item">
-            <view class="cost-name">改装费</view>
+            <view class="cost-name">升级费</view>
+            <view class="cost-value">
+              {{carData.stageCost>0?split3(carData.stageCost):'机密'}}
+            </view>
+            </view>
+          <view class="cost-item">
+            <view class="cost-name">零件费</view>
+            <view class="cost-value">
+              {{carData.partCost>0?split3(carData.partCost):'机密'}}
+            </view>
+            </view>
+          <view class="cost-item">
+            <view class="cost-name">改装合计</view>
             <view class="cost-value">
               {{carData.totalCost>0?split3(carData.totalCost):'机密'}}
             </view>

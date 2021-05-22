@@ -36,9 +36,7 @@
 </script>
 
 <style lang="scss">
-  .career-season-list,
-  .empty-season-list,
-  .loading {
+  .career-season-list{
     background-color: $card-bg-color;
     border-radius: 0 0 10rpx 10rpx;
     margin: 5rpx 20rpx 0 20rpx;

@@ -21,11 +21,11 @@
         </view>
       </view>
     </view>
-    <view class="event-detail" v-if="featuredCars && featuredCars.length">
+    <!-- <view class="event-detail" v-if="featuredCars && featuredCars.length"> -->
 
       <!-- <image class="event-detail-icon" src="../../../static/contest-icons/car.png"></image> -->
-      <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view>
-    </view>
+      <!-- <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view> -->
+    <!-- </view> -->
   </view>
 </template>
 

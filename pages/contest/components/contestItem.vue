@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="divider" v-if="index>0"></view>
-    <view class="card">
+    <view class="card" @tap="onQueryFeaturedCars">
       <view class="title-block">
         <view class="contest-title" :class="'title-'+timeStatus">{{contest.contestName}}</view>
         <view class="time-tip" :class="'tip-'+timeStatus">{{timeTip}}</view>
@@ -56,6 +56,27 @@
         }
       }
     },
+    methods: {
+      onQueryFeaturedCars() {
+        if (this.contest.featuredCars&&this.contest.featuredCars.length > 0) {
+          const params = this.contest.featuredCars.join(',')
+          let pages = getCurrentPages()
+          let currentPage = pages[pages.length - 1]
+          const url = `/pages/contest/queryFeaturedCars/queryFeaturedCars?carIds=${params}`
+          uni.navigateTo({
+            url
+          })
+        }
+        else{
+          uni.showToast({
+            title:'没有精选车辆！',
+            // duration:500,
+            icon:'none'
+          })
+        }
+
+      }
+    }
   }
 </script>
 
