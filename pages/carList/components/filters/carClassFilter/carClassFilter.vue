@@ -44,58 +44,62 @@
 
   .class-block {
     font-size: 36rpx;
-    flex: 1;
+    // flex: 1;
+    width: 72rpx;
+    // border-radius: 1000rpx;
+    display: flex;
+    justify-content: center;
     height: 72rpx;
     line-height: 72rpx;
-    text-align: center;
+    // text-align: center;
     box-sizing: border-box;
     font-weight: bold;
-    background-color: #fff;
+    // background-color: #fff;
 
     @include pad-devices {
 
       font-size: toPadPx(36);
+      width: toPadPx(72);
       height: toPadPx(72);
       line-height: toPadPx(72);
     }
 
   }
 
-  .class-block+.class-block {
-    border-left: 2rpx solid $page-bg-color;
+  // .class-block+.class-block {
+  //   border-left: 2rpx solid $page-bg-color;
+    
 
-    @include pad-devices {
+  //   @include pad-devices {
 
-      border-left: toPadPx(2) solid $page-bg-color;
-    }
+  //     border-left: toPadPx(2) solid $page-bg-color;
+  //   }
 
-    @media (prefers-color-scheme: dark) {
+  //   @media (prefers-color-scheme: dark) {
 
-      border-left: 2rpx solid $page-bg-color-dark;
+  //     border-left: 2rpx solid $page-bg-color-dark;
 
-      @include pad-devices {
+  //     @include pad-devices {
 
-        border-left: toPadPx(2) solid $page-bg-color-dark;
-      }
-    }
-  }
+  //       border-left: toPadPx(2) solid $page-bg-color-dark;
+  //     }
+  //   }
+  // }
 
-  .class-block:first-child {
-    border-radius: 10rpx 0 0 10rpx;
-  }
+  // .class-block:first-child {
+  //   border-radius: 10rpx 0 0 10rpx;
+  // }
 
-  .class-block:last-child {
-    border-radius: 0 10rpx 10rpx 0;
-  }
+  // .class-block:last-child {
+  //   border-radius: 0 10rpx 10rpx 0;
+  // }
 
   .class-block {
     color: $text-title-color;
-    background-color: $card-bg-color;
 
     @media (prefers-color-scheme: dark) {
 
       color: $text-title-color-dark;
-      background-color: $card-bg-color-dark;
     }
   }
 

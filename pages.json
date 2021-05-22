@@ -52,21 +52,13 @@
       }
 
     }, {
-      "path": "pages/about/about",
+      "path": "pages/more/more",
       "style": {
         // "navigationBarTitleText": "",
-        "enablePullDownRefresh": true
+        // "enablePullDownRefresh": true
       }
 
     }, {
-      "path": "pages/about/specialEvent/specialEventCalculator/specialEventCalculator",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-
-    }
-      ,{
             "path" : "pages/careerMaps/quickQuery/quickQuery",
             "style" :                                                                                    
             {
@@ -131,7 +123,7 @@
         "text": "赛事"
       },
       {
-        "pagePath": "pages/about/about",
+        "pagePath": "pages/more/more",
         "iconPath": "static/tabbar-icons/helmet.png",
         "selectedIconPath": "static/tabbar-icons/helmet-selected.png",
         "text": "更多"

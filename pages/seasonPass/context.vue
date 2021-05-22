@@ -1,12 +1,15 @@
 <template>
   <view class="context">
-    <view class="head">
+    <view class="head-wrapper">
+      <view class="head">
 
-      <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
-      <view class="season-title-block">
-        <view class="season-name">{{seasonName}}</view>
+        <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
+        <view class="season-title-block">
+          <view class="season-name">{{seasonName}}</view>
+        </view>
       </view>
     </view>
+
     <view class="mission-list-block" v-if="seasonPassStatus==='resolve' && seasonPass">
 
       <view class="mission-list" v-for="episode in seasonPass.episodes" :key="episode.episode_id">
@@ -68,17 +71,16 @@
 
         this.$emit('onToggleServer')
       },
-      onMissionMapQuery(mapName,tags) {
-        let url=''
-        let timeAttack=0
-        let hunted=0
-        for(let tag of tags){
-          if(tag==='追逐赛'){
-            hunted=1
+      onMissionMapQuery(mapName, tags) {
+        let url = ''
+        let timeAttack = 0
+        let hunted = 0
+        for (let tag of tags) {
+          if (tag === '追逐赛') {
+            hunted = 1
             break
-          }
-          else if(tag==='计时赛'){
-            timeAttack=1
+          } else if (tag === '计时赛') {
+            timeAttack = 1
             break
           }
         }
@@ -94,36 +96,57 @@
 </script>
 
 <style lang="scss">
-  .context {
+  .context {}
+
+  .head-wrapper {
+    background-color: $card-bg-color;
+    margin-bottom: 20rpx;
+    @include pad-devices {
+      margin-bottom:  toPadPx(20);
+    
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      background-color: $card-bg-color-dark;
+    }
+  }
+
+  .head,
+  .mission-list-block {
+
     max-width: 768px;
     margin: 0 auto;
   }
 
   .head {
     display: flex;
+
+
   }
 
   .server-toggle {
-    padding: 0 20rpx;
+    // padding: 0 20rpx;
     font-size: 36rpx;
     height: 72rpx;
     line-height: 72rpx;
-    border-radius: 10rpx;
-    margin: 20rpx 0 20rpx 20rpx;
+    // border-radius: 10rpx;
+    padding: 0 20rpx;
+    
+    // background-color: #f7ce26;
 
     @include pad-devices {
       font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
+      // padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-      margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
+      // border-radius: toPadPx(10);
+      padding: 0 toPadPx(20);
 
     }
 
     color: $theme-color;
 
-    background-color: $card-bg-color;
 
     @media (prefers-color-scheme: dark) {
 
@@ -136,17 +159,17 @@
   .season-title-block {
     display: flex;
     flex: 1;
-    margin: 20rpx;
+    // margin: 20rpx;
 
     //好康的渐变
     //https://www.ui.cn/detail/198009.html 双色渐变用于中小面积，轻量渐变用于大面积
     // background: linear-gradient(to right, #f7ce26, #ff0054);
 
     // background: linear-gradient(to right, #f7ce26, #ff0054);
-    border-radius: 10rpx;
+    // border-radius: 10rpx;
 
     @include pad-devices {
-      margin: toPadPx(20);
+      // margin: toPadPx(20);
       border-radius: toPadPx(10);
     }
   }
@@ -154,16 +177,17 @@
   .season-name {
     padding: 0 20rpx;
     line-height: 72rpx;
-    border-radius: 10rpx;
+    // border-radius: 10rpx;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f7ce26;
+    // background-color: #f7ce26;
 
 
     // background: linear-gradient(to right, #ffe681,#f7ce26 );
-    color: #000;
+    color:$text-title-color;
+    // color: #f18200;
     font-size: 36rpx;
     font-weight: bold;
 
@@ -176,7 +200,7 @@
     @include pad-devices {
       padding: 0 toPadPx(20);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
+      // border-radius: toPadPx(10);
       font-size: toPadPx(36);
     }
   }
@@ -208,7 +232,8 @@
   }
 
   .mission-list-block {
-    padding:0 20rpx 30rpx 20rpx;
+    padding: 0 20rpx 30rpx 20rpx;
+
     @include pad-devices {
       padding: 0 toPadPx(20) toPadPx(30) toPadPx(20);
     }

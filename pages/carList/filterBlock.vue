@@ -7,6 +7,7 @@
           @onChangeSelectMethod="onChangeSelectMethod" />
 
       </view>
+      <view class="divider"></view>
     </view>
     <view class="placeholder"></view>
   </view>
@@ -61,10 +62,10 @@
 
 <style lang="scss">
   .placeholder {
-    height: 112rpx;
+    height: 92rpx;
 
     @include pad-devices {
-      height: toPadPx(112);
+      height: toPadPx(92);
     }
   }
 
@@ -72,48 +73,73 @@
     // display: flex;
     position: fixed;
     z-index: 114514;
+    background-color: $card-bg-color;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
+
     width: 100%;
   }
 
   .filter-wrapper {
     display: flex;
     margin: 0 auto;
+    padding: 0 20rpx;
     max-width: 768px;
     align-items: center;
-    background-color: $page-bg-color;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $page-bg-color-dark;
+    // box-shadow: 0 2rpx 2rpx $divider-color;
+    @include pad-devices {
+      padding: 0 toPadPx(20);
+      // box-shadow: ;
+
     }
 
+  }
+
+  .divider {
+    height: 2rpx;
+    background-color: $divider-color;
+
+    @include pad-devices {
+      height: 0 toPadPx(2);
+      // box-shadow: ;
+
+    }
+    
+    @media (prefers-color-scheme: dark) {
+    
+      background-color: $divider-color-dark;
+    }
   }
 
   .filter {
     display: flex;
     flex: 1;
-    padding: 20rpx;
+    // 
     box-sizing: border-box;
 
     @include pad-devices {
-      padding: toPadPx(20);
+      // padding: toPadPx(20);
     }
   }
 
   .server-toggle {
-    padding: 0 20rpx;
+    // padding: 0 20rpx;
     font-size: 36rpx;
     height: 72rpx;
     line-height: 72rpx;
-    border-radius: 10rpx;
-    margin: 20rpx 0 20rpx 20rpx;
+    // border-radius: 10rpx;
+    // margin: 20rpx 0 20rpx 20rpx;
 
     @include pad-devices {
       font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
+      // padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-      margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
+      // border-radius: toPadPx(10);
+      // margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
 
     }
 

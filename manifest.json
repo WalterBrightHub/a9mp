@@ -99,9 +99,9 @@
           "text": "赛事"
         },
         {
-          "pagePath": "pages/about/about",
-          "iconPath": "@iconPathAbout",
-          "selectedIconPath": "@selectedIconPathAbout",
+          "pagePath": "pages/more/more",
+          "iconPath": "@iconPathMore",
+          "selectedIconPath": "@selectedIconPathMore",
           "text": "更多"
         }
       ]

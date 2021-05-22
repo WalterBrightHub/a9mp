@@ -56,7 +56,7 @@
         now: new Date().getTime(),
         action: '',
         typeFilterValue: 0,
-        typeFilterRange: ['热门', '往期', '寻车', '多人', '特殊赛', '大奖赛', '通行证', '巅峰', '节日'],
+        typeFilterRange: ['热门', '往期', '寻车','惊艳亮相','速度爆发','传奇周末', '多人', '特殊赛', '大奖赛', '通行证', '巅峰', '节日'],
       }
     },
     computed: {
@@ -233,7 +233,7 @@
     // flex: 1;
     height: 72rpx;
     line-height: 72rpx;
-    border-radius: 10rpx;
+    // border-radius: 10rpx;
     // background-color: $page-bg-color;
     color: $theme-color;
 
@@ -242,7 +242,7 @@
       // padding: 0 toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
+      // border-radius: toPadPx(10);
     }
 
     @media (prefers-color-scheme: dark) {

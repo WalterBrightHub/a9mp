@@ -18,8 +18,8 @@
     "selectedIconPathContest": "static/tabbar-icons/trophy-selected.png",
     "iconPathSeasonPass": "static/tabbar-icons/pass.png",
     "selectedIconPathSeasonPass": "static/tabbar-icons/pass-selected.png",
-    "iconPathAbout": "static/tabbar-icons/helmet.png",
-    "selectedIconPathAbout": "static/tabbar-icons/helmet-selected.png"
+    "iconPathMore": "static/tabbar-icons/helmet.png",
+    "selectedIconPathMore": "static/tabbar-icons/helmet-selected.png"
   },
   "dark": {
     "navBgColor": "#1e1e1e",
@@ -40,7 +40,7 @@
     "selectedIconPathContest": "static/tabbar-icons/trophy-selected-dark.png",
     "iconPathSeasonPass": "static/tabbar-icons/pass-dark.png",
     "selectedIconPathSeasonPass": "static/tabbar-icons/pass-selected-dark.png",
-    "iconPathAbout": "static/tabbar-icons/helmet-dark.png",
-    "selectedIconPathAbout": "static/tabbar-icons/helmet-selected-dark.png"
+    "iconPathMore": "static/tabbar-icons/helmet-dark.png",
+    "selectedIconPathMore": "static/tabbar-icons/helmet-selected-dark.png"
   }
 }

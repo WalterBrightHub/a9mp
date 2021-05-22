@@ -1,6 +1,7 @@
 <template>
   <view class="filter-block">
-    <picker class="filter-picker" :range="sortFieldRange" :value="sortFieldValue" :range-key="'name'" @change="onChangeSortField">{{sortField.name}}</picker>
+    <picker class="filter-picker" :range="sortFieldRange" :value="sortFieldValue" :range-key="'name'" @change="onChangeSortField">按{{sortField.name}}
+    </picker>
     <view class="filter-toggle" @tap="onToggleIsAsc">{{isAsc?'从低到高':'从高到低'}}</view>
   </view>
 </template>
@@ -20,7 +21,7 @@
             value: 'rank',
           },
           {
-            name: '最大速度',
+            name: '极速',
             value: 'topSpeed',
           },
           {
@@ -73,46 +74,44 @@
   }
 
   .filter-picker {
-    flex: 1;
+    // flex: 1;
     text-align: center;
-    background-color: #fff;
-    color: #000;
-    font-size: 36rpx;
+    // background-color: #fff;
+    // color: #000;
+    font-size: 32rpx;
     height: 72rpx;
     line-height: 72rpx;
-    border-radius: 10rpx;
+    // border-radius: 10rpx;
 
     @include pad-devices {
-      font-size: toPadPx(36);
+      font-size: toPadPx(32);
       height: toPadPx(72);
       line-height: toPadPx(72);
-      border-radius: toPadPx(10);
+      // border-radius: toPadPx(10);
     }
   }
 
   .filter-picker,
   .filter-toggle {
-    color: $text-title-color;
-    background-color: $card-bg-color;
+    color: $text-p-color;
 
     @media (prefers-color-scheme: dark) {
 
-      color: $text-title-color-dark;
-      background-color: $card-bg-color-dark;
+      color: $text-p-color-dark;
     }
   }
 
   .filter-toggle {
-    padding: 0 20rpx;
-    font-size: 36rpx;
+    padding-left: 20rpx;
+    font-size: 32rpx;
     height: 72rpx;
     line-height: 72rpx;
     border-radius: 10rpx;
     margin-left: 20rpx;
 
     @include pad-devices {
-      font-size: toPadPx(36);
-      padding: 0 toPadPx(20);
+      font-size: toPadPx(32);
+      padding-left: toPadPx(20);
       height: toPadPx(72);
       line-height: toPadPx(72);
       border-radius: toPadPx(10);
