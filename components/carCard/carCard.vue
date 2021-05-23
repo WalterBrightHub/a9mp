@@ -53,13 +53,13 @@
             <view class="cost-value">
               {{carData.stageCost>0?split3(carData.stageCost):'机密'}}
             </view>
-            </view>
+          </view>
           <view class="cost-item">
             <view class="cost-name">零件费</view>
             <view class="cost-value">
               {{carData.partCost>0?split3(carData.partCost):'机密'}}
             </view>
-            </view>
+          </view>
           <view class="cost-item">
             <view class="cost-name">改装合计</view>
             <view class="cost-value">
@@ -144,17 +144,26 @@
         return res.reverse().join('')
       },
       jumpToArchives() {
-        const url = `/pages/carList/carArchives/carArchives?car_id=${this.carData.car_id}`
-
-        let pages = getCurrentPages()
-        let currentPage = pages[pages.length - 1]
-        if ('/pages/carList/carArchives/carArchives' === currentPage.route) {
-          //又回到最初的起点？
-        } else {
-          uni.navigateTo({
-            url
+        if (this.carData.releaseVersion === '0.0') {
+          uni.showToast({
+            title: '尚未发布',
+            duration: 500,
+            icon: 'none'
           })
+        } else {
+          const url = `/pages/carList/carArchives/carArchives?car_id=${this.carData.car_id}`
+
+          let pages = getCurrentPages()
+          let currentPage = pages[pages.length - 1]
+          if ('/pages/carList/carArchives/carArchives' === currentPage.route) {
+            //又回到最初的起点？
+          } else {
+            uni.navigateTo({
+              url
+            })
+          }
         }
+
       }
     }
   }
@@ -430,26 +439,28 @@
   .part-list {
     margin-top: 32rpx;
     display: flex;
-    
+
     @include pad-devices {
       margin-top: toPadPx(32);
     }
+
     // justify-content: flex-end;
   }
-  
-  .part-title{
+
+  .part-title {
     display: flex;
     align-items: center;
     height: 40rpx;
     line-height: 40rpx;
+
     @include pad-devices {
       height: toPadPx(40);
       line-height: toPadPx(40);
     }
   }
-  
-  .part-title+.part-item{
-    margin-left:auto;
+
+  .part-title+.part-item {
+    margin-left: auto;
   }
 
   .part-item {

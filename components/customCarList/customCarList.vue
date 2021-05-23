@@ -64,7 +64,7 @@
       },
       onqueryload() {
         // uni.hideLoading()
-        this.loaded=true
+        this.options.loaded=true
       },
       onqueryerror() {
         // uni.hideLoading()
