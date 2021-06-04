@@ -76,6 +76,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/carList/carArchives/relatedEvents/relatedEvents",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 
   "globalStyle": {

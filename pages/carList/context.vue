@@ -14,7 +14,7 @@
         <loading />
       </view>
 
-      <view class="car-empty-list" v-if="data.length===0 && options.loaded===true">😮 这里空空如也</view>
+      <view class="car-empty-list" v-else-if="data.length===0 && options.loaded===true">😮 这里空空如也</view>
     </unicloud-db>
   </view>
 </template>
@@ -51,6 +51,7 @@
         this.$refs.carListDB.loadMore()
       },
       refresh() {
+        // this.options.loaded=false
         this.$refs.carListDB.loadData({
           //设置true又正常了，真奇怪
           clear: true
@@ -60,11 +61,12 @@
             duration: 500
           })
           uni.stopPullDownRefresh()
+          // this.options.loaded=true
         })
       },
       onqueryload() {
         // uni.hideLoading()
-        this.ooptions.loaded=true
+        this.options.loaded=true
       },
       onqueryerror() {
         // uni.hideLoading()

@@ -3,7 +3,7 @@
 
     <view class="event-detail" v-if="startTime">
       <image class="event-detail-icon" src="../../../static/contest-icons/time.png"></image>
-      <text class="event-detail-content">{{selectDays(startTime,endTime)}}</text>
+      <text class="event-detail-content time-detail" :style="cardBackgroundStyle">{{selectDays(startTime,endTime)}}</text>
     </view>
 
 
@@ -40,6 +40,24 @@
       return {
 
       };
+    },
+    computed:{
+      
+        cardBackgroundStyle(){
+          
+            const {
+              startTime,
+              endTime,
+              now
+            } = this
+          if(now>=startTime&&now<=endTime){
+            let percent=(now-startTime)*100/(endTime-startTime)
+          return `background: linear-gradient(to right,#dcf5e0 ${percent}%,#fff ${percent}%);`
+          }
+          else{
+            return ''
+          }
+        },
     },
     methods: {
 
@@ -94,6 +112,21 @@
 
     @media (prefers-color-scheme: dark) {
       color: $text-p-color-dark;
+    }
+  }
+  
+  .time-detail{
+    flex:1;
+    display: flex;
+    align-items: center;
+    height: 36rpx;
+    border-radius: 1145px;
+    padding: 0 16rpx;
+    border: 1rpx solid #d5f1da;
+    @include pad-devices {
+      padding:0 toPadPx(16);
+      height: toPadPx(36);
+      border-width: toPadPx(1);
     }
   }
 
