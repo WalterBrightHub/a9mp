@@ -29,7 +29,9 @@
   </view>
 </template>
 
-<script>
+<script>  import {
+    mapState,
+  } from 'vuex'
   // const oneDay = 1000 * 60 * 60 * 24
   const formatDate = (date, now) => (date.getFullYear() === new Date(now).getFullYear() ? '' :
       `${date.getFullYear()}.`) +
@@ -43,6 +45,7 @@
     },
     computed:{
       
+      ...mapState(['theme']),
         cardBackgroundStyle(){
           
             const {
@@ -52,7 +55,8 @@
             } = this
           if(now>=startTime&&now<=endTime){
             let percent=(now-startTime)*100/(endTime-startTime)
-          return `background: linear-gradient(to right,#dcf5e0 ${percent}%,#fff ${percent}%);`
+          let [fullColor,emptyColor]=this.theme==='light'?['#dcf5e0','#fff']:['#006a02','#1e1e1e']
+          return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
           }
           else{
             return ''
@@ -123,6 +127,9 @@
     border-radius: 1145px;
     padding: 0 16rpx;
     border: 1rpx solid #d5f1da;
+    @media (prefers-color-scheme: dark) {
+      border-color: $text-help-color-dark;
+    }
     @include pad-devices {
       padding:0 toPadPx(16);
       height: toPadPx(36);

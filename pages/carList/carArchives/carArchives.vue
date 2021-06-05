@@ -1,6 +1,6 @@
 <template>
   <view>
-    <view class="context features-context">
+<!--    <view class="context features-context">
       <view class="context-card">
         <view class="card-title">
           获取方式
@@ -9,7 +9,7 @@
           <view class="card-item-title">蓝喷</view>
         </view>
       </view>
-    </view>
+    </view> -->
 
 
     <div class="contest-db">
@@ -124,6 +124,9 @@
     padding: 0;
     margin: 20rpx;
     background-color: $card-bg-color;
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
     border-radius: 10rpx;
   }
   .contest-empty-list,

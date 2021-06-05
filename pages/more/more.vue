@@ -102,7 +102,10 @@
 
   .context-item {
     border-radius: 20rpx;
-    background-color: $card-bg-color;
+    background-color: $card-bg-color;    
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
   }
   .context-item+.context-item{
     margin-top: 20rpx;
@@ -131,20 +134,29 @@
   .divider{
     height:  2rpx;
     background-color: $divider-color;
+    @media (prefers-color-scheme: dark) {
+      background-color: $divider-color-dark;
+    }
   }
 
 
   .card-item-title {
     font-weight: bold;
     color:$text-title-color;
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+    }
   }
 
   .card-item-tip {
-    color: $text-help-color;
+    color: $text-p-color;
     margin-left: auto;
     margin-right: 0;
     flex:none;
     font-size: 28rpx;
+    @media (prefers-color-scheme: dark) {
+      color: $text-p-color-dark;
+    }
   }
   .custom-car-list-grid{
     display: grid;

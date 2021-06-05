@@ -1,9 +1,36 @@
 <script>
+  import {
+    mapMutations
+  } from 'vuex'
+  
   export default {
 
     onLaunch: function() {
       console.log(process.env.NODE_ENV)
+      let that=this
       
+      //#ifdef MP-WEIXIN
+
+      wx.getSystemInfo({
+        success(res) {
+          let {theme}=res
+          if(!theme){
+            //不支持theme
+            return
+          }else{
+            console.log(theme)
+            that.setTheme(theme)
+            wx.onThemeChange(({theme})=>{
+              that.setTheme(theme)
+            })
+          }
+        }
+      })
+      //#endif
+    },
+    methods:{
+      
+        ...mapMutations(['setTheme']),
     }
   }
 </script>
