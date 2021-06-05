@@ -14,6 +14,7 @@
       <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index"
         :style="{flex:item>0?item:20}">{{item}}</view>
     </view>
+
     <view class="perf-and-update">
       <view class="perf">
         <view class="perf-item">
@@ -40,35 +41,30 @@
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
 
-        <view class="perf-item">
+        <!--        <view class="perf-item">
           <view class="perf-name">单喷时间</view>
           <view class="perf-value" v-if="carData.nitroDuration>0">{{Number(carData.nitroDuration).toFixed(2)}}</view>
           <view class="perf-value" v-else>机密</view>
-        </view>
+        </view> -->
       </view>
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
-        <view class="cost-list">
-          <view class="cost-item">
-            <view class="cost-name">升级费</view>
-            <view class="cost-value">
-              {{carData.stageCost>0?split3(carData.stageCost):'机密'}}
-            </view>
+        <view class="cost-item">
+          <view class="cost-name">图纸总数</view>
+          <view class="cost-value">
+            {{totalBP}}
           </view>
-          <view class="cost-item">
-            <view class="cost-name">零件费</view>
-            <view class="cost-value">
-              {{carData.partCost>0?split3(carData.partCost):'机密'}}
-            </view>
-          </view>
-          <view class="cost-item">
-            <view class="cost-name">改装合计</view>
-            <view class="cost-value">
-              {{carData.totalCost>0?split3(carData.totalCost):'机密'}}
-            </view>
-          </view>
-
-
         </view>
+        <view class="perf-empty-bar"></view>
+        <view class="cost-item">
+          <view class="cost-name">改装费用</view>
+          <view class="cost-value">
+            {{carData.totalCost>0?split3(carData.totalCost):'未知'}}
+            
+          </view>
+        </view>
+        <view class="perf-empty-bar"></view>
+
+
 
         <view class="part-list">
           <view class="part-title">进口零件</view>
@@ -84,6 +80,16 @@
             <image class="part-icon" src="@/static/carcard-icons/part-epic.png"></image>
             <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
+        </view>
+        <view class="perf-empty-bar"></view>
+
+        <view class="cost-item">
+          <view class="cost-name">单喷时间</view>
+          <view class="cost-value" v-if="carData.nitroDuration>0">{{Number(carData.nitroDuration).toFixed(2)}}</view>
+          <view class="cost-value" v-else>未知</view>
+
+
+
         </view>
       </view>
       <view class="update feature-tip-block" v-else>
@@ -115,6 +121,15 @@
         } = this.carData
         return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
       },
+      totalBP() {
+        let hasUnknowBP=this.starArray.reduce((res, curr) => res || curr==='?'||curr==='？', false)
+        if(hasUnknowBP){
+          return '未知'
+        }else{
+          
+        return this.starArray.reduce((res, curr) => res + (Number(curr) || 0), 0)
+        }
+      }
     },
     methods: {
       //数值转化为宽度百分比
@@ -298,8 +313,8 @@
     background-color: #303030;
     text-align: center;
     border-radius: 6rpx;
-    font-size: 28rpx;
-    padding: 8rpx 14rpx;
+    font-size: 30rpx;
+    padding: 4rpx 14rpx;
 
     // background-color: #23bbfa;
 
@@ -307,8 +322,8 @@
 
     @include pad-devices {
       border-radius: toPadPx(6);
-      font-size: toPadPx(28);
-      padding: toPadPx(8) toPadPx(14);
+      font-size: toPadPx(30);
+      padding: toPadPx(4) toPadPx(14);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -343,6 +358,18 @@
 
   }
 
+  // .info-grid-wrapper {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-row-gap: 18rpx;
+  //   grid-column-gap: 18rpx;
+  //   // grid-auto-flow: column;
+  // }
+
+  // .info-item {
+  //   // padding-bottom: ;
+  // }
+
   .perf {
     flex: 1;
     margin-right: 2%;
@@ -350,6 +377,13 @@
 
   .perf-item {
     display: flex;
+    height: 40rpx;
+    line-height: 40rpx;
+
+    @include pad-devices {
+      height: toPadPx(40);
+      line-height: toPadPx(40);
+    }
   }
 
   .perf-value {
@@ -367,6 +401,17 @@
     @include pad-devices {
       height: toPadPx(12);
       border-radius: toPadPx(6);
+      // margin-bottom: toPadPx(18);
+    }
+  }
+  
+  .perf-empty-bar{
+    
+      height: 12rpx;    
+    margin-top: 6rpx;
+      @include pad-devices {
+      height: toPadPx(12);
+      margin-top: toPadPx(6);
       // margin-bottom: toPadPx(18);
     }
   }
@@ -391,12 +436,12 @@
 
   .update {
     flex: 1;
-    margin-left: 1em;
-    display: flex;
-    flex-direction: column;
+    margin-left: 2%;
   }
 
   .feature-tip-block {
+    display: flex;
+    // flex-direction: column;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -415,37 +460,45 @@
     }
   }
 
-  .cost-list {
-    display: flex;
-    flex-direction: column;
-  }
+
 
   .cost-item {
     display: flex;
-  }
-
-  .cost-item+.cost-item {
-    margin-top: 32rpx;
+    height: 40rpx;
+    line-height: 40rpx;
 
     @include pad-devices {
-      margin-top: toPadPx(32);
+      height: toPadPx(40);
+      line-height: toPadPx(40);
     }
   }
+  
+  
+.perf-empty-bar+.part-list,
+.perf-empty-bar+.cost-item{
+    margin-top: 18rpx;
+    
+    @include pad-devices {
+      margin-top: toPadPx(18);
+    }
+  }
+
+
 
   .cost-value {
     margin-left: auto;
   }
 
   .part-list {
-    margin-top: 32rpx;
     display: flex;
 
     @include pad-devices {
-      margin-top: toPadPx(32);
     }
 
     // justify-content: flex-end;
   }
+  
+
 
   .part-title {
     display: flex;

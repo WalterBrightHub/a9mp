@@ -38,11 +38,13 @@
               <view class="card-item-tip">版本 1.7</view>
             </view>
             <view class="divider"></view>
+            <!-- #ifdef MP-WEIXIN -->
             <view class="card-item-block">
               <view class="card-item-title">联系客服</view>
               <button open-type="contact" class="card-item-tip">唤醒客服</button>
             </view>
             <view class="divider"></view>
+            <!-- #endif -->
             <view class="card-item-block">
               <view class="card-item-title">意见反馈</view>
               <button open-type="feedback" class="card-item-tip">填写反馈</button>

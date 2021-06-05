@@ -59,7 +59,7 @@
           return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
           }
           else{
-            return ''
+            return 'border:0;'
           }
         },
     },
