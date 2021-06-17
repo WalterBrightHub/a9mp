@@ -301,10 +301,10 @@
 
   .bps {
     display: flex;
-    margin-bottom: 10rpx;
+    margin-bottom: 18rpx;
 
     @include pad-devices {
-      margin-bottom: toPadPx(10);
+      margin-bottom: toPadPx(18);
     }
   }
 

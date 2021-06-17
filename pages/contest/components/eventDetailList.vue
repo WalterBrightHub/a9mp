@@ -55,11 +55,11 @@
             } = this
           if(now>=startTime&&now<=endTime){
             let percent=(now-startTime)*100/(endTime-startTime)
-          let [fullColor,emptyColor]=this.theme==='light'?['#dcf5e0','#fff']:['#006a02','#1e1e1e']
+          let [fullColor,emptyColor]=this.theme==='light'?['#b7f0b7','#ecf9ec']:['#006a02','#1e1e1e']
           return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
           }
           else{
-            return 'border:0;'
+            return ''
           }
         },
     },
@@ -126,14 +126,14 @@
     height: 36rpx;
     border-radius: 1145px;
     padding: 0 16rpx;
-    border: 1rpx solid #d5f1da;
+    // border: 1rpx solid #d5f1da;
     @media (prefers-color-scheme: dark) {
-      border-color: $text-help-color-dark;
+      // border-color: $text-help-color-dark;
     }
     @include pad-devices {
       padding:0 toPadPx(16);
       height: toPadPx(36);
-      border-width: toPadPx(1);
+      // border-width: toPadPx(1);
     }
   }
 
