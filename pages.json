@@ -135,7 +135,7 @@
         "pagePath": "pages/more/more",
         "iconPath": "static/tabbar-icons/helmet.png",
         "selectedIconPath": "static/tabbar-icons/helmet-selected.png",
-        "text": "更多"
+        "text": "发现"
       }
     ]
   },
