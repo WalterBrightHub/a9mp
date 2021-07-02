@@ -64,7 +64,10 @@
       "navigationBarTextStyle": "@navTxtStyle",
       "navigationBarBackgroundColor": "@navBgColor",
       "navigationBarTitleText": "狂飙小助手",
-      "backgroundColor": "@bgColor"
+      "backgroundColor": "@bgColor",
+	  
+	  
+	  	"navigationStyle":"custom"
     },
     "themeLocation": "static/theme.json",
     

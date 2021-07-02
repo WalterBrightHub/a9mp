@@ -46,7 +46,7 @@
     border-radius: 50%;
     /*将边框和内容区域都变成圆形*/
 
-    animation: loading-360 0.5s infinite linear;
+    animation: loading-360 1s infinite linear;
     /*给圆环添加旋转360度的动画，并且是无限次*/
 
     @include pad-devices {

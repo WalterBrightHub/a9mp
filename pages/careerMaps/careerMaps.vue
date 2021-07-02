@@ -1,9 +1,10 @@
 <template>
   <view class="container">
+    
+    	<top-bar :showServerToggle="true" />
     <view class="head-wrapper">
 
       <view class="head">
-        <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
         <view class="tab-block">
           <view class="tab-item tab-item-selected">精确查询</view>
           <navigator class="tab-item" url="/pages/careerMaps/quickQuery/quickQuery">快速查询</navigator>
@@ -23,12 +24,14 @@
     mapMutations
   } from 'vuex'
   import careerQuery from './careerQuery.vue'
+	import topBar from '../../components/topBar/topBar.vue'
 
   const db = uniCloud.database()
 
   export default {
     components: {
       'career-query': careerQuery,
+			'top-bar':topBar
     },
     data() {
       return {
@@ -92,7 +95,6 @@
           })
       },
 
-      ...mapMutations(['toggleServer']),
     }
   }
 </script>
@@ -134,7 +136,7 @@
     // text-align: center;
     // justify-content: space-between;
     flex: 1;
-    margin-left: 32rpx;
+    // margin-left: 32rpx;
     height: 72rpx;
     line-height: 72rpx;
     background-color: $card-bg-color;
@@ -145,7 +147,7 @@
       font-size: toPadPx(36);
       // padding: 0 toPadPx(20);
       height: toPadPx(72);
-      margin-left: toPadPx(32);
+      // margin-left: toPadPx(32);
       line-height: toPadPx(72);
     }
 
@@ -184,30 +186,6 @@
     }
   }
 
-  .mode-button {
-    
-    font-size: 36rpx;
-    flex: none;
-    display: flex;
-    justify-content: center;
-    height: 72rpx;
-    line-height: 72rpx;
-    border-radius: 10rpx;
-    background-color: $card-bg-color;
-    color: $theme-color;
-
-    @include pad-devices {
-      font-size: toPadPx(36);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      border-radius: toPadPx(10);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
-      color: $theme-color-dark;
-    }
-  }
 
 
 </style>

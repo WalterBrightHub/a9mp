@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+    	<top-bar :showBack="true" :title="'中英对照'" />
 		<view class="map-theme-block-list">
       <view class="map-theme-block" v-for="(mapTheme,index) of mapThemes">
         <view class="map-theme-name-list">
@@ -25,8 +26,13 @@
 </template>
 
 <script>
+	import topBar from '@/components/topBar/topBar.vue'
   const db = uniCloud.database()
 	export default {
+    components:{
+      
+      'top-bar':topBar,
+    },
 		data() {
       return {
         // careerSeasons: [],

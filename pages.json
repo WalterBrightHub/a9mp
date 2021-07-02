@@ -59,33 +59,28 @@
       }
 
     }, {
-            "path" : "pages/careerMaps/quickQuery/quickQuery",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "快速查询",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/careerMaps/mapNameComparison/mapNameComparison",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "中英对照",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/carArchives/relatedEvents/relatedEvents",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+      "path": "pages/careerMaps/quickQuery/quickQuery",
+      "style": {
+        "navigationBarTitleText": "快速查询",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/careerMaps/mapNameComparison/mapNameComparison",
+      "style": {
+        "navigationBarTitleText": "中英对照",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/carArchives/relatedEvents/relatedEvents",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    }
+  ],
 
   "globalStyle": {
     //QQ未支持深色模式
@@ -99,7 +94,9 @@
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F5F5F5",
     // #endif
-    "navigationBarTitleText": "狂飙小助手"
+    "navigationBarTitleText": "狂飙小助手",
+
+    "navigationStyle": "custom"
 
   },
 

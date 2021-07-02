@@ -1,5 +1,7 @@
 <template>
   <view class="container">
+    
+    <top-bar :showBack="true" :title="'地图任务指引'" />
     <div class="head">{{mapName}}</div>
 
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
@@ -19,10 +21,13 @@
 <script>
   import prioritySeasonList from '@/components/prioritySeasonList/prioritySeasonList.vue'
 
+	import topBar from '@/components/topBar/topBar.vue'
+
 
   export default {
     components:{
-      prioritySeasonList
+      prioritySeasonList,
+      'top-bar':topBar,
     },
     data() {
       return {
@@ -79,7 +84,6 @@
       margin: 0 auto;
     }
 
-    padding: 20rpx 0;
   }
 
   .head {
@@ -87,16 +91,16 @@
     color: #41b90a;
     font-weight: bold;
     border-radius: 10rpx 10rpx 0 0;
-    padding: 20rpx 20rpx 5rpx 20rpx;
+    padding: 20rpx 20rpx 10rpx 20rpx;
     background-color: $card-bg-color;
-    margin: 0 20rpx;
+    margin: 20rpx 20rpx 0 20rpx;
 
     @include pad-devices {
       font-size: toPadPx(36);
       border-radius: toPadPx(10) toPadPx(10) 0 0;
       padding: toPadPx(20);
       background-color: $card-bg-color;
-      margin: 0 toPadPx(20);
+      margin: toPadPx(20) toPadPx(20) 0 toPadPx(20);
     }
 
     @media (prefers-color-scheme: dark) {

@@ -1,9 +1,9 @@
 <template>
   <view class="container">
+		<top-bar :showServerToggle="true" />
     <div class="filter-wrapper">
 
       <view class="filter-block">
-        <view class="mode-button" @tap="toggleServer">{{server==='al'?'国服':'国际'}} ⇌</view>
         <!--      <picker :range="typeFilterRange" class="type-filter" @change="onChangeType">{{typeFilterRange[typeFilterValue]}}
       </picker> -->
         <view class="type-filter-block">
@@ -37,6 +37,7 @@
 <script>
   import contestItem from './components/contestItem.vue'
   import loading from '../../components/loading/loading.vue'
+	import topBar from '@/components/topBar/topBar.vue'
   // import uniClientDB from '../../components/uni-clientdb/uni-clientdb.vue'
 
   import {
@@ -49,7 +50,8 @@
     components: {
 
       'contest-item': contestItem,
-      'loading': loading
+      'loading': loading,
+			'top-bar':topBar
     },
     data() {
       return {
@@ -122,7 +124,6 @@
       }
     },
     methods: {
-      ...mapMutations(['toggleServer']),
       onChangeType(index) {
         this.typeFilterValue = index
       },
@@ -166,90 +167,70 @@
 
   .type-filter-block {
     // padding: 0 20rpx;
-    font-size: 36rpx;
-    display: flex;
-    text-align: center;
-    // justify-content: center;
-    flex: 1;
-    margin-left: 30rpx;
-    height: 72rpx;
-    line-height: 72rpx;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    
+    // margin: 0 20rpx;
+    
     background-color: $card-bg-color;
-    color: $text-title-color;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
+    
     @include pad-devices {
-      font-size: toPadPx(36);
-      // padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      margin-left: toPadPx(30);
-      line-height: toPadPx(72);
+      margin: 0 toPadPx(20);
     }
-
+    
+    
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
+    }
+    
+  }
+
+
+
+  .type-filter-item {
+    
+    display: flex;
+    justify-content: center;
+    
+    color: $text-title-color;
+    
+    padding: 10rpx 0;
+    // border: 1rpx solid $divider-color;
+    // box-sizing: border-box;
+    
+    
+    font-size: 28rpx;
+    line-height: 48rpx;
+    
+    @include pad-devices {
+      font-size: toPadPx(28);
+      line-height: toPadPx(48);
+      padding: toPadPx(10) 0;
+    }
+    
+    @media (prefers-color-scheme: dark) {
       color: $text-title-color-dark;
     }
   }
 
-  .type-filter-block::-webkit-scrollbar {
-    height: 0 !important;
-  }
-
-  .type-filter-item {
-    flex: none;
-  }
-
   .type-filter-item-selected {
-    border-bottom: 8rpx solid $theme-color;
+
     font-weight: bold;
-    color: $theme-color;
+    background-color: #41b90a;
+    color: #fff;
 
     @media (prefers-color-scheme: dark) {
-      color: $theme-color-dark;
-      border-bottom-color: $theme-color-dark;
-    }
-
-    @include pad-devices {
-      border-bottom-width: toPadPx(8);
+      color: $text-title-color-dark;
+      background-color: #2d8006;
     }
   }
 
   .type-filter-item+.type-filter-item {
-    margin-left: 32rpx;
 
-    @include pad-devices {
-      margin-left: toPadPx(32);
-    }
   }
 
-  .mode-button {
-    // padding: 0 20rpx;
-    font-size: 36rpx;
-    display: flex;
-    justify-content: center;
-    // flex: 1;
-    height: 72rpx;
-    line-height: 72rpx;
-    // border-radius: 10rpx;
-    // background-color: $page-bg-color;
-    color: $theme-color;
 
-    @include pad-devices {
-      font-size: toPadPx(36);
-      // padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      // border-radius: toPadPx(10);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      // background-color: $page-bg-color-dark;
-      color: $theme-color-dark;
-    }
-  }
 
   @import './contest-list.scss';
 </style>

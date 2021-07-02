@@ -1,6 +1,7 @@
 <template>
   <view class="container">
 
+    	<top-bar :showBack="true" :title="'快速查询'" />
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
 
@@ -44,6 +45,7 @@
     mapMutations
   } from 'vuex'
   import requestFail from '@/components/requestFail/requestFail.vue'
+	import topBar from '@/components/topBar/topBar.vue'
   
     import selectCareerMaps from './selectCareerMaps.js'
 
@@ -56,6 +58,7 @@
   export default {
     components: {
 
+			'top-bar':topBar,
       'request-fail': requestFail,
     },
     data() {

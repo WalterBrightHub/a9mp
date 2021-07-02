@@ -10,6 +10,7 @@
         </view>
       </view>
     </view> -->
+    <top-bar :showBack="true" :title="'车辆档案'" />
 
 
     <div class="contest-db">
@@ -41,12 +42,14 @@
   } from 'vuex'
   import contestItem from '../../contest/components/contestItem.vue'
   import loading from '@/components/loading/loading.vue'
+	import topBar from '@/components/topBar/topBar.vue'
   const db = uniCloud.database()
   const dbCmd = db.command
   export default {
     components: {
       'contest-item': contestItem,
       'loading': loading,
+      'top-bar':topBar,
     },
     data() {
       return {

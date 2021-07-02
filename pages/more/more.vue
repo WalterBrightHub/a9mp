@@ -1,5 +1,7 @@
 <template>
   <view class="container">
+	  
+	  	<top-bar :showServerToggle="true" />
     <div class="context">
 
       <view class="context-item custom-car-list-list-block">
@@ -66,7 +68,12 @@
 </template>
 
 <script>
+	
+	import topBar from '@/components/topBar/topBar.vue'
   export default {
+	  components:{
+		  'top-bar':topBar
+	  },
     data() {
       return {
         groupNumber:'1041602955'

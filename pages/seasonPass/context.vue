@@ -3,7 +3,6 @@
     <view class="head-wrapper">
       <view class="head">
 
-        <view class="server-toggle" @tap="onToggleServer">{{serverName}} ⇌</view>
         <view class="season-title-block">
           <view class="season-name">{{seasonName}}</view>
         </view>
@@ -125,36 +124,7 @@
 
   }
 
-  .server-toggle {
-    // padding: 0 20rpx;
-    font-size: 36rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    // border-radius: 10rpx;
-    padding: 0 20rpx;
-    
-    // background-color: #f7ce26;
 
-    @include pad-devices {
-      font-size: toPadPx(36);
-      // padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      // border-radius: toPadPx(10);
-      padding: 0 toPadPx(20);
-
-    }
-
-    color: $theme-color;
-
-
-    @media (prefers-color-scheme: dark) {
-
-      color: $theme-color-dark;
-      background-color: $card-bg-color-dark;
-    }
-
-  }
 
   .season-title-block {
     display: flex;

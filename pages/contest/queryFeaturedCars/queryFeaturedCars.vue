@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+    	<top-bar :showBack="true" :title="'精选车辆'" />
     <unicloud-db class="cardb" :ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
       :collection="collection" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
@@ -25,12 +26,14 @@
   } from 'vuex'
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
+	import topBar from '@/components/topBar/topBar.vue'
 
   export default {
     components: {
 
       'car-card': carCard,
-      'loading': loading
+      'loading': loading,
+			'top-bar':topBar,
     },
     data() {
       return {
@@ -63,11 +66,13 @@
 
 <style lang="scss">
   .container {
-    padding-top: 20rpx;
 
     display: flex;
     flex-direction: column;
 
+  }
+  .cardb{
+    padding-top: 20rpx;
     @include pad-devices {
       padding-top: toPadPx(20);
     }

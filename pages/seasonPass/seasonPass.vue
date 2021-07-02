@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+		<top-bar :showServerToggle="true" />
     <context :seasonPass="computedSeasonPass" :seasonPassStatus="seasonPassMissionsStatus" :server="server"
       @onToggleServer="toggleServer" @onRetry="onRetry" />
   </view>
@@ -11,6 +12,7 @@
     mapMutations
   } from 'vuex'
   import context from './context.vue'
+	import topBar from '@/components/topBar/topBar.vue'
 
   const db = uniCloud.database()
   const requestSeasonPassMissions = async function(now, server) {
@@ -21,7 +23,8 @@
 
   export default {
     components: {
-      'context': context
+      'context': context,
+			'top-bar':topBar
     },
     data() {
       return {

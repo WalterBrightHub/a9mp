@@ -156,7 +156,7 @@
     text-align: center;
     // justify-content: center;
     // flex: 1;
-    margin-left: 30rpx;
+    // margin-left: 30rpx;
     height: 72rpx;
     line-height: 72rpx;
     background-color: $card-bg-color;

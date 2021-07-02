@@ -2,7 +2,6 @@
   <view class="context">
     <view class="filter-block">
       <view class="filter-wrapper">
-        <view class="server-toggle" @tap="toggleServer">{{serverName}} ⇌</view>
         <v-filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
           @onChangeSelectMethod="onChangeSelectMethod" />
 
@@ -41,10 +40,7 @@
       };
     },
     computed: {
-      ...mapState(['server']),
-      serverName() {
-        return this.server === 'gl' ? "国际" : "国服"
-      }
+
     },
     methods: {
       /*
@@ -125,34 +121,6 @@
     }
   }
 
-  .server-toggle {
-    // padding: 0 20rpx;
-    font-size: 36rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    // border-radius: 10rpx;
-    // margin: 20rpx 0 20rpx 20rpx;
 
-    @include pad-devices {
-      font-size: toPadPx(36);
-      // padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      line-height: toPadPx(72);
-      // border-radius: toPadPx(10);
-      // margin: toPadPx(20) 0 toPadPx(20) toPadPx(20);
 
-    }
-
-    // color: #fff;
-    // background-color: $theme-color;
-    color: $theme-color;
-    background-color: $card-bg-color;
-
-    @media (prefers-color-scheme: dark) {
-
-      color: $theme-color-dark;
-      background-color: $card-bg-color-dark;
-    }
-
-  }
 </style>
