@@ -1,16 +1,18 @@
 <template>
   <view class="container">
-    
-    	<top-bar :showServerToggle="true" />
-    <view class="head-wrapper">
 
-      <view class="head">
-        <view class="tab-block">
-          <view class="tab-item tab-item-selected">精确查询</view>
-          <navigator class="tab-item" url="/pages/careerMaps/quickQuery/quickQuery">快速查询</navigator>
-          <navigator class="tab-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">中英对照</navigator>
-        </view>
-      </view>
+    <top-bar :showServerToggle="true" />
+
+    <view class="func-button-list">
+      <navigator class="func-button-item" url="/pages/careerMaps/quickQuery/quickQuery">
+        <image class="func-icon" src="../../static/func-button-icons/magnifier.png"></image>
+        <view class="func-title">快速查询</view>
+      </navigator>
+      <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
+        <image class="func-icon" src="../../static/func-button-icons/translate.png"></image>
+        <view class="func-title">中英对照</view>
+      </navigator>
+      </navigator>
     </view>
     <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
       :careerQueryStatus="careerQueryStatus"></career-query>
@@ -24,14 +26,14 @@
     mapMutations
   } from 'vuex'
   import careerQuery from './careerQuery.vue'
-	import topBar from '../../components/topBar/topBar.vue'
+  import topBar from '../../components/topBar/topBar.vue'
 
   const db = uniCloud.database()
 
   export default {
     components: {
       'career-query': careerQuery,
-			'top-bar':topBar
+      'top-bar': topBar
     },
     data() {
       return {
@@ -100,92 +102,71 @@
 </script>
 
 <style lang="scss">
-  .head-wrapper {
-
-    background-color: $card-bg-color;
-    margin-bottom: 20rpx;
-    @include pad-devices {
-      margin-bottom: toPadPx(20);
+  
+    .top-bar{
+      
+      border-bottom: 1px solid $divider-color;    
+      @media (prefers-color-scheme: dark) {
+        border-bottom-color: $divider-color-dark;
+      }
     }
+  .func-button-list {
+    display: flex;
+    margin: 20rpx;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
+    @include pad-devices {
+      margin: toPadPx(20);
     }
   }
 
-  .head {
-    display: flex;
-    // background-color: $page-bg-color;
-
-    padding: 0 20rpx;
-    box-sizing: border-box;
-
-    @include pad-devices {
-      padding: 0 toPadPx(20);
-      max-width: 768px;
-      margin: 0 auto;
-    }
-  }
-
-
-
-  .tab-block {
-    // padding: 0 20rpx;
-    font-size: 36rpx;
-    display: flex;
-    // text-align: center;
-    // justify-content: space-between;
+  .func-button-item {
     flex: 1;
-    // margin-left: 32rpx;
-    height: 72rpx;
-    line-height: 72rpx;
-    background-color: $card-bg-color;
-    color: $text-title-color;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cc52ea;
+    color: #fff;
+    border-radius: 10rpx;
 
     @include pad-devices {
-      font-size: toPadPx(36);
-      // padding: 0 toPadPx(20);
-      height: toPadPx(72);
-      // margin-left: toPadPx(32);
-      line-height: toPadPx(72);
+      border-radius: toPadPx(10);
     }
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
-      color: $text-title-color-dark;
+      color: #cc52ea;
     }
   }
 
-
-
-  .tab-item {
-    // flex: 1;
+  .func-button-item+.func-button-item {
+    margin-left: 20rpx;
+    @include pad-devices {
+      margin-left: toPadPx(20);
+    }
   }
 
-  .tab-item-selected {
-    border-bottom: 8rpx solid $theme-color;
-    font-weight: bold;
-    color: $theme-color;
+  .func-icon {
+    width: 32rpx;
+    height: 32rpx;
+
+    @include pad-devices {
+      width: toPadPx(32);
+      height: toPadPx(32);
+    }
 
     @media (prefers-color-scheme: dark) {
-      color: $theme-color-dark;
-      border-bottom-color: $theme-color-dark;
-    }
-
-    @include pad-devices {
-      border-bottom-width: toPadPx(8);
+      filter: invert(30%);
     }
   }
 
-  .tab-item+.tab-item {
+  .func-title {
+    font-size: 32rpx;
+    padding: 16rpx 0;
     margin-left: 32rpx;
-
     @include pad-devices {
+      font-size: toPadPx(32);
+      padding: toPadPx(16) 0;
       margin-left: toPadPx(32);
     }
   }
-
-
-
 </style>

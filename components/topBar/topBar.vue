@@ -9,8 +9,10 @@
           <view class="app-title">{{title || '狂飙小助手'}}</view>
         </view>
         <view class="server-toggle" v-if="showServerToggle">
-          <view class="server server-gl" :class="{['server-selected']:server==='gl'}" @tap="changeServer('gl')">国际</view>
-          <view class="server server-al":class="{['server-selected']:server==='al'}" @tap="changeServer('al')">国服</view>
+          <view class="server server-gl" :class="{['server-selected']:server==='gl'}" @tap="changeServer('gl')">国际
+          </view>
+          <view class="server server-al" :class="{['server-selected']:server==='al'}" @tap="changeServer('al')">国服
+          </view>
         </view>
       </view>
     </view>
@@ -25,30 +27,30 @@
   } from 'vuex'
   export default {
     name: "topBar",
-    props: ["title","showServerToggle","showBack"],
+    props: ["title", "showServerToggle", "showBack", "backColor"],
     data() {
       return {
         //高度适配方案 https://developers.weixin.qq.com/community/develop/article/doc/0000ecde0e49a85a314c9d44d51013
-        statusBarHeight:'25'
+        statusBarHeight: '25'
       };
     },
     created() {
-      let systemInfo=uni.getSystemInfoSync()
-      this.statusBarHeight=systemInfo.statusBarHeight
+      let systemInfo = uni.getSystemInfoSync()
+      this.statusBarHeight = systemInfo.statusBarHeight
     },
     computed: {
       ...mapState(['server']),
     },
-    methods:{
-        ...mapMutations(['toggleServer']),
-      changeServer(newServer){
-        if(this.server!==newServer){
+    methods: {
+      ...mapMutations(['toggleServer']),
+      changeServer(newServer) {
+        if (this.server !== newServer) {
           this.toggleServer()
         }
       },
-      onBack(){
+      onBack() {
         uni.navigateBack({
-          
+
         })
       }
     }
@@ -81,20 +83,20 @@
     height: 44px;
   }
 
-.app-title-wrap{
-  
+  .app-title-wrap {
+
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 44px;
-}
+  }
 
   .app-title {
     padding-left: 8px;
     font-size: 16px;
     color: $text-title-color;
-    font-weight: bold;
+    // font-weight: bold;
 
 
     @media (prefers-color-scheme: dark) {
@@ -110,34 +112,47 @@
     align-items: center;
     height: 44px;
   }
-  .server{
+
+  .server {
     display: flex;
     align-items: center;
     border: 1px solid $theme-color;
     color: $theme-color;
-    
+
     @media (prefers-color-scheme: dark) {
       color: $theme-color-dark;
     }
   }
-  .server-selected{
-    color:#fff;
+
+  .server-selected {
+    color: #fff;
     font-weight: bold;
     background-color: $theme-color;
   }
-  .server-gl{
+
+  .server-gl {
     border-radius: 100px 0 0 100px;
     padding: 2px 10px 2px 15px;
   }
-  .server-al{
-    
+
+  .server-al {
+
     border-radius: 0 100px 100px 0;
     padding: 2px 15px 2px 10px;
   }
-  .back-button{
+
+  .back-button {
     width: 16px;
     height: 16px;
     padding: 6px;
     margin-left: 20rpx;
+    
+    @include pad-devices {
+      margin-left: toPadPx(20);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(100%);
+    }
   }
 </style>

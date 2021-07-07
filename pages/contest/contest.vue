@@ -1,6 +1,9 @@
 <template>
   <view class="container">
-		<top-bar :showServerToggle="true" />
+    <view class="top-bar-wrapper">
+      
+		<top-bar  :showServerToggle="true" />
+    </view>
     <div class="filter-wrapper">
 
       <view class="filter-block">
@@ -138,6 +141,13 @@
 </script>
 
 <style lang="scss">
+  .top-bar{
+    
+    border-bottom: 1px solid $divider-color;    
+    @media (prefers-color-scheme: dark) {
+      border-bottom-color: $divider-color-dark;
+    }
+  }
   .filter-wrapper {
 
     background-color: $card-bg-color;
@@ -145,6 +155,7 @@
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
+
   }
 
   .filter-block {

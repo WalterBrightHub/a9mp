@@ -8,6 +8,7 @@
         </view>
       </view>
     </view>
+    <view class="placeholder"></view>
 
     <view class="mission-list-block" v-if="seasonPassStatus==='resolve' && seasonPass">
 
@@ -98,7 +99,12 @@
   .context {}
 
   .head-wrapper {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     background-color: $card-bg-color;
+    border-bottom: 2px solid $divider-color;
     margin-bottom: 20rpx;
     @include pad-devices {
       margin-bottom:  toPadPx(20);
@@ -108,7 +114,16 @@
     @media (prefers-color-scheme: dark) {
 
       background-color: $card-bg-color-dark;
+      border-bottom-color: $divider-color-dark;
     }
+  }
+  .placeholder{
+    height: 102rpx;
+    @include pad-devices {
+      height:  toPadPx(102);
+    
+    }
+    
   }
 
   .head,

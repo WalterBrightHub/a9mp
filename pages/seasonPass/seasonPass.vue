@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-		<top-bar :showServerToggle="true" />
+		<top-bar :showServerToggle="true"  />
     <context :seasonPass="computedSeasonPass" :seasonPassStatus="seasonPassMissionsStatus" :server="server"
       @onToggleServer="toggleServer" @onRetry="onRetry" />
   </view>
