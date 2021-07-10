@@ -4,30 +4,6 @@
 	  	<top-bar :showServerToggle="true" />
     <div class="context">
 
-      <view class="context-item custom-car-list-list-block">
-        <view class="card-title">个性车单</view>
-        <view class="card-flex custom-car-list-grid">
-          <view class="custom-car-list-block">
-            <view class="card-item-title">品牌</view>
-            <view class="card-item-tip custom-car-list-tip">法拉利、保时捷等品牌</view>
-          </view>
-          <view class="custom-car-list-block">
-            <view class="card-item-title">释放版本</view>
-            <view class="card-item-tip custom-car-list-tip">版本更新的新车！</view>
-          </view>
-          <view class="custom-car-list-block">
-            <view class="card-item-title">特性</view>
-            <view class="card-item-tip custom-car-list-tip">蓝喷、贴纸等特性</view>
-          </view>
-          <view class="custom-car-list-block">
-            <view class="card-item-title">属性</view>
-            <view class="card-item-tip custom-car-list-tip">商店金卡等属性</view>
-          </view>
-          
-          
-        </view>
-
-      </view>
       
       <view class="context-item help-and-service">
         
@@ -167,18 +143,5 @@
       color: $text-p-color-dark;
     }
   }
-  .custom-car-list-grid{
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-  }
-  .custom-car-list-block{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20rpx;
-  }
-   .custom-car-list-tip{
-     margin-left: 0;
-     margin-top: 5rpx;
-   }
+
 </style>

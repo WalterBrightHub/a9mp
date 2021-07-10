@@ -3,7 +3,7 @@
 		<top-bar :showServerToggle="true" />
 		<filter-block id="filter-block" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
 			@onChangeSelectMethod="onChangeSelectMethod" />
-
+      <func-list />
 		<context id="context" :selectMethod="selectMethod" ref="carListDB" />
 
 	</view>
@@ -19,6 +19,7 @@
 	import context from './context.vue'
 	import selectCarClass from './components/filters/carClassFilter/select.js'
 	import topBar from '@/components/topBar/topBar.vue'
+  import funcList from './components/funcList/funcList.vue'
 	import _ from 'lodash'
 
 	const db = uniCloud.database()
@@ -27,7 +28,8 @@
 		components: {
 			'filter-block': filterBlock,
 			'context': context,
-			'top-bar':topBar
+			'top-bar':topBar,
+      'func-list':funcList
 		},
 		data() {
 			return {

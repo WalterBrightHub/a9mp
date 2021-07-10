@@ -12,7 +12,6 @@
         <image class="func-icon" src="../../static/func-button-icons/translate.png"></image>
         <view class="func-title">中英对照</view>
       </navigator>
-      </navigator>
     </view>
     <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
       :careerQueryStatus="careerQueryStatus"></career-query>
@@ -124,7 +123,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cc52ea;
+    // background-color: #cc52ea;
+    background: linear-gradient(to right, #d866f4, #cc52ea);
     color: #fff;
     border-radius: 10rpx;
 
