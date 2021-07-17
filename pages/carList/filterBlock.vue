@@ -69,10 +69,11 @@
     // display: flex;
     position: fixed;
     z-index: 114514;
-    background-color: $card-bg-color;
+    background-color: $theme-color;
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
+      // color: $text-title-color-dark;
     }
 
     width: 100%;
@@ -103,9 +104,9 @@
       // box-shadow: ;
 
     }
-    
+
     @media (prefers-color-scheme: dark) {
-    
+
       background-color: $divider-color-dark;
     }
   }
@@ -120,7 +121,4 @@
       // padding: toPadPx(20);
     }
   }
-
-
-
 </style>

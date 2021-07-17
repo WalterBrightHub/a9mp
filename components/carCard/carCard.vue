@@ -13,6 +13,7 @@
     <view class="bps">
       <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index"
         :style="{flex:item>0?item:20}">{{item}}</view>
+        <!-- <view style="font-size: 32rpx; margin-left: 10rpx;display: flex;align-items: center;">{{totalBP}}</view> -->
     </view>
 
     <view class="perf-and-update">
@@ -80,6 +81,7 @@
             <image class="part-icon" src="@/static/carcard-icons/part-epic.png"></image>
             <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
+          <view class="part-item" v-if="!carData.uncommonPart&&!carData.rarePart&&!carData.epicPart">未知</view>
         </view>
         <view class="perf-empty-bar"></view>
 

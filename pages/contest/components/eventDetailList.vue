@@ -55,7 +55,7 @@
             } = this
           if(now>=startTime&&now<=endTime){
             let percent=(now-startTime)*100/(endTime-startTime)
-          let [fullColor,emptyColor]=this.theme==='light'?['#b7f0b7','#ecf9ec']:['#006a02','#1e1e1e']
+          let [fullColor,emptyColor]=this.theme==='light'?['#b7f0b7','#ecf9ec']:['#005b02','#003001']
           return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
           }
           else{

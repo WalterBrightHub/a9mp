@@ -95,7 +95,7 @@
   // }
 
   .class-block {
-    color: $text-title-color;
+    color:#fff;
 
     @media (prefers-color-scheme: dark) {
 
@@ -104,8 +104,8 @@
   }
 
   .class-selected {
-    color: #fff;
-    background-color: #000;
+    color: $theme-color;
+    background-color: #fff;
 
     @media (prefers-color-scheme: dark) {
 

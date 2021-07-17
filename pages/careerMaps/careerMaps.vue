@@ -2,17 +2,19 @@
   <view class="container">
 
     <top-bar :showServerToggle="true" />
-
-    <view class="func-button-list">
-      <navigator class="func-button-item" url="/pages/careerMaps/quickQuery/quickQuery">
-        <image class="func-icon" src="../../static/func-button-icons/magnifier.png"></image>
-        <view class="func-title">快速查询</view>
-      </navigator>
-      <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
-        <image class="func-icon" src="../../static/func-button-icons/translate.png"></image>
-        <view class="func-title">中英对照</view>
-      </navigator>
+    <view class="func-button-list-wrapper">
+      <view class="func-button-list">
+        <navigator class="func-button-item" url="/pages/careerMaps/quickQuery/quickQuery">
+          <image class="func-icon" src="../../static/func-button-icons/magnifier.png"></image>
+          <view class="func-title">快速查询</view>
+        </navigator>
+        <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
+          <image class="func-icon" src="../../static/func-button-icons/translate.png"></image>
+          <view class="func-title">中英对照</view>
+        </navigator>
+      </view>
     </view>
+
     <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
       :careerQueryStatus="careerQueryStatus"></career-query>
 
@@ -101,20 +103,29 @@
 </script>
 
 <style lang="scss">
-  
-    .top-bar{
-      
-      border-bottom: 1px solid $divider-color;    
-      @media (prefers-color-scheme: dark) {
-        border-bottom-color: $divider-color-dark;
-      }
+  .top-bar {
+
+    border-bottom: 1px solid $divider-color;
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom-color: $divider-color-dark;
     }
+  }
+
+  .func-button-list-wrapper{
+    display: flex;
+    justify-content: center;
+  }
+
   .func-button-list {
     display: flex;
-    margin: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    max-width: 768px;
+    width: 100%;
 
     @include pad-devices {
-      margin: toPadPx(20);
+      padding: toPadPx(20);
     }
   }
 
@@ -123,8 +134,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: #cc52ea;
-    background: linear-gradient(to right, #d866f4, #cc52ea);
+    background-color: #cc52ea;
+    background-color: #23bbfa;
+    // background: linear-gradient(to right, #ff226b, #ff0054);
     color: #fff;
     border-radius: 10rpx;
 
@@ -134,12 +146,13 @@
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
-      color: #cc52ea;
+      color: #23bbfa;
     }
   }
 
   .func-button-item+.func-button-item {
     margin-left: 20rpx;
+
     @include pad-devices {
       margin-left: toPadPx(20);
     }
@@ -163,6 +176,7 @@
     font-size: 32rpx;
     padding: 16rpx 0;
     margin-left: 32rpx;
+
     @include pad-devices {
       font-size: toPadPx(32);
       padding: toPadPx(16) 0;

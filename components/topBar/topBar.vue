@@ -1,17 +1,19 @@
 <template>
   <view>
-    <view class="top-bar">
+    <view class="top-bar-wrapper" :style="bgColor">
 
-      <view class="status-bar" :style="'height:'+statusBarHeight+'px;'"></view>
-      <view class="navigator">
-        <view class="app-title-wrap">
-          <image v-if="showBack" src="../../static/top-bar-icons/back.png" class="back-button" @click="onBack" />
-          <view class="app-title">{{title || '狂飙小助手'}}</view>
-        </view>
-        <view class="server-toggle" v-if="showServerToggle">
-          <view class="server server-gl" :class="{['server-selected']:server==='gl'}" @tap="changeServer('gl')">国际
+      <view class="top-bar" :style="bgColor">
+        <view class="status-bar" :style="'height:'+statusBarHeight+'px;'"></view>
+        <view class="navigator">
+          <view class="app-title-wrap">
+            <image v-if="showBack" src="../../static/top-bar-icons/back.png" class="back-button" @click="onBack" />
+            <view class="app-title">{{title || '狂飙小助手'}}</view>
           </view>
-          <view class="server server-al" :class="{['server-selected']:server==='al'}" @tap="changeServer('al')">国服
+          <view class="server-toggle" v-if="showServerToggle">
+            <view class="server server-gl" :class="{['server-selected']:server==='gl'}" @tap="changeServer('gl')">国际
+            </view>
+            <view class="server server-al" :class="{['server-selected']:server==='al'}" @tap="changeServer('al')">国服
+            </view>
           </view>
         </view>
       </view>
@@ -27,7 +29,7 @@
   } from 'vuex'
   export default {
     name: "topBar",
-    props: ["title", "showServerToggle", "showBack", "backColor"],
+    props: ["title", "showServerToggle", "showBack", "themeConfig"],
     data() {
       return {
         //高度适配方案 https://developers.weixin.qq.com/community/develop/article/doc/0000ecde0e49a85a314c9d44d51013
@@ -39,7 +41,14 @@
       this.statusBarHeight = systemInfo.statusBarHeight
     },
     computed: {
-      ...mapState(['server']),
+      ...mapState(['server', 'theme']),
+      bgColor() {
+        if (this.themeConfig && this.themeConfig[this.theme]) {
+          return `background-color:${this.themeConfig[this.theme].bgColor};`
+        } else {
+          return `background-color:${this.theme==='dark'?'#1e1e1e':'#ff0054'};`
+        }
+      }
     },
     methods: {
       ...mapMutations(['toggleServer']),
@@ -63,15 +72,22 @@
     // background-color: $card-bg-color;
   }
 
-  .top-bar {
-    position: fixed;
+  .top-bar-wrapper {
+    display: flex;
     z-index: 114555;
+    justify-content: center;
     width: 100%;
-    background-color: $card-bg-color;
+    position: fixed;
+  }
 
-    @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
-    }
+  .top-bar {
+    max-width: 768px;
+    width: 100%;
+    // background-color: $card-bg-color;
+
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $card-bg-color-dark;
+    // }
   }
 
   .status-bar {
@@ -95,7 +111,7 @@
   .app-title {
     padding-left: 8px;
     font-size: 16px;
-    color: $text-title-color;
+    color: #fff;
     // font-weight: bold;
 
 
@@ -116,18 +132,24 @@
   .server {
     display: flex;
     align-items: center;
-    border: 1px solid $theme-color;
-    color: $theme-color;
+    border: 1px solid #fff;
+    color: #fff;
 
     @media (prefers-color-scheme: dark) {
-      color: $theme-color-dark;
+      color: $theme-color;
+      border-color: $theme-color-dark;
     }
   }
 
   .server-selected {
-    color: #fff;
+    color: $theme-color;
     font-weight: bold;
-    background-color: $theme-color;
+    background-color: #fff;
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+      background-color: $theme-color;
+    }
   }
 
   .server-gl {
@@ -146,13 +168,12 @@
     height: 16px;
     padding: 6px;
     margin-left: 20rpx;
-    
+
     @include pad-devices {
       margin-left: toPadPx(20);
     }
 
-    @media (prefers-color-scheme: dark) {
-      filter: invert(100%);
-    }
+    filter: invert(100%);
+
   }
 </style>

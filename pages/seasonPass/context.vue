@@ -103,8 +103,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: $card-bg-color;
-    border-bottom: 2px solid $divider-color;
+    background-color: #dbb620;
+    // border-bottom: 2px solid $divider-color;
     margin-bottom: 20rpx;
     @include pad-devices {
       margin-bottom:  toPadPx(20);
@@ -114,7 +114,7 @@
     @media (prefers-color-scheme: dark) {
 
       background-color: $card-bg-color-dark;
-      border-bottom-color: $divider-color-dark;
+      // border-bottom-color: $divider-color-dark;
     }
   }
   .placeholder{
@@ -144,6 +144,7 @@
   .season-title-block {
     display: flex;
     flex: 1;
+    height:72rpx;
     // margin: 20rpx;
 
     //好康的渐变
@@ -156,12 +157,13 @@
     @include pad-devices {
       // margin: toPadPx(20);
       border-radius: toPadPx(10);
+    height:toPadPx(72);
     }
   }
 
   .season-name {
-    padding: 0 20rpx;
-    line-height: 72rpx;
+    // padding: 0 20rpx;
+    // line-height: 72rpx;
     // border-radius: 10rpx;
     flex: 1;
     display: flex;
@@ -183,7 +185,7 @@
     }
 
     @include pad-devices {
-      padding: 0 toPadPx(20);
+      // padding: 0 toPadPx(20);
       line-height: toPadPx(72);
       // border-radius: toPadPx(10);
       font-size: toPadPx(36);
@@ -266,7 +268,7 @@
 
     @media (prefers-color-scheme: dark) {
 
-      color: $text-title-color-dark;
+      color: $theme-color-dark;
     }
 
     @include pad-devices {
@@ -276,10 +278,10 @@
   }
 
   .mission-tag-block {
-    padding: 25rpx 20rpx 0 20rpx;
+    padding: 20rpx 20rpx 0 20rpx;
 
     @include pad-devices {
-      padding: toPadPx(25) toPadPx(20) 0 toPadPx(20);
+      padding: toPadPx(20) toPadPx(20) 0 toPadPx(20);
     }
   }
 
@@ -318,12 +320,12 @@
 
 
   .mission-solution {
-    padding: 5rpx 20rpx 25rpx 20rpx;
+    padding: 0 20rpx 20rpx 20rpx;
     font-size: 32rpx;
 
     @include pad-devices {
       font-size: toPadPx(32);
-      padding: toPadPx(5) toPadPx(20) toPadPx(25) toPadPx(20);
+      padding: 0 toPadPx(20) toPadPx(20) toPadPx(20);
     }
   }
 

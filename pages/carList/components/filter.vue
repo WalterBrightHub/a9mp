@@ -58,7 +58,12 @@
   .filter-block {
 
     margin-left: auto;
+    // background-color: $theme-color;
 
+    // @media (prefers-color-scheme: dark) {
+    //   background-color: $card-bg-color-dark;
+    //   // color: $text-title-color-dark;
+    // }
     // @include pad-devices {
 
     //   margin-left: toPadPx(20);
@@ -77,7 +82,7 @@
     // margin-left: 30rpx;
     height: 72rpx;
     line-height: 72rpx;
-    background-color: $card-bg-color;
+    // background-color: $card-bg-color;
     color: $text-title-color;
 
     overflow-x: auto;
@@ -92,7 +97,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background-color: $card-bg-color-dark;
+      // background-color: $card-bg-color-dark;
       color: $text-title-color-dark;
     }
   }
@@ -100,7 +105,7 @@
 
   .type-filter-item {
     flex: none;
-    color: $text-title-color;
+    color: #fff;
     @media (prefers-color-scheme: dark) {
       color: $text-title-color-dark;
     }

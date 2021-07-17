@@ -1,39 +1,42 @@
 <template>
-	<view class="container">
-    	<top-bar :showBack="true" :title="'中英对照'" />
-		<view class="map-theme-block-list">
-      <view class="map-theme-block" v-for="(mapTheme,index) of mapThemes">
-        <view class="map-theme-name-list">
-          <view class="map-theme-name-item map-theme-name-item-cn">
-            
-          <view class="map-theme-name-cn">{{mapTheme.mapThemeCN}}</view>
-          <view class="map-theme-name-al">{{mapTheme.mapThemeAL}}</view>
-          </view>
-          <view class="map-theme-name-item map-theme-name-en">{{mapTheme.mapThemeEN}}</view>
-        </view>
-        <view class="map-name-list">
-          <view class="map-name-item-block" v-for="mapName of selectedMapNames[index]">
-            <view class="map-name-item map-name-item-cn">
-              <view class="map-name-cn">{{mapName.mapNameCN}}</view>
-              <view class="map-name-al" v-if="mapName.mapNameCN!==mapName.mapNameAL">{{mapName.mapNameAL}}</view>
+  <view class="container">
+    <top-bar :showBack="true" :title="'中英对照'" />
+    <view class="context-wrapper">
+
+      <view class="map-theme-block-list">
+        <view class="map-theme-block" v-for="(mapTheme,index) of mapThemes">
+          <view class="map-theme-name-list">
+            <view class="map-theme-name-item map-theme-name-item-cn">
+
+              <view class="map-theme-name-cn">{{mapTheme.mapThemeCN}}</view>
+              <view class="map-theme-name-al">{{mapTheme.mapThemeAL}}</view>
             </view>
-            <view class="map-name-item">{{mapName.mapNameEN}}</view>
+            <view class="map-theme-name-item map-theme-name-en">{{mapTheme.mapThemeEN}}</view>
+          </view>
+          <view class="map-name-list">
+            <view class="map-name-item-block" v-for="mapName of selectedMapNames[index]">
+              <view class="map-name-item map-name-item-cn">
+                <view class="map-name-cn">{{mapName.mapNameCN}}</view>
+                <view class="map-name-al" v-if="mapName.mapNameCN!==mapName.mapNameAL">{{mapName.mapNameAL}}</view>
+              </view>
+              <view class="map-name-item">{{mapName.mapNameEN}}</view>
+            </view>
           </view>
         </view>
       </view>
     </view>
-	</view>
+  </view>
 </template>
 
 <script>
-	import topBar from '@/components/topBar/topBar.vue'
+  import topBar from '@/components/topBar/topBar.vue'
   const db = uniCloud.database()
-	export default {
-    components:{
-      
-      'top-bar':topBar,
+  export default {
+    components: {
+
+      'top-bar': topBar,
     },
-		data() {
+    data() {
       return {
         // careerSeasons: [],
         tracks: [],
@@ -41,10 +44,10 @@
         // 加载主题与赛道后开始查询
         careerQueryStatus: 'ready'
       }
-		},
-    computed:{
-      selectedMapNames(){
-        return this.mapThemes.map(mapTheme=>this.tracks.filter(track=>track.mapThemeCN===mapTheme.mapThemeCN))
+    },
+    computed: {
+      selectedMapNames() {
+        return this.mapThemes.map(mapTheme => this.tracks.filter(track => track.mapThemeCN === mapTheme.mapThemeCN))
       }
     },
     onLoad() {
@@ -75,13 +78,13 @@
     onPullDownRefresh() {
 
       this.requestThemesAndTracks()
-      .then(()=>{
-        uni.showToast({
-          title:'最新',
-          icon:'success'
+        .then(() => {
+          uni.showToast({
+            title: '最新',
+            icon: 'success'
+          })
+          uni.stopPullDownRefresh()
         })
-        uni.stopPullDownRefresh()
-      })
 
 
     },
@@ -98,117 +101,139 @@
           })
       },
     }
-	}
+  }
 </script>
 
 <style lang="scss">
-.container{
-  margin: 0 auto;
-  width: 100%;
-  max-width: 768px;
-}
-.map-theme-block-list{
-  padding: 20rpx 20rpx 30rpx 20rpx;
-  @include pad-devices {
-    padding: toPadPx(20) toPadPx(20) toPadPx(30) toPadPx(20);
-  }
-}
+  .container {}
 
-.map-theme-block{
-  background-color: $card-bg-color;
-  border-radius: 10rpx;
-  @include pad-devices {
-    border-radius: toPadPx(10);
-  }
-  @media (prefers-color-scheme: dark) {
-    background-color: $card-bg-color-dark;
-  }
-}
-.map-theme-block+.map-theme-block{
-  margin-top: 20rpx;
-  @include pad-devices {
-    margin-top: toPadPx(20);
-  }
-}
+  .context-wrapper {
 
-.map-theme-name-list{
-  display: flex;
-  justify-content: space-between;
-  padding: 20rpx;
-  font-size: 34rpx;
-  font-weight: bold;
-  @include pad-devices {
-    font-size: toPadPx(34);
-    padding: toPadPx(20);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 768px;
   }
-  color: $text-title-color;
-  
-  @media (prefers-color-scheme: dark) {
-    color: $text-title-color-dark;
-  }
-}
 
-.map-theme-name-item{
-  flex:1;
-}
+  .map-theme-block-list {
+    padding: 20rpx 20rpx 30rpx 20rpx;
 
-.map-theme-name-item-cn{
-  display: flex;
-}
+    @include pad-devices {
+      padding: toPadPx(20) toPadPx(20) toPadPx(30) toPadPx(20);
+    }
+  }
 
-.map-theme-name-cn,
-.map-theme-name-en{
-  
-  color: $theme-color;
-  
-  @media (prefers-color-scheme: dark) {
-    color: $theme-color-dark;
-  }
-}
+  .map-theme-block {
+    background-color: $card-bg-color;
+    border-radius: 10rpx;
 
-.map-theme-name-al{
-  color:#41b90a;
-  @media (prefers-color-scheme: dark) {
-    color: #2d8006;
-  }
-  margin: 0 auto;
-}
+    @include pad-devices {
+      border-radius: toPadPx(10);
+    }
 
-.map-name-list{
-  padding: 20rpx;
-  @include pad-devices {
-    padding: toPadPx(20);
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
   }
-}
-.map-name-item-block{
-  // border-top: 1rpx solid $divider-color;
-  padding: 10rpx 0;
-  @include pad-devices {
-    // border-top-width: toPadPx(1);
-    padding: toPadPx(10) 0;
+
+  .map-theme-block+.map-theme-block {
+    margin-top: 20rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(20);
+    }
   }
-  display: flex;
-  align-items:flex-start;
-  @media (prefers-color-scheme: dark) {
-    // border-top-color: $divider-color-dark;
+
+  .map-theme-name-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+
+    @include pad-devices {
+      font-size: toPadPx(34);
+      padding: toPadPx(20);
+    }
+
+    color: $text-title-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+    }
   }
-}
-.map-name-item{
-  flex:1;
-}
- .map-name-item-cn{
-   display: flex;
-   flex-direction: column;
- }
- .map-name-al{
-   margin-top: 5rpx;
-   color:#41b90a;
-   @media (prefers-color-scheme: dark) {
-     color: #2d8006;
-   }
-   
-   @include pad-devices {
-     margin-top: toPadPx(5);
-   }
- }
+
+  .map-theme-name-item {
+    flex: 1;
+  }
+
+  .map-theme-name-item-cn {
+    display: flex;
+  }
+
+  .map-theme-name-cn,
+  .map-theme-name-en {
+
+    color: $theme-color;
+
+    @media (prefers-color-scheme: dark) {
+      color: $theme-color-dark;
+    }
+  }
+
+  .map-theme-name-al {
+    color: #41b90a;
+
+    @media (prefers-color-scheme: dark) {
+      color: #2d8006;
+    }
+
+    margin: 0 auto;
+  }
+
+  .map-name-list {
+    padding: 20rpx;
+
+    @include pad-devices {
+      padding: toPadPx(20);
+    }
+  }
+
+  .map-name-item-block {
+    // border-top: 1rpx solid $divider-color;
+    padding: 10rpx 0;
+
+    @include pad-devices {
+      // border-top-width: toPadPx(1);
+      padding: toPadPx(10) 0;
+    }
+
+    display: flex;
+    align-items:flex-start;
+
+    @media (prefers-color-scheme: dark) {
+      // border-top-color: $divider-color-dark;
+    }
+  }
+
+  .map-name-item {
+    flex: 1;
+  }
+
+  .map-name-item-cn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-name-al {
+    margin-top: 5rpx;
+    color: #41b90a;
+
+    @media (prefers-color-scheme: dark) {
+      color: #2d8006;
+    }
+
+    @include pad-devices {
+      margin-top: toPadPx(5);
+    }
+  }
 </style>

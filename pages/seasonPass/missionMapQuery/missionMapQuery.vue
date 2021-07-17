@@ -1,7 +1,9 @@
 <template>
   <view class="container">
-    
+
     <top-bar :showBack="true" :title="'地图任务指引'" />
+    <div class="body-wrapper">
+      
     <div class="head">{{mapName}}</div>
 
     <unicloud-db class="career-season-db" ref="careerSeasonDB"
@@ -11,23 +13,24 @@
       <view class="loading" v-else-if="loading">
         <loading />
       </view>
-      
-        <prioritySeasonList  :data="data" v-else-if="data.length>0" />
+
+      <prioritySeasonList :data="data" v-else-if="data.length>0" />
       <div v-if="!loading && data.length===0 " class="empty-season-list">😮 生涯竟然没有这张图</div>
     </unicloud-db>
+    </div>
   </view>
 </template>
 
 <script>
   import prioritySeasonList from '@/components/prioritySeasonList/prioritySeasonList.vue'
 
-	import topBar from '@/components/topBar/topBar.vue'
+  import topBar from '@/components/topBar/topBar.vue'
 
 
   export default {
-    components:{
+    components: {
       prioritySeasonList,
-      'top-bar':topBar,
+      'top-bar': topBar,
     },
     data() {
       return {
@@ -70,7 +73,7 @@
     },
     methods: {
       handleLoad(data, ended, pagination) {
-        
+
       }
     }
   }
@@ -78,12 +81,7 @@
 
 <style lang="scss">
   .container {
-    @include pad-devices {
-      max-width: 768px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
+    
   }
 
   .head {
@@ -108,7 +106,14 @@
     }
   }
 
+  .body-wrapper {
 
+    @include pad-devices {
+      max-width: 768px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 
   .career-season-list,
   .empty-season-list,

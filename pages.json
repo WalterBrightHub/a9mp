@@ -80,7 +80,16 @@
       }
 
     }
-  ],
+      ,{
+            "path" : "pages/carList/funcs/carClass/carClass",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 
   "globalStyle": {
     //QQ未支持深色模式

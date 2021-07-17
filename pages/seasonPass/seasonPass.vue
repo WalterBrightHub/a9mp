@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-		<top-bar :showServerToggle="true"  />
+		<top-bar :showServerToggle="true" :themeConfig="themeConfig"  />
     <context :seasonPass="computedSeasonPass" :seasonPassStatus="seasonPassMissionsStatus" :server="server"
       @onToggleServer="toggleServer" @onRetry="onRetry" />
   </view>
@@ -20,6 +20,12 @@
       getOne: true
     })
   }
+  
+  const themeConfig={
+    light:{
+      bgColor:'#dbb620'
+    }
+  }
 
   export default {
     components: {
@@ -32,7 +38,7 @@
           episodes: []
         },
         seasonPassMissionsStatus: 'ready',
-
+        themeConfig,
       };
     },
     computed: {

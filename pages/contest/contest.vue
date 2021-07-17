@@ -180,6 +180,7 @@
     // padding: 0 20rpx;
     width: 100%;
     display: grid;
+    padding-top: 10rpx;
     grid-template-columns: repeat(5, 20%);
     
     // margin: 0 20rpx;
@@ -188,8 +189,12 @@
     
     @include pad-devices {
       margin: 0 toPadPx(20);
+      padding-top: toPadPx(10);
     }
+    @media (min-width:750px) {
+      grid-template-columns: repeat(6, 16.66%);
     
+    }
     
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
