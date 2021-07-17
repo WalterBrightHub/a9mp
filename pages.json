@@ -102,6 +102,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F5F5F5",
+    "navigationBarTextStyle":"white",
     // #endif
     "navigationBarTitleText": "狂飙小助手",
 

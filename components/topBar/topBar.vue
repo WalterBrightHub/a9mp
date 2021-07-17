@@ -109,10 +109,13 @@
   }
 
   .app-title {
-    padding-left: 8px;
+    padding-left: 20rpx;
     font-size: 16px;
     color: #fff;
     // font-weight: bold;
+    @include pad-devices {
+      padding-left: toPadPx(20);
+    }
 
 
     @media (prefers-color-scheme: dark) {
