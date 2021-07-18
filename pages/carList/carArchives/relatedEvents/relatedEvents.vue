@@ -1,6 +1,6 @@
 <template>
   <view>
-
+    <top-bar :showBack="true" :title="'所有关联赛事'" />
     
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
@@ -27,12 +27,14 @@
   } from 'vuex'
   import contestItem from '@/pages/contest/components/contestItem.vue'
   import loading from '@/components/loading/loading.vue'
+	import topBar from '@/components/topBar/topBar.vue'
   const db = uniCloud.database()
   const dbCmd = db.command
   export default {
     components: {
       'contest-item': contestItem,
       'loading': loading,
+      'top-bar':topBar,
     },
     data() {
       return {

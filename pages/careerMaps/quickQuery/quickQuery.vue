@@ -1,7 +1,7 @@
 <template>
   <view class="container">
 
-    	<top-bar :showBack="true" :title="'快速查询'" />
+    	<top-bar :showBack="true" :showServerToggle="true" :title="'快速查询'" />
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
 

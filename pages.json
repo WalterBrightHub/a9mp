@@ -89,6 +89,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/carList/funcs/carBrand/carBrand",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/carList/funcs/carBrand/carListBySelectedBrand",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
     ],
 
   "globalStyle": {

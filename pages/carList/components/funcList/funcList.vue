@@ -11,7 +11,7 @@
         <view class="func-title">数据排序</view>
       </navigator>
 
-      <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
+      <navigator class="func-button-item" url="/pages/carList/funcs/carBrand/carBrand">
         <image class="func-icon" src="@/static/carlist-func-button-icons/car-brand.png"></image>
         <view class="func-title">品牌分类</view>
       </navigator>

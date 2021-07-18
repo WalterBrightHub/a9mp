@@ -21,7 +21,7 @@
 
 <script>
   import carCard from '@/components/carCard/carCard.vue'
-  import loading from '../../components/loading/loading.vue'
+  import loading from '@/components/loading/loading.vue'
 
   export default {
     components: {

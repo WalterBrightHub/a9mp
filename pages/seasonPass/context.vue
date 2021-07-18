@@ -42,8 +42,8 @@
 </template>
 
 <script>
-  import loading from '../../components/loading/loading.vue'
-  import requestFail from '../../components/requestFail/requestFail.vue'
+  import loading from '@/components/loading/loading.vue'
+  import requestFail from '@/components/requestFail/requestFail.vue'
   export default {
     components: {
       'loading': loading,
