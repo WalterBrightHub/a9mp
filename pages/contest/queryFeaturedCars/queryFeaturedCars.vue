@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     	<top-bar :showBack="true" :title="'精选车辆'" />
-    <unicloud-db class="cardb" :ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
+    <unicloud-db class="cardb" ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
       :collection="collection" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">

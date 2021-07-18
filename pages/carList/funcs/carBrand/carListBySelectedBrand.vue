@@ -1,7 +1,7 @@
 <template>
   <view class="container">
-    	<top-bar :showBack="true" :showServerToggle="true" :title="'品牌车辆'" />
-    <unicloud-db class="cardb" :ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
+    <top-bar :showBack="true" :showServerToggle="true" :title="'品牌车辆'" />
+    <unicloud-db class="cardb" ref="carDB" v-slot:default="{data, pagination, loading, error, options}"
       :collection="collection" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
@@ -26,18 +26,18 @@
   } from 'vuex'
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
-	import topBar from '@/components/topBar/topBar.vue'
+  import topBar from '@/components/topBar/topBar.vue'
 
   export default {
     components: {
 
       'car-card': carCard,
       'loading': loading,
-			'top-bar':topBar,
+      'top-bar': topBar,
     },
     data() {
       return {
-        brand:'',
+        brand: '',
       }
     },
     computed: {
@@ -55,6 +55,20 @@
       console.log(brand)
       this.brand = brand
     },
+    onPullDownRefresh() {
+
+      this.$refs.carDB.loadData({
+        //设置true又正常了，真奇怪
+        clear: true
+      }, () => {
+        uni.showToast({
+          title: '最新',
+          duration: 500
+        })
+        uni.stopPullDownRefresh()
+        // this.options.loaded=true
+      })
+    },
     methods: {
       getWhere(carId) {
         return `car_id=="${carId}"`
@@ -70,12 +84,14 @@
     flex-direction: column;
 
   }
-  .cardb{
+
+  .cardb {
     padding-top: 20rpx;
+
     @include pad-devices {
       padding-top: toPadPx(20);
     }
   }
 
-@import '@/pages/carList/carList.scss';
+  @import '@/pages/carList/carList.scss';
 </style>
