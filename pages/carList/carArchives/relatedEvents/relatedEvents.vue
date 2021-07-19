@@ -58,6 +58,7 @@
     },
     onLoad({car_id}) {
       // console.log(car_id)
+      // console.log(this.server)
       this.car_id=car_id
       // db.collection('contest').where({
       //     featuredCars: dbCmd.all(['sian'])

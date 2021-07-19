@@ -49,6 +49,18 @@
         </view> -->
       </view>
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
+        
+        <view class="cost-item">
+          <view class="cost-name">氮速空速</view>
+          <view class="cost-value nitro-speed-list">
+            <view class="nitro-speed-item">{{carData.nitroSpeed || '未知'}}</view>
+            <view v-if="carData.blueSpeed>0" class="nitro-speed-item blue-speed">{{carData.blueSpeed}}</view>
+            <view class="nitro-speed-item">{{carData.airSpeed || '未知'}}</view>
+            
+          </view>
+        </view>
+        <view class="perf-empty-bar"></view>
+        
         <view class="cost-item">
           <view class="cost-name">图纸总数</view>
           <view class="cost-value">
@@ -56,14 +68,15 @@
           </view>
         </view>
         <view class="perf-empty-bar"></view>
-        <view class="cost-item">
+        
+<!--        <view class="cost-item">
           <view class="cost-name">改装费用</view>
           <view class="cost-value">
             {{carData.totalCost>0?split3(carData.totalCost):'未知'}}
             
           </view>
         </view>
-        <view class="perf-empty-bar"></view>
+        <view class="perf-empty-bar"></view> -->
 
 
 
@@ -569,5 +582,14 @@
       width: toPadPx(40);
       height: toPadPx(40);
     }
+  }
+  .nitro-speed-list{
+    display: flex;
+  }
+  .nitro-speed-item+.nitro-speed-item{
+    margin-left: 0.5em;
+  }
+  .blue-speed{
+    color: #23bbfa;
   }
 </style>
