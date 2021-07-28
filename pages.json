@@ -107,6 +107,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/carList/funcs/releaseVersion/releaseVersion",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 
   "globalStyle": {

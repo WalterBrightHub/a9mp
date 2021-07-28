@@ -18,7 +18,7 @@
 
       <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
         <image class="func-icon" src="@/static/carlist-func-button-icons/release-version.png"></image>
-        <view class="func-title">释放版本</view>
+        <view class="func-title">版本新车</view>
       </navigator>
 
       <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">

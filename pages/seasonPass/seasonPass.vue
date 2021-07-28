@@ -16,7 +16,7 @@
 
   const db = uniCloud.database()
   const requestSeasonPassMissions = async function(now, server) {
-    return db.collection('seasonPassMissions').where(`server=="${server}"&&endTime>${now}`).get({
+    return db.collection('seasonPassMissions').where(`server=="${server}"&&endTime>${now}&&startTime<=${now}`).get({
       getOne: true
     })
   }

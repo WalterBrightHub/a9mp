@@ -12,9 +12,17 @@
             <view class="list-head-item list-head-item-right">车辆数</view>
           </view>
           <view class="list">
-            <view class="list-item" v-for="(brandItem,index) in brands" @tap="onTapBrandItem(brandItem.brand)">
-              <view class="divider" v-if="index>0"></view>
-              <list-item-card :brandItem="brandItem" :percent="getPercentOf(brandItem.count)" :theme="theme" />
+            <view class="list-item card-wrapper" v-for="(brandItem,index) in brands" @tap="onTapBrandItem(brandItem.brand)">
+              <!-- <view class="divider" v-if="index>0"></view> -->
+              <!-- <list-item-card :brandItem="brandItem" :percent="getPercentOf(brandItem.count)" :theme="theme" /> -->
+              
+              <view class="card">
+              
+                <view class="card-item">{{brandItem.brand}}</view>
+                <view class="card-item-right">{{brandItem.count}}</view>
+                <image class="card-item right-arrow-icon" src="@/static/common/right-arrow.png"></image>
+              </view>
+              <view class="count-bar" :style="{width:getPercentOf(brandItem.count)+'%'}"></view>
             </view>
           </view>
         </view>
@@ -30,7 +38,6 @@
   import loading from '@/components/loading/loading.vue'
   import requestFail from '@/components/requestFail/requestFail.vue'
   import topBar from '@/components/topBar/topBar.vue'
-  import listItemCard from './listItemCard/listItemCard.vue'
 
   const db = uniCloud.database()
   const requestBrands = () => {
@@ -43,7 +50,6 @@
     components: {
       'loading': loading,
       'top-bar': topBar,
-      'list-item-card': listItemCard,
       'request-fail': requestFail,
     },
     data() {
@@ -100,7 +106,7 @@
         })
       },
       getPercentOf(count) {
-        return count > 1 ? count / (this.brands[0]?.count || 20) * 100 : 0
+        return  count / (this.brands[0]?.count || 20) * 100
       },
       onRetry() {
         this.requestStatus = 'loading'
@@ -186,6 +192,66 @@
     @media (prefers-color-scheme: dark) {
 
       background-color: $divider-color-dark;
+    }
+  }
+  .card-wrapper {
+  
+    padding: 15rpx 20rpx 20rpx 20rpx;
+  
+    @include pad-devices {
+      padding: toPadPx(15) toPadPx(20) toPadPx(20) toPadPx(20);
+  
+    }
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+  
+    @include pad-devices {
+      font-size: toPadPx(30);
+  
+    }
+  }
+  
+  .card-item-right {
+    margin-left: auto;
+  }
+  
+  .right-arrow-icon {
+    width: 18rpx;
+    height: 18rpx;
+    margin-left: 18rpx;
+    filter: invert(70%);
+  
+    @media (prefers-color-scheme: dark) {
+  
+      filter: invert(30%);
+    }
+  
+    @include pad-devices {
+      width: toPadPx(18);
+      height: toPadPx(18);
+      margin-left: toPadPx(18);
+  
+    }
+  }
+  
+  .count-bar {
+    height: 20rpx;
+    margin-top: 10rpx;
+    border-radius: 5rpx;
+    background-color: #5dd284;
+    @media (prefers-color-scheme: dark) {
+  
+      background-color: #41b90a;
+    }
+    @include pad-devices {
+      height: toPadPx(20);
+      margin-top: toPadPx(10);
+      border-radius: toPadPx(5);
+  
     }
   }
 </style>
