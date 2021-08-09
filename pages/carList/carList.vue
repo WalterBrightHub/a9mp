@@ -20,6 +20,7 @@
 	import selectCarClass from './components/filters/carClassFilter/select.js'
 	import topBar from '@/components/topBar/topBar.vue'
   import funcList from './components/funcList/funcList.vue'
+  import tapTabToTop from '@/mixin/tapTabToTop.js'
 	import _ from 'lodash'
 
 	const db = uniCloud.database()
@@ -45,6 +46,7 @@
 				return this.server === 'gl' ? this.releaseVersionRangeGL : this.releaseVersionRangeAL
 			}
 		},
+    mixins:[tapTabToTop],
 		onReachBottom() {
 			this.$refs.carListDB.loadMore()
 			this.limit += 20
@@ -93,20 +95,20 @@
 		onPullDownRefresh() {
 			this.$refs.carListDB.refresh();
 		},
-		firstTapTab: false,
-		onHide() {
-			this.firstTapTab = true
-		},
-		onTabItemTap() {
-      // console.log('on tab item tap')
-			if (this.firstTapTab) {
-				this.firstTapTab = false
-			} else {
-				uni.pageScrollTo({
-					scrollTop: 0
-				})
-			}
-		},
+		// firstTapTab: false,
+		// onHide() {
+		// 	this.firstTapTab = true
+		// },
+		// onTabItemTap() {
+  //     // console.log('on tab item tap')
+		// 	if (this.firstTapTab) {
+		// 		this.firstTapTab = false
+		// 	} else {
+		// 		uni.pageScrollTo({
+		// 			scrollTop: 0
+		// 		})
+		// 	}
+		// },
 		methods: {
 
 			onChangeSelectMethod(method) {

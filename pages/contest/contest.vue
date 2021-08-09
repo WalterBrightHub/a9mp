@@ -41,7 +41,7 @@
   import contestItem from './components/contestItem.vue'
   import loading from '../../components/loading/loading.vue'
 	import topBar from '@/components/topBar/topBar.vue'
-  // import uniClientDB from '../../components/uni-clientdb/uni-clientdb.vue'
+  import tapTabToTop from '@/mixin/tapTabToTop.js'
 
   import {
     mapState,
@@ -87,6 +87,7 @@
         }
       }
     },
+    mixins:[tapTabToTop],
     onLoad() {
       // this.contestStatus = 'pending'
 
@@ -113,19 +114,7 @@
       }
     },
 
-    firstTapTab: false,
-    onHide() {
-      this.firstTapTab = true
-    },
-    onTabItemTap() {
-      if (this.firstTapTab) {
-        this.firstTapTab = false
-      } else {
-        uni.pageScrollTo({
-          scrollTop: 0
-        })
-      }
-    },
+
     methods: {
       onChangeType(index) {
         this.typeFilterValue = index

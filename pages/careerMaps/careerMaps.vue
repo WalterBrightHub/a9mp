@@ -28,6 +28,7 @@
   } from 'vuex'
   import careerQuery from './careerQuery.vue'
   import topBar from '../../components/topBar/topBar.vue'
+  import tapTabToTop from '@/mixin/tapTabToTop.js'
 
   const db = uniCloud.database()
 
@@ -49,6 +50,7 @@
 
       ...mapState(['server']),
     },
+    mixins:[tapTabToTop],
     onLoad() {
 
       this.requestThemesAndTracks()
@@ -61,19 +63,6 @@
       }
     },
 
-    firstTapTab: false,
-    onHide() {
-      this.firstTapTab = true
-    },
-    onTabItemTap() {
-      if (this.firstTapTab) {
-        this.firstTapTab = false
-      } else {
-        uni.pageScrollTo({
-          scrollTop: 0
-        })
-      }
-    },
     onPullDownRefresh() {
 
       this.requestThemesAndTracks()

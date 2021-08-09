@@ -13,6 +13,7 @@
   } from 'vuex'
   import context from './context.vue'
 	import topBar from '@/components/topBar/topBar.vue'
+  import tapTabToTop from '@/mixin/tapTabToTop.js'
 
   const db = uniCloud.database()
   const requestSeasonPassMissions = async function(now, server) {
@@ -71,6 +72,7 @@
           })
       }
     },
+    mixins:[tapTabToTop],
     onLoad() {
 
       this.seasonPassMissionsStatus = 'loading'
@@ -103,19 +105,7 @@
         })
     },
     
-    firstTapTab: false,
-    onHide() {
-      this.firstTapTab = true
-    },
-    onTabItemTap() {
-      if (this.firstTapTab) {
-        this.firstTapTab = false
-      } else {
-        uni.pageScrollTo({
-          scrollTop: 0
-        })
-      }
-    },
+
     onShareAppMessage() {
 
       return {
