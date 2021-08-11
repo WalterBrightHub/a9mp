@@ -6,7 +6,7 @@
         <request-fail v-if="requestStatus==='reject'" @onRetry='onRetry' />
         <loading v-else-if="requestStatus==='pending'" />
         <view v-else-if="requestStatus==='resolve'">
-          <view class="card" v-for="versionItem in releaseVersions" :key="versionItem._id">
+          <view class="card" v-for="(versionItem,index) in releaseVersions" :key="versionItem._id" @tap="onTapReleaseVersionItem(index)">
             <view class="card-head">
               <view class="version-note">{{versionItem.note}}</view>
               <view class="version-number">版本号 {{versionItem.releaseVersion}}</view>
@@ -69,7 +69,7 @@
       this.requestStatus = 'pending'
       //获取所有品牌，并按照车辆数降序排列。
       requestReleaseVersions().then(res => {
-        console.log(res.result)
+        // console.log(res.result)
         this.releaseVersionsBoth = res.result
         this.requestStatus = 'resolve'
       }).catch(e => {
@@ -99,9 +99,11 @@
       }
     },
     methods: {
-      onTapReleaseVersionItem(version) {
+      onTapReleaseVersionItem(index) {
+        let releaseVersion=this.releaseVersions[index].releaseVersion//.map(car=>car.car_id)
+        console.log(releaseVersion)
         uni.navigateTo({
-          url: `/pages/carList/funcs/carBrand/carListBySelectedReleaseVersion?version=${version}`
+          url: `/pages/carList/funcs/releaseVersion/carListBySelectedReleaseVersion?releaseVersion=${releaseVersion}`
         })
       },
       getPercentOf(count) {
@@ -135,74 +137,13 @@
 
 
     @include pad-devices {
-      margin: toPadPx(20) 0;
+      // 小屏左右无边距，卡片无圆角
+      margin: toPadPx(20) ;
       margin-bottom: toPadPx(30);
 
     }
   }
 
-  .list-head {
-    display: flex;
-    color: $text-title-color;
-    padding: 20rpx;
-    font-size: 32rpx;
-
-    @media (prefers-color-scheme: dark) {
-
-      color: $text-title-color-dark;
-    }
-
-    @include pad-devices {
-      padding: toPadPx(20);
-      font-size: toPadPx(32);
-
-    }
-  }
-
-  .list-head-item {
-    font-weight: bold;
-  }
-
-  .list-head-item-right {
-    margin-left: auto;
-  }
-
-  .list {
-    color: $text-title-color;
-    font-size: 30rpx;
-
-    @media (prefers-color-scheme: dark) {
-
-      color: $text-title-color-dark;
-    }
-
-    @include pad-devices {
-      font-size: toPadPx(30);
-
-    }
-  }
-
-
-
-  .divider {
-    height: 1px;
-    background-color: $divider-color;
-
-    @media (prefers-color-scheme: dark) {
-
-      background-color: $divider-color-dark;
-    }
-  }
-
-  .card-wrapper {
-
-    padding: 15rpx 20rpx 20rpx 20rpx;
-
-    @include pad-devices {
-      padding: toPadPx(15) toPadPx(20) toPadPx(20) toPadPx(20);
-
-    }
-  }
 
   .card {
     // display: flex;
@@ -218,7 +159,8 @@
     
     
     @include pad-devices {
-      // border-radius: toPadPx(10);
+      border-radius: toPadPx(10);
+      padding:toPadPx(20);
     
     }
 
@@ -226,6 +168,9 @@
   }
   .card+.card{
     margin-top: 20rpx;
+    @include  pad-devices{
+      margin-top:toPadPx(20);
+    }
   }
 
   .card-head{
@@ -237,15 +182,32 @@
      margin-left: 48rpx;
      font-size: 30rpx;
      align-self: flex-end;
+     @media (prefers-color-scheme: dark) {
+     
+       color: $text-help-color-dark;
+     }
+     @include pad-devices {
+       margin-left:toPadPx(48);
+       font-size: toPadPx(30);
+     
+     }
   }
   .version-note{
     font-size: 36rpx;
     
     color:$theme-color;
     font-weight: bold;
+    @include pad-devices {
+      font-size: toPadPx(36);
+    
+    }
   }
   .new-car-wrapper{
     margin-top: 30rpx;
+     @include pad-devices {
+       margin-top:toPadPx(30);
+     
+     }
   }
   .new-car-card{
     display: flex;
@@ -264,6 +226,15 @@
     @media (prefers-color-scheme: dark) {
     
       color: #000;
+      
+    }
+    @include pad-devices {
+      // border-radius: toPadPx(10);
+      width:toPadPx(36);
+      height: toPadPx(36);
+      margin-left: toPadPx(10);
+      border-radius: toPadPx(5);
+    
     }
   }
   .car-bp-epic{
@@ -279,23 +250,12 @@
   }
    .new-car-card+.new-car-card{
      margin-top: 24rpx;
+
+     @include pad-devices {
+       // border-radius: toPadPx(10);
+       margin-top:toPadPx(24);
+     
+     }
    }
-  .count-bar {
-    height: 20rpx;
-    margin-top: 10rpx;
-    border-radius: 5rpx;
-    background-color: #5dd284;
-
-    @media (prefers-color-scheme: dark) {
-
-      background-color: #41b90a;
-    }
-
-    @include pad-devices {
-      height: toPadPx(20);
-      margin-top: toPadPx(10);
-      border-radius: toPadPx(5);
-
-    }
-  }
+  
 </style>
