@@ -12,7 +12,7 @@
             <view class="list-head-item list-head-item-right">车辆数</view>
           </view>
           <view class="list">
-            <view class="list-item card-wrapper" v-for="(brandItem,index) in brands" @tap="onTapBrandItem(brandItem.brand)">
+            <view class="list-item card-wrapper" v-for="(brandItem,index) in brands" :key="index" @tap="onTapBrandItem(brandItem.brand)">
               <!-- <view class="divider" v-if="index>0"></view> -->
               <!-- <list-item-card :brandItem="brandItem" :percent="getPercentOf(brandItem.count)" :theme="theme" /> -->
               

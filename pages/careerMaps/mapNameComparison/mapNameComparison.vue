@@ -4,7 +4,7 @@
     <view class="context-wrapper">
 
       <view class="map-theme-block-list">
-        <view class="map-theme-block" v-for="(mapTheme,index) of mapThemes">
+        <view class="map-theme-block" v-for="(mapTheme,index) of mapThemes" :key="mapTheme._id">
           <view class="map-theme-name-list">
             <view class="map-theme-name-item map-theme-name-item-cn">
 
@@ -14,7 +14,7 @@
             <view class="map-theme-name-item map-theme-name-en">{{mapTheme.mapThemeEN}}</view>
           </view>
           <view class="map-name-list">
-            <view class="map-name-item-block" v-for="mapName of selectedMapNames[index]">
+            <view class="map-name-item-block" v-for="mapName of selectedMapNames[index]" :key="mapName.mapNameCN">
               <view class="map-name-item map-name-item-cn">
                 <view class="map-name-cn">{{mapName.mapNameCN}}</view>
                 <view class="map-name-al" v-if="mapName.mapNameCN!==mapName.mapNameAL">{{mapName.mapNameAL}}</view>

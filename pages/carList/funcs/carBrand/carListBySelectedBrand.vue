@@ -52,7 +52,7 @@
     onLoad({
       brand
     }) {
-      console.log(brand)
+      // console.log(brand)
       this.brand = brand
     },
     onPullDownRefresh() {

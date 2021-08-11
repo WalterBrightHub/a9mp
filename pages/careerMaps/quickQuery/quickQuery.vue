@@ -15,22 +15,22 @@
           </view>
           <view class="row" v-for="item in selectedCareerMaps[theme]['ll']" :key="item._id">
             <view class="map-name">{{item.mapName}}</view>
-            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]">{{place}}</view>
+            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{place}}</view>
           </view>
           <view class="divider" />
           <view class="row" v-for="item in selectedCareerMaps[theme]['l']" :key="item._id">
             <view class="map-name">{{item.mapName}}</view>
-            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]">{{place}}</view>
+            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{place}}</view>
           </view>
           <view class="divider" />
           <view class="row" v-for="item in selectedCareerMaps[theme]['m']" :key="item._id">
             <view class="map-name">{{item.mapName}}</view>
-            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]">{{place}}</view>
+            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{place}}</view>
           </view>
           <view class="divider" />
           <view class="row" v-for="item in selectedCareerMaps[theme]['s']" :key="item._id">
             <view class="map-name">{{item.mapName}}</view>
-            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]">{{place}}</view>
+            <view class="place" v-for="place in [item['D'],item['C'],item['B'],item['A'],item['S']]" :key="place">{{place}}</view>
           </view>
         </view>
       </view>
@@ -84,7 +84,7 @@
 
       requestCareerMaps()
         .then(res => {
-          console.log(res.result) // 3
+          // console.log(res.result) // 3
           // return Promise.reject()
           this.careerMaps = res.result.data,
             this.careerMapsStatus = 'resolve'

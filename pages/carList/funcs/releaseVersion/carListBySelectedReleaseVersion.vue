@@ -52,7 +52,7 @@
     onLoad({
       releaseVersion
     }) {
-      console.log(releaseVersion)
+      // console.log(releaseVersion)
       this.releaseVersion = releaseVersion
     },
     onPullDownRefresh() {

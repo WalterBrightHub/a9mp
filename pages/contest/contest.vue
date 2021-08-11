@@ -11,7 +11,7 @@
       </picker> -->
         <view class="type-filter-block">
           <view class="type-filter-item" :class="{['type-filter-item-selected']:index===typeFilterValue}"
-            v-for="(type,index) in typeFilterRange" @tap="onChangeType(index)">
+            v-for="(type,index) in typeFilterRange" :key="type" @tap="onChangeType(index)">
             {{type}}
           </view>
         </view>

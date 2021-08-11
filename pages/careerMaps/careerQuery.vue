@@ -2,12 +2,12 @@
   <div class="context">
     <div class="map-theme-block">
       <div class="map-theme" :class="{['map-theme-selected']:index===mapThemeValue}"
-        v-for="(mapTheme,index) in selectedMapThemeRange" @tap="onChangeMapTheme(index)">{{mapTheme}}</div>
+        v-for="(mapTheme,index) in selectedMapThemeRange" :key="index" @tap="onChangeMapTheme(index)">{{mapTheme}}</div>
     </div>
     <div class="map-name-block">
 
       <div class="map-name" :class="{['map-name-selected']:index===mapNameValue}"
-        v-for="(item,index) in mapNameAndLengthRange" @tap="onChangeMapName(index)">{{item}}</div>
+        v-for="(item,index) in mapNameAndLengthRange" :key="index" @tap="onChangeMapName(index)">{{item}}</div>
 
 
 
