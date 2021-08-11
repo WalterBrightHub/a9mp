@@ -1,7 +1,7 @@
 <template>
   <view class="context">
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where"
+      :options="options" :field="carCardField" :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where"
       @load="onqueryload" @error="onqueryerror" :manual="true">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
@@ -22,6 +22,7 @@
 <script>
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
+  import carCardField from '@/config/carCardField.js'
 
   export default {
     components: {
@@ -32,6 +33,7 @@
     data() {
       return {
         // where:this.selectMethod.where
+        carCardField,
         options:{
           loaded:false
         }
@@ -65,6 +67,7 @@
         })
       },
       onqueryload() {
+        // console.log(data)
         // uni.hideLoading()
         this.options.loaded=true
       },
