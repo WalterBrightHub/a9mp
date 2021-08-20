@@ -63,6 +63,7 @@
         "appid" : "wx742bd28d4723c3d9",
         "resizable" : true,
         "darkmode" : true,
+        "lazyCodeLoading": "requiredComponents",
         "window" : {
             "navigationBarTextStyle" : "@navTxtStyle",
             "navigationBarBackgroundColor" : "@navBgColor",

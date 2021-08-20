@@ -49,7 +49,6 @@
     mixins:[tapTabToTop],
 		onReachBottom() {
 			this.$refs.carListDB.loadMore()
-			this.limit += 20
 		},
 		onLoad() {
 

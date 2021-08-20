@@ -6,7 +6,7 @@
         <view class="func-title">等级分布</view>
       </navigator>
 
-      <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
+      <navigator class="func-button-item" url="/pages/carList/funcs/carSort/carSort">
         <image class="func-icon" src="@/static/carlist-func-button-icons/data-sort.png"></image>
         <view class="func-title">数据排序</view>
       </navigator>

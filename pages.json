@@ -79,53 +79,51 @@
         "enablePullDownRefresh": false
       }
 
+    }, {
+      "path": "pages/carList/funcs/carClass/carClass",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/carList/funcs/carBrand/carBrand",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/carBrand/carListBySelectedBrand",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/releaseVersion/releaseVersion",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/releaseVersion/carListBySelectedReleaseVersion",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/carSort/carSort",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true,
+        "onReachBottomDistance": 200
+      }
+
     }
-      ,{
-            "path" : "pages/carList/funcs/carClass/carClass",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/carBrand/carBrand",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/carBrand/carListBySelectedBrand",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/releaseVersion/releaseVersion",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/releaseVersion/carListBySelectedReleaseVersion",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-    ],
+  ],
 
   "globalStyle": {
     //QQ未支持深色模式
@@ -138,7 +136,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F5F5F5",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle": "white",
     // #endif
     "navigationBarTitleText": "狂飙小助手",
 
