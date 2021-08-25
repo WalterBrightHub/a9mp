@@ -69,7 +69,7 @@
       this.requestStatus = 'pending'
       //获取所有品牌，并按照车辆数降序排列。
       requestReleaseVersions().then(res => {
-        // console.log(res.result)
+        console.log(res.result)
         this.releaseVersionsBoth = res.result
         this.requestStatus = 'resolve'
       }).catch(e => {

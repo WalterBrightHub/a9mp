@@ -135,8 +135,9 @@
   .server {
     display: flex;
     align-items: center;
-    border: 1px solid #fff;
     color: #fff;
+    
+    opacity: 0.8;
 
     @media (prefers-color-scheme: dark) {
       color: $theme-color;
@@ -144,9 +145,23 @@
     }
   }
 
+
+  .server-gl {
+    border-radius: 100px 0 0 100px;
+    padding: 2px 10px ;
+  }
+
+  .server-al {
+
+    border-radius: 0 100px 100px 0;
+    padding: 2px 10px;
+  }
+
   .server-selected {
     color: $theme-color;
+    border-radius: 100px;
     font-weight: bold;
+    opacity: 1;
     background-color: #fff;
 
     @media (prefers-color-scheme: dark) {
@@ -154,18 +169,7 @@
       background-color: $theme-color;
     }
   }
-
-  .server-gl {
-    border-radius: 100px 0 0 100px;
-    padding: 2px 10px 2px 15px;
-  }
-
-  .server-al {
-
-    border-radius: 0 100px 100px 0;
-    padding: 2px 15px 2px 10px;
-  }
-
+  
   .back-button {
     width: 16px;
     height: 16px;

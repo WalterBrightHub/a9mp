@@ -1,19 +1,10 @@
 <template>
   <view class="func-button-list-wrapper">
     <view class="func-button-list">
-      <navigator class="func-button-item" url="/pages/carList/funcs/carClass/carClass">
-        <image class="func-icon" src="@/static/carlist-func-button-icons/car-class.png"></image>
-        <view class="func-title">等级分布</view>
-      </navigator>
 
       <navigator class="func-button-item" url="/pages/carList/funcs/carSort/carSort">
         <image class="func-icon" src="@/static/carlist-func-button-icons/data-sort.png"></image>
         <view class="func-title">数据排序</view>
-      </navigator>
-
-      <navigator class="func-button-item" url="/pages/carList/funcs/carBrand/carBrand">
-        <image class="func-icon" src="@/static/carlist-func-button-icons/car-brand.png"></image>
-        <view class="func-title">品牌分类</view>
       </navigator>
 
       <navigator class="func-button-item" url="/pages/carList/funcs/releaseVersion/releaseVersion">
@@ -21,15 +12,21 @@
         <view class="func-title">版本新车</view>
       </navigator>
 
+      <navigator class="func-button-item" url="/pages/carList/funcs/carBrand/carBrand">
+        <image class="func-icon" src="@/static/carlist-func-button-icons/car-brand.png"></image>
+        <view class="func-title">品牌分类</view>
+      </navigator>
+
       <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
         <image class="func-icon" src="@/static/carlist-func-button-icons/get-way.png"></image>
         <view class="func-title">获取方式</view>
       </navigator>
 
-      <navigator class="func-button-item" url="/pages/careerMaps/mapNameComparison/mapNameComparison">
-        <image class="func-icon" src="@/static/carlist-func-button-icons/car-character.png"></image>
-        <view class="func-title">车辆特性</view>
+      <navigator class="func-button-item" url="/pages/carList/funcs/carClass/carClass">
+        <image class="func-icon" src="@/static/carlist-func-button-icons/car-class.png"></image>
+        <view class="func-title">数据统计</view>
       </navigator>
+
 
     </view>
   </view>
@@ -47,23 +44,30 @@
 </script>
 
 <style lang="scss">
-  .func-button-list-wrapper{
+  .func-button-list-wrapper {
     display: flex;
     justify-content: center;
   }
+
   .func-button-list {
     max-width: 768px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 16.66%);
+    grid-template-columns: repeat(5, 20%);
     grid-row-gap: 20rpx;
+    background-color: #d9fdff;
+    border-radius: 10rpx;
+    padding: 20rpx 0;
     // align-self: center;
 
     margin: 0 20rpx 20rpx 20rpx;
+    @media (prefers-color-scheme: dark) {
+      background-color: $card-bg-color-dark;
+    }
 
     @include pad-devices {
       margin: 0 toPadPx(20) toPadPx(20) toPadPx(20);
-    grid-row-gap: toPadPx(20);
+      grid-row-gap: toPadPx(20);
     }
   }
 
