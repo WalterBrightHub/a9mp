@@ -13,7 +13,7 @@
     <view class="bps">
       <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index"
         :style="{flex:item>0?item:20}">{{item}}</view>
-        <!-- <view style="font-size: 32rpx; margin-left: 10rpx;display: flex;align-items: center;">{{totalBP}}</view> -->
+        <view class="bp bp-total">{{totalBP}}</view>
     </view>
 
     <view class="perf-and-update">
@@ -61,22 +61,22 @@
         </view>
         <view class="perf-empty-bar"></view>
         
-        <view class="cost-item">
+        <!-- <view class="cost-item">
           <view class="cost-name">图纸总数</view>
           <view class="cost-value">
             {{totalBP}}
           </view>
         </view>
-        <view class="perf-empty-bar"></view>
+        <view class="perf-empty-bar"></view> -->
         
-<!--        <view class="cost-item">
+       <view class="cost-item">
           <view class="cost-name">改装费用</view>
           <view class="cost-value">
             {{carData.totalCost>0?split3(carData.totalCost):'未知'}}
             
           </view>
         </view>
-        <view class="perf-empty-bar"></view> -->
+        <view class="perf-empty-bar"></view>
 
 
 
@@ -139,7 +139,7 @@
       totalBP() {
         let hasUnknowBP=this.starArray.reduce((res, curr) => res || curr==='?'||curr==='？', false)
         if(hasUnknowBP){
-          return '未知'
+          return '?'
         }else{
           
         return this.starArray.reduce((res, curr) => res + (Number(curr) || 0), 0)
@@ -181,7 +181,8 @@
             icon: 'none'
           })
         } else {
-          const url = `/pages/carList/carArchives/carArchives?car_id=${this.carData.car_id}`
+          const {car_id,fullName}=this.carData
+          const url = `/pages/carList/carArchives/carArchives?car_id=${car_id}&fullName=${fullName}`
 
           let pages = getCurrentPages()
           let currentPage = pages[pages.length - 1]
@@ -200,10 +201,12 @@
 </script>
 
 <style lang="scss">
+  
   .car-card {
     padding: 20rpx;
     padding-bottom: 25rpx;
     background-color: #fff;
+    background-color: var(--card-bg-color);
 
     // background: linear-gradient(to right, #fffdec, #fffbcf);
     border-radius: 10rpx;
@@ -217,7 +220,7 @@
 
     @media (prefers-color-scheme: dark) {
       color: $text-p-color-dark;
-      background-color: $card-bg-color-dark;
+      // background-color: $card-bg-color-dark;
     }
   }
 
@@ -360,6 +363,12 @@
     @include pad-devices {
       margin-left: toPadPx(10);
     }
+  }
+  
+  .bp-total{
+    color: var(--text-help-color);
+    background: none;
+    border: 1px solid var(--text-help-color);
   }
 
   .perf-and-update {
