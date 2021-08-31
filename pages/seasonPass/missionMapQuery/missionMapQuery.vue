@@ -1,7 +1,9 @@
 <template>
   <view class="container">
-
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showBack="true" :title="'地图任务指引'" />
+    </div>
     <div class="body-wrapper">
       
     <div class="head">{{mapName}}</div>
@@ -81,7 +83,11 @@
 
 <style lang="scss">
   .container {
+  }
+  .top-fixed-wrapper{
     
+    position: sticky;
+    top:0;
   }
 
   .head {

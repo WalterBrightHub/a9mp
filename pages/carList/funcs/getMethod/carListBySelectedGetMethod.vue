@@ -2,10 +2,10 @@
   <view class="container">
     <div class="top-fixed-wrapper">
       
-    	<top-bar :showBack="true" :title="'精选车辆'" />
+    <top-bar :showBack="true"  :title="'获取方式：'+name" />
     </div>
-    <unicloud-db class="cardb" ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
-      :collection="collection" :field="carCardField" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
+    <unicloud-db class="cardb" ref="carDB" v-slot:default="{data, pagination, loading, error, options}"
+      :collection="collection" :field="carCardField" :orderby="'_id'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -29,7 +29,7 @@
   } from 'vuex'
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
-	import topBar from '@/components/topBar/topBar.vue'
+  import topBar from '@/components/topBar/topBar.vue'
   import carCardField from '@/config/carCardField.js'
 
   export default {
@@ -37,12 +37,13 @@
 
       'car-card': carCard,
       'loading': loading,
-			'top-bar':topBar,
+      'top-bar': topBar,
     },
     data() {
       return {
-        carCardField,
-        carIds: []
+        releaseVersion: '',
+        name:'',
+        field:'',
       }
     },
     computed: {
@@ -51,14 +52,28 @@
         return this.server === 'gl' ? 'carList' : 'carListAL'
       },
       where() {
-        let ins = this.carIds.map(carId => `'${carId}'`).join(',')
-        return `car_id in [${ins}]`
+        return `${this.field}==1`
       }
     },
     onLoad({
-      carIds
+      name,field
     }) {
-      this.carIds = carIds.split(',')
+      this.name = name
+      this.field=field
+    },
+    onPullDownRefresh() {
+
+      this.$refs.carDB.loadData({
+        //设置true又正常了，真奇怪
+        clear: true
+      }, () => {
+        uni.showToast({
+          title: '最新',
+          duration: 500
+        })
+        uni.stopPullDownRefresh()
+        // this.options.loaded=true
+      })
     },
     methods: {
       getWhere(carId) {
@@ -75,18 +90,20 @@
     flex-direction: column;
 
   }
-  
   .top-fixed-wrapper{
-    z-index: 114514;
+    
     position: sticky;
     top:0;
+    z-index: 114514;
   }
-  .cardb{
+
+  .cardb {
     padding-top: 20rpx;
+
     @include pad-devices {
       padding-top: toPadPx(20);
     }
   }
 
-@import '@/pages/carList/carList.scss';
+  @import '@/pages/carList/carList.scss';
 </style>

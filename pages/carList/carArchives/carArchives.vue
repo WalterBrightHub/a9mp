@@ -1,9 +1,15 @@
 <template>
   <view>
-    
-    <top-bar :showBack="true" :title="'车辆档案'" />
+    <div class="top-fixed-wrapper">
 
-    <unicloud-db class=" get-method-db" ref="getMethodDB" v-slot:default="{data, pagination, loading, error, options}"
+      <top-bar :showBack="true" :title="'车辆档案'" />
+      <div class="full-name-wrapper">
+
+        <div class="full-name">{{fullName}}</div>
+      </div>
+    </div>
+
+    <unicloud-db class=" get-method-db" ref="carArchivesDB" v-slot:default="{data, pagination, loading, error, options}"
       :collection="carListCollection" getone="true" @load="onqueryload" @error="onqueryerror" manual="true"
       :where="whereGetMethod" :field="carArchivesField">
 
@@ -18,27 +24,27 @@
           <view v-else class="detail-block">
             <div class="detail-row-list">
               <div class="detail-row">
-              <div class="detail-title">升级费用</div>
-              <div class="detail-content">{{data.stageCost>0?split3(data.stageCost):'未知'}}</div>
+                <div class="detail-title">升级费用</div>
+                <div class="detail-content">{{data.stageCost>0?split3(data.stageCost):'未知'}}</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-title">零件费用</div>
+                <div class="detail-content">{{data.partCost>0?split3(data.partCost):'未知'}}</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-title">MAX费用</div>
+                <div class="detail-content">{{data.stageCost>0?split3(data.stageCost+data.partCost):'未知'}}</div>
+              </div>
+              <div class="detail-row attr-row" :class="{'attr-enable':data.openCar!==''}">
+                <div class="detail-title">敞篷</div>
+                <div class="detail-content">{{data.openCar!==''?data.openCar:'否'}}</div>
+              </div>
+              <div class="detail-row attr-row" :class="{'attr-enable':data.decalsExclusive!==''}">
+                <div class="detail-title">独占贴纸</div>
+                <div class="detail-content">{{data.decalsExclusive!==''?data.decalsExclusive:'否'}}</div>
+              </div>
             </div>
-            <div class="detail-row">
-              <div class="detail-title">零件费用</div>
-              <div class="detail-content">{{data.partCost>0?split3(data.partCost):'未知'}}</div>
-            </div>
-            <div class="detail-row">
-              <div class="detail-title">MAX费用</div>
-              <div class="detail-content">{{data.stageCost>0?split3(data.stageCost+data.partCost):'未知'}}</div>
-            </div>
-            <div class="detail-row attr-row" :class="{'attr-enable':data.openCar!==''}">
-              <div class="detail-title">敞篷</div>
-              <div class="detail-content">{{data.openCar!==''?data.openCar:'否'}}</div>
-            </div>
-            <div class="detail-row attr-row" :class="{'attr-enable':data.decalsExclusive!==''}">
-              <div class="detail-title">独占贴纸</div>
-              <div class="detail-content">{{data.decalsExclusive!==''?data.decalsExclusive:'否'}}</div>
-            </div>
-            </div>
-            
+
             <div class="divider"></div>
             <div class="attr-list">
               <div class="attr-item" :class="{['attr-item-selected']:data.keyCar===1}">钥匙</div>
@@ -155,7 +161,7 @@
       car_id,
       fullName
     }) {
-      console.log(car_id,fullName)
+      console.log(car_id, fullName)
       this.fullName = fullName
       this.car_id = car_id
       // db.collection('contest').where({
@@ -165,6 +171,26 @@
       //   .then(res => {
       //     console.log(res)
       //   })
+    },
+    onPullDownRefresh() {
+
+      let refreshRelatedEvents = this.$refs.contestDB.loadData({
+        //设置false和不设置都会导致bug，真奇怪
+        clear: true
+      })
+      let refreshCarArchives = this.$refs.carArchivesDB.loadData({
+        clear: true
+      })
+      Promise.all([refreshRelatedEvents, refreshCarArchives]).then(() => {
+        // console.log(this.$refs.contestDB.dataList);
+        uni.showToast({
+          title: '最新',
+          duration: 500
+        })
+      }).finally(() => {
+
+        uni.stopPullDownRefresh()
+      })
     },
     methods: {
 
@@ -183,7 +209,7 @@
       },
       onqueryload(data) {
         // uni.hideLoading()
-        console.log(data)
+        // console.log(data)
       },
       onqueryerror() {
         // uni.hideLoading()
@@ -200,22 +226,49 @@
 <style lang="scss">
   @import '../../contest/contest-list.scss';
 
+  .top-fixed-wrapper {
+
+    position: sticky;
+    top: 0;
+  }
+
+  .full-name-wrapper {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 2px 2px var(--divider-color);
+  }
+
+  .full-name {
+    font-size: 38rpx;
+    max-width: 768px;
+    box-sizing: border-box;
+    padding: 20rpx 40rpx;
+    // padding-bottom: 0;
+    margin: 0 auto;
+    color: var(--text-title-color);
+    font-weight: bold;
+
+    @include pad-devices {
+      font-size: toPadPx(38);
+      padding: toPadPx(20) toPadPx(40);
+    }
+  }
+
   .contest-db-title-block {
     display: flex;
     align-items: center;
   }
 
   .contest-db-title {
-    font-size: 36rpx;
+    font-size: 32rpx;
     font-weight: bold;
     padding: 20rpx;
-    padding-bottom: 10rpx;
+    // padding-bottom: 10rpx;
     color: $theme-color;
 
     @include pad-devices {
-      font-size: toPadPx(36);
+      font-size: toPadPx(32);
       padding: toPadPx(20);
-      padding-bottom: toPadPx(10);
+      // padding-bottom: toPadPx(10);
     }
   }
 
@@ -267,13 +320,26 @@
   .attr-list {
     display: grid;
     padding: 20rpx;
-    grid-template-columns: repeat(3, 33.33%);
+    grid-template-columns: repeat(4, 25%);
     grid-row-gap: 20rpx;
 
     @include pad-devices {
-      grid-template-columns: repeat(4, 25%);
+      // grid-template-columns: repeat(5, 20%);
       padding: toPadPx(20);
       grid-row-gap: toPadPx(20);
+    }
+  }
+
+  .get-method-block {
+    padding-top: 0;
+  }
+
+  .detail-block,
+  .get-method-block {
+    font-size: 28rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(28);
     }
   }
 
@@ -300,25 +366,39 @@
       padding-left: toPadPx(6);
     }
   }
-  .detail-row-list{
-    padding: 20rpx 0;
+
+  .detail-row-list {
+    padding-bottom: 20rpx;
+
+    @include pad-devices {
+      padding-bottom: toPadPx(20);
+    }
   }
-  .detail-row{
+
+  .detail-row {
     padding: 0 20rpx;
     display: flex;
     justify-content: space-between;
+
+    @include pad-devices {
+      padding: 0 toPadPx(20);
+    }
   }
-  .detail-row+.detail-row{
+
+  .detail-row+.detail-row {
     margin-top: 15rpx;
   }
-  .divider{
+
+  .divider {
     background-color: var(--divider-color);
     height: 2px;
   }
-  .attr-row{
-    color:var(--text-tip-color);
+
+  .attr-row {
+    color: var(--text-tip-color);
   }
-  .attr-enable{
-    color:var(--text-p-color);
+
+  .attr-enable {
+    color: var(--text-p-color);
   }
 </style>

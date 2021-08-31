@@ -1,6 +1,7 @@
 <template>
   <view class="container">
-    <view class="top-bar-wrapper">
+    
+    <view class="top-fixed-wrapper">
       
 		<top-bar  :showServerToggle="true" />
     </view>
@@ -130,6 +131,12 @@
 </script>
 
 <style lang="scss">
+  
+  .top-fixed-wrapper{
+    z-index: 114514;
+    position: sticky;
+    top:0;
+  }
   .top-bar{
     
     border-bottom: 1px solid $divider-color;    

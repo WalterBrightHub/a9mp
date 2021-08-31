@@ -1,79 +1,56 @@
 <template>
-  <view class="context">
-    <view class="filter-block">
-      <view class="filter-wrapper">
-        <v-filter class="filter" :brandRange="brandRange" :releaseVersionRange="releaseVersionRange"
-          @onChangeSelectMethod="onChangeSelectMethod" />
+  <view class="filter-block">
+    <view class="filter-wrapper">
 
+      <view class="filter-label">等级</view>
+
+      <view class="car-class-list">
+        <view class="class-block" :class="{['class-selected']:item===carClass}" v-for="item in carFilter" :key="item"
+          @tap="onChangeCarClass(item)">
+          {{item}}
+        </view>
       </view>
-      <view class="divider"></view>
     </view>
-    <view class="placeholder"></view>
+    <div class="divider"></div>
   </view>
 </template>
 
 <script>
   import {
     mapState,
-    mapMutations
   } from 'vuex'
-  import filter from './components/filter.vue'
 
-  import {
-    defaultSelect
-  } from './components/filters/carClassFilter/select.js'
 
-  const defaultFilter = {
-    'carClass': 'D',
-    'carClassAL': 'D',
-    'brand': 'Lamborghini',
-    'all': 'rank'
-  }
+
   export default {
-    components: {
-      'v-filter': filter,
-    },
-    props: ['brandRange', "releaseVersionRange", ],
+    props: ['carClass'],
     data() {
       return {
-        selectMethod: defaultSelect
+        carFilter: ['D', 'C', 'B', 'A', 'S'],
       };
     },
     computed: {
 
     },
     methods: {
-      /*
-      server决定collection，filter决定where
-      短时间间隔分别unicloud-db的collection属性和where属性，会造成查询错误
-      用filter监听server改动，同时改变collection和where
-      */
-      ...mapMutations(['toggleServer']),
-      onChangeSelectMethod(method) {
-        this.$emit('onChangeSelectMethod', method)
+      onChangeCarClass(carClass) {
+        if (this.carClass !== carClass) {
+
+          this.$emit('onChangeCarClass', carClass)
+        }
       },
     }
   }
 </script>
 
 <style lang="scss">
-  .placeholder {
-    height: 92rpx;
-
-    @include pad-devices {
-      height: toPadPx(92);
-    }
-  }
-
   .filter-block {
     // display: flex;
-    position: fixed;
     z-index: 114514;
     background-color: $theme-color;
 
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
-      // color: $text-title-color-dark;
     }
 
     width: 100%;
@@ -83,6 +60,7 @@
     display: flex;
     margin: 0 auto;
     padding: 0 20rpx;
+    box-sizing: border-box;
     max-width: 768px;
     align-items: center;
 
@@ -96,11 +74,11 @@
   }
 
   .divider {
-    height: 2rpx;
+    // height: 2rpx;
     background-color: $divider-color;
 
     @include pad-devices {
-      height: 0 toPadPx(2);
+      height: toPadPx(2);
       // box-shadow: ;
 
     }
@@ -120,5 +98,75 @@
     @include pad-devices {
       // padding: toPadPx(20);
     }
+  }
+
+
+
+
+
+
+
+  .filter-label {
+    flex: none;
+    color: #fff;
+
+    @media (prefers-color-scheme: dark) {
+      color: $text-title-color-dark;
+    }
+  }
+
+
+
+
+  .car-class-list {
+    display: flex;
+    margin-left: auto;
+    // width: 100%;
+  }
+
+  .class-block {
+    font-size: 36rpx;
+    // flex: 1;
+    width: 72rpx;
+    // border-radius: 1000rpx;
+    display: flex;
+    justify-content: center;
+    height: 72rpx;
+    line-height: 72rpx;
+    // text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    // background-color: #fff;
+
+    @include pad-devices {
+
+      font-size: toPadPx(36);
+      width: toPadPx(72);
+      height: toPadPx(72);
+      line-height: toPadPx(72);
+    }
+
+  }
+
+
+  .class-block {
+    color: #fff;
+
+    @media (prefers-color-scheme: dark) {
+
+      color: $text-title-color-dark;
+    }
+  }
+
+  .class-selected {
+    color: $theme-color;
+    background-color: #fff;
+
+    @media (prefers-color-scheme: dark) {
+
+      color: $card-bg-color-dark;
+      background-color: $text-title-color-dark;
+    }
+
   }
 </style>

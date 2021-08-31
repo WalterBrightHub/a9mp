@@ -1,7 +1,9 @@
 <template>
   <view class="container">
-
+    <div class="top-fixed-wrapper">
+      
     	<top-bar :showBack="true" :showServerToggle="true" :title="'快速查询'" />
+    </div>
 
     <request-fail v-if="careerMapsStatus==='reject'" @onRetry='onRetryCareerMaps' />
 
@@ -185,6 +187,11 @@
   .context {
     max-width: 768px;
     margin: 0 auto;
+  }
+  .top-fixed-wrapper{
+    
+    position: sticky;
+    top:0;
   }
 
 

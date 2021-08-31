@@ -1,12 +1,15 @@
 <template>
   <view>
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showBack="true" :showServerToggle="true" :title="'版本新车'" />
+    </div>
     <view class="list-wrapper">
       <view class="list-wrapper-in">
         <request-fail v-if="requestStatus==='reject'" @onRetry='onRetry' />
         <loading v-else-if="requestStatus==='pending'" />
         <view v-else-if="requestStatus==='resolve'">
-          <view class="card" v-for="(versionItem,index) in releaseVersions" :key="versionItem._id" @tap="onTapReleaseVersionItem(index)">
+          <view class="card" v-for="(versionItem,index) in releaseVersions" :key="versionItem._id" @tap="onTapReleaseVersionItem(versionItem.releaseVersion,versionItem.note)">
             <view class="card-head">
               <view class="version-note">{{versionItem.note}}</view>
               <view class="version-number">版本号 {{versionItem.releaseVersion}}</view>
@@ -99,11 +102,9 @@
       }
     },
     methods: {
-      onTapReleaseVersionItem(index) {
-        let releaseVersion=this.releaseVersions[index].releaseVersion//.map(car=>car.car_id)
-        console.log(releaseVersion)
+      onTapReleaseVersionItem(releaseVersion,note) {
         uni.navigateTo({
-          url: `/pages/carList/funcs/releaseVersion/carListBySelectedReleaseVersion?releaseVersion=${releaseVersion}`
+          url: `/pages/carList/funcs/releaseVersion/carListBySelectedReleaseVersion?note=${note}&releaseVersion=${releaseVersion}&`
         })
       },
       getPercentOf(count) {
@@ -126,6 +127,12 @@
 </script>
 
 <style lang="scss">
+  
+  .top-fixed-wrapper{
+    z-index: 114514;
+    position: sticky;
+    top:0;
+  }
   .list-wrapper {
     max-width: 768px;
     margin: 0 auto;

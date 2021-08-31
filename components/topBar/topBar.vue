@@ -18,7 +18,6 @@
         </view>
       </view>
     </view>
-    <view class="placeholder" :style="'height:'+(statusBarHeight+44)+'px'"></view>
   </view>
 </template>
 
@@ -33,15 +32,16 @@
     data() {
       return {
         //高度适配方案 https://developers.weixin.qq.com/community/develop/article/doc/0000ecde0e49a85a314c9d44d51013
-        statusBarHeight: '25'
+        // statusBarHeight: '25'
+        // 转移到了Vuex啦
       };
     },
     created() {
-      let systemInfo = uni.getSystemInfoSync()
-      this.statusBarHeight = systemInfo.statusBarHeight
+      // let systemInfo = uni.getSystemInfoSync()
+      // this.statusBarHeight = systemInfo.statusBarHeight
     },
     computed: {
-      ...mapState(['server', 'theme']),
+      ...mapState(['server', 'theme','statusBarHeight']),
       bgColor() {
         if (this.themeConfig && this.themeConfig[this.theme]) {
           return `background-color:${this.themeConfig[this.theme].bgColor};`
@@ -67,17 +67,13 @@
 </script>
 
 <style lang="scss">
-  .placeholder {
-    height: 67px;
-    // background-color: $card-bg-color;
-  }
+
 
   .top-bar-wrapper {
     display: flex;
     z-index: 114555;
     justify-content: center;
     width: 100%;
-    position: fixed;
   }
 
   .top-bar {

@@ -1,8 +1,8 @@
 <template>
   <view class="context">
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options}"
-      :options="options" :field="carCardField" :collection="collection" :orderby="selectMethod.sort" :where="selectMethod.where"
-      @load="onqueryload" @error="onqueryerror" :manual="true">
+      :options="options" :field="carCardField" :collection="collection" :orderby="'_id'" :where="where"
+      @load="onqueryload" @error="onqueryerror" >
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -20,6 +20,9 @@
 </template>
 
 <script>
+  import {
+    mapState
+  } from 'vuex'
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
   import carCardField from '@/config/carCardField.js'
@@ -29,7 +32,7 @@
       'car-card': carCard,
       'loading': loading
     },
-    props: ['carList', 'selectMethod'],
+    props: [ 'carClass'],
     data() {
       return {
         // where:this.selectMethod.where
@@ -40,9 +43,13 @@
       };
     },
     computed: {
+        ...mapState(['server']),
       collection() {
-        return this.selectMethod.server === 'gl' ? 'carList' : 'carListAL'
+        return this.server === 'gl' ? 'carList' : 'carListAL'
       },
+      where(){
+        return `carClass=='${this.carClass}'`
+      }
     },
     methods: {
       loadData(){

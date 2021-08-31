@@ -1,6 +1,9 @@
 <template>
   <view class="container">
-    <top-bar :showBack="true" :showServerToggle="true" :title="'版本新车'" />
+    <div class="top-fixed-wrapper">
+
+      <top-bar :showBack="true" :title="note+' v'+releaseVersion" />
+    </div>
     <unicloud-db class="cardb" ref="carDB" v-slot:default="{data, pagination, loading, error, options}"
       :collection="collection" :field="carCardField" :orderby="'_id'" :where="where" :manual="true" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
@@ -39,6 +42,7 @@
     data() {
       return {
         releaseVersion: '',
+        note:'',
         carCardField,
       }
     },
@@ -52,10 +56,12 @@
       }
     },
     onLoad({
-      releaseVersion
+      releaseVersion,
+      note
     }) {
       // console.log(releaseVersion)
-      this.releaseVersion = releaseVersion
+      this.releaseVersion = releaseVersion,
+      this.note=note
     },
     onPullDownRefresh() {
 
@@ -72,9 +78,7 @@
       })
     },
     methods: {
-      getWhere(carId) {
-        return `car_id=="${carId}"`
-      }
+      
     }
   }
 </script>
@@ -85,6 +89,12 @@
     display: flex;
     flex-direction: column;
 
+  }
+  .top-fixed-wrapper{
+    
+    position: sticky;
+    top:0;
+    z-index: 114514;
   }
 
   .cardb {

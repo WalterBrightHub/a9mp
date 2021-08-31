@@ -1,7 +1,9 @@
 <template>
   <view class="container">
-
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showServerToggle="true" />
+    </div>
     <view class="func-button-list-wrapper">
       <view class="func-button-list">
         <navigator class="func-button-item" url="/pages/careerMaps/quickQuery/quickQuery">
@@ -92,14 +94,12 @@
 </script>
 
 <style lang="scss">
-  .top-bar {
-
-    border-bottom: 1px solid $divider-color;
-
-    @media (prefers-color-scheme: dark) {
-      border-bottom-color: $divider-color-dark;
-    }
+  .top-fixed-wrapper{
+    
+    position: sticky;
+    top:0;
   }
+
 
   .func-button-list-wrapper{
     display: flex;

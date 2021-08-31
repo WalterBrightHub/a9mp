@@ -1,6 +1,9 @@
 <template>
   <view class="container">
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showBack="true" :title="'中英对照'" />
+    </div>
     <view class="context-wrapper">
 
       <view class="map-theme-block-list">
@@ -106,7 +109,11 @@
 
 <style lang="scss">
   .container {}
-
+  .top-fixed-wrapper{
+    
+    position: sticky;
+    top:0;
+  }
   .context-wrapper {
 
     margin: 0 auto;

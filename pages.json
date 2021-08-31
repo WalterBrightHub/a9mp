@@ -48,7 +48,7 @@
       "path": "pages/carList/carArchives/carArchives",
       "style": {
         "navigationBarTitleText": "关联赛事",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": true
       }
 
     }, {
@@ -74,13 +74,6 @@
 
     }, {
       "path": "pages/carList/carArchives/relatedEvents/relatedEvents",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-
-    }, {
-      "path": "pages/carList/funcs/carClass/carClass",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
@@ -123,7 +116,34 @@
       }
 
     }
-  ],
+      ,{
+            "path" : "pages/carList/funcs/getMethod/getMethod",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/carList/funcs/getMethod/carListBySelectedGetMethod",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/carList/funcs/attrAnalysis/attrAnalysis",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 
   "globalStyle": {
     //QQ未支持深色模式

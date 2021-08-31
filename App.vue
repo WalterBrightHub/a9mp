@@ -8,6 +8,9 @@
     onLaunch: function() {
       console.log(process.env.NODE_ENV)
       let that = this
+      
+        let systemInfo = uni.getSystemInfoSync()
+        this.setStatusBarHeight(systemInfo.statusBarHeight)
 
       //#ifdef MP-WEIXIN
 
@@ -34,7 +37,7 @@
     },
     methods: {
 
-      ...mapMutations(['setTheme']),
+      ...mapMutations(['setTheme','setStatusBarHeight']),
     }
   }
 </script>
@@ -65,8 +68,6 @@
     
     background-color: var(--page-bg-color);
 
-    display: flex;
-    flex-direction: column;
 
     font-size: 32rpx;
     color: var(--text-p-color);

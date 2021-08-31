@@ -1,6 +1,9 @@
 <template>
   <view>
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showBack="true" :showServerToggle="false" :title="'品牌分类'" />
+    </div>
     <view class="option-card-list-wrapper">
       <view class="option-card-list">
         <view class="option-card">
@@ -154,6 +157,12 @@
 </script>
 
 <style lang="scss">
+  
+  .top-fixed-wrapper{
+    z-index: 114514;
+    position: sticky;
+    top:0;
+  }
   .option-card-list-wrapper {
 
     display: flex;

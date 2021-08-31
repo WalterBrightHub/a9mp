@@ -1,6 +1,9 @@
 <template>
   <view class="container">
+    <div class="top-fixed-wrapper">
+      
     <top-bar :showBack="true" :showServerToggle="true" :title="'数据排序'" />
+    </div>
     <view class="option-card-list-wrapper">
       <view class="option-card-list">
         <view class="option-card">
@@ -20,7 +23,7 @@
     </view>
 
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options,hasMore}"
-      :collection="collection" :field="carCardField" :orderby="orderby" @load="handleLoad">
+      :collection="collection"  :where="'releaseVersion!=\'0.0\''" :field="carCardField" :orderby="orderby" @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -40,8 +43,7 @@
 
 <script>
   import {
-    mapState,
-    mapMutations
+    mapState
   } from 'vuex'
   import carCard from '@/components/carCard/carCard.vue'
   import loading from '@/components/loading/loading.vue'
@@ -131,6 +133,12 @@
     display: flex;
     flex-direction: column;
 
+  }
+  
+  .top-fixed-wrapper{
+    z-index: 114514;
+    position: sticky;
+    top:0;
   }
 
   .cardb {
