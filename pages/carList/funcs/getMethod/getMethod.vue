@@ -7,11 +7,13 @@
     <unicloud-db class="get-method-db" ref="getMethodDB" v-slot:default="{data, pagination, loading, error, options}"
       :options="options" :field="queryField" :collection="collection" :orderby="'_id'" @load="onqueryload"
       @error="onqueryerror" page-size="479">
-      
+
       <view class="loading" v-if="loading">
         <loading />
       </view>
       <view v-else-if="error" class="error">{{error.message}}</view>
+      <view class="car-empty-list" v-else-if="data.length===0 && options.loaded===true">😮 这里空空如也</view>
+
       <view v-else class="get-method-list-wrapper">
 
         <view class="list-wrapper">
@@ -22,7 +24,6 @@
       </view>
 
 
-      <view class="car-empty-list" v-else-if="data.length===0 && options.loaded===true">😮 这里空空如也</view>
     </unicloud-db>
 
   </view>
@@ -39,7 +40,7 @@
     getMethodField
   } from './getMethodField.js'
   const db = uniCloud.database()
- 
+
   export default {
     components: {
       'loading': loading,
@@ -58,14 +59,24 @@
         return this.server === 'al' ? 'carListAL' : 'carList'
       }
     },
-    onLoad() {
+    onPullDownRefresh() {
+      
+        this.$refs.getMethodDB.loadData({
+          clear: true
+        }, () => {
+          uni.showToast({
+            title: '最新',
+            duration: 500
+          })
+          uni.stopPullDownRefresh()
+        })
     },
     methods: {
       onqueryload(data) {
         // console.log(data)
       },
-      onqueryerror(){
-        
+      onqueryerror() {
+
       }
     }
   }
@@ -95,11 +106,13 @@
 
     }
   }
-  .loading{
+
+  .loading {
     margin-top: 40rpx;
+
     @include pad-devices {
       margin-top: toPadPx(40);
-    
+
     }
   }
 </style>

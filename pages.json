@@ -76,7 +76,7 @@
       "path": "pages/carList/carArchives/relatedEvents/relatedEvents",
       "style": {
         "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": true
       }
 
     }, {
@@ -121,7 +121,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         }
@@ -136,6 +136,15 @@
         }
         ,{
             "path" : "pages/carList/funcs/attrAnalysis/attrAnalysis",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/carList/funcs/attrAnalysis/carListByAttr",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

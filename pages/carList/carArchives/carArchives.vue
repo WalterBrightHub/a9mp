@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="car-archives">
     <div class="top-fixed-wrapper">
 
       <top-bar :showBack="true" :title="'车辆档案'" />
@@ -225,6 +225,14 @@
 
 <style lang="scss">
   @import '../../contest/contest-list.scss';
+
+  .car-archives {
+    margin-bottom: 30rpx;
+
+    @include pad-devices {
+      margin-bottom: toPadPx(30);
+    }
+  }
 
   .top-fixed-wrapper {
 
