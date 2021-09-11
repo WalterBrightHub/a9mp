@@ -1,4 +1,7 @@
+
+  import carCardField from '@/config/carCardField.js'
 export default [
+  ...carCardField,
   'stageCost',
   'partCost',
   'keyCar',

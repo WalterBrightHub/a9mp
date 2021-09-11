@@ -60,43 +60,43 @@
 
     </div>
     <div class="analysis-attr">
-      <div class="analysis-attr-item">
+      <div class="analysis-attr-item" @tap="jumpToCarList('蓝喷','blueSpeed')">
         <div class="analysis-attr-title">蓝喷</div>
         <div class="analysis-attr-content">{{countBlueSpeed}}</div>
         <div class="analysis-attr-bar" :style="styleBlueSpeed"></div>
       </div>
-      <div class="analysis-attr-item">
+      <div class="analysis-attr-item" @tap="jumpToCarList('钥匙','keyCar')">
         <div class="analysis-attr-title">钥匙</div>
         <div class="analysis-attr-content">{{countKeyCar}}</div>
         <div class="analysis-attr-bar" :style="styleKeyCar"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">贴纸</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('贴纸','decals')">贴纸</div>
         <div class="analysis-attr-content">{{countDecals}}</div>
         <div class="analysis-attr-bar" :style="styleDecals"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">独占贴纸</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('独占贴纸','decalsExclusive')">独占贴纸</div>
         <div class="analysis-attr-content">{{countDecalsExclusive}}</div>
         <div class="analysis-attr-bar" :style="styleDecalsExclusive"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">外观套件</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('外观套件','bodyParts')">外观套件</div>
         <div class="analysis-attr-content">{{countBodyParts}}</div>
         <div class="analysis-attr-bar" :style="styleBodyParts"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">敞篷</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('敞篷','openCar')">敞篷</div>
         <div class="analysis-attr-content">{{countOpenCar}}</div>
         <div class="analysis-attr-bar" :style="styleOpenCar"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">氮气特效</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('氮气特效','nitroVisuals')">氮气特效</div>
         <div class="analysis-attr-content">{{countNitroVisuals}}</div>
         <div class="analysis-attr-bar" :style="styleNitroVisuals"></div>
       </div>
       <div class="analysis-attr-item">
-        <div class="analysis-attr-title">商店金卡</div>
+        <div class="analysis-attr-title" @tap="jumpToCarList('商店金卡','storeEpicPart')">商店金卡</div>
         <div class="analysis-attr-content">{{countStoreEpicPart}}</div>
         <div class="analysis-attr-bar" :style="styleStoreEpicPart"></div>
       </div>
@@ -182,6 +182,13 @@
         let percent = (count) * 100 / (this.data.length || 20)
         let [fullColor, emptyColor] = this.theme === 'light' ? ['#ff0054', '#ffe7ed'] : ['#ff0054', '#4a222f']
         return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
+      },
+      jumpToCarList(attrName,attrField){
+        const url = `/pages/carList/funcs/attrAnalysis/carListByAttr?attrName=${attrName}&attrField=${attrField}`
+        
+          uni.navigateTo({
+            url
+          })
       }
     }
   }
@@ -191,6 +198,8 @@
   .analysis-list {
 
     padding: 20rpx;
+    max-width: 768px;
+    margin: 0 auto;
 
     @include pad-devices {
       padding: toPadPx(20);

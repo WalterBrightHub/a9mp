@@ -2,7 +2,11 @@
   <view class="filter-block">
     <view class="filter-wrapper">
 
-      <view class="filter-label">等级</view>
+      <!-- <view class="filter-label">等级</view> -->
+      <navigator url="/pages/carList/carSearch/carSearch" class="search-bar">
+        <div>快速搜索</div>
+        <image class="search-icon" src="@/static/search-glass.png" />
+        </navigator>
 
       <view class="car-class-list">
         <view class="class-block" :class="{['class-selected']:item===carClass}" v-for="item in carFilter" :key="item"
@@ -168,5 +172,37 @@
       background-color: $text-title-color-dark;
     }
 
+  }
+  .search-bar{
+    flex:1;
+    margin-right: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    padding: 12rpx 20rpx;
+    border-radius: 100px;
+    background-color: #aa0038;
+    color:#fff;
+    @media (prefers-color-scheme: dark){
+      color: var(--text-title-color);
+      background-color: var(--page-bg-color);
+    }
+    @include pad-devices {
+      margin-right: toPadPx(32);
+      font-size: toPadPx(28);
+      padding: toPadPx(12) toPadPx(20);
+      border-radius: toPadPx(100);
+    
+    }
+  }
+  .search-icon{
+    width: 28rpx;
+    height: 28rpx;
+    @include pad-devices {
+      width: toPadPx(28);
+      height: toPadPx(28);
+    
+    }
   }
 </style>

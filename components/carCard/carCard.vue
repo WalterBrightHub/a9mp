@@ -366,9 +366,19 @@
   }
   
   .bp-total{
-    color: var(--text-help-color);
+    color: #23bbfa;
     background: none;
-    border: 1px solid var(--text-help-color);
+    border: 1px solid #23bbfa;
+  }
+  
+  .bp-rare+.bp-total{
+    color:#cc52ea;
+    border-color: #cc52ea;
+  }
+  
+  .bp-epic+.bp-total{
+    color:#ffc107;
+    border-color: #ffc107;
   }
 
   .perf-and-update {

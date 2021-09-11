@@ -63,7 +63,7 @@
         "appid" : "wx742bd28d4723c3d9",
         "resizable" : true,
         "darkmode" : true,
-        "lazyCodeLoading": "requiredComponents",
+        "lazyCodeLoading" : "requiredComponents",
         "window" : {
             "navigationBarTextStyle" : "@navTxtStyle",
             "navigationBarBackgroundColor" : "@navBgColor",
@@ -100,12 +100,6 @@
                     "iconPath" : "@iconPathContest",
                     "selectedIconPath" : "@selectedIconPathContest",
                     "text" : "赛事"
-                },
-                {
-                    "pagePath" : "pages/more/more",
-                    "iconPath" : "@iconPathMore",
-                    "selectedIconPath" : "@selectedIconPathMore",
-                    "text" : "发现"
                 }
             ]
         },
@@ -118,7 +112,7 @@
         "usingComponents" : true,
         "permission" : {},
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     "mp-alipay" : {
@@ -148,7 +142,7 @@
             "minified" : true
         },
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     "h5" : {
@@ -187,7 +181,7 @@
             ]
         },
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     "uniStatistics" : {

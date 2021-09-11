@@ -17,7 +17,7 @@
         <loading />
       </view>
 
-      <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 这里空空如也</view>
+      <view class="car-empty-list" v-if="data.length===0 && loading===false">😮 怎么找也没有啦</view>
     </unicloud-db>
   </view>
 </template>

@@ -115,44 +115,43 @@
         "onReachBottomDistance": 200
       }
 
+    }, {
+      "path": "pages/carList/funcs/getMethod/getMethod",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/getMethod/carListBySelectedGetMethod",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/attrAnalysis/attrAnalysis",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/funcs/attrAnalysis/carListByAttr",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
+    }, {
+      "path": "pages/carList/carSearch/carSearch",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
     }
-      ,{
-            "path" : "pages/carList/funcs/getMethod/getMethod",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/getMethod/carListBySelectedGetMethod",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/attrAnalysis/attrAnalysis",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/carList/funcs/attrAnalysis/carListByAttr",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+  ],
 
   "globalStyle": {
     //QQ未支持深色模式
@@ -200,12 +199,6 @@
         "iconPath": "static/tabbar-icons/trophy.png",
         "selectedIconPath": "static/tabbar-icons/trophy-selected.png",
         "text": "赛事"
-      },
-      {
-        "pagePath": "pages/more/more",
-        "iconPath": "static/tabbar-icons/helmet.png",
-        "selectedIconPath": "static/tabbar-icons/helmet-selected.png",
-        "text": "发现"
       }
     ]
   },

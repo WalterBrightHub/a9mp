@@ -3,18 +3,68 @@
     <div class="top-fixed-wrapper">
 
       <top-bar :showBack="true" :title="'车辆档案'" />
-      <div class="full-name-wrapper">
-
-        <div class="full-name">{{fullName}}</div>
-      </div>
     </div>
 
     <unicloud-db class=" get-method-db" ref="carArchivesDB" v-slot:default="{data, pagination, loading, error, options}"
       :collection="carListCollection" getone="true" @load="onqueryload" @error="onqueryerror" manual="true"
       :where="whereGetMethod" :field="carArchivesField">
+      
+      
 
       <div class="contest-db-wrapper">
+        
+        <view  class=" car-card-list">
+          <view class="car-card-wrap" >
+            <car-card :carData="data"></car-card>
+          </view>
+        </view>
+        
+        
+        <div class="contest-db">
+          <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
+            :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
+            :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="5">
+            <view class="contest-db-title-block">
+              <view class="contest-db-title">关联赛事</view>
+              <view class="contest-db-all" @tap="jumpToRelatedEvents" v-if="data.length>0 && loading===false">查看所有 >
+              </view>
+            </view>
+            <view v-if="error" class="error">{{error.message}}</view>
+            <view v-else class="contest-list">
+              <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
+                :now="options.now" :index="index" />
+            </view>
+            <view class="loading" v-if="loading">
+              <!-- <loading /> -->
+            </view>
+            <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 还没有赛事记录</view>
+          </unicloud-db>
+        </div>
 
+        <div class="contest-db">
+          <view class="contest-db-title-block">
+            <view class="contest-db-title">获取方式</view>
+          </view>
+          <view v-if="error" class="error">{{error.message}}</view>
+          <view v-else class="get-method-block">
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getLoot===1}">战利品</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getGoals===1}">每日任务</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getClassCup===1}">级别杯</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getStore===1}">传奇商店</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getExclusive===1}">独家赛事</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getHunt===1}">寻车</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getLegendPass===1}">通行证</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getUnleash===1}">惊艳亮相</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getClassicMP===1}">经典多人</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.get1vs1===1}">1VS1</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getSpecialEvent===1}">特殊赛事</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getGrandPrix===1}">大奖赛</div>
+            <div class="get-method-item" :class="{['get-method-item-selected']:data.getDriveSyndicate===1}">车联赛事</div>
+          </view>
+          <view class="contest-empty-list" v-if="!data && loading===false">😮 出错啦！</view>
+        </div>
+
+        
         <div class="contest-db">
           <view class="contest-db-title-block">
             <view class="contest-db-title">详细信息</view>
@@ -44,7 +94,7 @@
                 <div class="detail-content">{{data.decalsExclusive!==''?data.decalsExclusive:'否'}}</div>
               </div>
             </div>
-
+        
             <div class="divider"></div>
             <div class="attr-list">
               <div class="attr-item" :class="{['attr-item-selected']:data.keyCar===1}">钥匙</div>
@@ -56,57 +106,10 @@
           </view>
           <view class="contest-empty-list" v-if="!data && loading===false">😮 出错啦！</view>
         </div>
-        <div class="contest-db">
-          <view class="contest-db-title-block">
-            <view class="contest-db-title">获取方式</view>
-          </view>
-          <view v-if="error" class="error">{{error.message}}</view>
-          <view v-else class="get-method-block">
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getLoot===1}">战利品</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getGoals===1}">每日任务</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getClassCup===1}">级别杯</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getStore===1}">传奇商店</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getExclusive===1}">独家赛事</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getHunt===1}">寻车</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getLegendPass===1}">通行证</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getUnleash===1}">惊艳亮相</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getClassicMP===1}">经典多人</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.get1vs1===1}">1VS1</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getSpecialEvent===1}">特殊赛事</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getGrandPrix===1}">大奖赛</div>
-            <div class="get-method-item" :class="{['get-method-item-selected']:data.getDriveSyndicate===1}">车联赛事</div>
-          </view>
-          <view class="contest-empty-list" v-if="!data && loading===false">😮 出错啦！</view>
-        </div>
-
-
 
       </div>
     </unicloud-db>
 
-    <view class="contest-db-wrapper">
-
-      <div class="contest-db">
-        <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
-          :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-          :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="5">
-          <view class="contest-db-title-block">
-            <view class="contest-db-title">关联赛事</view>
-            <view class="contest-db-all" @tap="jumpToRelatedEvents" v-if="data.length>0 && loading===false">查看所有 >
-            </view>
-          </view>
-          <view v-if="error" class="error">{{error.message}}</view>
-          <view v-else class="contest-list">
-            <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
-              :now="options.now" :index="index" />
-          </view>
-          <view class="loading" v-if="loading">
-            <!-- <loading /> -->
-          </view>
-          <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 还没有赛事记录</view>
-        </unicloud-db>
-      </div>
-    </view>
   </view>
 </template>
 
@@ -118,6 +121,7 @@
   import contestItem from '../../contest/components/contestItem.vue'
   import loading from '@/components/loading/loading.vue'
   import topBar from '@/components/topBar/topBar.vue'
+  import carCard from '@/components/carCard/carCard.vue'
 
   import carArchivesField from './carArchivesField.js'
 
@@ -128,6 +132,7 @@
       'contest-item': contestItem,
       'loading': loading,
       'top-bar': topBar,
+      'car-card': carCard,
     },
     data() {
       return {
@@ -225,6 +230,15 @@
 
 <style lang="scss">
   @import '../../contest/contest-list.scss';
+  @import '@/pages/carList/carList.scss';
+  
+  .car-card-list{
+    padding-bottom: 0;
+    margin-top: 20rpx;
+    @include pad-devices {
+      margin-top: toPadPx(20);
+    }
+  }
 
   .car-archives {
     margin-bottom: 30rpx;
@@ -240,26 +254,7 @@
     top: 0;
   }
 
-  .full-name-wrapper {
-    background-color: var(--card-bg-color);
-    box-shadow: 0 2px 2px var(--divider-color);
-  }
 
-  .full-name {
-    font-size: 38rpx;
-    max-width: 768px;
-    box-sizing: border-box;
-    padding: 20rpx 40rpx;
-    // padding-bottom: 0;
-    margin: 0 auto;
-    color: var(--text-title-color);
-    font-weight: bold;
-
-    @include pad-devices {
-      font-size: toPadPx(38);
-      padding: toPadPx(20) toPadPx(40);
-    }
-  }
 
   .contest-db-title-block {
     display: flex;
