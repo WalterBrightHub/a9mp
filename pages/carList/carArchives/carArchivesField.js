@@ -9,7 +9,7 @@ export default [
   'decalsExclusive',
   'bodyParts',
   'openCar',
-  'nitroVusuals',
+  'nitroVisuals',
   'storeEpicPart',
   'getLoot',
   'getGoals',

@@ -103,7 +103,7 @@
               <div class="attr-item" :class="{['attr-item-selected']:data.keyCar===1}">钥匙</div>
               <div class="attr-item" :class="{['attr-item-selected']:data.decals===1}">贴纸</div>
               <div class="attr-item" :class="{['attr-item-selected']:data.bodyParts===1}">外观套件</div>
-              <div class="attr-item" :class="{['attr-item-selected']:data.nitroVusuals===1}">氮气特效</div>
+              <div class="attr-item" :class="{['attr-item-selected']:data.nitroVisuals===1}">氮气特效</div>
               <div class="attr-item" :class="{['attr-item-selected']:data.storeEpicPart===1}">商店金卡</div>
             </div>
           </view>
