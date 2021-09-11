@@ -15,7 +15,6 @@
 
 <script>
   import moment from 'moment'
-  import 'moment/locale/zh-cn'
   import eventDetailList from './eventDetailList.vue'
   moment.locale('zh-cn')
   export default {

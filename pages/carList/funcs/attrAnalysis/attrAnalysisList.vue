@@ -100,6 +100,11 @@
         <div class="analysis-attr-content">{{countStoreEpicPart}}</div>
         <div class="analysis-attr-bar" :style="styleStoreEpicPart"></div>
       </div>
+      <div class="analysis-attr-item">
+        <div class="analysis-attr-title" @tap="jumpToCarList('卡牌包等级','packLevel')">卡牌包等级</div>
+        <div class="analysis-attr-content">{{countPackLevel}}</div>
+        <div class="analysis-attr-bar" :style="stylePackLevel"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -175,6 +180,12 @@
       },
       styleStoreEpicPart() {
         return this.barStyle(this.countStoreEpicPart)
+      },
+      countPackLevel() {
+        return _(this.data).filter(car => car.packLevel>0).value().length
+      },
+      stylePackLevel() {
+        return this.barStyle(this.countPackLevel)
       },
     },
     methods: {

@@ -12,5 +12,7 @@ export default [
   'bodyParts',
   'openCar',
   'nitroVisuals',
-  'storeEpicPart'
+  'storeEpicPart',
+  
+  'packLevel'
 ]

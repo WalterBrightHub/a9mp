@@ -23,5 +23,6 @@ export default [
   'get1vs1',
   'getSpecialEvent',
   'getGrandPrix',
-  'getDriveSyndicate'
+  'getDriveSyndicate',
+  'packLevel'
 ]

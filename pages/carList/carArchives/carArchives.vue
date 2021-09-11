@@ -84,6 +84,10 @@
                 <div class="detail-title">MAX费用</div>
                 <div class="detail-content">{{data.stageCost>0?split3(data.stageCost+data.partCost):'未知'}}</div>
               </div>
+              <div class="detail-row attr-row" :class="{'attr-enable':data.packLevel!==''}">
+                <div class="detail-title">卡牌包等级</div>
+                <div class="detail-content">{{data.packLevel!==''?data.packLevel:'否'}}</div>
+              </div>
               <div class="detail-row attr-row" :class="{'attr-enable':data.openCar!==''}">
                 <div class="detail-title">敞篷</div>
                 <div class="detail-content">{{data.openCar!==''?data.openCar:'否'}}</div>
