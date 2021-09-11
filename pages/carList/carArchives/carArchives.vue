@@ -19,26 +19,6 @@
         </view>
 
 
-        <div class="contest-db">
-          <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
-            :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-            :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="5">
-            <view class="contest-db-title-block">
-              <view class="contest-db-title">关联赛事</view>
-              <view class="contest-db-all" @tap="jumpToRelatedEvents" v-if="data.length>0 && loading===false">查看所有 >
-              </view>
-            </view>
-            <view v-if="error" class="error">{{error.message}}</view>
-            <view v-else class="contest-list">
-              <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
-                :now="options.now" :index="index" />
-            </view>
-            <view class="loading" v-if="loading">
-              <!-- <loading /> -->
-            </view>
-            <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 还没有赛事记录</view>
-          </unicloud-db>
-        </div>
 
         <div class="contest-db">
           <view class="contest-db-title-block">
@@ -112,6 +92,30 @@
 
       </div>
     </unicloud-db>
+
+    <div class="contest-db-wrapper">
+
+      <div class="contest-db">
+        <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
+          :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
+          :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="5">
+          <view class="contest-db-title-block">
+            <view class="contest-db-title">关联赛事</view>
+            <view class="contest-db-all" @tap="jumpToRelatedEvents" v-if="data.length>0 && loading===false">查看所有 >
+            </view>
+          </view>
+          <view v-if="error" class="error">{{error.message}}</view>
+          <view v-else class="contest-list">
+            <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
+              :now="options.now" :index="index" />
+          </view>
+          <view class="loading" v-if="loading">
+            <!-- <loading /> -->
+          </view>
+          <view class="contest-empty-list" v-if="data.length===0 && loading===false">😮 还没有赛事记录</view>
+        </unicloud-db>
+      </div>
+    </div>
 
   </view>
 </template>
