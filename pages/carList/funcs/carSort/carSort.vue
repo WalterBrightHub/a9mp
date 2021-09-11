@@ -1,8 +1,8 @@
 <template>
   <view class="container">
     <div class="top-fixed-wrapper">
-      
-    <top-bar :showBack="true" :showServerToggle="true" :title="'数据排序'" />
+
+      <top-bar :showBack="true" :showServerToggle="true" :title="'数据排序'" />
     </div>
     <view class="option-card-list-wrapper">
       <view class="option-card-list">
@@ -23,7 +23,8 @@
     </view>
 
     <unicloud-db class="cardb" ref="carListDB" v-slot:default="{data, pagination, loading, error, options,hasMore}"
-      :collection="collection"  :where="'releaseVersion!=\'0.0\''" :field="carCardField" :orderby="orderby" @load="handleLoad">
+      :collection="collection" :where="'releaseVersion!=\'0.0\''" :field="carCardField" :orderby="orderby"
+      @load="handleLoad">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -52,7 +53,6 @@
 
   export default {
     components: {
-
       'car-card': carCard,
       'loading': loading,
       'top-bar': topBar,
@@ -95,10 +95,10 @@
     onLoad() {
 
     },
-		onReachBottom() {
-			this.$refs.carListDB.loadMore()
-			// this.limit += 20
-		},
+    onReachBottom() {
+      this.$refs.carListDB.loadMore()
+      // this.limit += 20
+    },
     onPullDownRefresh() {
 
       this.$refs.carDB.loadData({
@@ -120,8 +120,8 @@
       onChangeSortFieldValue(index) {
         this.sortFieldValue = index
       },
-      handleLoad(data,ended){
-        
+      handleLoad(data, ended) {
+
       }
     }
   }
@@ -134,11 +134,11 @@
     flex-direction: column;
 
   }
-  
-  .top-fixed-wrapper{
+
+  .top-fixed-wrapper {
     z-index: 114514;
     position: sticky;
-    top:0;
+    top: 0;
   }
 
   .cardb {
@@ -150,12 +150,14 @@
   }
 
   @import '@/pages/carList/carList.scss';
-  .option-card-list-wrapper{
-    
-      display: flex;
-      justify-content: center;
-      width: 100%;
+
+  .option-card-list-wrapper {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
     background-color: $card-bg-color;
+
     @media (prefers-color-scheme: dark) {
       background-color: $card-bg-color-dark;
     }
@@ -164,7 +166,8 @@
   .option-card-list {
     max-width: 768px;
     width: 100%;
-    padding:20rpx;
+    padding: 20rpx;
+
     @include pad-devices {
       padding: toPadPx(20);
     }
@@ -174,8 +177,10 @@
     display: flex;
     align-items: center;
   }
-  .option-card+.option-card{
+
+  .option-card+.option-card {
     margin-top: 10rpx;
+
     @include pad-devices {
       margin-top: toPadPx(10);
     }
@@ -185,21 +190,24 @@
     font-size: 28rpx;
     margin-right: auto;
     color: $text-p-color;
+
     @media (prefers-color-scheme: dark) {
       color: $text-p-color-dark;
     }
+
     @include pad-devices {
       font-size: toPadPx(28);
     }
   }
 
   .option-item {
-    flex:none;
+    flex: none;
     font-size: 28rpx;
     line-height: 48rpx;
     padding: 10rpx 20rpx;
 
     color: $text-title-color;
+
     // font-weight: normal;
     @include pad-devices {
       font-size: toPadPx(28);
@@ -210,6 +218,7 @@
     @media (prefers-color-scheme: dark) {
       color: $text-title-color-dark;
     }
+
     @include pad-devices {
       font-size: toPadPx(28);
       line-height: toPadPx(48);
@@ -227,19 +236,22 @@
       color: $text-title-color-dark;
       background-color: #2d8006;
     }
+
     @include pad-devices {
       border-radius: toPadPx(2);
     }
   }
-  
-  .has-no-more{
+
+  .has-no-more {
     display: flex;
     justify-content: center;
     color: $text-help-color;
     padding-bottom: 40rpx;
+
     @media (prefers-color-scheme: dark) {
       color: $text-help-color-dark;
     }
+
     @include pad-devices {
       padding-bottom: toPadPx(40);
     }

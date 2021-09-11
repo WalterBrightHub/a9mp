@@ -26,7 +26,6 @@ export default new Vuex.Store({
     },
 
     setStatusBarHeight(state, statusBarHeight) {
-      console.log(statusBarHeight)
       state.statusBarHeight = statusBarHeight
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <view class="car-card" @tap="jumpToArchives">
+  <view class="car-card" @tap="jumpToArchives" v-if="carData">
     <view class="full-name">{{carData.fullName}}</view>
     <view class="stars-and-rank">
       <view class="stars">
@@ -20,9 +20,9 @@
       <view class="perf">
         <view class="perf-item">
           <view class="perf-name">最大速度</view>
-          <view class="perf-value">{{carData.topSpeed.toFixed(1)}}</view>
+          <view class="perf-value">{{ carData.topSpeed.toFixed(1)}}</view>
         </view>
-        <view class="perf-bar" :style="{width:topSpeedWidth(carData.topSpeed)+'%'}" />
+        <view class="perf-bar" :style="{width:topSpeedWidth(carData.topSpeed?carData.topSpeed:0)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">加速</view>
@@ -125,6 +125,9 @@
     },
     computed: {
       starArray() {
+        if(!this.carData){
+          return []
+        }
         let {
           star,
           star_1,
@@ -137,6 +140,9 @@
         return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
       },
       totalBP() {
+        if(!this.carData){
+          return 0
+        }
         let hasUnknowBP=this.starArray.reduce((res, curr) => res || curr==='?'||curr==='？', false)
         if(hasUnknowBP){
           return '?'
@@ -186,7 +192,8 @@
 
           let pages = getCurrentPages()
           let currentPage = pages[pages.length - 1]
-          if ('/pages/carList/carArchives/carArchives' === currentPage.route) {
+          // console.log(currentPage.route)
+          if ('pages/carList/carArchives/carArchives' === currentPage.route) {
             //又回到最初的起点？
           } else {
             uni.navigateTo({

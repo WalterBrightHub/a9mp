@@ -8,18 +8,17 @@
     <unicloud-db class=" get-method-db" ref="carArchivesDB" v-slot:default="{data, pagination, loading, error, options}"
       :collection="carListCollection" getone="true" @load="onqueryload" @error="onqueryerror" manual="true"
       :where="whereGetMethod" :field="carArchivesField">
-      
-      
+
 
       <div class="contest-db-wrapper">
-        
-        <view  class=" car-card-list">
-          <view class="car-card-wrap" >
+
+        <view class=" car-card-list">
+          <view class="car-card-wrap" v-if="!loading">
             <car-card :carData="data"></car-card>
           </view>
         </view>
-        
-        
+
+
         <div class="contest-db">
           <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
             :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
@@ -64,7 +63,7 @@
           <view class="contest-empty-list" v-if="!data && loading===false">😮 出错啦！</view>
         </div>
 
-        
+
         <div class="contest-db">
           <view class="contest-db-title-block">
             <view class="contest-db-title">详细信息</view>
@@ -94,7 +93,7 @@
                 <div class="detail-content">{{data.decalsExclusive!==''?data.decalsExclusive:'否'}}</div>
               </div>
             </div>
-        
+
             <div class="divider"></div>
             <div class="attr-list">
               <div class="attr-item" :class="{['attr-item-selected']:data.keyCar===1}">钥匙</div>
@@ -116,7 +115,6 @@
 <script>
   import {
     mapState,
-    // mapMutations
   } from 'vuex'
   import contestItem from '../../contest/components/contestItem.vue'
   import loading from '@/components/loading/loading.vue'
@@ -166,7 +164,7 @@
       car_id,
       fullName
     }) {
-      console.log(car_id, fullName)
+      // console.log(car_id, fullName)
       this.fullName = fullName
       this.car_id = car_id
       // db.collection('contest').where({
@@ -231,10 +229,11 @@
 <style lang="scss">
   @import '../../contest/contest-list.scss';
   @import '@/pages/carList/carList.scss';
-  
-  .car-card-list{
+
+  .car-card-list {
     padding-bottom: 0;
     margin-top: 20rpx;
+
     @include pad-devices {
       margin-top: toPadPx(20);
     }

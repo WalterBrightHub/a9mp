@@ -23,7 +23,7 @@
             //不支持theme
             return
           } else {
-            console.log(theme)
+            // console.log(theme)
             that.setTheme(theme)
             wx.onThemeChange(({
               theme

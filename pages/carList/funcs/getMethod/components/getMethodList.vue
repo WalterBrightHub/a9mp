@@ -30,19 +30,17 @@
     },
     computed:{
       countGetMethod() {
-        let res = getMethodField.map(getMethod => ({
+        return getMethodField.map(getMethod => ({
             [getMethod]: this.data.filter(car => car[getMethod] === 1)
           }))
           .reduce((res, curr) => ({
             ...res,
             ...curr
           }))
-        return res
       }
     },
     methods:{
       onTapGetMethod({name,field}){
-        const url=``
         uni.navigateTo({
           url:`/pages/carList/funcs/getMethod/carListBySelectedGetMethod?name=${name}&field=${field}`
         })

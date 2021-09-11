@@ -110,10 +110,7 @@
             "minified" : true
         },
         "usingComponents" : true,
-        "permission" : {},
-        "uniStatistics" : {
-            "enable" : false
-        }
+        "permission" : {}
     },
     "mp-alipay" : {
         "usingComponents" : true,
@@ -140,9 +137,6 @@
             "es6" : true,
             "postcss" : true,
             "minified" : true
-        },
-        "uniStatistics" : {
-            "enable" : false
         }
     },
     "h5" : {

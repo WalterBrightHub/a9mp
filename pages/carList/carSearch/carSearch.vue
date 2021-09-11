@@ -31,8 +31,6 @@
           </view>
         </view>
 
-
-        <!-- <view class="car-empty-list" v-else-if="data.length===0 && options.loaded===true">😮 这里空空如也</view> -->
       </unicloud-db>
     </div>
   </view>
@@ -54,7 +52,7 @@
     data() {
       return {
         searchWord: '',
-        carSearchField: ['fullName', 'carClass', 'quality', 'car_id','keyWords']
+        carSearchField: ['fullName', 'carClass', 'quality', 'car_id', 'keyWords']
       };
     },
     computed: {
@@ -82,7 +80,7 @@
     },
     methods: {
       onqueryload(data) {
-        console.log(data)
+        // console.log(data)
       },
       onqueryerror(e) {
         console.log(e)
