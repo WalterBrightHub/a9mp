@@ -60,7 +60,12 @@
         })
         uni.stopPullDownRefresh()
       })
-    }
+    },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
   }
 </script>
 

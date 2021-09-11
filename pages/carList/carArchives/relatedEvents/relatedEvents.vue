@@ -68,6 +68,11 @@
       //     console.log(res)
       //   })
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
 
       onqueryload() {

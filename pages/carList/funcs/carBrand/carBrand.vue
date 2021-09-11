@@ -128,6 +128,11 @@
         'title': '狂野飙车9车辆品牌分类',
       }
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
       onTapBrandItem(brand) {
         uni.navigateTo({

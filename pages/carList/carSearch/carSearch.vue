@@ -78,6 +78,11 @@
         uni.stopPullDownRefresh()
       })
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
       onqueryload(data) {
         // console.log(data)

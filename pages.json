@@ -51,12 +51,7 @@
         "enablePullDownRefresh": true
       }
 
-    }, {
-      "path": "pages/more/more",
-      "style": {
-        // "navigationBarTitleText": "",
-        // "enablePullDownRefresh": true
-      }
+    
 
     }, {
       "path": "pages/careerMaps/quickQuery/quickQuery",

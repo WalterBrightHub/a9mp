@@ -113,6 +113,11 @@
         // this.options.loaded=true
       })
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
       onChangeSortAsc(isAsc) {
         this.sortAsc = isAsc === true

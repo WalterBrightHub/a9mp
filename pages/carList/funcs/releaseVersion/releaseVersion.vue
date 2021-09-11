@@ -113,6 +113,11 @@
         'title': '狂野飙车9版本新车',
       }
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
       onTapReleaseVersionItem(releaseVersion, note) {
         uni.navigateTo({

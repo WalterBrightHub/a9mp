@@ -75,6 +75,11 @@
         // this.options.loaded=true
       })
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
       getWhere(carId) {
         return `car_id=="${carId}"`

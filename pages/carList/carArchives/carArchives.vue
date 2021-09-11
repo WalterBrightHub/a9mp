@@ -195,6 +195,11 @@
         uni.stopPullDownRefresh()
       })
     },
+    onShareAppMessage() {
+      return {
+        title: `狂飙小助手`,
+      }
+    },
     methods: {
 
       //数值千位符
