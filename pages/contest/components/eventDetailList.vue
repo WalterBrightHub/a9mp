@@ -1,7 +1,7 @@
 <template>
   <view class="event-detail-list">
 
-    <view class="event-detail" v-if="startTime">
+    <view class="event-detail" v-if="!isPreRelease&&startTime">
       <image class="event-detail-icon" src="../../../static/contest-icons/time.png"></image>
       <text class="event-detail-content time-detail" :style="cardBackgroundStyle">{{selectDays(startTime,endTime)}}</text>
     </view>
@@ -37,7 +37,7 @@
       `${date.getFullYear()}.`) +
     `${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName'],
+    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName','isPreRelease'],
     data() {
       return {
 

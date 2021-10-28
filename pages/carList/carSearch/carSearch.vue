@@ -69,7 +69,7 @@
     },
     onPullDownRefresh() {
       this.$refs.carListDB.loadData({
-        // clear: true
+        clear: true
       }, () => {
         uni.showToast({
           title: '最新',

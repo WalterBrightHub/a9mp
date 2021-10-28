@@ -7,7 +7,7 @@
         <view class="time-tip" :class="'tip-'+timeStatus">{{timeTip}}</view>
       </view>
 
-      <event-detail-list :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName"
+      <event-detail-list :isPreRelease="contest.isPreRelease" :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName"
         :rewords="contest.rewords" :featuredCars="contest.featuredCars" />
     </view>
   </view>
@@ -42,18 +42,25 @@
 
         const {
           startTime,
-          endTime
+          endTime,
+          isPreRelease
         } = this.contest
-        const {
-          now
-        } = this
-        return startTime > now ? `${moment(startTime).to(this.now, true)}后开启` : endTime >= now ?
-          `${moment(endTime).from(this.now, true)}后结束` : '已结束'
-        if (startTime > this.now) {
-          return moment(startTime).to(this.now, true)
-        } else {
-          return moment(endTime).from(this.now, true)
+        if(isPreRelease){
+          return '即将到来'
         }
+        else{
+          const {
+            now
+          } = this
+          return startTime > now ? `${moment(startTime).to(this.now, true)}后开启` : endTime >= now ?
+            `${moment(endTime).from(this.now, true)}后结束` : '已结束'
+          if (startTime > this.now) {
+            return moment(startTime).to(this.now, true)
+          } else {
+            return moment(endTime).from(this.now, true)
+          }
+        }
+        
       }
     },
     methods: {
