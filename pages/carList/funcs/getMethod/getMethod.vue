@@ -111,6 +111,12 @@
 
     }
   }
+  
+  .get-method-db{
+    display: block;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 
   .loading {
     margin-top: 40rpx;

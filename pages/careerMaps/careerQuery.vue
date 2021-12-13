@@ -37,7 +37,7 @@
       'loading': loading,
       'prioritySeasonList': prioritySeasonList
     },
-    props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server', "careerQueryStatus"],
+    props: ['trackDetails', 'careerSeasons', 'mapThemeRange', 'server', "careerQueryStatus","realServer"],
     data() {
       return {
         // 放在data内的是picker value，即"0"，"1"，"2"...，显示在界面上的String放在Computed中
@@ -61,7 +61,11 @@
         }
       },
       careerSeasonName() {
-        return this.server === 'gl' ? 'careerSeasonGL' : 'careerSeasonAL'
+        return {
+          ns:'careerSeasonNS',
+          gl:'careerSeasonGL',
+          al:'careerSeasonAL'
+        }[this.realServer]
       },
       where() {
         return `mapName=='${this.selectedMapNames[this.mapNameValue]

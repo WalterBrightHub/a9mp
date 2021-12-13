@@ -119,6 +119,8 @@
     margin: 0 auto;
     width: 100%;
     max-width: 768px;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .map-theme-block-list {

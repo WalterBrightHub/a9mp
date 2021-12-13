@@ -2,7 +2,7 @@
   <view class="container">
     <div class="top-fixed-wrapper">
       
-    <top-bar :showServerToggle="true" />
+    <top-bar :showServerToggle="true" :ns="true" />
     </div>
     <view class="func-button-list-wrapper">
       <view class="func-button-list">
@@ -17,7 +17,7 @@
       </view>
     </view>
 
-    <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server"
+    <career-query ref="careerQueryDB" :trackDetails="tracks" :mapThemeRange="mapThemeRange" :server="server" :realServer="realServer"
       :careerQueryStatus="careerQueryStatus"></career-query>
 
   </view>
@@ -50,7 +50,10 @@
     },
     computed: {
 
-      ...mapState(['server']),
+      ...mapState(['server','serverNS']),
+      realServer(){
+        return this.serverNS?'ns':this.server
+      }
     },
     mixins:[tapTabToTop],
     onLoad() {

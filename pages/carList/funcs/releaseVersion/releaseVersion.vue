@@ -153,6 +153,9 @@
   .list-wrapper {
     max-width: 768px;
     margin: 0 auto;
+    
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .list-wrapper-in {

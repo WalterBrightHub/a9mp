@@ -253,7 +253,9 @@
   }
 
   .car-archives {
-    margin-bottom: 30rpx;
+    // margin-bottom: 30rpx;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 
     @include pad-devices {
       margin-bottom: toPadPx(30);
@@ -305,7 +307,8 @@
   }
 
   .contest-db {
-    padding: 0;
+    padding: 0;    
+    /*兼容 IOS>11.2*/
     // box-sizing: border-box;
     margin: 20rpx;
     background-color: $card-bg-color;

@@ -114,6 +114,12 @@
     top: 0;
     z-index: 114514;
   }
+  
+  .content{
+    
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 
   .input-wrapper {
 

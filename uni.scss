@@ -21,14 +21,14 @@
 	
 
 	
-	// iPhone 6下的750rpx转化为420px下的px 
+	// iPhone 6下的750rpx转化为450px下的px 
 	@function toPadPx($rpx){
 		//@return $rpx*0.64px;
-		@return $rpx*0.56px;
+		@return $rpx*0.6px;
 	}
 	
 	@mixin pad-devices {
-		@media (min-width:420px) {
+		@media (min-width:450px) {
 			@content;
 		}
 	}

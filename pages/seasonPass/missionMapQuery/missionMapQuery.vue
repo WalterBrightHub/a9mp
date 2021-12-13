@@ -1,24 +1,24 @@
 <template>
   <view class="container">
     <div class="top-fixed-wrapper">
-      
-    <top-bar :showBack="true" :title="'地图任务指引'" />
+
+      <top-bar :showBack="true" :title="'地图任务指引'" />
     </div>
     <div class="body-wrapper">
-      
-    <div class="head">{{mapName}}</div>
 
-    <unicloud-db class="career-season-db" ref="careerSeasonDB"
-      v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
-      :orderby="'_id'" :getone="false" :where="where" loadtime="onready" :page-size="479" @load="handleLoad">
-      <view v-if="error" class="error">{{error.message}}</view>
-      <view class="loading" v-else-if="loading">
-        <loading />
-      </view>
+      <div class="head">{{mapName}}</div>
 
-      <prioritySeasonList :data="data" v-else-if="data.length>0" />
-      <div v-if="!loading && data.length===0 " class="empty-season-list">😮 生涯竟然没有这张图</div>
-    </unicloud-db>
+      <unicloud-db class="career-season-db" ref="careerSeasonDB"
+        v-slot:default="{data, pagination, loading, error, options}" :options="options" :collection="careerSeasonName"
+        :orderby="'_id'" :getone="false" :where="where" loadtime="onready" :page-size="479" @load="handleLoad">
+        <view v-if="error" class="error">{{error.message}}</view>
+        <view class="loading" v-else-if="loading">
+          <loading />
+        </view>
+
+        <prioritySeasonList :data="data" v-else-if="data.length>0" />
+        <div v-if="!loading && data.length===0 " class="empty-season-list">😮 生涯竟然没有这张图</div>
+      </unicloud-db>
     </div>
   </view>
 </template>
@@ -82,12 +82,12 @@
 </script>
 
 <style lang="scss">
-  .container {
-  }
-  .top-fixed-wrapper{
-    
+  .container {}
+
+  .top-fixed-wrapper {
+
     position: sticky;
-    top:0;
+    top: 0;
   }
 
   .head {
@@ -114,6 +114,8 @@
 
   .body-wrapper {
 
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     @include pad-devices {
       max-width: 768px;
       width: 100%;

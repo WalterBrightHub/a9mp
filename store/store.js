@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   server: 'gl',
+  serverNS:false,
   theme: 'light',
   statusBarHeight: 25,
 }
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     setTheme(state, theme) {
       state.theme = theme === 'light' ? 'light' : 'dark'
+    },
+    setServerNS(state,serverNS){
+      state.serverNS=serverNS===true
     },
 
     setStatusBarHeight(state, statusBarHeight) {

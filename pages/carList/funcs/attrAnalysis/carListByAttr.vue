@@ -108,6 +108,9 @@
 
   .cardb {
     padding-top: 20rpx;
+    
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 
     @include pad-devices {
       padding-top: toPadPx(20);
