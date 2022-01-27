@@ -13,7 +13,7 @@
     <view class="bps">
       <view :class="carData.quality?'bp-'+carData.quality:''" class="bp" v-for="(item,index) in starArray" :key="index"
         :style="{flex:item>0?item:20}">{{item}}</view>
-        <view class="bp bp-total">{{totalBP}}</view>
+      <view class="bp bp-total">{{totalBP}}</view>
     </view>
 
     <view class="perf-and-update">
@@ -49,18 +49,18 @@
         </view> -->
       </view>
       <view class="update" v-if="carData.releaseVersion!=='0.0'">
-        
+
         <view class="cost-item">
           <view class="cost-name">氮速空速</view>
           <view class="cost-value nitro-speed-list">
             <view class="nitro-speed-item">{{carData.nitroSpeed || '未知'}}</view>
             <view v-if="carData.blueSpeed>0" class="nitro-speed-item blue-speed">{{carData.blueSpeed}}</view>
             <view class="nitro-speed-item">{{carData.airSpeed || '未知'}}</view>
-            
+
           </view>
         </view>
         <view class="perf-empty-bar"></view>
-        
+
         <!-- <view class="cost-item">
           <view class="cost-name">图纸总数</view>
           <view class="cost-value">
@@ -68,12 +68,12 @@
           </view>
         </view>
         <view class="perf-empty-bar"></view> -->
-        
-       <view class="cost-item">
+
+        <view class="cost-item">
           <view class="cost-name">改装费用</view>
           <view class="cost-value">
             {{carData.totalCost>0?split3(carData.totalCost):'未知'}}
-            
+
           </view>
         </view>
         <view class="perf-empty-bar"></view>
@@ -83,15 +83,15 @@
         <view class="part-list">
           <view class="part-title">进口零件</view>
           <view class="part-item" v-if="carData.uncommonPart">
-            <image class="part-icon" src="@/static/carcard-icons/part-uncommon.png"></image>
+            <!-- <image class="part-icon" src="@/static/carcard-icons/part-uncommon.png"></image> -->
             <view class="part-num uncommon-part-num">{{carData.uncommonPart}}</view>
           </view>
           <view class="part-item" v-if="carData.rarePart">
-            <image class="part-icon" src="@/static/carcard-icons/part-rare.png"></image>
+            <!-- <image class="part-icon" src="@/static/carcard-icons/part-rare.png"></image> -->
             <view class="part-num rare-part-num">{{carData.rarePart}}</view>
           </view>
           <view class="part-item" v-if="carData.epicPart">
-            <image class="part-icon" src="@/static/carcard-icons/part-epic.png"></image>
+            <!-- <image class="part-icon" src="@/static/carcard-icons/part-epic.png"></image> -->
             <view class="part-num epic-part-num">{{carData.epicPart}}</view>
           </view>
           <view class="part-item" v-if="!carData.uncommonPart&&!carData.rarePart&&!carData.epicPart">未知</view>
@@ -125,7 +125,7 @@
     },
     computed: {
       starArray() {
-        if(!this.carData){
+        if (!this.carData) {
           return []
         }
         let {
@@ -140,15 +140,15 @@
         return [star_1, star_2, star_3, star_4, star_5, star_6].slice(0, star)
       },
       totalBP() {
-        if(!this.carData){
+        if (!this.carData) {
           return 0
         }
-        let hasUnknowBP=this.starArray.reduce((res, curr) => res || curr==='?'||curr==='？', false)
-        if(hasUnknowBP){
+        let hasUnknowBP = this.starArray.reduce((res, curr) => res || curr === '?' || curr === '？', false)
+        if (hasUnknowBP) {
           return '?'
-        }else{
-          
-        return this.starArray.reduce((res, curr) => res + (Number(curr) || 0), 0)
+        } else {
+
+          return this.starArray.reduce((res, curr) => res + (Number(curr) || 0), 0)
         }
       }
     },
@@ -187,7 +187,10 @@
             icon: 'none'
           })
         } else {
-          const {car_id,fullName}=this.carData
+          const {
+            car_id,
+            fullName
+          } = this.carData
           const url = `/pages/carList/carArchives/carArchives?car_id=${car_id}&fullName=${fullName}`
 
           let pages = getCurrentPages()
@@ -208,7 +211,6 @@
 </script>
 
 <style lang="scss">
-  
   .car-card {
     padding: 20rpx;
     padding-bottom: 25rpx;
@@ -371,20 +373,20 @@
       margin-left: toPadPx(10);
     }
   }
-  
-  .bp-total{
+
+  .bp-total {
     color: #23bbfa;
     background: none;
     border: 1px solid #23bbfa;
   }
-  
-  .bp-rare+.bp-total{
-    color:#cc52ea;
+
+  .bp-rare+.bp-total {
+    color: #cc52ea;
     border-color: #cc52ea;
   }
-  
-  .bp-epic+.bp-total{
-    color:#ffc107;
+
+  .bp-epic+.bp-total {
+    color: #ffc107;
     border-color: #ffc107;
   }
 
@@ -445,12 +447,13 @@
       // margin-bottom: toPadPx(18);
     }
   }
-  
-  .perf-empty-bar{
-    
-      height: 12rpx;    
+
+  .perf-empty-bar {
+
+    height: 12rpx;
     margin-top: 6rpx;
-      @include pad-devices {
+
+    @include pad-devices {
       height: toPadPx(12);
       margin-top: toPadPx(6);
       // margin-bottom: toPadPx(18);
@@ -513,12 +516,12 @@
       line-height: toPadPx(40);
     }
   }
-  
-  
-.perf-empty-bar+.part-list,
-.perf-empty-bar+.cost-item{
+
+
+  .perf-empty-bar+.part-list,
+  .perf-empty-bar+.cost-item {
     margin-top: 18rpx;
-    
+
     @include pad-devices {
       margin-top: toPadPx(18);
     }
@@ -533,12 +536,11 @@
   .part-list {
     display: flex;
 
-    @include pad-devices {
-    }
+    @include pad-devices {}
 
     // justify-content: flex-end;
   }
-  
+
 
 
   .part-title {
@@ -563,7 +565,7 @@
   }
 
   .part-item+.part-item {
-    margin-left: 18rpx;
+    margin-left: 12rpx;
 
     @include pad-devices {
       margin-left: toPadPx(18);
@@ -576,6 +578,7 @@
     width: 40rpx;
     height: 40rpx;
     line-height: 40rpx;
+    clip-path: polygon(25% 6.7%, 0% 50%, 25% 93.3%, 75% 93.3%, 100% 50%, 75% 6.7%);
     // vertical-align: center;
     text-align: center;
     z-index: 1;
@@ -593,29 +596,41 @@
       height: toPadPx(40);
       line-height: toPadPx(40);
     }
+
+    background-color: #63c0ff;
+  }
+
+  .rare-part-num {
+    background-color: #da6dff;
+  }
+
+  .epic-part-num {
+    background-color: #ffc107;
   }
 
 
 
-  .part-icon {
-    width: 40rpx;
-    height: 40rpx;
-    // margin-left: auto;
-    position: absolute;
-    // z-index: -114514;
+  // .part-icon {
+  //   width: 40rpx;
+  //   height: 40rpx;
+  //   // margin-left: auto;
+  //   position: absolute;
+  //   // z-index: -114514;
 
-    @include pad-devices {
-      width: toPadPx(40);
-      height: toPadPx(40);
-    }
-  }
-  .nitro-speed-list{
+  //   @include pad-devices {
+  //     width: toPadPx(40);
+  //     height: toPadPx(40);
+  //   }
+  // }
+  .nitro-speed-list {
     display: flex;
   }
-  .nitro-speed-item+.nitro-speed-item{
+
+  .nitro-speed-item+.nitro-speed-item {
     margin-left: 0.5em;
   }
-  .blue-speed{
+
+  .blue-speed {
     color: #23bbfa;
   }
 </style>
