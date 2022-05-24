@@ -6,7 +6,7 @@
 
 [https://a9.walterbright.cc](https://a9.walterbright.cc)
 
-![](https://s2.loli.net/2022/05/24/xhMAB5ITWRqyPvF.png)
+![](https://s2.loli.net/2022/05/24/nXOQIfBdEL6P75g.png)
 
 ## 微信小程序
 
