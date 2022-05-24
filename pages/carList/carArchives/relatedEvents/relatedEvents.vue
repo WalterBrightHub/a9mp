@@ -5,7 +5,7 @@
     <div class="contest-db">
       <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
         :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-        :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="479">
+        :action="action" :where="where" @load="onqueryload" @error="onqueryerror"  loadtime="manual" :page-size="479">
         <view v-if="error" class="error">{{error.message}}</view>
         <view v-else class="contest-list">
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
@@ -68,6 +68,9 @@
       //     console.log(res)
       //   })
     },
+	onReady() {
+		this.$refs.contestDB.loadData()
+	},
     onShareAppMessage() {
       return {
         title: `狂飙小助手`,

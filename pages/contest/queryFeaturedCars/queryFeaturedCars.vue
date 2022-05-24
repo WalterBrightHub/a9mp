@@ -5,7 +5,7 @@
     	<top-bar :showBack="true" :title="'精选车辆'" />
     </div>
     <unicloud-db class="cardb" ref="cardb" v-slot:default="{data, pagination, loading, error, options}"
-      :collection="collection" :field="carCardField" :orderby="'_id desc'" :where="where" :manual="true" :page-size="479">
+      :collection="collection" :field="carCardField" :orderby="'_id desc'" :where="where" loadtime="manual" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -59,6 +59,9 @@
       carIds
     }) {
       this.carIds = carIds.split(',')
+    },
+    onReady() {
+      this.$refs.cardb.loadData()
     },
     methods: {
       getWhere(carId) {

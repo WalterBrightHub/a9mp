@@ -6,7 +6,7 @@
     </div>
 
     <unicloud-db class=" get-method-db" ref="carArchivesDB" v-slot:default="{data, pagination, loading, error, options}"
-      :collection="carListCollection" getone="true" @load="onqueryload" @error="onqueryerror" manual="true"
+      :collection="carListCollection" getone="true" @load="onqueryload" @error="onqueryerror" loadtime="manual"
       :where="whereGetMethod" :field="carArchivesField">
 
 
@@ -98,7 +98,7 @@
       <div class="contest-db">
         <unicloud-db class="cdb" ref="contestDB" v-slot:default="{data, pagination, loading, error, options}"
           :options="options" collection="contest" orderby="startTime desc,contestName asc" :getone="false"
-          :action="action" :where="where" @load="onqueryload" @error="onqueryerror" manual="true" page-size="5">
+          :action="action" :where="where" @load="onqueryload" @error="onqueryerror" loadtime="manual" :page-size="5">
           <view class="contest-db-title-block">
             <view class="contest-db-title">关联赛事</view>
             <view class="contest-db-all" @tap="jumpToRelatedEvents" v-if="data.length>0 && loading===false">查看所有 >
@@ -183,6 +183,10 @@
       //     console.log(res)
       //   })
     },
+	onReady() {
+		this.$refs.carArchivesDB.loadData()
+		this.$refs.contestDB.loadData()
+	},
     onPullDownRefresh() {
 
       let refreshRelatedEvents = this.$refs.contestDB.loadData({
@@ -254,8 +258,8 @@
 
   .car-archives {
     // margin-bottom: 30rpx;
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: calc(20rpx + constant(safe-area-inset-bottom));
+    padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
 
     @include pad-devices {
       margin-bottom: toPadPx(30);

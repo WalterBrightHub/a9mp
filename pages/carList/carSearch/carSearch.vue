@@ -52,7 +52,7 @@
     data() {
       return {
         searchWord: '',
-        carSearchField: ['fullName', 'carClass', 'quality', 'car_id', 'keyWords']
+        carSearchField: ['fullName', 'carClass', 'quality', 'car_id', 'keyWords'].join(',')
       };
     },
     computed: {

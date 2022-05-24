@@ -4,4 +4,4 @@ export default ['_id', 'car_id',
   'quality', 'star_1', 'star_2', 'star_3', 'star_4', 'star_5', 'star_6',
   'topSpeed', 'acceleration', 'handling', 'nitro',
   'releaseVersion', 'nitroSpeed','blueSpeed', 'airSpeed', 'uncommonPart', 'rarePart', 'epicPart', 'nitroDuration','totalCost'
-]
+].join(',')

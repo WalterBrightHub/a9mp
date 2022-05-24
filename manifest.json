@@ -176,7 +176,8 @@
         },
         "uniStatistics" : {
             "enable" : false
-        }
+        },
+        "title" : "狂飙小助手"
     },
     "uniStatistics" : {
         "enable" : false

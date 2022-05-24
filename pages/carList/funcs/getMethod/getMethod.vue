@@ -6,7 +6,7 @@
 
     <unicloud-db class="get-method-db" ref="getMethodDB" v-slot:default="{data, pagination, loading, error, options}"
       :options="options" :field="queryField" :collection="collection" :orderby="'_id'" @load="onqueryload"
-      @error="onqueryerror" page-size="479">
+      @error="onqueryerror" :page-size="479">
 
       <view class="loading" v-if="loading">
         <loading />

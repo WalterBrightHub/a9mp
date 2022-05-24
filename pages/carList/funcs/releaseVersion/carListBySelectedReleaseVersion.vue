@@ -5,7 +5,7 @@
       <top-bar :showBack="true" :title="note+' v'+releaseVersion" />
     </div>
     <unicloud-db class="cardb" ref="carDB" v-slot:default="{data, pagination, loading, error, options}"
-      :collection="collection" :field="carCardField" :orderby="'_id'" :where="where" :manual="true" :page-size="479">
+      :collection="collection" :field="carCardField" :orderby="'_id'" loadtime="manual" :where="where" :page-size="479">
       <view v-if="error" class="error">{{error.message}}</view>
       <view v-else class=" car-card-list">
         <view class="car-card-wrap" v-for="(carData,index) in data" :key="carData._id">
@@ -63,6 +63,10 @@
       this.releaseVersion = releaseVersion,
       this.note=note
     },
+	onReady() {
+		
+	  this.$refs.carDB.loadData()
+	},
     onPullDownRefresh() {
 
       this.$refs.carDB.loadData({
