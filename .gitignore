@@ -26,3 +26,5 @@ config/index.ts
 config/index.ts
 
 uniCloud-aliyun/
+
+/uni_modules
