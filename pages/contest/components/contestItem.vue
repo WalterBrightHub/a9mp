@@ -8,7 +8,8 @@
       </view>
 
       <event-detail-list :isPreRelease="contest.isPreRelease" :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName"
-        :rewords="contest.rewords" :featuredCars="contest.featuredCars" />
+        :rewords="contest.rewords" :featuredCars="contest.featuredCars"
+         :_id="_id"/>
     </view>
   </view>
 </template>
@@ -21,7 +22,7 @@
     components: {
       'event-detail-list': eventDetailList
     },
-    props: ['contest', 'now', 'index'],
+    props: ['contest', 'now', 'index','_id'],
     data() {
       return {
 

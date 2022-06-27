@@ -26,6 +26,7 @@
       <!-- <image class="event-detail-icon" src="../../../static/contest-icons/car.png"></image> -->
       <!-- <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view> -->
     <!-- </view> -->
+    <div class="special-evnet-calculator" @click="toSECalculator">赛事计算器</div>
   </view>
 </template>
 
@@ -37,7 +38,7 @@
       `${date.getFullYear()}.`) +
     `${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName','isPreRelease'],
+    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName','isPreRelease','_id'],
     data() {
       return {
 
@@ -88,6 +89,11 @@
             url
           })
         // }
+      },
+      toSECalculator(){
+        uni.navigateTo({
+          url:`/pages/contest/specialEventCalculator/specialEventCalculator?_id=${this._id}`
+        })
       }
     }
   }
