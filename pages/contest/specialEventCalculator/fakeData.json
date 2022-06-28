@@ -94,7 +94,7 @@
     }],
     "unlockConditions": 0,
     "missions": [{
-      "toolCarId": "lancer",
+      "toolCarIds": ["lancer","chiron"],
       "join": {
         "freeTry": false,
         "star": 1,
@@ -115,7 +115,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "lancer",
+      "toolCarIds": ["lancer"],
       "join": {
         "freeTry": false,
         "star": 2,
@@ -136,7 +136,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "lancer",
+      "toolCarIds": ["lancer"],
       "join": {
         "freeTry": false,
         "star": 3,
@@ -173,7 +173,7 @@
     }],
     "unlockConditions": 20,
     "missions": [{
-      "toolCarId": "chiron",
+      "toolCarIds": ["chiron"],
       "join": {
         "freeTry": false,
         "star": 1,
@@ -194,7 +194,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "chiron",
+      "toolCarIds": ["chiron"],
       "join": {
         "freeTry": false,
         "star": 2,
@@ -215,7 +215,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "chiron",
+      "toolCarIds": ["chiron"],
       "join": {
         "freeTry": false,
         "star": 3,
@@ -252,7 +252,7 @@
     }],
     "unlockConditions": 50,
     "missions": [{
-      "toolCarId": "jesko",
+      "toolCarIds": ["jesko"],
       "join": {
         "freeTry": true,
         "star": 1,
@@ -273,7 +273,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "jesko",
+      "toolCarIds": ["jesko"],
       "join": {
         "freeTry": true,
         "star": 2,
@@ -294,7 +294,7 @@
         "count": 5
       }]
     }, {
-      "toolCarId": "jesko",
+      "toolCarIds": ["jesko"],
       "join": {
         "freeTry": true,
         "star": 3,

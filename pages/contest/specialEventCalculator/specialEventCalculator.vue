@@ -5,6 +5,11 @@
       <top-bar title="特赛计算器" :showBack="true" />
     </view>
 
+    <div class="action-list">
+      <div class="action" @click="onActionClear">清空车库</div>
+      <div class="action" @click="onActionFull">拉满车库</div>
+    </div>
+
     <div class="form card">
       <div class="card-title">我的车库</div>
       <div class="form-item" v-for="(toolCar,toolCarIndex) in specialEventData.toolCars" :key="toolCar._id">
@@ -105,14 +110,21 @@
           <div>条件</div>
           <div>累计条件</div>
         </div>
-        <div class="user-process" v-for="(userStage,index) in userStages.userStageRewords" :key="index">
+        <div class="user-process" v-for="(userStage,index) in userStages.userStageRewords" :key="index"
+          @click="openUserStageModal(index)">
           <div>{{index+1}}</div>
           <div class="form-radio lock-radio" :class="{'form-radio-checked':userStage.unlock}">
             <div class="form-radio-label">{{userStage.unlock?'✔':''}}</div>
             <div class="form-radio-text">{{specialEventData.stages[index].unlockConditions}}</div>
           </div>
-          <div>{{userCars[specialEventData.stages[index].missions[0].toolCarId].nickName}}</div>
-          <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
+          <div>{{userCars[specialEventData.stages[index].missions[0].toolCarIds[0]].nickName}}</div>
+          <div class="user-process-conditions">
+            <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
+            <div>
+              <condition-bar class="condition-bar" :rate="userProcessConditions[index]/processConditions[index]">
+              </condition-bar>
+            </div>
+          </div>
           <div>{{userProcessConditionsSum[index]}}/{{processConditionsSum[index]}}</div>
         </div>
       </div>
@@ -129,16 +141,37 @@
     <div class="card">
       <div class="card-title">说明</div>
       <div class="note-list">
-        <div class="note">本工具使用方法：点击“我的车库”中的星星和选项定制车库，然后就可以得到特殊赛事的结果了。</div>
+        <div class="note" v-for="note in specialEventData.notes">{{note}}</div>
+        <div class="note-divider"></div>
+        <div class="note">本工具使用方法：点击“我的车库”中的星星和选项定制车库，可以得到特殊赛事的结果。</div>
+        <div class="note">点击“我的进度”中的任意一行，可以查看每一阶段的具体情况。</div>
         <div class="note">本工具只计算特殊赛事中可获得的奖励。一般地，你还可以在俱乐部赛季、充值赛事、传奇通行证、商店礼包、VIP奖励等途径获得奖励。因此，你应该手动勾选特赛车辆的星级、钥匙等选项。</div>
-        <div class="note">数据如有错误之处可联系小助手龟速修复。</div>
+        <div class="note">本工具仅供参考，并非满足车辆条件就一定能完成可完成的任务。实际奖励以游戏内为准。数据如有错误之处可联系小助手龟速修复。</div>
       </div>
     </div>
 
     <div class="user-stage-modal" v-show="showUserStageModal">
-      <div class="user-stage-modal-mask" @click="showUserStageModal=false"></div>
+      <div class="user-stage-modal-mask" @touchmove.stop @click="showUserStageModal=false"></div>
       <div class="user-stage-modal-context">
-        hello world
+        <div class="user-stage-modal-title card-title">第 {{userStageClickIndex+1}} 阶段要求</div>
+        <div class="user-stage-info-list">
+          <div class="user-stage-info-header">
+            <div>工具车</div>
+            <div>试驾</div>
+            <div>星级</div>
+            <div>性能分</div>
+            <div>我的</div>
+          </div>
+          <div class="user-stage-info" v-for=" (info,index) in userStageInfo" :key="index">
+            <div>{{info.carNickNames.join(',')}}</div>
+            <div>{{info.freeTry?'是':'/'}}</div>
+            <div>{{info.star||'/'}}</div>
+            <div>{{info.rank>=0?info.rank:'/'}}</div>
+            <div class="form-radio lock-radio" :class="{'form-radio-checked':info.canJoin}">
+              <div class="form-radio-label">{{info.canJoin?'✔':'✘'}}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </view>
@@ -147,6 +180,7 @@
 <script>
   import topBar from '@/components/topBar/topBar.vue'
   import specialEventData from './fakeData.json'
+  import conditionBar from './conditionBar.vue'
   const db = uniCloud.database()
   const canJoin = (join, userCar) => join.rank <= userCar.rank &&
     (join.freeTry || userCar.unlock) &&
@@ -170,11 +204,12 @@
   export default {
     components: {
       topBar,
+      conditionBar,
     },
     data() {
       return {
         _id: '',
-        showUserStageModal: true,
+        showUserStageModal: false,
         specialEventData: {
           "havePack": true,
           "haveClubRewords": true,
@@ -192,6 +227,8 @@
         form: [
 
         ],
+        userStageInfo: [],
+        userStageClickIndex: 0,
       };
     },
     computed: {
@@ -264,8 +301,8 @@
               conditions,
               rewords
             } = mission
-            const userCar = userCars[mission.toolCarId]
-            if (canJoin(join, userCar)) {
+            const userCarList = mission.toolCarIds.map(id => userCars[id])
+            if (userCarList.some(userCar => canJoin(join, userCar))) {
               userProcessConditions[currStageIndex] += conditions
               userConditions += conditions
               for (let {
@@ -396,6 +433,48 @@
       }
     },
     methods: {
+      onActionClear: async function() {
+        const [err, res] = await uni.showModal({
+          title: '确认清空车库',
+          content: '将移除所有车辆'
+        })
+        if (res.confirm) {
+
+          this.resetForm()
+          this.setLocalForm()
+        }
+      },
+      onActionFull: async function() {
+        const [err, res] = await uni.showModal({
+          title: '确认拉满车库',
+          content: '将拉满所有车辆'
+        })
+        if (res.confirm) {
+
+          this.fullForm()
+          this.setLocalForm()
+        }
+      },
+      openUserStageModal(index) {
+        this.userStageClickIndex = index
+        this.userStageInfo = this.specialEventData.stages[index].missions.map(({
+          join,
+          toolCarIds
+        }) => {
+          let userCarList = toolCarIds.map(id => this.userCars[id])
+          return {
+
+            canJoin: userCarList.some(userCar => canJoin(join, userCar)),
+            carNickNames: userCarList.map(({
+              nickName
+            }) => nickName),
+            ...join
+          }
+
+        })
+
+        this.showUserStageModal = true
+      },
       toNumber10K(credit) {
         return credit / 10000 + 'W'
       },
@@ -420,7 +499,7 @@
           }))
         })
       },
-      resetForm(specialEventData) {
+      resetForm(specialEventData = this.specialEventData) {
         let {
           toolCars
         } = specialEventData
@@ -461,10 +540,18 @@
         let {
           toolCars
         } = this.specialEventData
-        this.form = toolCars.map(toolCar => ({
+        console.log(toolCars, this.form)
+        this.form = toolCars.map(({
+          star,
+          rankLimits,
+          _id,
+          nickName
+        }) => ({
           unlock: true,
-          star: toolCar.star,
-          rankLimit: (toolCar.rankLimits?.length - 1) || 10000,
+          star,
+          rank: (rankLimits?.length - 1) || 10000,
+          _id,
+          nickName,
         }))
       },
       onFormClickUnlock(toolCarIndex) {
@@ -511,9 +598,10 @@
           '_id': this._id
         }).get()
         if (res.result.data.length) {
+          // return specialEventData
           return res.result.data[0].specialEventData
         }
-      }
+      },
     },
     onLoad({
       _id
@@ -568,6 +656,44 @@
       @include pad-devices {
         font-size: toPadPx(38);
         padding-bottom: toPadPx(20);
+      }
+    }
+  }
+
+  .action-list {
+    display: flex;
+    margin: 20rpx;
+
+    @include pad-devices {
+      max-width: 768px;
+      margin: toPadPx(20);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .action {
+    flex: 1;
+    background-color: #23bbfa;
+    color: #fff;
+    text-align: center;
+    line-height: 2.5;
+    border-radius: 10rpx;
+
+    @include pad-devices {
+      border-radius: toPadPx(10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--card-bg-color);
+      color: #23bbfa;
+    }
+
+    &+& {
+      margin-left: 20rpx;
+
+      @include pad-devices {
+        margin-left: toPadPx(20);
       }
     }
   }
@@ -750,6 +876,10 @@
     justify-items: center;
   }
 
+  .user-process-header {
+    font-weight: bold;
+  }
+
   .user-process {
     margin-top: 20rpx;
 
@@ -757,6 +887,32 @@
       margin-top: toPadPx(20);
     }
   }
+
+  .user-process-conditions {
+    // width: 100%;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .user-stage-info,
+  .user-stage-info-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .user-stage-info-header {
+    font-weight: bold;
+  }
+
+  .user-stage-info {
+    margin-top: 40rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(40);
+    }
+  }
+
 
   .data-table-image {
     border-radius: 10rpx;
@@ -767,7 +923,10 @@
     }
   }
 
+
   .note {
+    line-height: 1.7;
+
     &+& {
       margin-top: 20px;
 
@@ -775,6 +934,12 @@
         margin-top: toPadPx(20);
       }
     }
+  }
+
+  .note-divider {
+    height: 1px;
+    background-color: var(--divider-color);
+    margin: 1em 0;
   }
 
   .user-stage-modal {
@@ -802,12 +967,12 @@
     background-color: var(--card-bg-color);
     z-index: 114514;
     border-radius: 10rpx;
-    padding: 20rpx;
+    padding: 40rpx 20rpx;
     box-sizing: border-box;
 
     @include pad-devices {
       border-radius: toPadPx(10);
-      padding: toPadPx(20);
+      padding: toPadPx(40) toPadPx(20);
     }
   }
 </style>
