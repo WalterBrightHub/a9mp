@@ -3,7 +3,8 @@
 
     <view class="event-detail" v-if="!isPreRelease&&startTime">
       <image class="event-detail-icon" src="../../../static/contest-icons/time.png"></image>
-      <text class="event-detail-content time-detail" :style="cardBackgroundStyle">{{selectDays(startTime,endTime)}}</text>
+      <text class="event-detail-content time-detail"
+        :style="cardBackgroundStyle">{{selectDays(startTime,endTime)}}</text>
     </view>
 
 
@@ -23,14 +24,18 @@
     </view>
     <!-- <view class="event-detail" v-if="featuredCars && featuredCars.length"> -->
 
-      <!-- <image class="event-detail-icon" src="../../../static/contest-icons/car.png"></image> -->
-      <!-- <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view> -->
+    <!-- <image class="event-detail-icon" src="../../../static/contest-icons/car.png"></image> -->
+    <!-- <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view> -->
     <!-- </view> -->
-    <div class="special-evnet-calculator" @click="toSECalculator">赛事计算器</div>
+    <div class="action-list">
+
+      <div class="special-evnet-calculator" @click.prevent="toSECalculator">赛事计算器</div>
+    </div>
   </view>
 </template>
 
-<script>  import {
+<script>
+  import {
     mapState,
   } from 'vuex'
   // const oneDay = 1000 * 60 * 60 * 24
@@ -38,31 +43,30 @@
       `${date.getFullYear()}.`) +
     `${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName','isPreRelease','_id'],
+    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName', 'isPreRelease', '_id'],
     data() {
       return {
 
       };
     },
-    computed:{
-      
+    computed: {
+
       ...mapState(['theme']),
-        cardBackgroundStyle(){
-          
-            const {
-              startTime,
-              endTime,
-              now
-            } = this
-          if(now>=startTime&&now<=endTime){
-            let percent=(now-startTime)*100/(endTime-startTime)
-          let [fullColor,emptyColor]=this.theme==='light'?['#b7f0b7','#ecf9ec']:['#005b02','#003001']
+      cardBackgroundStyle() {
+
+        const {
+          startTime,
+          endTime,
+          now
+        } = this
+        if (now >= startTime && now <= endTime) {
+          let percent = (now - startTime) * 100 / (endTime - startTime)
+          let [fullColor, emptyColor] = this.theme === 'light' ? ['#b7f0b7', '#ecf9ec'] : ['#005b02', '#003001']
           return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
-          }
-          else{
-            return ''
-          }
-        },
+        } else {
+          return ''
+        }
+      },
     },
     methods: {
 
@@ -85,14 +89,14 @@
         //     url
         //   })
         // } else {
-          uni.navigateTo({
-            url
-          })
+        uni.navigateTo({
+          url
+        })
         // }
       },
-      toSECalculator(){
+      toSECalculator() {
         uni.navigateTo({
-          url:`/pages/contest/specialEventCalculator/specialEventCalculator?_id=${this._id}`
+          url: `/pages/contest/specialEventCalculator/specialEventCalculator?_id=${this._id}`
         })
       }
     }
@@ -124,20 +128,22 @@
       color: $text-p-color-dark;
     }
   }
-  
-  .time-detail{
-    flex:1;
+
+  .time-detail {
+    flex: 1;
     display: flex;
     align-items: center;
     height: 36rpx;
     border-radius: 1145px;
     padding: 0 16rpx;
+
     // border: 1rpx solid #d5f1da;
     @media (prefers-color-scheme: dark) {
       // border-color: $text-help-color-dark;
     }
+
     @include pad-devices {
-      padding:0 toPadPx(16);
+      padding: 0 toPadPx(16);
       height: toPadPx(36);
       // border-width: toPadPx(1);
     }
@@ -212,4 +218,16 @@
   }
 
   @import './rewordStyle.scss';
+
+  .action-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10rpx;
+  }
+
+  .special-evnet-calculator {
+    background-color: var(--divider-color);
+    padding: 5rpx 10rpx;
+    
+  }
 </style>

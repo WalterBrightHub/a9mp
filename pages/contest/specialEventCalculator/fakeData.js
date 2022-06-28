@@ -1,5 +1,7 @@
 const specialEventData = {
   havePack: true,
+  haveClubRewords:true,
+  haveSkin:true,
   toolCars: [{
       _id: 'f5',
       fullName: 'Venom F5',
@@ -356,6 +358,10 @@ const specialEventData = {
         {
           type: 'sePack',
           count: 5
+        },
+        {
+          type: 'sePart',
+          count: 16
         },
         {
           type: 'seSkin',
