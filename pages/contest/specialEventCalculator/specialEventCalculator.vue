@@ -32,7 +32,7 @@
             <div class="form-radio-text">已解锁</div>
           </div>
           <div class="form-radio lock-radio" :class="{'form-radio-checked':form[toolCarIndex].rank>=rankLimit}"
-            @click="form[toolCarIndex].rank=form[toolCarIndex].rank>=rankLimit?rankLimit-1:rankLimit"
+            @click="onFormClickRank(toolCarIndex,rankLimit)"
             v-for="(rankLimit,rankLimitIndex) in specialEventData.toolCars[toolCarIndex].rankLimits"
             :key="rankLimitIndex">
             <div class="form-radio-label">{{form[toolCarIndex].rank>=rankLimit?'✔':''}}</div>
@@ -391,6 +391,27 @@
       toNumber10K(credit) {
         return credit / 10000 + 'W'
       },
+      getLocalForm() {
+        return uni.getStorage({
+          key: 'sed-' + this._id,
+        })
+      },
+      setLocalForm() {
+        uni.setStorage({
+          key: 'sed-' + this._id,
+          data: this.form.map(({
+            _id,
+            unlock,
+            star,
+            rank
+          }) => ({
+            _id,
+            unlock,
+            star,
+            rank
+          }))
+        })
+      },
       resetForm(specialEventData) {
         let {
           toolCars
@@ -407,6 +428,23 @@
         uni.showLoading()
         const specialEventData = await this.getSpecialEventData()
         this.resetForm(specialEventData)
+        this.getLocalForm().then(([err, res]) => {
+          if (err) {} else {
+            let form = res.data
+            // car_id可以对应
+            if (form.every((car, index) => car._id === this.specialEventData.toolCars[index]._id)) {
+              form.forEach(({
+                star,
+                rank,
+                unlock
+              }, index) => {
+                this.form[index].star = star
+                this.form[index].rank = rank
+                this.form[index].unlock = unlock
+              })
+            }
+          }
+        })
         this.specialEventData = specialEventData
 
         uni.hideLoading()
@@ -425,6 +463,7 @@
         this.form[toolCarIndex].unlock = true
         //解锁了，说明至少1星
         this.form[toolCarIndex].star = this.form[toolCarIndex].star || 1
+        this.setLocalForm()
       },
       onFormClickLock(toolCarIndex) {
         this.form[toolCarIndex].unlock = false
@@ -433,6 +472,7 @@
 
           this.form[toolCarIndex].star = 0
         }
+        this.setLocalForm()
       },
       onFormClickStar(toolCarIndex, starIndex) {
         this.form[toolCarIndex].star = starIndex + 1
@@ -441,6 +481,11 @@
           this.form[toolCarIndex].unlock = true
 
         }
+        this.setLocalForm()
+      },
+      onFormClickRank(toolCarIndex, rankLimit) {
+        this.form[toolCarIndex].rank = this.form[toolCarIndex].rank >= rankLimit ? rankLimit - 1 : rankLimit
+        this.setLocalForm()
       },
       previewDataTableImage() {
         uni.previewImage({
@@ -484,6 +529,11 @@
 
   .page {
     padding-bottom: 20rpx;
+
+    @include pad-devices {
+      padding-bottom: toPadPx(20);
+    }
+
   }
 
   .card {
@@ -492,17 +542,35 @@
     border-radius: 10rpx;
     background-color: var(--card-bg-color);
 
+    @include pad-devices {
+      margin: toPadPx(20);
+      padding: toPadPx(20);
+      border-radius: toPadPx(10);
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     &-title {
       color: var(--theme-color);
       font-size: 38rpx;
       font-weight: bold;
       padding-bottom: 20rpx;
+
+      @include pad-devices {
+        font-size: toPadPx(38);
+        padding-bottom: toPadPx(20);
+      }
     }
   }
 
   .form-item {
     &+& {
       margin-top: 35rpx;
+
+      @include pad-devices {
+        margin-top: toPadPx(35);
+      }
     }
   }
 
@@ -510,6 +578,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include pad-devices {}
   }
 
   .form-item-car-name {
@@ -517,6 +587,10 @@
     font-size: 34rpx;
     color: var(--text-title-color);
     font-weight: bold;
+
+    @include pad-devices {
+      font-size: toPadPx(34);
+    }
   }
 
   .form-item-link {
@@ -525,19 +599,38 @@
     padding: 5rpx 10rpx;
     background-color: var(--divider-color);
     border-radius: 10rpx;
+
+    @include pad-devices {
+      font-size: toPadPx(34);
+      padding: toPadPx(5) toPadPx(10);
+      border-radius: toPadPx(10);
+    }
   }
 
   .form-item-star {
     display: flex;
     margin-top: 5rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(5);
+    }
   }
 
   .form-item-star-image {
     width: 40rpx;
     height: 40rpx;
 
+    @include pad-devices {
+      width: toPadPx(40);
+      height: toPadPx(40);
+    }
+
     &+& {
       margin-left: 20rpx;
+
+      @include pad-devices {
+        margin-left: toPadPx(20);
+      }
     }
   }
 
@@ -548,6 +641,10 @@
   .form-item-lock-state {
     display: flex;
     margin-top: 10rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(10);
+    }
   }
 
   .form-radio {
@@ -575,6 +672,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+    @include pad-devices {
+      border-radius: toPadPx(2);
+    }
   }
 
   .form-radio-text {
@@ -596,6 +698,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.6em 2em;
     margin-top: 20rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(20);
+    }
   }
 
   .user-reword {
@@ -638,16 +744,28 @@
 
   .user-process {
     margin-top: 20rpx;
+
+    @include pad-devices {
+      margin-top: toPadPx(20);
+    }
   }
 
   .data-table-image {
     border-radius: 10rpx;
     width: 100%;
+
+    @include pad-devices {
+      border-radius: toPadPx(10);
+    }
   }
 
   .note {
     &+& {
       margin-top: 20px;
+
+      @include pad-devices {
+        margin-top: toPadPx(20);
+      }
     }
   }
 </style>
