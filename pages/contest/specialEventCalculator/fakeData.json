@@ -6,9 +6,11 @@
   "haveTokenPack":false,
   "haveEventKey":true,
   "packConditions":60,
+  "dataTableImage":"https://s3.bmp.ovh/imgs/2022/06/28/b6bc33ae95b28661.jpg",
   "toolCars": [{
     "_id": "f5",
     "fullName": "Venom F5",
+    "nickName":"f5",
     "isKeyCar": true,
     "rankLimits": [],
     "star": 6,
@@ -16,6 +18,7 @@
   }, {
     "_id": "lancer",
     "fullName": "Mitsubishi Lancer Evolution",
+    "nickName":"三菱",
     "isKeyCar": false,
     "rankLimits": [1000, 1381],
     "star": 3,
@@ -23,6 +26,7 @@
   }, {
     "_id": "chiron",
     "fullName": "Bugatti Chiron",
+    "nickName":"肥龙",
     "isKeyCar": false,
     "rankLimits": [4000, 4755],
     "getMethod": "精英大奖赛",
@@ -30,6 +34,7 @@
   }, {
     "_id": "jesko",
     "fullName": "Koenisegg Jesko🔑",
+    "nickName":"杰哥",
     "isKeyCar": true,
     "rankLimits": [4000, 4826],
     "getMethod": "惊艳亮相",
@@ -89,7 +94,7 @@
     }],
     "unlockConditions": 0,
     "missions": [{
-      "tooCarId": "lancer",
+      "toolCarId": "lancer",
       "join": {
         "freeTry": false,
         "star": 1,
@@ -110,7 +115,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "lancer",
+      "toolCarId": "lancer",
       "join": {
         "freeTry": false,
         "star": 2,
@@ -131,7 +136,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "lancer",
+      "toolCarId": "lancer",
       "join": {
         "freeTry": false,
         "star": 3,
@@ -168,7 +173,7 @@
     }],
     "unlockConditions": 20,
     "missions": [{
-      "tooCarId": "chiron",
+      "toolCarId": "chiron",
       "join": {
         "freeTry": false,
         "star": 1,
@@ -189,7 +194,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "chiron",
+      "toolCarId": "chiron",
       "join": {
         "freeTry": false,
         "star": 2,
@@ -210,7 +215,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "chiron",
+      "toolCarId": "chiron",
       "join": {
         "freeTry": false,
         "star": 3,
@@ -245,9 +250,9 @@
       "type": "sePack",
       "count": 5
     }],
-    "unlockConditions": 10,
+    "unlockConditions": 50,
     "missions": [{
-      "tooCarId": "jesko",
+      "toolCarId": "jesko",
       "join": {
         "freeTry": true,
         "star": 1,
@@ -268,7 +273,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "jesko",
+      "toolCarId": "jesko",
       "join": {
         "freeTry": true,
         "star": 2,
@@ -289,7 +294,7 @@
         "count": 5
       }]
     }, {
-      "tooCarId": "jesko",
+      "toolCarId": "jesko",
       "join": {
         "freeTry": true,
         "star": 3,

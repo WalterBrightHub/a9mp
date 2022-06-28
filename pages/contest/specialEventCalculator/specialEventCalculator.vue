@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="page">
     <view class="top-fixed-wrapper">
 
       <top-bar title="特赛计算器" :showBack="true" />
@@ -8,9 +8,9 @@
     <div class="form card">
       <div class="card-title">我的车库</div>
       <div class="form-item" v-for="(toolCar,toolCarIndex) in specialEventData.toolCars" :key="toolCar._id">
-        <div class="form-item-car-name-and-link">
+        <div class="form-item-car-name-and-link" @click="toCarArchives(toolCar._id,toolCar.fullName)">
           <div class="form-item-car-name">{{toolCar.fullName}}</div>
-          <div class="form-item-link" @click="toCarArchives(toolCar._id)">查看卡片</div>
+          <div class="form-item-link">查看卡片</div>
         </div>
         <!-- <div class="form-item-get-method">获取方式：<span class="form-item-get-method-text">{{toolCar.getMethod}}</span>
         </div> -->
@@ -23,17 +23,20 @@
         <div class="form-item-lock-state">
           <div class="form-radio lock-radio" :class="{'form-radio-checked':!form[toolCarIndex].unlock}"
             @click="onFormClickLock(toolCarIndex)">
-            <div class="form-radio-label">{{form[toolCarIndex].unlock?'':'✔'}}</div>未解锁
+            <div class="form-radio-label">{{form[toolCarIndex].unlock?'':'✔'}}</div>
+            <div class="form-radio-text">未解锁</div>
           </div>
           <div class="form-radio lock-radio" :class="{'form-radio-checked':form[toolCarIndex].unlock}"
             @click="onFormClickUnlock(toolCarIndex)">
-            <div class="form-radio-label">{{form[toolCarIndex].unlock?'✔':''}}</div>已解锁
+            <div class="form-radio-label">{{form[toolCarIndex].unlock?'✔':''}}</div>
+            <div class="form-radio-text">已解锁</div>
           </div>
           <div class="form-radio lock-radio" :class="{'form-radio-checked':form[toolCarIndex].rank>=rankLimit}"
             @click="form[toolCarIndex].rank=form[toolCarIndex].rank>=rankLimit?rankLimit-1:rankLimit"
             v-for="(rankLimit,rankLimitIndex) in specialEventData.toolCars[toolCarIndex].rankLimits"
             :key="rankLimitIndex">
-            <div class="form-radio-label">{{form[toolCarIndex].rank>=rankLimit?'✔':''}}</div>{{rankLimit}}分
+            <div class="form-radio-label">{{form[toolCarIndex].rank>=rankLimit?'✔':''}}</div>
+            <div class="form-radio-text">{{rankLimit}}分</div>
           </div>
         </div>
       </div>
@@ -92,8 +95,44 @@
       </div>
     </div>
 
-    <div class="user-process-module">
+    <div class="user-process-module card">
+      <div class="card-title">我的进度</div>
+      <div class="user-process-list">
+        <div class="user-process-header">
+          <div>阶段</div>
+          <div>解锁</div>
+          <div>主工具车</div>
+          <div>条件</div>
+          <div>累计条件</div>
+        </div>
+        <div class="user-process" v-for="(userStage,index) in userStages.userStageRewords" :key="index">
+          <div>{{index+1}}</div>
+          <div class="form-radio lock-radio" :class="{'form-radio-checked':userStage.unlock}">
+            <div class="form-radio-label">{{userStage.unlock?'✔':''}}</div>
+            <div class="form-radio-text">{{specialEventData.stages[index].unlockConditions}}</div>
+          </div>
+          <div>{{userCars[specialEventData.stages[index].missions[0].toolCarId].nickName}}</div>
+          <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
+          <div>{{userProcessConditionsSum[index]}}/{{processConditionsSum[index]}}</div>
+        </div>
+      </div>
+    </div>
 
+    <div class="card">
+      <div class="card-title">
+        数据表格
+      </div>
+      <image class="data-table-image" :src="specialEventData.dataTableImage" mode="widthFix"
+        @click="previewDataTableImage"></image>
+    </div>
+
+    <div class="card">
+      <div class="card-title">说明</div>
+      <div class="note-list">
+        <div class="note">本工具使用方法：点击“我的车库”中的星星和选项定制车库，然后就可以得到特殊赛事的结果了。</div>
+        <div class="note">本工具只计算特殊赛事中可获得的奖励。一般地，你还可以在俱乐部赛季、充值赛事、传奇通行证、商店礼包、VIP奖励等途径获得奖励。因此，你应该手动勾选特赛车辆的星级、钥匙等选项。</div>
+        <div class="note">数据如有错误之处可联系小助手龟速修复。</div>
+      </div>
     </div>
   </view>
 </template>
@@ -101,6 +140,7 @@
 <script>
   import topBar from '@/components/topBar/topBar.vue'
   import specialEventData from './fakeData.json'
+  const db = uniCloud.database()
   const canJoin = (join, userCar) => join.rank <= userCar.rank &&
     (join.freeTry || userCar.unlock) &&
     join.star <= userCar.star
@@ -126,21 +166,72 @@
     },
     data() {
       return {
-        specialEventData,
+        _id: '',
+        specialEventData: {
+          "havePack": true,
+          "haveClubRewords": true,
+          "haveSkin": true,
+          "havePackConditions": true,
+          "haveTokenPack": false,
+          "haveEventKey": true,
+          "packConditions": 0,
+          "dataTableImage": "",
+          "toolCars": [],
+          "notes": [],
+          "processRewords": [],
+          "stages": []
+        },
         form: [
 
         ],
       };
     },
     computed: {
+      processConditions({
+        specialEventData
+      }) {
+        let res = specialEventData.stages.map(({
+          missions
+        }) => missions.reduce((m1, m2) => m1 + m2.conditions, 0))
+        return res
+      },
+      processConditionsSum({
+        processConditions
+      }) {
+        return processConditions.reduce((c1, c2) => c1.concat((c1[c1.length - 1] || 0) + c2), [])
+      },
+      userProcessConditionsSum({
+        userProcessConditions
+      }) {
+        return userProcessConditions.reduce((c1, c2) => c1.concat((c1[c1.length - 1] || 0) + c2), [])
+      },
       seCar({
         specialEventData
       }) {
         return specialEventData.toolCars[0]
       },
+      userCars({
+        form
+      }) {
+        return form.reduce((res, {
+          unlock,
+          star,
+          rank,
+          _id,
+          nickName
+        }) => ({
+          ...res,
+          [_id]: {
+            unlock,
+            star,
+            rank,
+            nickName
+          }
+        }), {})
+      },
       userStages({
         specialEventData,
-        form
+        userCars
       }) {
         const {
           stages,
@@ -152,23 +243,10 @@
         }))
         let userProcessRewords = getEmptyReword()
 
+        let userProcessConditions = new Array(stages.length).fill(0)
+
         let userConditions = 0
         let currStageIndex = 0
-        console.log(form)
-        let userCars = form.reduce((res, {
-          unlock,
-          star,
-          rank,
-          _id
-        }) => ({
-          ...res,
-          [_id]: {
-            unlock,
-            star,
-            rank
-          }
-        }), {})
-        console.log(userCars)
         // 计算每个阶段的奖励
         while (currStageIndex < stages.length && userConditions >= stages[currStageIndex].unlockConditions) {
           userStageRewords[currStageIndex].unlock = true
@@ -178,8 +256,9 @@
               conditions,
               rewords
             } = mission
-            const userCar = userCars[mission.tooCarId]
+            const userCar = userCars[mission.toolCarId]
             if (canJoin(join, userCar)) {
+              userProcessConditions[currStageIndex] += conditions
               userConditions += conditions
               for (let {
                   type,
@@ -207,16 +286,23 @@
           userStageRewords,
           userConditions,
           userProcessRewords,
+          userProcessConditions,
         }
 
         return result
+      },
+      userProcessConditions({
+        userStages: {
+          userProcessConditions
+        }
+      }) {
+        return userProcessConditions
       },
       userConditions({
         userStages: {
           userConditions
         }
       }) {
-        console.log('user conditions', userConditions)
         return userConditions
       },
       userClubRewords({
@@ -245,6 +331,9 @@
           userStageRewords
         }
       }) {
+        if (!userStageRewords.length) {
+          return getEmptyReword()
+        }
         return userStageRewords.map(({
           rewords
         }) => rewords).reduce(combineRewords)
@@ -302,19 +391,25 @@
       toNumber10K(credit) {
         return credit / 10000 + 'W'
       },
-      resetForm() {
+      resetForm(specialEventData) {
         let {
           toolCars
-        } = this.specialEventData
+        } = specialEventData
         this.form = toolCars.map(toolCar => ({
           _id: toolCar._id,
           unlock: false,
           star: toolCar.isKeyCar ? 1 : 0,
           rank: 0,
+          nickName: toolCar.nickName,
         }))
       },
-      initForm() {
-        return this.resetForm()
+      initForm: async function() {
+        uni.showLoading()
+        const specialEventData = await this.getSpecialEventData()
+        this.resetForm(specialEventData)
+        this.specialEventData = specialEventData
+
+        uni.hideLoading()
       },
       fullForm() {
         let {
@@ -346,17 +441,36 @@
           this.form[toolCarIndex].unlock = true
 
         }
+      },
+      previewDataTableImage() {
+        uni.previewImage({
+          urls: [this.specialEventData.dataTableImage]
+        })
+      },
+      toCarArchives(_id, fullName) {
+        const url = `/pages/carList/carArchives/carArchives?car_id=${_id}&fullName=${fullName}`
+        uni.navigateTo({
+          url
+        })
+      },
+      getSpecialEventData: async function() {
+        const res = await db.collection('contest').where({
+          '_id': this._id
+        }).get()
+        if (res.result.data.length) {
+          return res.result.data[0].specialEventData
+        }
       }
     },
     onLoad({
       _id
     }) {
       console.log(_id)
-      // console.log(this.form)
+      this._id = _id
+      this.initForm()
     },
     created() {
 
-      this.initForm()
     }
   }
 </script>
@@ -366,6 +480,10 @@
     z-index: 114514;
     position: sticky;
     top: 0;
+  }
+
+  .page {
+    padding-bottom: 20rpx;
   }
 
   .card {
@@ -384,7 +502,7 @@
 
   .form-item {
     &+& {
-      margin-top: 30rpx;
+      margin-top: 35rpx;
     }
   }
 
@@ -411,7 +529,7 @@
 
   .form-item-star {
     display: flex;
-    margin-top: 10rpx;
+    margin-top: 5rpx;
   }
 
   .form-item-star-image {
@@ -454,10 +572,13 @@
     box-sizing: border-box;
     border: 1px solid var(--text-help-color);
     border-radius: 2px;
-    margin-right: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .form-radio-text {
+    margin-left: 0.5em;
   }
 
   .form-radio-checked {
@@ -473,7 +594,7 @@
   .user-reword-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em 2em;
+    gap: 0.6em 2em;
     margin-top: 20rpx;
   }
 
@@ -481,27 +602,52 @@
     display: flex;
     justify-content: space-between;
   }
-  
-  .user-reword-count{
+
+  .user-reword-count {
     font-weight: bold;
   }
-  
-  .hl-disable{
+
+  .hl-disable {
     color: var(--text-help-color);
   }
-  
-  .hl-golden{
-    color:#ffc107;
+
+  .hl-golden {
+    color: #ffc107;
   }
-  
-  .hl-pack{
+
+  .hl-pack {
     color: #da6dff;
   }
-  
-  .hl-token{
+
+  .hl-token {
     color: #068ffc;
   }
-  .hl-skin{
+
+  .hl-skin {
     color: #41b90a;
+  }
+
+  .user-process-list {}
+
+  .user-process-header,
+  .user-process {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+    justify-items: center;
+  }
+
+  .user-process {
+    margin-top: 20rpx;
+  }
+
+  .data-table-image {
+    border-radius: 10rpx;
+    width: 100%;
+  }
+
+  .note {
+    &+& {
+      margin-top: 20px;
+    }
   }
 </style>

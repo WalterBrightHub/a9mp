@@ -27,9 +27,9 @@
     <!-- <image class="event-detail-icon" src="../../../static/contest-icons/car.png"></image> -->
     <!-- <view class="featured-cars-button" @tap="onQueryFeaturedCars">查看精选车辆</view> -->
     <!-- </view> -->
-    <div class="action-list">
+    <div class="action-list" >
 
-      <div class="special-evnet-calculator" @click.prevent="toSECalculator">赛事计算器</div>
+      <div class="special-evnet-calculator" @click.stop="toSECalculator" v-if="haveSpecialEventData">赛事计算器</div>
     </div>
   </view>
 </template>
@@ -43,7 +43,7 @@
       `${date.getFullYear()}.`) +
     `${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName', 'isPreRelease', '_id'],
+    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName', 'isPreRelease', '_id','haveSpecialEventData'],
     data() {
       return {
 
@@ -223,6 +223,10 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 10rpx;
+  }
+  
+  .action-list:empty{
+    margin-top: 0;
   }
 
   .special-evnet-calculator {

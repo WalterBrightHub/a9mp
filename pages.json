@@ -51,7 +51,7 @@
         "enablePullDownRefresh": true
       }
 
-    
+
 
     }, {
       "path": "pages/careerMaps/quickQuery/quickQuery",
@@ -145,17 +145,15 @@
         "enablePullDownRefresh": true
       }
 
+    }, {
+      "path": "pages/contest/specialEventCalculator/specialEventCalculator",
+      "style": {
+        "navigationBarTitleText": "特赛计算器",
+        "enablePullDownRefresh": false
+      }
+
     }
-      ,{
-            "path" : "pages/contest/specialEventCalculator/specialEventCalculator",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "特赛计算器",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-    ],
+  ],
 
   "globalStyle": {
     //QQ未支持深色模式
