@@ -220,7 +220,7 @@ const specialEventData = {
         star: 2,
         rank: -1,
       },
-      conditions: 50,
+      conditions: 10,
       rewords: [{
           type: 'token',
           count: 100
@@ -366,10 +366,7 @@ const specialEventData = {
   }]
 }
 
-const canJoin=(join,userCar)=>{
-  return join.rank<=userCar.rank&&(join.freeTry||userCar.unlock)&&join.star<=userCar.star
-}
+
 
 export default specialEventData
 
-export {canJoin}

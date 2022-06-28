@@ -42,15 +42,23 @@
 <script>
   import topBar from '@/components/topBar/topBar.vue'
   import specialEventData from './fakeData.js'
-  const canJoin = (join, userCar) => join.rank <= userCar.rank && (join.freeTry || userCar.unlock) && join.star <=
-    userCar.star
-  const combineRewords = (r1, r2) => {
-    let res = {}
-    for (let key of Object.keys(r1)) {
-      res[key] = r1.key + r2.key
-    }
-    return res
-  }
+  const canJoin = (join, userCar) => join.rank <= userCar.rank &&
+    (join.freeTry || userCar.unlock) &&
+    join.star <= userCar.star
+  const combineRewords = (r1, r2) =>
+    Object.keys(r1).reduce((res, curr) => ({
+      ...res,
+      [curr]: r1[curr] + r2[curr]
+    }), {})
+    
+  const getEmptyReword=()=>({
+    token: 0,
+    credit: 0,
+    seCard: 0,
+    seSkin: 0,
+    sePack: 0,
+    seKey: 0,
+  })
 
   export default {
     components: {
@@ -75,23 +83,9 @@
         } = specialEventData
         let userStageRewords = stages.map(stage => ({
           unlock: false,
-          rewords: {
-            token: 0,
-            credit: 0,
-            seCard: 0,
-            seSkin: 0,
-            sePack: 0,
-            seKey: 0,
-          }
+          rewords: getEmptyReword()
         }))
-        let userProcessRewords = {
-          token: 0,
-          credit: 0,
-          seCard: 0,
-          seSkin: 0,
-          sePack: 0,
-          seKey: 0,
-        }
+        let userProcessRewords = getEmptyReword()
 
         let userConditions = 0
         let currStageIndex = 0
@@ -138,7 +132,7 @@
         for (let {
             conditions,
             reword
-          } in processRewords) {
+          } of processRewords) {
           if (conditions <= userConditions) {
             userProcessRewords[reword.type] += reword.count
           }
@@ -150,8 +144,13 @@
           userProcessRewords,
         }
 
-        console.log('user', result)
         return result
+      },
+      userConditions({userRewords:{
+        userConditions
+      }}){
+        console.log('user conditions',userConditions)
+        return userConditions
       },
       userClubRewords({
         specialEventData,
@@ -161,37 +160,35 @@
           processRewords
         } = specialEventData
         // 计算俱乐部奖励，全部白嫖
-        let userClubRewords = {
-
-          token: 0,
-          credit: 0,
-          seCard: 0,
-          seSkin: 0,
-          sePack: 0,
-          seKey: 0,
-        }
+        let userClubRewords = getEmptyReword()
         for (let reword of stages.reduce((res, curr) => res.concat(curr.clubRewords), [])) {
           userClubRewords[reword.type] += reword.count
         }
-        console.log('club', userClubRewords)
         return userClubRewords
       },
-      userTotalRewords({
-        userRewords,
-        userClubRewords
+      userProcessRewords({
+        userRewords: {
+          userProcessRewords
+        }
       }) {
-        const {
-          userProcessRewords,
-        } = userRewords
-        console.log(userRewords.userStageRewords.map(({
-          rewords
-        }) => rewords))
-        const userStageRewords = userRewords.userStageRewords.map(({
+        return userProcessRewords
+      },
+      userStageRewords({
+        userRewords: {
+          userStageRewords
+        }
+      }) {
+        return userStageRewords.map(({
           rewords
         }) => rewords).reduce(combineRewords)
-        console.log(userStageRewords)
-        const res = combineRewords(userClubRewords, combineRewords(userProcessRewords, userStageRewords))
-        console.log('total', res)
+      },
+      userTotalRewords({
+        userClubRewords,
+        userProcessRewords,
+        userStageRewords,
+      }) {
+        let res = [userClubRewords, userProcessRewords, userStageRewords].reduce(combineRewords)
+        console.log(res)
         return res
       }
     },
