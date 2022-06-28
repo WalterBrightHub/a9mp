@@ -134,6 +134,13 @@
         <div class="note">数据如有错误之处可联系小助手龟速修复。</div>
       </div>
     </div>
+
+    <div class="user-stage-modal" v-show="showUserStageModal">
+      <div class="user-stage-modal-mask" @click="showUserStageModal=false"></div>
+      <div class="user-stage-modal-context">
+        hello world
+      </div>
+    </div>
   </view>
 </template>
 
@@ -167,6 +174,7 @@
     data() {
       return {
         _id: '',
+        showUserStageModal: true,
         specialEventData: {
           "havePack": true,
           "haveClubRewords": true,
@@ -766,6 +774,40 @@
       @include pad-devices {
         margin-top: toPadPx(20);
       }
+    }
+  }
+
+  .user-stage-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+  }
+
+  .user-stage-modal-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.38);
+  }
+
+  .user-stage-modal-context {
+    margin: auto;
+    width: 710rpx;
+    max-width: 720px;
+    background-color: var(--card-bg-color);
+    z-index: 114514;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+
+    @include pad-devices {
+      border-radius: toPadPx(10);
+      padding: toPadPx(20);
     }
   }
 </style>
