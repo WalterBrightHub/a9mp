@@ -2,15 +2,15 @@
   "havePack": true,
   "haveClubRewords": true,
   "haveSkin": true,
-  "havePackConditions":true,
-  "haveTokenPack":false,
-  "haveEventKey":true,
-  "packConditions":60,
-  "dataTableImage":"https://s3.bmp.ovh/imgs/2022/06/28/b6bc33ae95b28661.jpg",
+  "havePackConditions": true,
+  "haveTokenPack": false,
+  "haveEventKey": true,
+  "packConditions": 60,
+  "dataTableImage": "https://s3.bmp.ovh/imgs/2022/06/28/b6bc33ae95b28661.jpg",
   "toolCars": [{
     "_id": "f5",
     "fullName": "Venom F5",
-    "nickName":"f5",
+    "nickName": "f5",
     "isKeyCar": true,
     "rankLimits": [],
     "star": 6,
@@ -18,7 +18,7 @@
   }, {
     "_id": "lancer",
     "fullName": "Mitsubishi Lancer Evolution",
-    "nickName":"三菱",
+    "nickName": "三菱",
     "isKeyCar": false,
     "rankLimits": [1000, 1381],
     "star": 3,
@@ -26,7 +26,7 @@
   }, {
     "_id": "chiron",
     "fullName": "Bugatti Chiron",
-    "nickName":"肥龙",
+    "nickName": "肥龙",
     "isKeyCar": false,
     "rankLimits": [4000, 4755],
     "getMethod": "精英大奖赛",
@@ -34,7 +34,7 @@
   }, {
     "_id": "jesko",
     "fullName": "Koenisegg Jesko🔑",
-    "nickName":"杰哥",
+    "nickName": "杰哥",
     "isKeyCar": true,
     "rankLimits": [4000, 4826],
     "getMethod": "惊艳亮相",
@@ -94,9 +94,14 @@
     }],
     "unlockConditions": 0,
     "missions": [{
-      "toolCarIds": ["lancer","chiron"],
+      "toolCars": [{
+        "car_id": "lancer",
+        "freeTry": true
+      }, {
+        "car_id": "chiron",
+        "freeTry": true
+      }],
       "join": {
-        "freeTry": false,
         "star": 1,
         "rank": -1
       },
@@ -115,9 +120,11 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["lancer"],
+      "toolCars": [{
+        "car_id": "lancer",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": false,
         "star": 2,
         "rank": -1
       },
@@ -136,9 +143,11 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["lancer"],
+      "toolCars": [{
+        "car_id": "lancer",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": false,
         "star": 3,
         "rank": -1
       },
@@ -173,9 +182,11 @@
     }],
     "unlockConditions": 20,
     "missions": [{
-      "toolCarIds": ["chiron"],
+      "toolCars": [{
+        "car_id": "chiron",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": false,
         "star": 1,
         "rank": -1
       },
@@ -194,9 +205,11 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["chiron"],
+      "toolCars": [{
+        "car_id": "chiron",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": false,
         "star": 2,
         "rank": -1
       },
@@ -215,9 +228,11 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["chiron"],
+      "toolCars": [{
+        "car_id": "chiron",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": false,
         "star": 3,
         "rank": -1
       },
@@ -252,9 +267,11 @@
     }],
     "unlockConditions": 50,
     "missions": [{
-      "toolCarIds": ["jesko"],
+      "toolCars": [{
+        "car_id": "jesko",
+        "freeTry": true
+      }],
       "join": {
-        "freeTry": true,
         "star": 1,
         "rank": -1
       },
@@ -273,9 +290,11 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["jesko"],
+      "toolCars": [{
+        "car_id": "jesko",
+        "freeTry": true
+      }],
       "join": {
-        "freeTry": true,
         "star": 2,
         "rank": -1
       },
@@ -294,11 +313,13 @@
         "count": 5
       }]
     }, {
-      "toolCarIds": ["jesko"],
+      "toolCars": [{
+        "car_id": "jesko",
+        "freeTry": false
+      }],
       "join": {
-        "freeTry": true,
         "star": 3,
-        "rank": -1
+        "rank": 4826
       },
       "conditions": 15,
       "rewords": [{

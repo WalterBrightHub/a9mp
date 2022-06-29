@@ -117,7 +117,7 @@
             <div class="form-radio-label">{{userStage.unlock?'✔':''}}</div>
             <div class="form-radio-text">{{specialEventData.stages[index].unlockConditions}}</div>
           </div>
-          <div>{{userCars[specialEventData.stages[index].missions[0].toolCarIds[0]].nickName}}</div>
+          <div>{{userCars[specialEventData.stages[index].missions[0].toolCars[0].id].nickName}}</div>
           <div class="user-process-conditions">
             <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
             <div>
@@ -141,7 +141,7 @@
     <div class="card">
       <div class="card-title">说明</div>
       <div class="note-list">
-        <div class="note" v-for="note in specialEventData.notes">{{note}}</div>
+        <div class="note" v-for="(note,index) in specialEventData.notes" :key="index">{{note}}</div>
         <div class="note-divider"></div>
         <div class="note">本工具使用方法：点击“我的车库”中的星星和选项定制车库，可以得到特殊赛事的结果。</div>
         <div class="note">点击“我的进度”中的任意一行，可以查看每一阶段的具体情况。</div>
@@ -164,7 +164,7 @@
           </div>
           <div class="user-stage-info" v-for=" (info,index) in userStageInfo" :key="index">
             <div>{{info.carNickNames.join(',')}}</div>
-            <div>{{info.freeTry?'是':'/'}}</div>
+            <div>{{info.freeTry}}</div>
             <div>{{info.star||'/'}}</div>
             <div>{{info.rank>=0?info.rank:'/'}}</div>
             <div class="form-radio lock-radio" :class="{'form-radio-checked':info.canJoin}">
@@ -183,7 +183,7 @@
   import conditionBar from './conditionBar.vue'
   const db = uniCloud.database()
   const canJoin = (join, userCar) => join.rank <= userCar.rank &&
-    (join.freeTry || userCar.unlock) &&
+    (userCar.freeTry || userCar.unlock) &&
     join.star <= userCar.star
   const combineRewords = (r1, r2) =>
     Object.keys(r1).reduce((res, curr) => ({
@@ -301,7 +301,13 @@
               conditions,
               rewords
             } = mission
-            const userCarList = mission.toolCarIds.map(id => userCars[id])
+            const userCarList = mission.toolCars.map(({
+              car_id,
+              freeTry
+            }) => ({
+              ...userCars[car_id],
+              freeTry
+            }))
             if (userCarList.some(userCar => canJoin(join, userCar))) {
               userProcessConditions[currStageIndex] += conditions
               userConditions += conditions
@@ -459,15 +465,24 @@
         this.userStageClickIndex = index
         this.userStageInfo = this.specialEventData.stages[index].missions.map(({
           join,
-          toolCarIds
+          toolCars
         }) => {
-          let userCarList = toolCarIds.map(id => this.userCars[id])
+          let userCarList = toolCars.map(({
+            car_id,
+            freeTry
+          }) => ({
+            ...this.userCars[car_id],
+            freeTry
+          }))
           return {
 
             canJoin: userCarList.some(userCar => canJoin(join, userCar)),
             carNickNames: userCarList.map(({
               nickName
             }) => nickName),
+            freeTry: userCarList.filter(car => car.freeTry).map(({
+              nickName
+            }) => nickName).join('，'),
             ...join
           }
 
@@ -549,7 +564,7 @@
         }) => ({
           unlock: true,
           star,
-          rank: (rankLimits?.length - 1) || 10000,
+          rank: (rankLimits[rankLimits.length - 1]) || 10000,
           _id,
           nickName,
         }))
@@ -897,7 +912,7 @@
   .user-stage-info,
   .user-stage-info-header {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
     justify-items: center;
   }
 
