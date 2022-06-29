@@ -12,8 +12,8 @@
 
     <div class="form card">
       <div class="card-title">我的车库</div>
-      <div class="form-item" v-for="(toolCar,toolCarIndex) in specialEventData.toolCars" :key="toolCar._id">
-        <div class="form-item-car-name-and-link" @click="toCarArchives(toolCar._id,toolCar.fullName)">
+      <div class="form-item" v-for="(toolCar,toolCarIndex) in specialEventData.toolCars" :key="toolCar.car_id">
+        <div class="form-item-car-name-and-link" @click="toCarArchives(toolCar.car_id,toolCar.fullName)">
           <div class="form-item-car-name">{{toolCar.fullName}}</div>
           <div class="form-item-link">查看卡片</div>
         </div>
@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" v-if="specialEventData.dataTableImage">
       <div class="card-title">
         数据表格
       </div>
@@ -166,7 +166,7 @@
             <div>{{info.carNickNames.join(',')}}</div>
             <div>{{info.freeTry||'/'}}</div>
             <div>{{info.star||'/'}}</div>
-            <div>{{info.rank>=0?info.rank:'/'}}</div>
+            <div>{{info.rank>0?info.rank:'/'}}</div>
             <div class="form-radio lock-radio" :class="{'form-radio-checked':info.canJoin}">
               <div class="form-radio-label">{{info.canJoin?'✔':'✘'}}</div>
             </div>
@@ -179,12 +179,15 @@
 
 <script>
   import topBar from '@/components/topBar/topBar.vue'
-  import specialEventData from './fakeData.json'
+  // import specialEventData from './fakeData.js'
   import conditionBar from './conditionBar.vue'
   const db = uniCloud.database()
   const canJoin = (join, userCar) => join.rank <= userCar.rank &&
-    (userCar.freeTry || userCar.unlock) &&
-    join.star <= userCar.star
+    (userCar.freeTry ?
+      (join.star <= (userCar.star || 1)) :
+      (userCar.unlock && join.star <= userCar.star)
+    )
+
   const combineRewords = (r1, r2) =>
     Object.keys(r1).reduce((res, curr) => ({
       ...res,
@@ -251,9 +254,11 @@
         return userProcessConditions.reduce((c1, c2) => c1.concat((c1[c1.length - 1] || 0) + c2), [])
       },
       seCar({
-        specialEventData
+        specialEventData: {
+          toolCars
+        }
       }) {
-        return specialEventData.toolCars[0]
+        return toolCars[toolCars.length - 1]
       },
       userCars({
         form
@@ -262,11 +267,11 @@
           unlock,
           star,
           rank,
-          _id,
+          car_id,
           nickName
         }) => ({
           ...res,
-          [_id]: {
+          [car_id]: {
             unlock,
             star,
             rank,
@@ -502,12 +507,12 @@
         uni.setStorage({
           key: 'sed-' + this._id,
           data: this.form.map(({
-            _id,
+            car_id,
             unlock,
             star,
             rank
           }) => ({
-            _id,
+            car_id,
             unlock,
             star,
             rank
@@ -519,7 +524,7 @@
           toolCars
         } = specialEventData
         this.form = toolCars.map(toolCar => ({
-          _id: toolCar._id,
+          car_id: toolCar.car_id,
           unlock: false,
           star: toolCar.isKeyCar ? 1 : 0,
           rank: 0,
@@ -534,7 +539,7 @@
           if (err) {} else {
             let form = res.data
             // car_id可以对应
-            if (form.every((car, index) => car._id === this.specialEventData.toolCars[index]._id)) {
+            if (form.every((car, index) => car.car_id === this.specialEventData.toolCars[index].car_id)) {
               form.forEach(({
                 star,
                 rank,
@@ -555,17 +560,17 @@
         let {
           toolCars
         } = this.specialEventData
-        console.log(toolCars, this.form)
+        // console.log(toolCars, this.form)
         this.form = toolCars.map(({
           star,
           rankLimits,
-          _id,
+          car_id,
           nickName
         }) => ({
           unlock: true,
           star,
           rank: (rankLimits[rankLimits.length - 1]) || 10000,
-          _id,
+          car_id,
           nickName,
         }))
       },
@@ -602,8 +607,8 @@
           urls: [this.specialEventData.dataTableImage]
         })
       },
-      toCarArchives(_id, fullName) {
-        const url = `/pages/carList/carArchives/carArchives?car_id=${_id}&fullName=${fullName}`
+      toCarArchives(car_id, fullName) {
+        const url = `/pages/carList/carArchives/carArchives?car_id=${car_id}&fullName=${fullName}`
         uni.navigateTo({
           url
         })
