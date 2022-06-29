@@ -164,7 +164,7 @@
           </div>
           <div class="user-stage-info" v-for=" (info,index) in userStageInfo" :key="index">
             <div>{{info.carNickNames.join(',')}}</div>
-            <div>{{info.freeTry}}</div>
+            <div>{{info.freeTry||'/'}}</div>
             <div>{{info.star||'/'}}</div>
             <div>{{info.rank>=0?info.rank:'/'}}</div>
             <div class="form-radio lock-radio" :class="{'form-radio-checked':info.canJoin}">
