@@ -4,6 +4,10 @@
 
       <top-bar title="特赛计算器" :showBack="true" />
     </view>
+    
+    <div class="card">
+      <div class="card-title contest-name">{{contestName}}</div>
+    </div>
 
     <div class="action-list">
       <div class="action" @click="onActionClear">清空车库</div>
@@ -212,6 +216,7 @@
     data() {
       return {
         _id: '',
+        contestName:' ',
         showUserStageModal: false,
         specialEventData: {
           "havePack": true,
@@ -618,6 +623,7 @@
           '_id': this._id
         }).get()
         if (res.result.data.length) {
+          this.contestName=res.result.data[0].contestName
           // return specialEventData
           return res.result.data[0].specialEventData
         }
@@ -894,6 +900,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
     justify-items: center;
+    align-items: center;
   }
 
   .user-process-header {
@@ -994,5 +1001,9 @@
       border-radius: toPadPx(10);
       padding: toPadPx(40) toPadPx(20);
     }
+  }
+  
+  .contest-name{
+    padding-bottom: 0;
   }
 </style>
