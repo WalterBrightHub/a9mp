@@ -4,7 +4,7 @@
 
       <top-bar title="特赛计算器" :showBack="true" />
     </view>
-    
+
     <div class="card">
       <div class="card-title contest-name">{{contestName}}</div>
     </div>
@@ -78,6 +78,11 @@
               :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{specialEventData.packConditions}}</div>
         </div>
         <div class="user-reword">
+          <div class="user-reword-type">进度</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{totalConditions}}</div>
+        </div>
+        <div class="user-reword">
           <div class="user-reword-type">金卡</div>
           <div class="user-reword-count"><span class="hl-disable"
               :class="{'hl-golden':userTotalRewords.sePart>0}">{{userTotalRewords.sePart}}</span>/{{totalRewords.sePart}}
@@ -121,7 +126,7 @@
             <div class="form-radio-label">{{userStage.unlock?'✔':''}}</div>
             <div class="form-radio-text">{{specialEventData.stages[index].unlockConditions}}</div>
           </div>
-          <div>{{userCars[specialEventData.stages[index].missions[0].toolCars[0].id].nickName}}</div>
+          <div>{{userCars[specialEventData.stages[index].missions[0].toolCars[0].car_id].nickName}}</div>
           <div class="user-process-conditions">
             <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
             <div>
@@ -216,7 +221,7 @@
     data() {
       return {
         _id: '',
-        contestName:' ',
+        contestName: ' ',
         showUserStageModal: false,
         specialEventData: {
           "havePack": true,
@@ -252,6 +257,11 @@
         processConditions
       }) {
         return processConditions.reduce((c1, c2) => c1.concat((c1[c1.length - 1] || 0) + c2), [])
+      },
+      totalConditions({
+        processConditionsSum
+      }) {
+        return processConditionsSum[processConditionsSum.length - 1]
       },
       userProcessConditionsSum({
         userProcessConditions
@@ -623,7 +633,7 @@
           '_id': this._id
         }).get()
         if (res.result.data.length) {
-          this.contestName=res.result.data[0].contestName
+          this.contestName = res.result.data[0].contestName
           // return specialEventData
           return res.result.data[0].specialEventData
         }
@@ -1002,8 +1012,8 @@
       padding: toPadPx(40) toPadPx(20);
     }
   }
-  
-  .contest-name{
+
+  .contest-name {
     padding-bottom: 0;
   }
 </style>
