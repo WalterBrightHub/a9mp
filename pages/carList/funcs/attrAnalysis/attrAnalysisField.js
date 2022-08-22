@@ -15,4 +15,4 @@ export default [
   'storeEpicPart',
   
   'packLevel'
-]
+].join(',')

@@ -127,11 +127,11 @@
         return _(this.data).map(item => item.brand).uniq().value().length
       },
       countCarClass() {
-        return _(this.data).countBy('carClass')
+        return _(this.data).countBy('carClass').value()
       },
       countStar() {
 
-        return _(this.data).countBy('star')
+        return _(this.data).countBy('star').value()
       },
       countBlueSpeed() {
         return _(this.data).filter(car => car.blueSpeed > 0).value().length

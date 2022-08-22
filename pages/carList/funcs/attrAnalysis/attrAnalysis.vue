@@ -5,7 +5,7 @@
         <top-bar :showBack="true" :showServerToggle="true" :title="'数据统计'" />
       </div>
       <unicloud-db class="attr-analysis-db" ref="attrAnalysisDB" v-slot:default="{data, pagination, loading, error, options}"
-        :options="options" :where="where" :field="queryField" :collection="collection" :orderby="'_id'"  page-size="479">
+        :options="options" :where="where" :field="queryField" :collection="collection" :orderby="'_id'"  :page-size="479">
       
         <view class="loading" v-if="loading">
           <loading />
