@@ -220,6 +220,10 @@
   .car-bp-rare {
     background-color: #cc52ea;
   }
+  .car-bp-ruby {
+    background-color: var(--color-ruby);
+  }
+
 
   .car-empty-list {
     margin-top: 40rpx;

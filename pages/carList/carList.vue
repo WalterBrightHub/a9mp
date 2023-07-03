@@ -41,6 +41,13 @@
         return this.server === 'gl' ? this.releaseVersionRangeGL : this.releaseVersionRangeAL
       }
     },
+    watch: {
+      server(newServer) {
+        if (newServer !== 'al' && this.carClass === 'R') {
+          this.carClass = 'S'
+        }
+      }
+    },
     mixins: [tapTabToTop],
     onReachBottom() {
       this.$refs.carListDB.loadMore()

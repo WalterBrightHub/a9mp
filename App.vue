@@ -79,6 +79,9 @@
     --text-help-color: #909090;
     --text-tip-color: #c0c0c0;
     --divider-color: #f0f0f0;
+    
+    --color-ruby: #dc0005;
+    --color-ruby-lighter: #ff3136;
 
     @media (prefers-color-scheme: dark) {
       --theme-color: #ff1360;

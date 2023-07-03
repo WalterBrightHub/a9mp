@@ -155,6 +155,9 @@
   .car-bp-rare{
     background-color: #cc52ea;
   }
+  .car-bp-ruby {
+    background-color: var(--color-ruby);
+  }
    .new-car-card+.new-car-card{
      margin-top: 24rpx;
 

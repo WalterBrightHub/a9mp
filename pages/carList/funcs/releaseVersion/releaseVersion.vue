@@ -286,6 +286,9 @@
   .car-bp-rare {
     background-color: #cc52ea;
   }
+  .car-bp-ruby {
+    background-color: var(--color-ruby);
+  }
 
   .get-method {
     flex: none;

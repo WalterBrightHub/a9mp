@@ -38,6 +38,11 @@
           <div class="analysis-car-class-content">{{countCarClass.S}}</div>
           <div class="analysis-car-class-title">S</div>
         </div>
+        <div v-if="server==='al'" class="analysis-car-class-item class-r" :style="'flex-grow:'+countCarClass.S">
+
+          <div class="analysis-car-class-content">{{countCarClass.R}}</div>
+          <div class="analysis-car-class-title">S</div>
+        </div>
       </div>
       <div class="analysis-star">
         <div class="analysis-star-item star-3" :style="'flex-grow:'+countStar[3]">
@@ -122,7 +127,7 @@
       };
     },
     computed: {
-      ...mapState(['theme']),
+      ...mapState(['theme', 'server']),
       countBrand() {
         return _(this.data).map(item => item.brand).uniq().value().length
       },
@@ -182,7 +187,7 @@
         return this.barStyle(this.countStoreEpicPart)
       },
       countPackLevel() {
-        return _(this.data).filter(car => car.packLevel>0).value().length
+        return _(this.data).filter(car => car.packLevel > 0).value().length
       },
       stylePackLevel() {
         return this.barStyle(this.countPackLevel)
@@ -194,12 +199,12 @@
         let [fullColor, emptyColor] = this.theme === 'light' ? ['#ff0054', '#ffe7ed'] : ['#ff0054', '#4a222f']
         return `background: linear-gradient(to right,${fullColor} ${percent}%,${emptyColor} ${percent}%);`
       },
-      jumpToCarList(attrName,attrField){
+      jumpToCarList(attrName, attrField) {
         const url = `/pages/carList/funcs/attrAnalysis/carListByAttr?attrName=${attrName}&attrField=${attrField}`
-        
-          uni.navigateTo({
-            url
-          })
+
+        uni.navigateTo({
+          url
+        })
       }
     }
   }
@@ -329,6 +334,11 @@
     color: #e9e1b0;
   }
 
+  .class-r {
+    background-color: var(--color-ruby);
+    color: #fff;
+  }
+
   .star-3 {
     background-color: #63c0ff;
     color: #e0f2ff;
@@ -362,8 +372,9 @@
     border-radius: 10rpx;
     margin-top: 30rpx;
 
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     @include pad-devices {
       border-radius: toPadPx(10);
       margin-top: toPadPx(30);

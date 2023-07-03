@@ -366,6 +366,10 @@
     background: linear-gradient(to right, #fed016, #ffc107);
   }
 
+  .bp-ruby {
+    background: linear-gradient(to right, var(--color-ruby-lighter), var(--color-ruby));
+  }
+
   .bp+.bp {
     margin-left: 10rpx;
 
@@ -388,6 +392,11 @@
   .bp-epic+.bp-total {
     color: #ffc107;
     border-color: #ffc107;
+  }
+
+  .bp-ruby+.bp-total {
+    color: var(--color-ruby);
+    border-color: var(--color-ruby);
   }
 
   .perf-and-update {

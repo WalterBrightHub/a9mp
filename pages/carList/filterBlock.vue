@@ -28,11 +28,16 @@
     props: ['carClass'],
     data() {
       return {
-        carFilter: ['D', 'C', 'B', 'A', 'S'],
+        // carFilter: ['D', 'C', 'B', 'A', 'S', 'R'],
       };
     },
     computed: {
-
+      ...mapState(['server']),
+      carFilter({
+        server
+      }) {
+        return server === 'al' ? ['D', 'C', 'B', 'A', 'S', 'R'] : ['D', 'C', 'B', 'A', 'S']
+      }
     },
     methods: {
       onChangeCarClass(carClass) {

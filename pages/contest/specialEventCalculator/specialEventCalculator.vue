@@ -60,27 +60,16 @@
               :class="{'hl-golden':userTotalRewords.seCard>0}">{{userTotalRewords.seCard}}</span>/{{totalRewords.seCard}}
           </div>
         </div>
+        <div class="user-reword">
+          <div class="user-reword-type">进度</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{totalConditions}}</div>
+        </div>
         <div class="user-reword" v-if="specialEventData.haveEventKey">
           <div class="user-reword-type">钥匙</div>
           <div class="user-reword-count"><span class="hl-disable"
               :class="{'hl-golden':userTotalRewords.seKey>0}">{{userTotalRewords.seKey}}</span>/{{totalRewords.seKey}}
           </div>
-        </div>
-        <div class="user-reword" v-if="specialEventData.havePack">
-          <div class="user-reword-type">图纸包</div>
-          <div class="user-reword-count"><span class="hl-disable"
-              :class="{'hl-pack':userTotalRewords.sePack>0}">{{userTotalRewords.sePack}}</span>/{{totalRewords.sePack}}
-          </div>
-        </div>
-        <div class="user-reword" v-if="specialEventData.havePackConditions">
-          <div class="user-reword-type">商店包条件</div>
-          <div class="user-reword-count"><span class="hl-disable"
-              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{specialEventData.packConditions}}</div>
-        </div>
-        <div class="user-reword">
-          <div class="user-reword-type">进度</div>
-          <div class="user-reword-count"><span class="hl-disable"
-              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{totalConditions}}</div>
         </div>
         <div class="user-reword">
           <div class="user-reword-type">金卡</div>
@@ -93,6 +82,27 @@
           <div class="user-reword-count"><span class="hl-disable"
               :class="{'hl-skin':userTotalRewords.seSkin>0}">{{userTotalRewords.seSkin}}</span>/{{totalRewords.seSkin}}
           </div>
+        </div>
+        <div class="user-reword" v-if="progressKeyConditions>0">
+          <div class="user-reword-type">钥匙条件</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{progressKeyConditions}}</div>
+        </div>
+        <div class="user-reword" v-if="progressSkinConditions>0">
+          <div class="user-reword-type">贴纸条件</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{progressSkinConditions}}</div>
+        </div>
+        <div class="user-reword" v-if="specialEventData.havePack">
+          <div class="user-reword-type">图纸包</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userTotalRewords.sePack>0}">{{userTotalRewords.sePack}}</span>/{{totalRewords.sePack}}
+          </div>
+        </div>
+        <div class="user-reword" v-if="specialEventData.havePackConditions">
+          <div class="user-reword-type">商店包条件</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-pack':userConditions>0}">{{userConditions}}</span>/{{specialEventData.packConditions}}</div>
         </div>
         <div class="user-reword">
           <div class="user-reword-type">蓝币</div>
@@ -130,7 +140,7 @@
           <div class="user-process-conditions">
             <div>{{userProcessConditions[index]}}/{{processConditions[index]}}</div>
             <div>
-              <condition-bar class="condition-bar" :rate="userProcessConditions[index]/processConditions[index]">
+              <condition-bar class="condition-bar" :rate="userProcessConditions[index]/(processConditions[index]||1)">
               </condition-bar>
             </div>
           </div>
@@ -154,7 +164,9 @@
         <div class="note-divider"></div>
         <div class="note">本工具使用方法：点击“我的车库”中的星星和选项定制车库，可以得到特殊赛事的结果。</div>
         <div class="note">点击“我的进度”中的任意一行，可以查看每一阶段的具体情况。</div>
-        <div class="note">本工具只计算特殊赛事中可获得的奖励。一般地，你还可以在俱乐部赛季、充值赛事、传奇通行证、商店礼包、VIP奖励等途径获得奖励。因此，你应该手动勾选特赛车辆的星级、钥匙等选项。</div>
+        <div class="note">本工具只计算特殊赛事中可获得的奖励,<span
+            style="font-weight: bold;color:#ff0054;">【包括关卡的个人奖励、关卡的俱乐部奖励、特殊赛事的进度奖励】</span>。车手们可以自行寻找特赛村落获得关卡的俱乐部奖励。一般地，你还可以在多人赛事、俱乐部赛季、充值赛事、传奇通行证、商店礼包、VIP奖励等途径获得奖励。因此，你应该手动勾选特赛车辆的星级、钥匙等选项。
+        </div>
         <div class="note">本工具仅供参考，并非满足车辆条件就一定能完成可完成的任务。实际奖励以游戏内为准。数据如有错误之处可联系小助手龟速修复。</div>
       </div>
     </div>
@@ -245,6 +257,34 @@
       };
     },
     computed: {
+      progressKeyConditions({
+        specialEventData
+      }) {
+        const {
+          processRewords
+        } = specialEventData
+        const reword = processRewords.find(r => r.reword.type === 'seKey')
+        if (!reword) {
+          return 0;
+        } else {
+          return reword.conditions
+        }
+
+      },
+      progressSkinConditions({
+        specialEventData
+      }) {
+        const {
+          processRewords
+        } = specialEventData
+        const reword = processRewords.find(r => r.reword.type === 'seSkin')
+        if (!reword) {
+          return 0;
+        } else {
+          return reword.conditions
+        }
+
+      },
       processConditions({
         specialEventData
       }) {
@@ -334,7 +374,8 @@
               for (let {
                   type,
                   count
-                } of rewords) {
+                }
+                of rewords) {
                 userStageRewords[currStageIndex].rewords[type] += count
               }
             }
@@ -347,7 +388,8 @@
         for (let {
             conditions,
             reword
-          } of processRewords) {
+          }
+          of processRewords) {
           if (conditions <= userConditions) {
             userProcessRewords[reword.type] += reword.count
           }
@@ -417,7 +459,8 @@
         const processTotalRewords = getEmptyReword()
         for (let {
             reword
-          } of processRewords) {
+          }
+          of processRewords) {
           processTotalRewords[reword.type] += reword.count
         }
         return processTotalRewords
@@ -431,11 +474,13 @@
         for (let stage of stages) {
           for (let {
               rewords
-            } of stage.missions) {
+            }
+            of stage.missions) {
             for (let {
                 type,
                 count
-              } of rewords) {
+              }
+              of rewords) {
               stageTotalRewords[type] += count
             }
           }
@@ -511,7 +556,7 @@
         this.showUserStageModal = true
       },
       toNumber10K(credit) {
-        return credit / 10000 + 'W'
+        return Math.floor(credit / 10000) + 'W'
       },
       getLocalForm() {
         return uni.getStorage({
