@@ -41,7 +41,7 @@
         <div v-if="server==='al'" class="analysis-car-class-item class-r" :style="'flex-grow:'+countCarClass.S">
 
           <div class="analysis-car-class-content">{{countCarClass.R}}</div>
-          <div class="analysis-car-class-title">S</div>
+          <div class="analysis-car-class-title">R</div>
         </div>
       </div>
       <div class="analysis-star">

@@ -110,6 +110,12 @@
               :class="{'hl-token':userTotalRewords.token>0}">{{userTotalRewords.token}}</span>/{{totalRewords.token}}
           </div>
         </div>
+        <div class="user-reword" v-if="totalRewords.seasonToken>0">
+          <div class="user-reword-type">绿币</div>
+          <div class="user-reword-count"><span class="hl-disable"
+              :class="{'hl-season-token':userTotalRewords.seasonToken>0}">{{userTotalRewords.seasonToken}}</span>/{{totalRewords.seasonToken}}
+          </div>
+        </div>
         <div class="user-reword">
           <div class="user-reword-type">金币</div>
           <div class="user-reword-count"><span class="hl-disable"
@@ -217,6 +223,7 @@
 
   const getEmptyReword = () => ({
     token: 0,
+    seasonToken: 0,
     credit: 0,
     seCard: 0,
     seSkin: 0,
@@ -943,8 +950,9 @@
   .hl-token {
     color: #068ffc;
   }
-
-  .hl-skin {
+  
+  .hl-season-token,
+  .hl-skin{
     color: #41b90a;
   }
 
