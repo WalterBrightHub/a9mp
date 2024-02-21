@@ -7,6 +7,7 @@
           src="@/static/carcard-icons/star.png" />
       </view>
       <view class="nick-name">{{carData.nickName}}</view>
+      <view class="rank-over" v-if="carData.overRank">{{carData.overRank}}</view>
       <view class="rank">{{carData.rank}}</view>
       <view class="car-class">{{carData.carClass}}</view>
     </view>
@@ -20,24 +21,28 @@
       <view class="perf">
         <view class="perf-item">
           <view class="perf-name">最大速度</view>
+          <view class="perf-value perf-value-over" v-if="carData.overTopSpeed">{{ carData.overTopSpeed.toFixed(1)}}</view>
           <view class="perf-value">{{ carData.topSpeed.toFixed(1)}}</view>
         </view>
         <view class="perf-bar" :style="{width:topSpeedWidth(carData.topSpeed?carData.topSpeed:0)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">加速</view>
+          <view class="perf-value perf-value-over" v-if="carData.overAcceleration">{{ carData.overAcceleration.toFixed(2)}}</view>
           <view class="perf-value">{{carData.acceleration.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:accelerationWidth(carData.acceleration)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">操控</view>
+          <view class="perf-value perf-value-over" v-if="carData.overHandling">{{ carData.overHandling.toFixed(2)}}</view>
           <view class="perf-value">{{carData.handling.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:handlingWidth(carData.handling)+'%'}" />
 
         <view class="perf-item">
           <view class="perf-name">氮气</view>
+          <view class="perf-value perf-value-over" v-if="carData.overNitro">{{ carData.overNitro.toFixed(2)}}</view>
           <view class="perf-value">{{carData.nitro.toFixed(2)}}</view>
         </view>
         <view class="perf-bar" :style="{width:nitroWidth(carData.nitro)+'%'}" />
@@ -314,15 +319,17 @@
     }
   }
 
-  .rank {
+  .rank ,.rank-over{
     font-size: 30rpx;
-    border-radius: 6rpx;
+    border-radius: 8rpx;
+    margin-left: 10rpx;
     color: #ffc107;
     font-weight: bold;
 
     @include pad-devices {
       font-size: toPadPx(30);
-      border-radius: toPadPx(6);
+      border-radius: toPadPx(8);
+      margin-left: toPadPx(10);
     }
   }
 
@@ -437,9 +444,59 @@
       line-height: toPadPx(40);
     }
   }
+  
+  // e6401c
 
-  .perf-value {
-    margin-left: auto;
+  .perf-name {
+    margin-right: auto;
+  }
+  
+  .perf-value-over+.perf-value{
+    margin-left: 6rpx;
+     @include pad-devices {
+      margin-left: toPadPx(6);
+      // margin-bottom: toPadPx(18);
+    }
+  }
+  
+  .perf-over,.rank-over{
+    color:#e6401c;
+  }
+  
+  .rank-over,.perf-value-over{
+    // background-color:#e6401c;
+    // color:#fff;
+     color:#e6401c;
+    background-color:rgba(#e6401c,0.1);
+    border-radius: 8rpx;
+    text-align: center;
+    padding: 0 0.5ch;
+     @include pad-devices {
+      border-radius: toPadPx(8);
+      // margin-bottom: toPadPx(18);
+    }
+    @media (prefers-color-scheme: dark) {
+    background-color:rgba(#fff,0.1);
+    }
+    
+  }
+  
+  .rank-over{
+    font-size: 28rpx;   
+     @include pad-devices {
+      font-size: toPadPx(28);
+      // margin-bottom: toPadPx(18);
+    }
+    
+  }
+  
+.perf-value-over{  
+    font-size: 26rpx;   
+     @include pad-devices {
+      font-size: toPadPx(26);
+      // margin-bottom: toPadPx(18);
+    }
+    
   }
 
   .perf-bar {
