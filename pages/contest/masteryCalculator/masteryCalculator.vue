@@ -10,7 +10,7 @@
         <div class="chapter-car-name">
           {{masteryInfo.toolCarMap[chapter.targetCarId].fullName}}
         </div>
-        <div class="chapter-car-info stars-and-rank">
+        <div class="chapter-car-info stars-and-rank"  @click="toCarArchives(chapter.targetCarId,masteryInfo.toolCarMap[chapter.targetCarId].fullName)">
           <div class="stars">
             <image class="star-icon" v-for="(item,index) in masteryInfo.toolCarMap[chapter.targetCarId].star"
               :key="index" src="@/static/carcard-icons/star.png" />
@@ -28,9 +28,16 @@
         </div>
         <div class="chapter-mission-list">
           <div class="chatper-mission" v-for="mission in chapter.missions" >
-            <div class="mission-car-info" style="display: flex;align-items: center;">
+            <div class="mission-car-info" style="display: flex;align-items: center;"  @click="toCarArchives(mission.toolCarId,masteryInfo.toolCarMap[mission.toolCarId].fullName)">
               <div>{{masteryInfo.toolCarMap[mission.toolCarId].shortName}}</div>
               <div class="mastery-car-tag" v-if="masterySet.has(mission.toolCarId)" style="font-size: 0.75em;margin-left: 0.75em;">大师车</div>
+              <div class="stars stars-tool-car" style="margin-left: auto;">
+                <image class="star-icon" v-for="(item,index) in masteryInfo.toolCarMap[mission.toolCarId].star"
+                  :key="index" src="@/static/carcard-icons/star.png" />
+              
+              </div>
+              <div class="rank"  >{{masteryInfo.toolCarMap[mission.toolCarId].rank}}</div>
+              <div class="car-class">{{masteryInfo.toolCarMap[mission.toolCarId].carClass}}</div>
             </div>
             <div class="rank-select-list">
               <div class="rank-select-item" :class="{'rank-select-item-highlight':!form[mission.toolCarId].unlock}"
@@ -187,7 +194,13 @@
         this.form[car_id].rank=rank
         this.form[car_id].unlock=true
         console.log(this.form[car_id])
-      }
+      },
+      toCarArchives(car_id, fullName) {
+        const url = `/pages/carList/carArchives/carArchives?car_id=${car_id}&fullName=${fullName}`
+        uni.navigateTo({
+          url
+        })
+      },
 
     },
     onLoad({
@@ -262,12 +275,19 @@
   }
 
   .star-icon {
-    width: 32rpx;
-    height: 32rpx;
+    width: 28rpx;
+    height: 28rpx;
 
     @include pad-devices {
-      width: toPadPx(32);
-      height: toPadPx(32);
+      width: toPadPx(28);
+      height: toPadPx(28);
+    }
+  }
+  
+  .stars-tool-car{
+    width:200rpx;
+    @include pad-devices {
+      width: toPadPx(200);
     }
   }
 
