@@ -152,6 +152,12 @@
         "enablePullDownRefresh": false
       }
 
+    }, {
+      "path": "pages/contest/masteryCalculator/masteryCalculator",
+      "style": {
+        "navigationBarTitleText": "大师计算器",
+        "enablePullDownRefresh": false
+      }
     }
   ],
 
