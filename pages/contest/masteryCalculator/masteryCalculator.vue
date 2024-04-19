@@ -5,6 +5,7 @@
       <top-bar title="大师计算器" :showBack="true" />
     </view>
     <view>
+      <div class="card">施工中，请坐和放宽！</div>
       <div class="card" v-for="(chapter,index) in masteryData.chapters">
         <div class="chapter-car-name">
           {{masteryInfo.toolCarMap[chapter.targetCarId].fullName}}
