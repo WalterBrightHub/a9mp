@@ -1,6 +1,7 @@
 export default {
-  notes: [],
-  toolCars: [{
+  notes:[],
+  toolCars:[
+    {
       car_id: '1789',
       fullName: 'Vision 1789',
       shortName: '1789',
@@ -21,9 +22,9 @@ export default {
       rewardBP: 60,
     },
     {
-      car_id: '300+',
-      fullName: 'Bugatti Chiron Super Sport 300+',
-      shortName: 'Chiron 300+',
+      car_id: 'chiron300',
+      fullName: 'Bugatti Chiron Super Sport 300+🔑',
+      shortName: 'Chiron 300+🔑',
       isKeyCar: true,
       star: 6,
       rank: 5602,
@@ -73,13 +74,13 @@ export default {
     {
       car_id: '004c',
       fullName: 'Glickenhaus 004C🔑',
-      shortName: '004C',
+      shortName: '004C🔑',
       isKeyCar: true,
       star: 5,
       rank: 2840,
       carClass: 'D',
       rewardBP: 30,
-    }, {
+    },{
       car_id: 'lancer',
       fullName: 'Mitsubishi Lancer Evolution',
       shortName: 'Lancer',
@@ -92,7 +93,7 @@ export default {
     {
       car_id: 'continental',
       fullName: 'Bentley Continental GT3🔑',
-      shortName: 'Continental GT3',
+      shortName: 'Continental GT3🔑',
       isKeyCar: true,
       star: 5,
       rank: 2781,
@@ -132,7 +133,7 @@ export default {
     {
       car_id: 'nsxgt3',
       fullName: 'Acura NSX GT3 EVO🔑',
-      shortName: 'NSX GT3',
+      shortName: 'NSX GT3🔑',
       isKeyCar: true,
       star: 5,
       rank: 3585,
@@ -182,7 +183,7 @@ export default {
     {
       car_id: 'zondar',
       fullName: 'Pagani Zonda R🔑',
-      shortName: 'Zonda R',
+      shortName: 'Zonda R🔑',
       isKeyCar: true,
       star: 6,
       rank: 4164,
@@ -212,7 +213,7 @@ export default {
     {
       car_id: '410',
       fullName: 'Lotus Evora Sport 410',
-      shortName: '',
+      shortName: 'Lotus 410',
       isKeyCar: false,
       star: 3,
       rank: 2123,
@@ -252,7 +253,7 @@ export default {
     {
       car_id: 'mbbs',
       fullName: 'Mercedes-Benz Mercedes-AMG GT Black Series🔑',
-      shortName: 'AMG GT BS',
+      shortName: 'AMG GT BS🔑',
       isKeyCar: true,
       star: 6,
       rank: 3517,
@@ -262,7 +263,7 @@ export default {
     {
       car_id: 'sc18',
       fullName: 'Lamborghini SC18🔑',
-      shortName: 'SC18',
+      shortName: 'SC18🔑',
       isKeyCar: true,
       star: 6,
       rank: 4079,
@@ -292,7 +293,7 @@ export default {
     {
       car_id: 'ares',
       fullName: 'Ares S1🔑',
-      shortName: 'Ares S1',
+      shortName: 'Ares S1🔑',
       isKeyCar: true,
       star: 5,
       rank: 3377,
@@ -312,7 +313,7 @@ export default {
     {
       car_id: 'mk2',
       fullName: 'Ford GT MKII🔑',
-      shortName: 'MKII',
+      shortName: 'MKII🔑',
       isKeyCar: true,
       star: 4,
       rank: 3198,
@@ -342,7 +343,7 @@ export default {
     {
       car_id: 'scv12',
       fullName: 'Lamborghini Essenza SCV12🔑',
-      shortName: 'SCV12',
+      shortName: 'SCV12🔑',
       isKeyCar: true,
       star: 5,
       rank: 4036,
@@ -362,7 +363,7 @@ export default {
     {
       car_id: 'mclarengt',
       fullName: 'McLaren GT🔑',
-      shortName: 'McLaren GT',
+      shortName: 'McLaren GT🔑',
       isKeyCar: true,
       star: 5,
       rank: 3432,
@@ -522,7 +523,7 @@ export default {
     {
       car_id: 'reventon',
       fullName: 'Lamborghini Reventon Roadster🔑',
-      shortName: 'Reventon',
+      shortName: 'Reventon🔑',
       isKeyCar: true,
       star: 6,
       rank: 3983,
@@ -542,7 +543,7 @@ export default {
     {
       car_id: 'solus',
       fullName: 'Mclaren Solus GT🔑',
-      shortName: 'Solus GT',
+      shortName: 'Solus GT🔑',
       isKeyCar: true,
       star: 6,
       rank: 4075,
@@ -572,7 +573,7 @@ export default {
     {
       car_id: 'huracanste',
       fullName: 'Lamborghini Huracan Super Trofeo Evo🔑',
-      shortName: 'Huracan STE',
+      shortName: 'Huracan STE🔑',
       isKeyCar: true,
       star: 5,
       rank: 3256,
@@ -602,7 +603,7 @@ export default {
     {
       car_id: 'r390',
       fullName: 'Nissan R390 GT1🔑',
-      shortName: 'R390 GT1',
+      shortName: 'R390 GT1🔑',
       isKeyCar: true,
       star: 6,
       rank: 3627,
@@ -612,7 +613,7 @@ export default {
     {
       car_id: '007s',
       fullName: 'Glickenhaus 007S🔑',
-      shortName: '007S',
+      shortName: '007S🔑',
       isKeyCar: true,
       star: 6,
       rank: 4192,
@@ -682,7 +683,7 @@ export default {
     {
       car_id: 'c7r',
       fullName: 'Chevrolet Corvette C7.R🔑',
-      shortName: 'C7.R',
+      shortName: 'C7.R🔑',
       isKeyCar: true,
       star: 5,
       rank: 2836,
@@ -712,7 +713,7 @@ export default {
     {
       car_id: 'centodieci',
       fullName: 'Bugatti Centodieci🔑',
-      shortName: 'Centodieci',
+      shortName: 'Centodieci🔑',
       isKeyCar: true,
       star: 6,
       rank: 4843,
@@ -722,7 +723,7 @@ export default {
     {
       car_id: 'rrturbo',
       fullName: 'ATS Automobili Corsa RRTurbo🔑',
-      shortName: 'Corsa RRTurbo',
+      shortName: 'Corsa RRTurbo🔑',
       isKeyCar: true,
       star: 4,
       rank: 3389,
@@ -742,7 +743,7 @@ export default {
     {
       car_id: '488gtbevo',
       fullName: 'Ferrari 488 GTB Challenge EVO🔑',
-      shortName: '488 Challenge',
+      shortName: '488 Challenge🔑',
       isKeyCar: true,
       star: 6,
       rank: 4095,
@@ -752,7 +753,7 @@ export default {
     {
       car_id: 'ccxr',
       fullName: 'Koenigsegg CCXR🔑',
-      shortName: 'CCXR',
+      shortName: 'CCXR🔑',
       isKeyCar: true,
       star: 6,
       rank: 4998,
@@ -792,7 +793,7 @@ export default {
     {
       car_id: 'xj220',
       fullName: 'Jaguar XJ220 TWR🔑',
-      shortName: 'XJ220',
+      shortName: 'XJ220🔑',
       isKeyCar: true,
       star: 6,
       rank: 4175,
@@ -802,7 +803,7 @@ export default {
     {
       car_id: 'c2',
       fullName: 'Rimac Nevera🔑',
-      shortName: 'Nevera',
+      shortName: 'Nevera🔑',
       isKeyCar: true,
       star: 6,
       rank: 4897,
@@ -812,7 +813,7 @@ export default {
     {
       car_id: 'gemera',
       fullName: 'Koenigsegg Gemera🔑',
-      shortName: 'Gemera',
+      shortName: 'Gemera🔑',
       isKeyCar: true,
       star: 6,
       rank: 5092,
@@ -823,7 +824,7 @@ export default {
     {
       car_id: 'lvn',
       fullName: 'Bugatti LA Voiture Noire🔑',
-      shortName: 'LVN',
+      shortName: 'LVN🔑',
       isKeyCar: true,
       star: 6,
       rank: 5055,
@@ -833,7 +834,7 @@ export default {
     {
       car_id: 'jesko',
       fullName: 'Koenigsegg Jesko🔑',
-      shortName: 'Jesko',
+      shortName: 'Jesko🔑',
       isKeyCar: true,
       star: 6,
       rank: 4824,
@@ -843,7 +844,7 @@ export default {
     {
       car_id: 'cc850',
       fullName: 'Koenigsegg CC850🔑',
-      shortName: 'CC850',
+      shortName: 'CC850🔑',
       isKeyCar: true,
       star: 6,
       rank: 5146,
@@ -883,7 +884,7 @@ export default {
     {
       car_id: '911gt2',
       fullName: 'Porsche 911 GT2 RS ClubSport🔑',
-      shortName: '911 GT2',
+      shortName: '911 GT2🔑',
       isKeyCar: true,
       star: 6,
       rank: 4289,
@@ -903,7 +904,7 @@ export default {
     {
       car_id: 'ultimars',
       fullName: 'Ultima RS🔑',
-      shortName: 'Ultima RS',
+      shortName: 'Ultima RS🔑',
       isKeyCar: true,
       star: 6,
       rank: 4650,
@@ -923,7 +924,7 @@ export default {
     {
       car_id: 'vwer',
       fullName: 'Volkswagen Electric R🔑',
-      shortName: 'Electric R',
+      shortName: 'Electric R🔑',
       isKeyCar: true,
       star: 5,
       rank: 3062,
@@ -1003,7 +1004,7 @@ export default {
     {
       car_id: 'lpi800',
       fullName: 'Lamborghini Countach LPI 800-4🔑',
-      shortName: 'LPI 800-4',
+      shortName: 'LPI 800-4🔑',
       isKeyCar: true,
       star: 6,
       rank: 4571,
@@ -1013,7 +1014,7 @@ export default {
     {
       car_id: 'bt62',
       fullName: 'Brabham BT62🔑',
-      shortName: 'BT62',
+      shortName: 'BT62🔑',
       isKeyCar: true,
       star: 5,
       rank: 3489,
@@ -1042,8 +1043,8 @@ export default {
     },
     {
       car_id: 'mc12',
-      fullName: 'Maserati MC12',
-      shortName: 'MC12',
+      fullName: 'Maserati MC12🔑',
+      shortName: 'MC12🔑',
       isKeyCar: true,
       star: 5,
       rank: 3100,
@@ -1093,7 +1094,7 @@ export default {
     {
       car_id: 'w12',
       fullName: 'Volkswagen W12 Coupe🔑',
-      shortName: 'W12',
+      shortName: 'W12🔑',
       isKeyCar: true,
       star: 6,
       rank: 4334,
@@ -1143,7 +1144,7 @@ export default {
     {
       car_id: 'af8',
       fullName: 'Arash AF8 Falcon Edition🔑',
-      shortName: 'AF8',
+      shortName: 'AF8🔑',
       isKeyCar: true,
       star: 5,
       rank: 3289,
@@ -1213,7 +1214,7 @@ export default {
     {
       car_id: 'at96',
       fullName: 'TechRules AT96 Track Version🔑',
-      shortName: 'AT96',
+      shortName: 'AT96🔑',
       isKeyCar: true,
       star: 6,
       rank: 4020,
@@ -1223,7 +1224,7 @@ export default {
     {
       car_id: 'miura',
       fullName: 'Lamborghini Miura Concept🔑',
-      shortName: 'Miura',
+      shortName: 'Miura🔑',
       isKeyCar: true,
       star: 5,
       rank: 3688,
@@ -1243,7 +1244,7 @@ export default {
     {
       car_id: '718gt4',
       fullName: 'Porsche 718 Cayman GT4 ClubSport🔑',
-      shortName: '718 GT4',
+      shortName: '718 GT4🔑',
       isKeyCar: true,
       star: 5,
       rank: 3415,
@@ -1312,39 +1313,39 @@ export default {
     },
 
   ],
-  processRewards: [{
-    conditions: 967,
-    rewards: []
-  }],
-  chapters: [
+  processRewards:[
+    {conditions:967,rewards:[]}
+  ],
+  chapters:[
 
     {
-      targetCarId: '004c',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'004c',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'lancer',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'lancer',
+          rankList:[
             467, 791, 1094, 1381
           ]
         },
         {
-          toolCarId: 'z4',
-          rankList: [
+          toolCarId:'z4',
+          rankList:[
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'lt',
-          rankList: [
+          toolCarId:'lt',
+          rankList:[
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: '370',
-          rankList: [
+          toolCarId:'370',
+          rankList:[
             6000, 6000, 6000, 6000
           ]
         },
@@ -1355,72 +1356,74 @@ export default {
 
 
     {
-      targetCarId: 'continental',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'continental',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'srt8',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'srt8',
+          rankList:[
             799, 1115, 1405, 1683
           ]
         },
         {
-          toolCarId: 'hommage',
-          rankList: [
+          toolCarId:'hommage',
+          rankList:[
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'boxster',
-          rankList: [
+          toolCarId:'boxster',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: '392',
-          rankList: [
+          toolCarId:'392',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
       ]
     },
     {
-      targetCarId: 'saleens1',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'saleens1',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: '410',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'410',
+          rankList:[
             1086, 1411, 1814, 2076, 2123
           ]
         },
         {
-          toolCarId: '911',
-          rankList: [
+          toolCarId:'911',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'db11',
-          rankList: [
+          toolCarId:'db11',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'gt350r',
-          rankList: [
+          toolCarId:'gt350r',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'c7r',
-          rankList: [
+          toolCarId:'c7r',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1428,41 +1431,42 @@ export default {
       ]
     },
     {
-      targetCarId: 'nsxgt3',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'nsxgt3',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'w70',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'w70',
+          rankList:[
             1567, 1920, 2308, 2584, 2633
           ]
         },
         {
-          toolCarId: 'fordgt',
-          rankList: [
+          toolCarId:'fordgt',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'asterion',
-          rankList: [
+          toolCarId:'asterion',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'alfieri',
-          rankList: [
+          toolCarId:'alfieri',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: '911gt1',
-          rankList: [
+          toolCarId:'911gt1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
@@ -1470,161 +1474,165 @@ export default {
       ]
     },
     {
-      targetCarId: 'mbbs',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'mbbs',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'amg',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'amg',
+          rankList:[
             1193, 1536, 1961, 2232, 2281
           ]
         },
         {
-          toolCarId: 'infiniti',
-          rankList: [
+          toolCarId:'infiniti',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'emira',
-          rankList: [
+          toolCarId:'emira',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'svr',
-          rankList: [
+          toolCarId:'svr',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'taycan',
-          rankList: [
+          toolCarId:'taycan',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
       ]
     },
     {
-      targetCarId: 'panamera',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'panamera',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'civic',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'civic',
+          rankList:[
             1539, 1928, 2307, 2564, 2627
           ]
         },
         {
-          toolCarId: 'continental',
-          rankList: [
+          toolCarId:'continental',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'f50',
-          rankList: [
+          toolCarId:'f50',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'vwer',
-          rankList: [
+          toolCarId:'vwer',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'trezor',
-          rankList: [
+          toolCarId:'trezor',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
       ]
     },
     {
-      targetCarId: 'ares',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'ares',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'griffith',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'griffith',
+          rankList:[
             1587, 1962, 2338, 2582, 2641
           ]
         },
         {
-          toolCarId: 'beast',
-          rankList: [
+          toolCarId:'beast',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: '004c',
-          rankList: [
+          toolCarId:'004c',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'v12',
-          rankList: [
+          toolCarId:'v12',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'saleens1',
-          rankList: [
+          toolCarId:'saleens1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
       ]
     },
 
-
+    
     {
-      targetCarId: '765lt',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'765lt',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'vulcan',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'vulcan',
+          rankList:[
             2162, 2454, 2718, 2740, 2908,
             6000
           ]
         },
         {
-          toolCarId: 'h2',
-          rankList: [
+          toolCarId:'h2',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'gtr',
-          rankList: [
+          toolCarId:'gtr',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'nsx',
-          rankList: [
+          toolCarId:'nsx',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'j50',
-          rankList: [
+          toolCarId:'j50',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
@@ -1632,41 +1640,42 @@ export default {
       ]
     },
     {
-      targetCarId: 'm4gt3',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'m4gt3',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'mk2',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'mk2',
+          rankList:[
             2197, 2550, 2865, 2896, 3090,
             6000
           ]
         },
         {
-          toolCarId: 'rrturbo',
-          rankList: [
+          toolCarId:'rrturbo',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'arashaf10',
-          rankList: [
+          toolCarId:'arashaf10',
+          rankList:[
             6000, 6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: '718gt4',
-          rankList: [
+          toolCarId:'718gt4',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'nsxgt3',
-          rankList: [
+          toolCarId:'nsxgt3',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1674,42 +1683,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'scv12',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'scv12',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'countach',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'countach',
+          rankList:[
             1418, 1816, 2220, 2400, 2545,
             6000
           ]
         },
         {
-          toolCarId: 'asterion',
-          rankList: [
+          toolCarId:'asterion',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'huracanste',
-          rankList: [
+          toolCarId:'huracanste',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'centenario',
-          rankList: [
+          toolCarId:'centenario',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'murcielago',
-          rankList: [
+          toolCarId:'murcielago',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
@@ -1717,42 +1727,43 @@ export default {
       ]
     },
     {
-      targetCarId: '600lt',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'600lt',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'mclarengt',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'mclarengt',
+          rankList:[
             2444, 2667, 2865, 3130, 3153,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'p1',
-          rankList: [
+          toolCarId:'p1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: '765lt',
-          rankList: [
+          toolCarId:'765lt',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'elva',
-          rankList: [
+          toolCarId:'elva',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'artura',
-          rankList: [
+          toolCarId:'artura',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1760,42 +1771,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'sennagtr',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'sennagtr',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'centenario',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'centenario',
+          rankList:[
             2816, 2970, 3163, 3392, 3561,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'f12tdf',
-          rankList: [
+          toolCarId:'f12tdf',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'laferrari',
-          rankList: [
+          toolCarId:'laferrari',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'n',
-          rankList: [
+          toolCarId:'n',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: '550',
-          rankList: [
+          toolCarId:'550',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1803,42 +1815,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'revuelto',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'revuelto',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'miura',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'miura',
+          rankList:[
             2114, 2471, 2788, 3209, 3247,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'diablo',
-          rankList: [
+          toolCarId:'diablo',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'gallardo',
-          rankList: [
+          toolCarId:'gallardo',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'murcielago',
-          rankList: [
+          toolCarId:'murcielago',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'reventon',
-          rankList: [
+          toolCarId:'reventon',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000
           ]
@@ -1846,88 +1859,90 @@ export default {
       ]
     },
     {
-      targetCarId: '007s',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'007s',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'ares',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'ares',
+          rankList:[
             2357, 2567, 2756, 2980, 3273,
             6000
           ]
         },
         {
-          toolCarId: 'nsxgt3',
-          rankList: [
+          toolCarId:'nsxgt3',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'ie',
-          rankList: [
+          toolCarId:'ie',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'zr1',
-          rankList: [
+          toolCarId:'zr1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'af8',
-          rankList: [
+          toolCarId:'af8',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
       ]
     },
-
-
+    
+    
 
     {
-      targetCarId: '9x8',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'9x8',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'mbbs',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'mbbs',
+          rankList:[
             2504, 2676, 2868, 3096, 3291,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'r390',
-          rankList: [
+          toolCarId:'r390',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'gt12',
-          rankList: [
+          toolCarId:'gt12',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'mc12',
-          rankList: [
+          toolCarId:'mc12',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'bt62',
-          rankList: [
+          toolCarId:'bt62',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1935,42 +1950,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'xjr',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'xjr',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'project8',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'project8',
+          rankList:[
             2175, 2411, 2615, 2864, 3177,
-            6000
+            6000 
           ]
         },
         {
-          toolCarId: 'panamera',
-          rankList: [
+          toolCarId:'panamera',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000
           ]
         },
         {
-          toolCarId: 'solus',
-          rankList: [
+          toolCarId:'solus',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'c-x75',
-          rankList: [
+          toolCarId:'c-x75',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
         },
         {
-          toolCarId: 'scv12',
-          rankList: [
+          toolCarId:'scv12',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -1978,42 +1994,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'fordp1',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'fordp1',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'm4gt3',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'m4gt3',
+          rankList:[
             2157, 2498, 2803, 3209, 3509,
             6000, 6000
           ]
         },
         {
-          toolCarId: '488gtbevo',
-          rankList: [
+          toolCarId:'488gtbevo',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000 , 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'ap-0',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000 
+          ]
+        },
+        {
+          toolCarId:'w12',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'ap-0',
-          rankList: [
-            6000, 6000, 6000, 6000, 6000,
-            6000, 6000
-          ]
-        },
-        {
-          toolCarId: 'w12',
-          rankList: [
-            6000, 6000, 6000, 6000, 6000,
-            6000, 6000, 6000, 6000
-          ]
-        },
-        {
-          toolCarId: 'terzo',
-          rankList: [
+          toolCarId:'911gt2',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2021,42 +2038,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'ts900',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'ts900',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'citroengt',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'citroengt',
+          rankList:[
             3066, 3253, 3425, 3624, 3656,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'gtr-50',
-          rankList: [
+          toolCarId:'gtr-50',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
-            6000, 6000
+            6000, 6000 
           ]
         },
         {
-          toolCarId: 'sennagtr',
-          rankList: [
+          toolCarId:'sennagtr',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
-            6000, 6000
+            6000, 6000 
           ]
         },
         {
-          toolCarId: 'akylone',
-          rankList: [
+          toolCarId:'akylone',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'terzo',
-          rankList: [
+          toolCarId:'terzo',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2064,42 +2082,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'centodieci',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'centodieci',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: '600lt',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'600lt',
+          rankList:[
             2624, 2949, 3246, 3632, 3927,
-            6000, 6000
+            6000, 6000 
           ]
         },
         {
-          toolCarId: 'avj',
-          rankList: [
+          toolCarId:'avj',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'sc18',
-          rankList: [
+          toolCarId:'sc18',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'aperta',
-          rankList: [
+          toolCarId:'aperta',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'imola',
-          rankList: [
+          toolCarId:'imola',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2107,42 +2126,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'ccxr',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'ccxr',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'valhalla',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'valhalla',
+          rankList:[
             2657, 2909, 3136, 3426, 3458,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'bc',
-          rankList: [
+          toolCarId:'bc',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'revuelto',
-          rankList: [
+          toolCarId:'revuelto',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'lykanneon',
-          rankList: [
+          toolCarId:'lykanneon',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'xj220',
-          rankList: [
+          toolCarId:'xj220',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2150,42 +2170,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'c2',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'c2',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'one77',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'one77',
+          rankList:[
             2657, 2909, 3136, 3426, 3458,
-            6000, 6000
+            6000, 6000 
           ]
         },
         {
-          toolCarId: 'huayrar',
-          rankList: [
+          toolCarId:'huayrar',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'c1',
-          rankList: [
+          toolCarId:'c1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'zondar',
-          rankList: [
+          toolCarId:'zondar',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'cs',
-          rankList: [
+          toolCarId:'cs',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2193,42 +2214,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'gemera',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'gemera',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'apolloevo',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'apolloevo',
+          rankList:[
             2557, 2830, 3111, 3493, 3812,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'at96',
-          rankList: [
+          toolCarId:'at96',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: '650s',
-          rankList: [
+          toolCarId:'650s',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'senna',
-          rankList: [
+          toolCarId:'senna',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'regera',
-          rankList: [
+          toolCarId:'regera',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2236,42 +2258,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'lvn',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'lvn',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'sesto',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'sesto',
+          rankList:[
             2295, 2605, 2917, 3344, 3697,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'lpi800',
-          rankList: [
+          toolCarId:'lpi800',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'speedtail',
-          rankList: [
+          toolCarId:'speedtail',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'fordp1',
-          rankList: [
+          toolCarId:'fordp1',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'eb110',
-          rankList: [
+          toolCarId:'eb110',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000
           ]
@@ -2279,42 +2302,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'jesko',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'jesko',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: 'xjr',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'xjr',
+          rankList:[
             3422, 3599, 3771, 3969, 3998,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'drakuma',
-          rankList: [
+          toolCarId:'drakuma',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'ts900',
-          rankList: [
+          toolCarId:'ts900',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: '1789',
-          rankList: [
+          toolCarId:'1789',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'ff01',
-          rankList: [
+          toolCarId:'ff01',
+          rankList:[
             6000, 6000, 6000, 6000, 6000,
             6000, 6000, 6000, 6000
           ]
@@ -2322,42 +2346,43 @@ export default {
       ]
     },
     {
-      targetCarId: 'cc850',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'cc850',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: '007s',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'007s',
+          rankList:[
             2859, 3101, 3324, 3584, 3615,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'vanda',
-          rankList: [
+          toolCarId:'vanda',
+          rankList:[
             2481, 2771, 3079, 3312, 3395,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'ts1',
-          rankList: [
+          toolCarId:'ts1',
+          rankList:[
             3258, 3482, 3719, 3902, 3966,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'sf90',
-          rankList: [
+          toolCarId:'sf90',
+          rankList:[
             3139, 3388, 3653, 3855, 3927,
             6000, 6000, 6000, 6000
           ]
         },
         {
-          toolCarId: 'centodieci',
-          rankList: [
+          toolCarId:'centodieci',
+          rankList:[
             3808, 3989, 4185, 4336, 4388,
             6000, 6000, 6000, 6000
           ]
@@ -2365,44 +2390,96 @@ export default {
       ]
     },
     {
-      targetCarId: 'venomf5',
-      unlockConditions: 0,
-      processRewards: [
+      targetCarId:'venomf5',
+      unlockConditions:0,
+      processRewards:[
 
       ],
-      missions: [{
-          toolCarId: '9x8',
-          rankList: [
+      missions:[
+        {
+          toolCarId:'9x8',
+          rankList:[
             2978, 3198, 3397, 3628, 3659,
             3799, 3928, 4050, 4172
           ]
         },
         {
-          toolCarId: 'naran',
-          rankList: [
+          toolCarId:'naran',
+          rankList:[
             3386, 3593, 3815, 3984, 4044,
             4191, 4324, 4444, 4564
           ]
         },
         {
-          toolCarId: 'fenyr',
-          rankList: [
+          toolCarId:'fenyr',
+          rankList:[
             3492, 3666, 3851, 3992, 4043,
             4166, 4275, 4377, 4479
           ]
         },
         {
-          toolCarId: 'ultimars',
-          rankList: [
+          toolCarId:'ultimars',
+          rankList:[
             3637, 3815, 4003, 4147, 4200,
             4322, 4438, 4544, 4650
           ]
         },
         {
-          toolCarId: 'ccxr',
-          rankList: [
+          toolCarId:'ccxr',
+          rankList:[
             3938, 4128, 4326, 4479, 4533,
             4668, 4782, 4890, 4998
+          ]
+        },
+      ]
+    },
+    {
+      targetCarId:'chiron300',
+      unlockConditions:800,
+      processRewards:[
+
+      ],
+      missions:[
+        {
+          toolCarId:'c2',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'gemera',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'lvn',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'jesko',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'cc850',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
+          ]
+        },
+        {
+          toolCarId:'venomf5',
+          rankList:[
+            6000, 6000, 6000, 6000, 6000,
+            6000, 6000, 6000, 6000
           ]
         },
       ]
@@ -2413,3 +2490,18 @@ export default {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
