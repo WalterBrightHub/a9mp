@@ -2,10 +2,23 @@
   <view class="page">
     <view class="top-fixed-wrapper">
 
-      <top-bar :title="`大师计算器 - 当前进度 ${userProgress.total} / ${chapterMissionsCount.total}`" :showBack="true" />
+      <top-bar :title="`狂野大师-进度 ${userProgress.total} / ${chapterMissionsCount.total}`" :showBack="true" />
     </view>
     <view>
-      <div class="card">施工中，请坐和放宽！</div>
+      <div class="card">
+
+        <div class="card-title">说明</div>
+        <div class="note-list">
+          <div class="note" v-for="(note,index) in masteryData.notes" :key="index">{{note}}</div>
+          <div class="note-divider"></div>
+          <div class="note">本工具使用方法：点击工具车的性能分使其符合您的车库。<span
+              style="font-weight: bold;color:#ff0054;">未解锁的钥匙车请选择“没钥匙”，无论其性能分多少。</span></div>
+          <div class="note">点击“打开计算”按钮，可以按车库从 D 到 R 方便地填写。</div>
+          <div class="note">由于工具车列表太长，<span style="font-weight: bold;color:#ff0054;">往下拉还有每辆大师车的计算器</span>，在这里填写也很方便！
+          </div>
+          <div class="note">本工具仅供参考，实际奖励以游戏内为准。数据如有错误之处可联系小助手龟速修复。</div>
+        </div>
+      </div>
       <div class="panel-group-calc">
         <div>
           <div class="action-list">
@@ -15,13 +28,16 @@
             <div class="action" @click="onActionFull">拉满车库</div>
           </div>
           <div class="card">
-            <div>工具车速查</div>
+            <!-- <div>工具车速查</div> -->
             <div class="panel-tool-car-list">
 
-              <div class="panel-tool-car-item" v-for="(car, carIndex) in masteryData.toolCars">
+              <div class="panel-tool-car-item" :class="{'panel-tool-car-item-detail':showPanel}"
+                v-for="(car, carIndex) in masteryData.toolCars">
                 <div class="mission-car-info" style="display: flex;align-items: center;">
                   <!-- <div class="card-title-number" style="margin-right: 0.5em;">{{carIndex+1}}</div> -->
-                  <div @click="toCarArchives(car.car_id,car.fullName)">{{carIndex+1}}. {{car.shortName}}</div>
+                  <div class="primary-title bold" @click="toCarArchives(car.car_id,car.fullName)">{{carIndex+1}}.
+                    {{car.shortName}}
+                  </div>
                   <div class="mastery-car-tag" v-if="masterySet.has(car.car_id)"
                     style="font-size: 0.75em;margin-left: 0.75em;">大师车</div>
                   <div class="stars stars-tool-car" style="margin-left: auto;">
@@ -45,13 +61,13 @@
                   </div>
                   <div class="panel-tool-car-to-chapter-list" style="margin-top: 0.25em;">
                     <div class="panel-tool-car-to-chapter-item" v-for="mission in toolCarChapterMap[car.car_id]">
-                      <div style="display:flex;gap:1em">
-                        <div>大师{{mission.chapterIndex+1}}</div>
+                      <div style="display:flex;gap:1em;padding-left: 2em;align-items: center;">
+                        <div>大师 {{mission.chapterIndex+1}}</div>
                         <div>{{masteryInfo.toolCarMap[mission.chapter.targetCarId].shortName}}</div>
                         <div>任务
                           {{userProgress.list[mission.chapterIndex].missionList[mission.missionIndex]}}/{{mission.mission.rankList.length}}
                         </div>
-                        <div>金卡 16/16</div>
+                        <!-- <div>金卡 16/16</div> -->
 
                       </div>
                     </div>
@@ -83,7 +99,7 @@
             <div class="card-title-group" style="display:flex;align-items:center;">
               <div class="card-title-number" style="margin-right: 0.5em;">{{index+1}}</div>
 
-              <div class="chapter-car-name"
+              <div class="chapter-car-name primary-title bold"
                 @click="toCarArchives(chapter.targetCarId,masteryInfo.toolCarMap[chapter.targetCarId].fullName)">
                 {{masteryInfo.toolCarMap[chapter.targetCarId].fullName}}
               </div>
@@ -109,20 +125,28 @@
               <!-- <div>前期图纸 2/2</div>
               <div v-if="masteryInfo.toolCarMap[chapter.targetCarId].isKeyCar">全奖钥匙或图纸 {{masteryInfo.toolCarMap[chapter.targetCarId].rewardBP}}</div>
               <div v-else>全奖图纸 {{masteryInfo.toolCarMap[chapter.targetCarId].rewardBP}}</div> -->
-              <div v-if="masteryInfo.toolCarMap[chapter.targetCarId].isKeyCar">图纸 🔑+0/8 或 0/53</div>
-              <div v-else>图纸 0/53</div>
+              <!--              <div v-if="masteryInfo.toolCarMap[chapter.targetCarId].isKeyCar">图纸 🔑+0/8 或 0/53</div>
+              <div v-else>图纸 0/53</div> -->
+              <div>最终奖励
+                {{masteryInfo.toolCarMap[chapter.targetCarId].isKeyCar?' 🔑 或':''}}
+                <span
+                  class=" primary-title bold">{{' '+masteryInfo.toolCarMap[chapter.targetCarId].rewardBP+' '}}</span> 图纸
+              </div>
               <div style="margin-right: 0.5em;margin-left:auto;padding-left: 1.5em;">进度
-                0/{{chapterMissionsCount.list[index]}}</div>
-              <div
-                style="max-width: 9em;flex:1;background-color:#f7ecf9;height: 0.75em;border-radius: 1em;border:1px solid #f2aff4;">
-                <div style="height: 100%; background-color:  #f2aff4;border-radius: 1em;" :style="{'width':'62%'}">
+                <span
+                  class=" primary-title bold" style="margin-left: 0.25em;">{{userProgress.list[index].missionTotal}}/{{chapterMissionsCount.list[index]}}</span>
+              </div>
+              <div class="bar-wrapper" style="max-width: 9em;flex:1;height: 0.75em;border-radius: 1em;">
+                <div class="bar" style="height: 100%;;border-radius: 1em;" :style="{'width':
+                userProgress.list[index].missionTotal*100/(chapterMissionsCount.list[index]||1)+'%'}">
                 </div>
               </div>
             </div>
             <div class="chapter-mission-list" style="margin-top: 0.25em;">
               <div class="chatper-mission" v-for="mission in chapter.missions">
                 <div class="mission-car-info" style="display: flex;align-items: center;">
-                  <div @click="toCarArchives(mission.toolCarId,masteryInfo.toolCarMap[mission.toolCarId].fullName)">
+                  <div @click="toCarArchives(mission.toolCarId,masteryInfo.toolCarMap[mission.toolCarId].fullName)"
+                    class="primary-title">
                     {{masteryInfo.toolCarMap[mission.toolCarId].shortName}}
                   </div>
                   <div class="mastery-car-tag" v-if="masterySet.has(mission.toolCarId)"
@@ -142,7 +166,7 @@
                   </div>
                   <div class="rank-select-item" v-for="rank in rankLimitMap[mission.toolCarId]"
                     :class="{'rank-select-item-highlight':form[mission.toolCarId].unlock&&form[mission.toolCarId].rank>=rank}"
-                    @click="setFormCarRank(mission.toolCarId,rank)">{{rank}}</div>
+                    :key="rank" @click="setFormCarRank(mission.toolCarId,rank)">{{rank}}</div>
                 </div>
               </div>
 
@@ -156,7 +180,7 @@
 
 <script>
   import topBar from '@/components/topBar/topBar.vue'
-  import fakeData from './fakeData'
+  // import fakeData from './fakeData'
 
   const db = uniCloud.database()
   export default {
@@ -314,14 +338,16 @@
             let form = res.data
 
             for (let e of Object.entries(form)) {
-              this.form[e[0].car_id].rank = e[1].rank
-              this.form[e[0].car_id].unlock = !!e[1].unlock
+              this.form[e[0]].rank = e[1].rank
+              this.form[e[0]].unlock = !!e[1].unlock
             }
           }
         })
+        // console.log(this.form)
         this.masteryData = masteryData
 
         uni.hideLoading()
+        this.setLocalForm()
       },
       getSpecialEventData: async function() {
         const res = await db.collection('contest').where({
@@ -329,8 +355,8 @@
         }).get()
         if (res.result.data.length) {
           this.contestName = res.result.data[0].contestName
-          const data = fakeData
-          // const data= res.result.data[0].masteryData
+          // const data = fakeData
+          const data= res.result.data[0].masteryData
           data.toolCars.sort((car1, car2) => {
             const orderClass1 = ['D', 'C', 'B', 'A', 'S', 'R'].findIndex(c => c === car1.carClass) || 0
             const orderClass2 = ['D', 'C', 'B', 'A', 'S', 'R'].findIndex(c => c === car2.carClass) || 0
@@ -349,6 +375,7 @@
             unlock: false,
           })
         }
+        // this.setLocalForm()
 
       },
       getChapterMissionsCount(chapter) {
@@ -359,13 +386,14 @@
           rank: 0,
           unlock: false,
         }
+        this.setLocalForm()
       },
       setFormCarRank(car_id, rank) {
         // this.$set(this.form[car_id], 'rank', rank)
         // this.$set(this.form[car_id], 'unlock', true)
         this.form[car_id].rank = rank
         this.form[car_id].unlock = true
-        console.log(this.form[car_id])
+        this.setLocalForm()
       },
       toCarArchives(car_id, fullName) {
         const url = `/pages/carList/carArchives/carArchives?car_id=${car_id}&fullName=${fullName}`
@@ -378,6 +406,7 @@
           this.form[key].unlock = true
           this.form[key].rank = 10000
         }
+        this.setLocalForm()
       },
 
       onActionClear: async function() {
@@ -388,7 +417,7 @@
         if (res.confirm) {
 
           this.resetForm()
-          // this.setLocalForm()
+          this.setLocalForm()
         }
       },
       onActionFull: async function() {
@@ -399,8 +428,14 @@
         if (res.confirm) {
 
           this.fullForm()
-          // this.setLocalForm()
+          this.setLocalForm()
         }
+      },
+      setLocalForm() {
+        uni.setStorage({
+          key: 'mastery-' + this._id,
+          data: this.form
+        })
       },
 
     },
@@ -419,6 +454,14 @@
 </script>
 
 <style lang="scss">
+  .bold {
+    font-weight: bold;
+  }
+
+  .primary-title {
+    color: var(--text-title-color);
+  }
+
   .top-fixed-wrapper {
     z-index: 114514;
     position: sticky;
@@ -446,7 +489,7 @@
       margin: toPadPx(20);
       padding: toPadPx(20);
       border-radius: toPadPx(10);
-      max-width: 768px;
+      max-width: 940px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -535,18 +578,34 @@
   }
 
   .rank-select-item {
-    background-color: #ecf9ec;
+    background-color: #eee;
     text-align: center;
     padding: 0.25em 0;
+    color: var(--text-title-color);
+
+    @media (prefers-color-scheme: dark) {
+      // color: $text-title-color-dark;
+      background-color: #333;
+    }
 
     &-highlight {
-      background-color: #b7f0b7;
+      // background-color: #b7f0b7;
+
+      background-color: #41b90a;
+      color: #fff;
+
+      @media (prefers-color-scheme: dark) {
+        // color: $text-title-color-dark;
+        background-color: #2d8006;
+      }
     }
   }
 
   .mastery-car-tag {
-    background-color: #f9ecec;
-    color: #ff0054;
+    // background-color: #f9ecec;
+    // color: #ff0054;
+    background-color: #ff0054;
+    color: #fff;
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
   }
@@ -562,6 +621,11 @@
       font-size: toPadPx(26);
     }
 
+    @media (prefers-color-scheme: dark) {
+      background-color: #d800ff;
+      color: #fff;
+    }
+
   }
 
   .rank-select-list {
@@ -573,12 +637,22 @@
       margin-top: 0.75em;
     }
   }
-  
-  .panel-tool-car-item{
+
+  .panel-tool-car-item {
     &+& {
       margin-top: 0.75em;
     }
-    
+
+  }
+
+  .panel-tool-car-item-detail {
+    &+& {
+      border-top: 1px solid var(--divider-color);
+      padding-top: 0.5em;
+      // @media (prefers-color-scheme: dark) {
+      //   border
+      // }
+    }
   }
 
   .panel-group-calc {
@@ -587,7 +661,8 @@
 
     @media(min-width:960px) {
       display: grid;
-      grid-template-columns: 475px 475px;
+      grid-template-columns: 1fr 1fr;
+      gap: toPadPx(20);
 
 
 
@@ -630,6 +705,41 @@
       @include pad-devices {
         margin-left: toPadPx(20);
       }
+    }
+  }
+
+
+  .note {
+    line-height: 1.5;
+
+    &+& {
+      margin-top: 0.5em;
+
+
+    }
+  }
+
+  .note-divider {
+    height: 1px;
+    background-color: var(--divider-color);
+    margin: 1em 0;
+  }
+
+  .bar {
+    background-color: #f2aff4;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #d800ff;
+    }
+  }
+
+  .bar-wrapper {
+    border: 1px solid #f2aff4;
+    background-color: #f7ecf9;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #303030;
+      border: 1px solid #d800ff;
     }
   }
 </style>
