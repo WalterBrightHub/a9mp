@@ -334,7 +334,10 @@
         const masteryData = await this.getSpecialEventData()
         this.resetForm(masteryData)
         this.getLocalForm().then(([err, res]) => {
-          if (err) {} else {
+          if (err) {
+            // console.log('出错了',err)
+          } else {
+            // console.log('data',res.data)
             let form = res.data
 
             for (let e of Object.entries(form)) {
@@ -347,7 +350,7 @@
         this.masteryData = masteryData
 
         uni.hideLoading()
-        this.setLocalForm()
+        // this.setLocalForm()
       },
       getSpecialEventData: async function() {
         const res = await db.collection('contest').where({
