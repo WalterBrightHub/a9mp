@@ -26,8 +26,8 @@
         <view v-else class="contest-list">
 
           <contest-item :contest="contest" v-for="(contest, index) in data" :key="contest._id" class="contest-item"
-            :now="options.now" :index="index" :_id="contest._id" :haveSpecialEventData="!!contest.specialEventData"
-             :haveMasteryData="!!contest.masteryData"/>
+            :now="options.now" :index="index" :_id="contest._id" :dsDataId="contest.dsDataId" :haveSpecialEventData="!!contest.specialEventData"
+             :haveMasteryData="!!contest.masteryData" :haveDSData="!!contest.dsDataId"/>
         </view>
         <view class="loading" v-if="loading">
           <loading />

@@ -10,8 +10,9 @@
       <event-detail-list :isPreRelease="contest.isPreRelease" :startTime="contest.startTime" :endTime="contest.endTime" :now="now" :mapName="contest.mapName"
         :rewords="contest.rewords" :featuredCars="contest.featuredCars"
         :haveSpecialEventData="haveSpecialEventData"
+        :haveDSData="haveDSData"
         :haveMasteryData="haveMasteryData"
-         :_id="_id"/>
+         :_id="_id" :dsDataId="dsDataId"/>
     </view>
   </view>
 </template>
@@ -24,7 +25,7 @@
     components: {
       'event-detail-list': eventDetailList
     },
-    props: ['contest', 'now', 'index','_id','haveSpecialEventData','haveMasteryData'],
+    props: ['contest', 'now', 'index','_id','dsDataId','haveSpecialEventData','haveMasteryData','haveDSData'],
     data() {
       return {
 

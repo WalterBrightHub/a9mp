@@ -31,6 +31,7 @@
 
       <div class="special-evnet-calculator" @click.stop="toSECalculator" v-if="haveSpecialEventData">赛事计算器</div>
       <div class="special-evnet-calculator" @click.stop="toMasteryCalculator" v-if="haveMasteryData">大师计算器</div>
+      <div class="special-evnet-calculator" @click.stop="toDSCalculator" v-if="haveDSData">车联计算器</div>
     </div>
   </view>
 </template>
@@ -44,8 +45,8 @@
       `${date.getFullYear()}.`) +
     `${date.getMonth() + 1}.${date.getDate()}`
   export default {
-    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName', 'isPreRelease', '_id',
-      'haveSpecialEventData', 'haveMasteryData'
+    props: ['startTime', 'endTime', 'now', 'rewords', 'featuredCars', 'mapName', 'isPreRelease', '_id','dsDataId',
+      'haveSpecialEventData', 'haveMasteryData','haveDSData'
     ],
     data() {
       return {
@@ -107,6 +108,12 @@
           url: `/pages/contest/masteryCalculator/masteryCalculator?_id=${this._id}`
         })
       },
+      toDSCalculator(){
+        uni.navigateTo({
+          url: `/pages/contest/DSCalculator/DSCalculator?dsDataId=${this.dsDataId}`
+        })
+        
+      }
     }
   }
 </script>
